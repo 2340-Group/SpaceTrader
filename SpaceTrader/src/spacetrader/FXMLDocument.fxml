@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.FXMLDocumentController">
     <children>
+      <ImageView fitHeight="239.0" fitWidth="381.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@space-background.jpg" />
+         </image>
+      </ImageView>
         <Button fx:id="button" layoutX="247.0" layoutY="65.0" onAction="#handleButtonAction" text="Start" />
-        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <Button layoutX="246.0" layoutY="100.0" mnemonicParsing="false" text="Load" />
       <Button layoutX="248.0" layoutY="136.0" mnemonicParsing="false" text="Quit" />
-      <Label layoutX="14.0" layoutY="49.0" text="Space Trader">
+      <Label layoutX="26.0" layoutY="81.0" text="Space Trader" textFill="#e40c0c">
          <font>
             <Font size="32.0" />
          </font>
