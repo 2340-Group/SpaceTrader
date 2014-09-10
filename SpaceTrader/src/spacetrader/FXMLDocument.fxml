@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="spacetrader.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Button fx:id="button" layoutX="247.0" layoutY="65.0" onAction="#handleButtonAction" text="Start" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Button layoutX="246.0" layoutY="100.0" mnemonicParsing="false" text="Load" />
+      <Button layoutX="248.0" layoutY="136.0" mnemonicParsing="false" text="Quit" />
+      <TextArea layoutX="20.0" layoutY="31.0" prefHeight="53.0" prefWidth="212.0" text="Space Trader">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </TextArea>
     </children>
 </AnchorPane>
