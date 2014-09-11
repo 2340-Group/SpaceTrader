@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -10,15 +12,18 @@
 
 <AnchorPane id="AnchorPane" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.FXMLDocumentController">
     <children>
-      <ImageView fitHeight="239.0" fitWidth="381.0" layoutX="-7.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="220.0" fitWidth="387.0" layoutX="-3.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@space-background.jpg" />
          </image>
       </ImageView>
-        <Button fx:id="button" layoutX="247.0" layoutY="65.0" onAction="#handleButtonAction" text="Start" />
-      <Button layoutX="246.0" layoutY="100.0" mnemonicParsing="false" text="Load" />
-      <Button layoutX="248.0" layoutY="136.0" mnemonicParsing="false" text="Quit" />
-      <Label layoutX="26.0" layoutY="81.0" text="Space Trader" textFill="#e40c0c">
+        <Button fx:id="button" layoutX="26.0" layoutY="168.0" onAction="#handleButtonAction" opacity="0.43" text="Start New Game">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></Button>
+      <Button layoutX="169.0" layoutY="168.0" mnemonicParsing="false" opacity="0.41" text="Load Game" />
+      <Button layoutX="284.0" layoutY="168.0" mnemonicParsing="false" opacity="0.41" text="Quit" />
+      <Label blendMode="SCREEN" layoutX="92.0" layoutY="68.0" text="Space Trader" textFill="#e40c0c">
          <font>
             <Font size="32.0" />
          </font>
