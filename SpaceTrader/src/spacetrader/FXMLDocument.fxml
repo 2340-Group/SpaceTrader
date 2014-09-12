@@ -17,7 +17,7 @@
             <Image url="@space-background.jpg" />
          </image>
       </ImageView>
-        <Button fx:id="button" layoutX="26.0" layoutY="168.0" onAction="#handleButtonAction" opacity="0.43" text="Start New Game">
+        <Button fx:id="button" layoutX="26.0" layoutY="168.0" onAction="#handleStartButtonAction" opacity="0.43" text="Start New Game">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></Button>
