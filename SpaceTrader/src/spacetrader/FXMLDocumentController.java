@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import java.util.*;
 import javax.sound.sampled.*;
-import sun.audio.*;
+import javafx.scene.media.*;
 import java.io.*;
 
 import javafx.application.Application;
@@ -31,7 +31,10 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label label;
+    private int active;
     private String currentScene;
+    private Media introSong;
+    private MediaPlayer mediaPlayer;
     
     
     @FXML
@@ -39,11 +42,13 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("You clicked me!");
         //label.setText("Hello World!");
         currentScene = "configure";
+        active = 0;
         Parent config = FXMLLoader.load(getClass().getResource("ConfigurationScreen.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
+        mediaPlayer.stop();
     }
     
     @FXML
@@ -56,11 +61,12 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("INIT");
+        active = 1;
         try {
-          Clip clip = AudioSystem.getClip();
-          AudioInputStream inputStream = AudioSystem.getAudioInputStream(AudioPlayer.class.getResourceAsStream("OpenTrack.wav"));         
-          clip.open(inputStream);
-          clip.loop(Clip.LOOP_CONTINUOUSLY);
+          introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3").toURI().toString());
+          mediaPlayer = new MediaPlayer(introSong);
+          mediaPlayer.play();
+          mediaPlayer.setCycleCount(4);
         } catch (Exception e) {
           System.err.println(e.getMessage());
         }
