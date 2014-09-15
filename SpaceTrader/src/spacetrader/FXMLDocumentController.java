@@ -46,6 +46,13 @@ public class FXMLDocumentController implements Initializable {
         stageN.show();
     }
     
+    @FXML
+    private void handleQuitButtonAction(ActionEvent event) throws Exception {
+        System.out.println("You clicked me!");
+        //label.setText("Hello World!");
+        System.exit(0);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("INIT");
