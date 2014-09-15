@@ -15,7 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -27,7 +26,7 @@ import javafx.stage.Stage;
  */
 public class ConfigurationScreenController implements Initializable {
 
-    private String name = "";
+    private String name = "Trader";
     private int remainingPoints = 10, pilotPoints = 0, fighterPoints = 0, traderPoints = 0, engineerPoints = 0;
     
     @FXML
@@ -145,6 +144,11 @@ public class ConfigurationScreenController implements Initializable {
     @FXML
     private void done(ActionEvent event) throws Exception {
         if (remainingPoints == 0) {
+            if (nameField.getText() != null && !nameField.getText().trim().isEmpty()) {
+                name = nameField.getText().trim();
+            }
+            System.out.println(name);
+            
             Parent config = FXMLLoader.load(getClass().getResource("Placeholder.fxml"));
             Scene sceneConfig = new Scene(config);
             Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
