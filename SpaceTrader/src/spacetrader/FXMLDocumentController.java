@@ -13,6 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import java.util.*;
+import javax.sound.sampled.*;
+import sun.audio.*;
+import java.io.*;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +48,16 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        System.out.println("INIT");
+        try {
+          Clip clip = AudioSystem.getClip();
+          AudioInputStream inputStream = AudioSystem.getAudioInputStream(AudioPlayer.class.getResourceAsStream("OpenTrack.wav"));         
+          clip.open(inputStream);
+          clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+          System.err.println(e.getMessage());
+        }
+
     }    
     
 }
