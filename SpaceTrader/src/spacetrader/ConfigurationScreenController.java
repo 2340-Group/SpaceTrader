@@ -29,7 +29,7 @@ import java.io.*;
 public class ConfigurationScreenController implements Initializable {
 
     private String name = "Trader";
-    private int remainingPoints = 10, pilotPoints = 0, fighterPoints = 0, traderPoints = 0, engineerPoints = 0;
+    private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0, traderPoints = 0, engineerPoints = 0;
     private Media click;
     private Media deny;
     private MediaPlayer mediaPlayer;

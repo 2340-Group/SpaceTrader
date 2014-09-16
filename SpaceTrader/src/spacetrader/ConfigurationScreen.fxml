@@ -100,7 +100,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Label fx:id="remainingPointsLabel" alignment="CENTER" prefHeight="108.0" prefWidth="507.0" text="Remaining Points&#10;10" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Label fx:id="remainingPointsLabel" alignment="CENTER" prefHeight="108.0" prefWidth="507.0" text="Remaining Points&#10;15" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
             <Font size="15.0" />
          </font>
