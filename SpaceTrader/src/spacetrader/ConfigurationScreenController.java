@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.media.*;
 import java.io.*;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -40,6 +41,26 @@ public class ConfigurationScreenController implements Initializable {
     //private Button minusPilot, plusPilot, minusFighter, plusFighter, minusTrader, plusTrader, minusEngineer, plusEngineer, cancelBtn, doneBtn;
     @FXML
     private Label remainingPointsLabel, pilotPointsLabel, fighterPointsLabel, traderPointsLabel, engineerPointsLabel;
+    @FXML
+    private Button minusPilot;
+    @FXML
+    private Button minusFighter;
+    @FXML
+    private Button minusTrader;
+    @FXML
+    private Button minusEngineer;
+    @FXML
+    private Button plusPilot;
+    @FXML
+    private Button plusFighter;
+    @FXML
+    private Button plusTrader;
+    @FXML
+    private Button plusEngineer;
+    @FXML
+    private Button cancelBtn;
+    @FXML
+    private Button doneBtn;
     
     @FXML
     private void subtractPilot(ActionEvent event) {
