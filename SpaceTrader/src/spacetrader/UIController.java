@@ -8,14 +8,22 @@ package spacetrader;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
- * FXML Controller class
+ * UI Controller class
  *
  * @author Ryan
  */
 public class UIController implements Initializable {
+	
+	@FXML
+    private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
+        System.exit(0);
+    }
 
     /**
      * Initializes the controller class.
