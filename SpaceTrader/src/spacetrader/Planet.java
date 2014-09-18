@@ -14,18 +14,18 @@ public class Planet {
 	private String name;
 	private int locX;
 	private int locY;
-	private String solarSystem;
+	private SolarSystem solarSystem;
 	private String techLevel;
-	private Resources resources;
+	private Items[] items;
     
-    public void createPlayer(String n, int x, int y, String ss, String tl, Resources r) {
+    public void createPlayer(String n, int x, int y, SolarSystem ss, String tl, Items[] i) {
         System.out.println("Making planet: " + n);
 		name = n;
 		locX = x;
 		locY = y;
 		solarSystem = ss;
 		techLevel = tl;
-		resources = r;
+		items = i;
 		
     }
 
@@ -34,8 +34,26 @@ public class Planet {
 		locY = y;
 	}
 	
-	public void setResources(Resources r) {
-		resources = r;
+	public void setItems(Items i) {
+		items = i;
 	}
+	
+	public String getName () {
+		return name;
+	}
+	
+	public Items[] getItems () {
+		return items;
+	}
+	
+	public String getTechLevel () {
+		return techLevel;
+	}
+	
+	public SolarSystem getSolarSystem () {
+		return solarSystem;
+	}
+	
+	
 
 }
