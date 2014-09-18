@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.UIController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Travel">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Select Planet" />
+                  <MenuItem mnemonicParsing="false" text="Change Solar System" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Information">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Inventory" />
+                  <MenuItem mnemonicParsing="false" text="Ship" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Actions">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Buy/Sell" />
+                  <MenuItem mnemonicParsing="false" text="Upgrade" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Save/Quit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" onMenuValidation="#handleQuitMenuItemAction" text="Quit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
