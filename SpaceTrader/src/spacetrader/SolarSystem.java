@@ -13,22 +13,36 @@
 public class SolarSystem {
 	
 	private String name;
+	private Planet[] planets;
 	private int locX;
 	private int locY;
 	private String style;
 	    
-	public void createPlayer(String n, int x, int y, String s) {
-	    System.out.println("Making planet: " + n);
+	public void createSolarSystem(String n, int x, int y, String s, Planet[] p) {
+	    System.out.println("Making Solar Sytems: " + n);
 		name = n;
 		locX = x;
 		locY = y;
 		style = s;
+		planets = p;
 		
 	}
 
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
+	}
+	
+	public String getName () {
+		return name;
+	}
+	
+	public String getStyle () {
+		return style;
+	}
+	
+	public Planet[] getPlanets () {
+		return planets;
 	}
 		
 

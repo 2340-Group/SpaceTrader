@@ -18,18 +18,20 @@ public class Player {
 	private int engineering;
 	private int locX;
 	private int locY;
-	private String solarSystem;
+	private Ship ship;
+	private SolarSystem solarSystem;
+	private Planet planet;
     
-    public void createPlayer(String n, int p, int f, int t, int e) {
+    public void createPlayer(String n, int p, int f, int t, int e, Ship s) {
         System.out.println("Making player: " + n);
 		name = n;
 		piloting = p;
 		fighting = f;
 		trading = t;
 		engineering = e;
+		ship = s;
 		locX = 0;
 		locY = 0;
-		solarSystem = "home";
 		
     }
 
@@ -38,12 +40,65 @@ public class Player {
 		locY = y;
 	}
 	
-	public void moveX(int x) {
-		locX = locX + x;
+	public void setSolarSystem(SolarSystem ss) {
+		solarSystem = ss;
 	}
 	
-	public void moveY(int y) {
-			locY = locY + y;
+	public void setPlanet(Planet p) {
+		Planet = p;
 	}
-
+	
+	public void setEngineering (int e) {
+		engineering = e;
+	}
+	
+	public void setPiloting (int p) {
+		piloting = p;
+	}
+	
+	public void setFighting (int f) {
+		fighting = f;
+	}
+	
+	public void setTrading (int t) {
+		trading = t;
+	}
+	
+	public void setShip (Ship s) {
+		ship = s;
+	}
+	
+	public String getName () {
+		return name;
+	}
+	
+	public SolarSystem getSolarSystem () {
+		return solarSystem;
+	}
+		
+	public Planet getPlanet () {
+		return Planet;
+	}
+	
+	public int getEngineering () {
+		return engineering;
+	}
+		
+	public int getPiloting () {
+		return piloting;
+	}
+		
+	public int getFighting () {
+		return fighting;
+	}
+		
+	public int getTrading () {
+		return trading;
+	}
+	
+	public Ship getShip () {
+		return ship;
+	}
+	
+	
 }
