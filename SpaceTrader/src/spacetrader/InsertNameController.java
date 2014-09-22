@@ -19,20 +19,25 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * Universe Controller class
  *
- * @author Jesse
+ * @author Ryan
  */
-public class PlaceholderController implements Initializable {
+public class InsertNameController implements Initializable {
 	
 	@FXML
-    private void handleContinueButtonAction(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
+    private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
+        System.exit(0);
+    }
+	
+	@FXML
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+		Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
-	}
+    }
 
     /**
      * Initializes the controller class.

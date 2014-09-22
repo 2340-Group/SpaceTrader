@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.SPAAACEController">
+   <children>
+      <ImageView fitHeight="623.0" fitWidth="947.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SPAACE.png" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="29.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Information">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Inventory" />
+                  <MenuItem mnemonicParsing="false" text="Ship" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Save/Quit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Quit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="6.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
+      <Button layoutX="497.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleS1ButtonAction" text="S1" />
+      <Button layoutX="497.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleS2ButtonAction" text="S2" />
+      <Button layoutX="497.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleS3ButtonAction" text="S3" />
+      <Button layoutX="481.0" layoutY="166.0" mnemonicParsing="false" onAction="#handleS3PT2ButtonAction" text="S3 PT 2" />
+      <Button layoutX="436.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleYNSButtonAction" prefHeight="29.0" prefWidth="155.0" text="Your Naming Sucks" />
+      <Label layoutX="492.0" layoutY="35.0" text="Planets" textFill="#da1818" />
+   </children>
+</AnchorPane>
