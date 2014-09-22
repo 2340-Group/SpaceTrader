@@ -13,6 +13,7 @@ public enum ShipType
 	GRASSHOPPER(15,30,2,3,2),	//15 parsecs, 30 cargo, 2 weapon, 3 gadget, 2 shield
 	TERMITE(13,60,1,2,3),		//13 parsecs, 60 cargo, 1 weapon, 2 gadget, 3 shield
 	WASP(14,35,3,2,2);			//14 parsecs, 35 cargo, 3 weapon, 2 gadget, 2 shield
+//	MAX(20,60,3,3,3)
 	
 	private final int PARSECS;
 	private final int CARGO;
@@ -27,19 +28,19 @@ public enum ShipType
 		GADGET = gad;
 		SHEILD = she;
 	}
-	public int getPARSECS() {
+	public int getMaxDistance() {
 		return PARSECS;
 	}
-	public int getCARGO() {
+	public int getCargoSlots() {
 		return CARGO;
 	}
-	public int getWEAPON() {
+	public int getWeaponSlots() {
 		return WEAPON;
 	}
-	public int getGADGET() {
+	public int getGadgetSlots() {
 		return GADGET;
 	}
-	public int getSHEILD() {
+	public int getSheildSlots() {
 		return SHEILD;
 	}
 }

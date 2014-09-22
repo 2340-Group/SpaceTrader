@@ -4,6 +4,9 @@
 * @author Kia Hadjkhan
 * @version 1.0
 */
+package spacetrader;
+import java.util.ArrayList;
+
 public class Economy {
 
     private Double currentInflation;

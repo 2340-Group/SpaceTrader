@@ -1,3 +1,4 @@
+package spacetrader;
 /*
  * Player.java
  *
@@ -45,7 +46,7 @@ public class Player {
 	}
 	
 	public void setPlanet(Planet p) {
-		Planet = p;
+		planet = p;
 	}
 	
 	public void setEngineering (int e) {
@@ -77,7 +78,7 @@ public class Player {
 	}
 		
 	public Planet getPlanet () {
-		return Planet;
+		return planet;
 	}
 	
 	public int getEngineering () {
