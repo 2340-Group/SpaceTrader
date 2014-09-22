@@ -1,6 +1,7 @@
 /*
-* Each solar system will have its own Economy
-* Economy will effect prices in each solar system
+* Each Planet will have its own Economy
+* Economy will effect prices in each Planet
+* Economy determines whether or not trade is possible.
 * @author Kia Hadjkhan
 * @version 1.0
 */
@@ -10,6 +11,7 @@ public class Economy {
     private final int ECON_SCORE_MAX = 10;
     private final int ECON_SCORE_MIN = 0;
     private ArrayList<Resource> resources;
+    private int economyScore;
 
     /**
     * Instantiates an instance of an Economy for a SolarSystem object.
@@ -30,7 +32,7 @@ public class Economy {
     */
     public static void raisePrice(Resource r, Double percent) {
         percent = percent/100;
-        int price = r.getPrice();
+        Double price = r.getPrice();
         price = (price + price*percent) * currentInflation;
         r.setPrice = price;
     }
@@ -43,7 +45,7 @@ public class Economy {
     */
     public static void lowerPrice(Resource r, Double percent) {
         percent = percent/100;
-        int price = r.getPrice();
+        Double price = r.getPrice();
         price = (price - price*percent) * currentInflation;
         r.setPrice = price;
     }
@@ -54,7 +56,7 @@ public class Economy {
     */
     public boolean checkEconomy() {
         if (economyScore == ECON_SCORE_MIN) {
-            System.out.println("The economy has fallen apart in this system.");
+            System.out.println("The economy has fallen apart on this Planet.");
             System.out.println("No one can afford to trade here.");
             return false;
         }
