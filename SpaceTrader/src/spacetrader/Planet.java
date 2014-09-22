@@ -17,17 +17,19 @@ public class Planet {
 	private int locY;
 	//private SolarSystem solarSystem;
 	private int techLevel;
+	private int resourceLevel;
 	//private Items[] items;
 	private Economy econ;
     
     //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
-    public Planet(String n, int x, int y, int tl) {
-        System.out.println("Making planet: " + n);
+    public Planet(String n, int x, int y, int tl, int rl) {
+        System.out.println("Making planet: " + n + ", Tech Level: " + tl + ", Resource Level: " + rl);
 		name = n;
 		locX = x;
 		locY = y;
 		//solarSystem = ss;
 		techLevel = tl;
+		resourceLevel = rl;
 		//items = i;
 		
     }
