@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.NONAMEController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Information">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Inventory" />
+                  <MenuItem mnemonicParsing="false" text="Ship" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Save/Quit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Quit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="6.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
+      <Button layoutX="497.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleERRORButtonAction" text="ERROR" />
+      <Button layoutX="497.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBlankButtonAction" text="[          ]" />
+      <Button layoutX="497.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleInsertNameButtonAction" text="Insert Name" />
+      <Label layoutX="492.0" layoutY="35.0" text="Planets" textFill="#da1818" />
+   </children>
+</AnchorPane>

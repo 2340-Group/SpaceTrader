@@ -1,3 +1,4 @@
+package spacetrader;
 /*
  * SolarSystem.java
  *

@@ -1,3 +1,4 @@
+package spacetrader;
 /*
  * Planet.java
  *
@@ -18,7 +19,7 @@ public class Planet {
 	private String techLevel;
 	private Items[] items;
     
-    public void createPlayer(String n, int x, int y, SolarSystem ss, String tl, Items[] i) {
+    public void createPlanet(String n, int x, int y, SolarSystem ss, String tl, Items[] i) {
         System.out.println("Making planet: " + n);
 		name = n;
 		locX = x;
@@ -34,7 +35,7 @@ public class Planet {
 		locY = y;
 	}
 	
-	public void setItems(Items i) {
+	public void setItems(Items[] i) {
 		items = i;
 	}
 	

@@ -8,7 +8,15 @@ package spacetrader;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -16,6 +24,15 @@ import javafx.fxml.Initializable;
  * @author Jesse
  */
 public class PlaceholderController implements Initializable {
+	
+	@FXML
+    private void handleContinueButtonAction(ActionEvent event) throws Exception {
+		Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+	}
 
     /**
      * Initializes the controller class.

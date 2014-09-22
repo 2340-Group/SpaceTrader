@@ -1,4 +1,5 @@
-/*
+package spacetrader;
+/**
  * Resources.java
  *
  * Version 1.0
