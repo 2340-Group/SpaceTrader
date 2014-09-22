@@ -1,4 +1,7 @@
 package spacetrader;
+
+import java.util.ArrayList;
+
 /*
  * SolarSystem.java
  *
@@ -14,12 +17,12 @@ package spacetrader;
 public class SolarSystem {
 	
 	private String name;
-	private Planet[] planets;
+	private ArrayList<Planet> planets;
 	private int locX;
 	private int locY;
 	//private String style;
 	    
-	public void createSolarSystem(String n, int x, int y, Planet[] p) {
+	public SolarSystem(String n, int x, int y, ArrayList<Planet> p) {
 	    System.out.println("Making Solar Sytems: " + n);
 		name = n;
 		locX = x;
@@ -42,7 +45,7 @@ public class SolarSystem {
 		return style;
 	}*/
 	
-	public Planet[] getPlanets () {
+	public ArrayList<Planet> getPlanets () {
 		return planets;
 	}
 		

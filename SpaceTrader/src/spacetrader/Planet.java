@@ -18,9 +18,10 @@ public class Planet {
 	//private SolarSystem solarSystem;
 	private int techLevel;
 	//private Items[] items;
+	private Economy econ;
     
     //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
-    public void createPlanet(String n, int x, int y, int tl) {
+    public Planet(String n, int x, int y, int tl) {
         System.out.println("Making planet: " + n);
 		name = n;
 		locX = x;
@@ -34,6 +35,10 @@ public class Planet {
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
+	}
+	
+	public void setEcon(Economy e) {
+		econ = e;
 	}
 	
 	/*public void setItems(Items[] i) {

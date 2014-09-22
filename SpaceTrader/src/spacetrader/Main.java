@@ -1,51 +1,50 @@
 package spacetrader;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
 	
 	public static void main(String args) {
 		Random randomGenerator = new Random();
-		Planet a = new Planet();
-		SolarSystem s = new SolarSystem();
 		
 		System.out.println("Making Universe");
 		
 		//Create Planet array containers
-		Planet[] SpaceSystem = new Planet[5];
-		Planet[] NameSystem = new Planet[3];
-		Planet[] NoNameSystem = new Planet[3];
+		ArrayList<Planet> SpaceSystem = new ArrayList<Planet>();
+		ArrayList<Planet> NameSystem = new ArrayList<Planet>();
+		ArrayList<Planet> NoNameSystem = new ArrayList<Planet>();
 		
 		//Create Space system
-		Planet S1 = createPlanet("S1", 0, 0, randomGenerator.nextInt(11));
-		Planet S2 = createPlanet("S2", 0, 0, randomGenerator.nextInt(11));
-		Planet S3 = createPlanet("S3", 0, 0, randomGenerator.nextInt(11));
-		Planet S3PT2 = createPlanet("S3PT2", 0, 0, randomGenerator.nextInt(11));
-		Planet YNS = createPlanet("Your Naming Sucks", 0, 0, randomGenerator.nextInt(11));
-		SpaceSystem[0] = S1;
-		SpaceSystem[1] = S2;
-		SpaceSystem[2] = S3;
-		SpaceSystem[3] = S3PT2;
-		SpaceSystem[4] = YNS;
-		SolarSystem Space = createSolarSystem("SPAAACE", 0, 0, SpaceSystem);
+		Planet S1 = new Planet("S1", 0, 0, randomGenerator.nextInt(11));
+		Planet S2 = new Planet("S2", 0, 0, randomGenerator.nextInt(11));
+		Planet S3 = new Planet("S3", 0, 0, randomGenerator.nextInt(11));
+		Planet S3PT2 = new Planet("S3PT2", 0, 0, randomGenerator.nextInt(11));
+		Planet YNS = new Planet("Your Naming Sucks", 0, 0, randomGenerator.nextInt(11));
+		SpaceSystem.add(S1);
+		SpaceSystem.add(S2);
+		SpaceSystem.add(S3);
+		SpaceSystem.add(S3PT2);
+		SpaceSystem.add(YNS);
+		SolarSystem Space = new SolarSystem("SPAAACE", 0, 0, SpaceSystem);
 		
 		//Create Name System
-		Planet Big = createPlanet("Big", 0, 0, randomGenerator.nextInt(11));
-		Planet Giant = createPlanet("Giant", 0, 0, randomGenerator.nextInt(11));
-		Planet Planet = createPlanet("Planet", 0, 0, randomGenerator.nextInt(11));
-		NameSystem[0] = Big;
-		NameSystem[1] = Giant;
-		NameSystem[2] = Planet;
-		SolarSystem Name = createSolarSystem("NAME", 0, 0, NameSystem);
+		Planet Big = new Planet("Big", 0, 0, randomGenerator.nextInt(11));
+		Planet Giant = new Planet("Giant", 0, 0, randomGenerator.nextInt(11));
+		Planet Planet = new Planet("Planet", 0, 0, randomGenerator.nextInt(11));
+		NameSystem.add(Big);
+		NameSystem.add(Giant);
+		NameSystem.add(Planet);
+		SolarSystem Name = new SolarSystem("NAME", 0, 0, NameSystem);
 		
 		//Create NoName System
-		Planet ERROR = createPlanet("ERROR", 0, 0, randomGenerator.nextInt(11));
-		Planet InsertName = createPlanet("Insert Name", 0, 0, randomGenerator.nextInt(11));
-		Planet Blank = createPlanet("[     ]", 0, 0, randomGenerator.nextInt(11));
-		NoNameSystem[0] = InsertName;
-		NoNameSystem[1] = Blank;
-		NoNameSystem[2] = ERROR;
-		SolarSystem NoName = createSolarSystem("NONAME", 0, 0, NoNameSystem);
+		Planet ERROR =  new Planet("ERROR", 0, 0, randomGenerator.nextInt(11));
+		Planet InsertName = new Planet("Insert Name", 0, 0, randomGenerator.nextInt(11));
+		Planet Blank = new Planet("[     ]", 0, 0, randomGenerator.nextInt(11));
+		NoNameSystem.add(InsertName);
+		NoNameSystem.add(Blank);
+		NoNameSystem.add(ERROR);
+		SolarSystem NoName = new SolarSystem("NONAME", 0, 0, NoNameSystem);
 	}
 
 }
