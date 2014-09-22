@@ -17,14 +17,14 @@ public class SolarSystem {
 	private Planet[] planets;
 	private int locX;
 	private int locY;
-	private String style;
+	//private String style;
 	    
-	public void createSolarSystem(String n, int x, int y, String s, Planet[] p) {
+	public void createSolarSystem(String n, int x, int y, Planet[] p) {
 	    System.out.println("Making Solar Sytems: " + n);
 		name = n;
 		locX = x;
 		locY = y;
-		style = s;
+		//style = s;
 		planets = p;
 		
 	}
@@ -38,9 +38,9 @@ public class SolarSystem {
 		return name;
 	}
 	
-	public String getStyle () {
+	/*public String getStyle () {
 		return style;
-	}
+	}*/
 	
 	public Planet[] getPlanets () {
 		return planets;

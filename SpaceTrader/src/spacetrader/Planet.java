@@ -15,18 +15,19 @@ public class Planet {
 	private String name;
 	private int locX;
 	private int locY;
-	private SolarSystem solarSystem;
-	private String techLevel;
-	private Items[] items;
+	//private SolarSystem solarSystem;
+	private int techLevel;
+	//private Items[] items;
     
-    public void createPlanet(String n, int x, int y, SolarSystem ss, String tl, Items[] i) {
+    //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
+    public void createPlanet(String n, int x, int y, int tl) {
         System.out.println("Making planet: " + n);
 		name = n;
 		locX = x;
 		locY = y;
-		solarSystem = ss;
+		//solarSystem = ss;
 		techLevel = tl;
-		items = i;
+		//items = i;
 		
     }
 
@@ -35,25 +36,25 @@ public class Planet {
 		locY = y;
 	}
 	
-	public void setItems(Items[] i) {
+	/*public void setItems(Items[] i) {
 		items = i;
-	}
+	}*/
 	
 	public String getName () {
 		return name;
 	}
 	
-	public Items[] getItems () {
+	/*public Items[] getItems () {
 		return items;
-	}
+	}*/
 	
-	public String getTechLevel () {
+	public int getTechLevel () {
 		return techLevel;
 	}
 	
-	public SolarSystem getSolarSystem () {
+	/*public SolarSystem getSolarSystem () {
 		return solarSystem;
-	}
+	}*/
 	
 	
 
