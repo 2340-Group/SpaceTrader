@@ -37,6 +37,7 @@ public class SpaceTrader extends Application {
         
     	Random randomGenerator = new Random();
     	//randomGenerator.nextInt((max - min) + 1) + min;
+    	
 		System.out.println("Making Universe");
 		
 		//Create Planet ArrayLists
