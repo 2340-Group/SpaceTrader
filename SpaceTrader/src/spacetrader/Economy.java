@@ -38,7 +38,7 @@ public class Economy {
         percent = percent/100;
         Double price = r.getPrice();
         price = (price + price*percent) * currentInflation;
-        r.setPrice = price;
+        r.setPrice(price);
     }
 
     /**
@@ -52,7 +52,7 @@ public class Economy {
         percent = percent/100;
         Double price = r.getPrice();
         price = (price - price*percent) * currentInflation;
-        r.setPrice = price;
+        r.setPrice(price);
     }
 
 
