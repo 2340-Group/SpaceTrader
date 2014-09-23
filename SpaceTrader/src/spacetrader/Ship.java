@@ -12,12 +12,14 @@ public class Ship {
 	private ArrayList<Equipment> gadgets;
 	private int fuel;
 	private int health;
+	private CargoBay cargo;
 	
 	public Ship()
 	{
 		shipT = ShipType.GNAT;
 		fuel = shipT.getMaxDistance();		
 		health = 100;
+		cargo = new CargoBay(shipT.getCargoSlots());
 	}
 	public Ship(ShipType shipT, int reputation, String name,
 			ArrayList<Equipment> weapons, ArrayList<Equipment> sheilds, ArrayList<Equipment> gadgets,

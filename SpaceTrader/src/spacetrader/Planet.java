@@ -23,7 +23,7 @@ public class Planet {
     
     //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
     public Planet(String n, int x, int y, int tl, int rl) {
-        System.out.println("Making planet: " + n + ", Tech Level: " + tl + ", Resource Level: " + rl);
+        System.out.println("Making planet: " + n + ", Tech Level: " + tl + ", Resource Level: " + rl + " Location (x,y): " + x + ", " + y);
 		name = n;
 		locX = x;
 		locY = y;

@@ -23,7 +23,7 @@ public class Player {
 	private SolarSystem solarSystem;
 	private Planet planet;
     
-    public void createPlayer(String n, int p, int f, int t, int e, Ship s) {
+    public Player(String n, int p, int f, int t, int e, Ship s) {
         System.out.println("Making player: " + n);
 		name = n;
 		piloting = p;
