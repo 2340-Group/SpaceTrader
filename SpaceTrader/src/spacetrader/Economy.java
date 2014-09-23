@@ -33,7 +33,8 @@ public class Economy {
     * @return the modified price of the Resource object
     * Example of invocation : Economy.rasiePrice(metal, 10);
     */
-    public static void raisePrice(Resource r, Double percent) {
+    public void raisePrice(Resource r, Double percent) {
+        adjustInflation(economyScore);
         percent = percent/100;
         Double price = r.getPrice();
         price = (price + price*percent) * currentInflation;
@@ -46,18 +47,21 @@ public class Economy {
     * @return the modified price of the Resource object
     * Example of invocation : Economy.lowerPrice(metal, 10);
     */
-    public static void lowerPrice(Resource r, Double percent) {
+    public void lowerPrice(Resource r, Double percent) {
+        adjustInflation(economyScore);
         percent = percent/100;
         Double price = r.getPrice();
         price = (price - price*percent) * currentInflation;
         r.setPrice = price;
     }
 
+
     /**
     * Checks the economy and prints out the inflation rate based on the system's economyScore.
     * @return True if trading is possible, false if unable to trade.
     */
     public boolean checkEconomy() {
+        adjustInflation(economyScore);
         if (economyScore == ECON_SCORE_MIN) {
             System.out.println("The economy has fallen apart on this Planet.");
             System.out.println("No one can afford to trade here.");
@@ -71,6 +75,46 @@ public class Economy {
             System.out.println("The current inflation rate is " + currentInflation + ".");
             return true;
         }
+    }
+
+    /**
+    * Adjusts the inflation of the planet's economy based on the current economyScore.
+    * @param The current economyScore of this instance of Economy.
+    */
+    private void adjustInflation(int e) {
+        switch (e) {
+            case 0: currentInflation = 0.0;
+                    break;
+            case 1: currentInflation = 2.0;
+                    break;
+            case 2: currentInflation = 1.8;
+                    break;
+            case 3: currentInflation = 1.5;
+                    break;
+            case 4: currentInflation = 1.2;
+                    break;
+            case 5: currentInflation = 1.0;
+                    break;
+            case 6: currentInflation = 0.9;
+                    break;
+            case 7: currentInflation = 0.8;
+                    break;
+            case 8: currentInflation = 0.7;
+                    break;
+            case 9: currentInflation = 0.6;
+                    break;
+            case 10: currentInflation = 0.5;
+                    break;
+        }
+
+    }
+
+    /**
+    * @return The Resource objects present in this planet's economy.
+    */
+
+    public ArrayList<Resource> getResources() {
+        return resources;
     }
 
 }
