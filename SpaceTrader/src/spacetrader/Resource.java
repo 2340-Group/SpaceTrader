@@ -1,17 +1,28 @@
 package spacetrader;
 
 
-public class Resource {
+public enum Resource {
 
-    private String name;
-    private Double price;
-    private int volume;
+
+    WATER("Water", 30),
+    ORE("Ore", 350),
+    FOOD("Food", 100),
+    FURS("Furs", 250),
+    GAMES("Games", 250),
+    FIREARMS("Firearms", 1250),
+    MEDICINE("Medicine", 650),
+    MACHINES("Machines", 900),
+    NARCOTICS("Narcotics", 3500),
+    ROBOTS("Robots", 5000);
+
+    private final String NAME;
+    private int basePrice;
     private int quantity;
+    private final int MAX_QUANTITY = 99;
 
-    public Resource(String name, Double price, int quantity) {
+    public Resource(String name, int price, int quantity) {
         this.name = name;
-        this.price = price;
-        this.quantity = quantity;
+        this.price = basePrice;
     }
 
     String getName() {
@@ -20,10 +31,6 @@ public class Resource {
 
     Double getPrice() {
         return price;
-    }
-
-    int getVolume() {
-        return volume;
     }
 
     int getQuantity() {
