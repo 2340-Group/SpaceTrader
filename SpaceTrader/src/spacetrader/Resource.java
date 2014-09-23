@@ -1,4 +1,4 @@
-
+package spacetrader;
 
 
 public class Resource {
@@ -30,11 +30,11 @@ public class Resource {
         return quantity;
     }
 
-    int setPrice(Double p) {
+    void setPrice(Double p) {
         price = p;
     }
 
-    int setQuantity(int q) {
+    void setQuantity(int q) {
         quantity = q;
     }
 
