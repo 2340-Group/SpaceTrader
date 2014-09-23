@@ -14,6 +14,7 @@ public enum Resource {
     MACHINES("Machines", 900),
     NARCOTICS("Narcotics", 3500),
     ROBOTS("Robots", 5000);
+    MOON("Moon", 1000000000);
 
     private final String NAME;
     private int basePrice;
