@@ -152,6 +152,6 @@ public class Ship {
 			health = 0;
 			return false;
 		}
-	}	
+	}
 }
->>>>>>> FETCH_HEAD
+//>>>>>>> FETCH_HEAD
