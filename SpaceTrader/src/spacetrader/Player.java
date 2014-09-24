@@ -38,6 +38,10 @@ public class Player {
 		
     }
 
+    public int getFunds() {
+		return funds;
+	}
+    
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
