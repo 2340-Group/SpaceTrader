@@ -22,6 +22,7 @@ public class Player {
 	private Ship ship;
 	private SolarSystem solarSystem;
 	private Planet planet;
+	private int funds;
     
     public Player(String n, int p, int f, int t, int e, Ship s) {
         System.out.println("Making player: " + n);
@@ -33,12 +34,21 @@ public class Player {
 		ship = s;
 		locX = 0;
 		locY = 0;
+		funds = 10000;
 		
     }
 
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
+	}
+	
+	public void addFunds(int x) {
+		funds = funds + x;
+	}
+	
+	public void subtractFunds(int x) {
+		funds = funds + x;
 	}
 	
 	public void setSolarSystem(SolarSystem ss) {
