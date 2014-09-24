@@ -59,6 +59,10 @@ public class Planet {
 		return techLevel;
 	}
 	
+	public int getresourceLevel () {
+		return resourceLevel;
+	}
+	
 	/*public SolarSystem getSolarSystem () {
 		return solarSystem;
 	}*/
