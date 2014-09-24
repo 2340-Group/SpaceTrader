@@ -68,7 +68,7 @@ public class Economy {
             return false;
         }
         else if (economyScore == ECON_SCORE_MAX) {
-            System.out.println("The economy is thriving in this system.");
+            System.out.println("The economy is thriving on this Planet.");
             System.out.println("No one has any interest to trade here.");
             return false;
         } else {
@@ -83,30 +83,38 @@ public class Economy {
     */
     private void adjustInflation(int e) {
         switch (e) {
-            case 0: currentInflation = 0.0;
+            case 0: currentInflation = 0;
                     break;
-            case 1: currentInflation = 2.0;
+            case 1: currentInflation = 5;
                     break;
-            case 2: currentInflation = 1.8;
+            case 2: currentInflation = 4;
                     break;
-            case 3: currentInflation = 1.5;
+            case 3: currentInflation = 3;
                     break;
-            case 4: currentInflation = 1.2;
+            case 4: currentInflation = 2;
                     break;
-            case 5: currentInflation = 1.0;
+            case 5: currentInflation = 1;
                     break;
-            case 6: currentInflation = 0.9;
+            case 6: currentInflation = 2;
                     break;
-            case 7: currentInflation = 0.8;
+            case 7: currentInflation = 3;
                     break;
-            case 8: currentInflation = 0.7;
+            case 8: currentInflation = 4;
                     break;
-            case 9: currentInflation = 0.6;
+            case 9: currentInflation = 5;
                     break;
-            case 10: currentInflation = 0.5;
+            case 10: currentInflation = 0;
                     break;
         }
 
+    }
+
+    public int buy(Resource r) {
+
+    }
+
+    public int sell(Resource r) {
+        for
     }
 
     /**

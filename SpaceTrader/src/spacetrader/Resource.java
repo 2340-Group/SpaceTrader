@@ -1,49 +1,50 @@
 package spacetrader;
 
 
-public enum Resource {
+public class Resource {
 
 
-    WATER("Water", 30),
-    ORE("Ore", 350),
-    FOOD("Food", 100),
-    FURS("Furs", 250),
-    GAMES("Games", 250),
-    FIREARMS("Firearms", 1250),
-    MEDICINE("Medicine", 650),
-    MACHINES("Machines", 900),
-    NARCOTICS("Narcotics", 3500),
-    ROBOTS("Robots", 5000);
-    MOON("Moon", 1000000000);
-
-    private final String NAME;
+    private String name;
     private int basePrice;
     private int quantity;
     private final int MAX_QUANTITY = 99;
+    private ResourceType type;
 
     public Resource(String name, int price, int quantity) {
         this.name = name;
         this.price = basePrice;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    Double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    int getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    void setPrice(Double p) {
+    public void setPrice(Double p) {
         price = p;
     }
 
-    void setQuantity(int q) {
+    public void setQuantity(int q) {
         quantity = q;
+    }
+
+    /**
+    * Consolidates the quantities of two Resource objects of the same ResourceType.
+    */
+    public void consolidate(Resource r) {
+        if (type.equals(r.getResourceType)) {
+            setQuantity(quantity + r.getQuantity());
+            return;
+        } else {
+            return;
+        }
     }
 
 }
