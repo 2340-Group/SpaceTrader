@@ -7,12 +7,12 @@ public class Resource {
     private String name;
     private int basePrice;
     private int quantity;
-    private final int MAX_QUANTITY = 99;
     private ResourceType type;
 
-    public Resource(String name, int price, int quantity) {
-        this.name = name;
-        this.price = basePrice;
+    public Resource(ResourceType t, int quantity) {
+        this.name = t.getName;
+        this.price = t.getBasePrice;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -20,15 +20,11 @@ public class Resource {
     }
 
     public Double getPrice() {
-        return price;
+        return basePrice;
     }
 
     public int getQuantity() {
         return quantity;
-    }
-
-    public void setPrice(Double p) {
-        price = p;
     }
 
     public void setQuantity(int q) {

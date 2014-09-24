@@ -22,10 +22,10 @@ public class Economy {
     * initializes the economyScore as 5.
     * initializes inflation as baseline.
     */  
-    public Economy (ArrayList<Resource> r) {
+    public Economy(ArrayList<Resource> r) {
         resources = r;
         economyScore = 5;
-        currentInflation = 1.0;
+        currentInflation = 1;
     }
     /**
     * returns a Raised price by a percent multiplier
@@ -36,7 +36,7 @@ public class Economy {
     public void raisePrice(Resource r, Double percent) {
         adjustInflation(economyScore);
         percent = percent/100;
-        Double price = r.getPrice();
+        int price = r.getPrice();
         price = (price + price*percent) * currentInflation;
         r.setPrice(price);
     }
@@ -50,7 +50,7 @@ public class Economy {
     public void lowerPrice(Resource r, Double percent) {
         adjustInflation(economyScore);
         percent = percent/100;
-        Double price = r.getPrice();
+        int price = r.getPrice();
         price = (price - price*percent) * currentInflation;
         r.setPrice(price);
     }
@@ -109,12 +109,12 @@ public class Economy {
 
     }
 
-    public int buy(Resource r) {
+    public int buy(Resource r, int quantity) {
 
     }
 
-    public int sell(Resource r) {
-        for
+    public int sell(Resource r, int quantity) {
+
     }
 
     /**

@@ -12,13 +12,22 @@ public class CargoBay {
 	private ArrayList<Resource> stock;
 
 
-	public CargoBay() {
-		int capacity = 100;
-	}
 	public CargoBay(int cap)
 	{
 		capacity = cap;
+		stock.add(new Resource(ResourceType.WATER, 0));
+		stock.add(new Resource(ResourceType.ORE, 0));
+		stock.add(new Resource(ResourceType.FOOD, 0));
+		stock.add(new Resource(ResourceType.FURS, 0));
+		stock.add(new Resource(ResourceType.GAMES, 0));
+		stock.add(new Resource(ResourceType.FIREARMS, 0));
+		stock.add(new Resource(ResourceType.MEDICINE, 0));
+		stock.add(new Resource(ResourceType.MACHINES, 0));
+		stock.add(new Resource(ResourceType.NARCOTICS, 0));
+		stock.add(new Resource(ResourceType.ROBOTS, 0));
+		stock.add(new Resource(ResourceType.MOON, 0));
 	}
+
 	
 	/**
 	 * will destroy all current contents
@@ -34,8 +43,8 @@ public class CargoBay {
 
 	public void addStock(Resource r) {
 		for (Resource rs: stock) {
-			if (r.getName = rs.getName) {
-			
+			if (r.getResourceType = rs.getResourceType) {
+				rs.setQuantity = rs.getQuantity + r.getQuantity;
 			}
 		}
 
