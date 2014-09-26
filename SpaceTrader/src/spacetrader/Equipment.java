@@ -6,6 +6,7 @@ public enum Equipment {
 	GADGET(100);
 	
 	private int powerLeft;
+	private final int MAXPOWER = 100;
 	
 	Equipment(int pow)
 	{
@@ -31,6 +32,10 @@ public enum Equipment {
 		else
 		{
 			powerLeft = powerLeft + refill;
+			if(powerLeft > MAXPOWER)
+			{
+				powerLeft = MAXPOWER;
+			}
 			return powerLeft;
 		}
 	}
@@ -41,14 +46,16 @@ public enum Equipment {
 	 */
 	public int usePower(int used)
 	{
-		powerLeft = powerLeft - used;
-		if(powerLeft <= 0)
+		int holding = powerLeft - used;
+		if(holding <= 0)
 		{
+			holding = used - powerLeft;
 			powerLeft = 0;
-			return (used - powerLeft);
+			return holding;
 		}
 		else
 		{
+			powerLeft = holding;
 			return -1;
 		}
 	}
