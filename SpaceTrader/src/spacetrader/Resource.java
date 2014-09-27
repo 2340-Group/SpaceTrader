@@ -42,7 +42,7 @@ public class Resource {
 
     /**
     * Consolidates the quantities of two Resource objects of the same ResourceType.
-    * @param r - the Resource to be added to this
+    * @param r - Resource to be added to this
     */
     public void consolidate(Resource r) {
         if (type.equals(r.getResourceType())) {

@@ -14,6 +14,9 @@ public class Ship {
 	private int health;
 	private CargoBay cargo;
 	
+	/**
+	 * Default is GNAT with full health and fuel tank
+	 */
 	public Ship()
 	{
 		shipT = ShipType.GNAT;
@@ -21,6 +24,19 @@ public class Ship {
 		health = 100;
 		cargo = new CargoBay(shipT.getCargoSlots());
 	}
+	
+	/**
+	 * None of these are checked to ensure validity with the specified ShipType
+	 * DO THIS BEFOREHAND
+	 * @param shipType
+	 * @param reputation - int
+	 * @param name - String
+	 * @param weapons - ArrayList<Equipment>
+	 * @param sheilds - ArrayList<Equipment>
+	 * @param gadgets - ArrayList<Equipment>
+	 * @param fuel - int
+	 * @param health - int
+	 */
 	public Ship(ShipType shipT, int reputation, String name,
 			ArrayList<Equipment> weapons, ArrayList<Equipment> sheilds, ArrayList<Equipment> gadgets,
 			int fuel, int health) {
@@ -42,6 +58,11 @@ public class Ship {
 	public int getReputation() {
 		return reputation;
 	}
+	/**
+	 * 
+	 * @param reputation - int amount to change current reputation by
+	 * @return int, new reputation
+	 */
 	public int changeReputation(int reputation) {
 		this.reputation += reputation;
 		return reputation;
@@ -54,7 +75,7 @@ public class Ship {
 		return weapons;
 	}
 	/**
-	 * @param weapon to be added (does NOT check to ensure it is a weapon)
+	 * @param wea - Equipment weapon to be added (does NOT check to ensure it is a weapon)
 	 * @return true if added properly
 	 */
 	public boolean addWeapon(Equipment wea)
@@ -67,14 +88,14 @@ public class Ship {
 	}
 	/**
 	 * to use a weapon, remove it, then add it back once done
-	 * @return longest dormant weapon of the ship
+	 * @return Equipment longest dormant weapon of the ship
 	 */
 	public Equipment removeWeapon()
 	{
 		return weapons.remove(0);
 	}
 	/**
-	 * @param Sheild to be added (does NOT check to ensure it is a sheild)
+	 * @param she - Equipment Sheild to be added (does NOT check to ensure it is a sheild)
 	 * @return true if added properly
 	 */
 	public boolean addSheild(Equipment she)
@@ -87,14 +108,14 @@ public class Ship {
 	}
 	/**
 	 * to use a sheild, remove it, then add it back once done
-	 * @return longest dormant sheild of the ship
+	 * @return Equipment longest dormant sheild of the ship
 	 */
 	public Equipment removeSheild()
 	{
 		return sheilds.remove(0);
 	}
 	/**
-	 * @param Gadget to be added (does NOT check to ensure it is a Gadget)
+	 * @param gad - Equipment Gadget to be added (does NOT check to ensure it is a Gadget)
 	 * @return true if added properly
 	 */
 	public boolean addGadget(Equipment gad)
@@ -107,7 +128,7 @@ public class Ship {
 	}
 	/**
 	 * to use a Gadget, remove it, then add it back once done
-	 * @return longest dormant Gadget of the ship
+	 * @return Equipment - longest dormant Gadget of the ship
 	 */
 	public Equipment removeGadget()
 	{
@@ -118,8 +139,8 @@ public class Ship {
 	}
 	/**
 	 * 
-	 * @param amount of fuel to be used
-	 * @return the amount lacking, -1 if ship has enough
+	 * @param used - int amount of fuel to be used
+	 * @return int the amount lacking, -1 if ship has enough
 	 */
 	public int useFuel(int used) {
 		fuel = fuel - used;
@@ -139,7 +160,7 @@ public class Ship {
 	}
 	/**
 	 * 
-	 * @param health to be taken (negative) or given in repairs (possitive)
+	 * @param health - int to be taken (negative) or given in repairs (possitive)
 	 * @return true if still alive
 	 */
 	public boolean takeDamageRepair(int health) 

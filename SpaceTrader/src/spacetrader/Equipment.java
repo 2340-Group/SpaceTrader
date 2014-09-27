@@ -20,8 +20,8 @@ public enum Equipment {
 	
 	/**
 	 * 
-	 * @param refill how much power to give equipment
-	 * @return new power amount, -1 if refill amount <= 0 (invalid, try usePower())
+	 * @param refill - int how much power to give equipment
+	 * @return int new power amount, -1 if refill amount <= 0 (invalid, try usePower())
 	 */
 	public int upgrade(int refill)
 	{
@@ -41,8 +41,8 @@ public enum Equipment {
 	}
 	
 	/**
-	 * @param used - the power needed
-	 * @return the amount of used that was too much for the Equipment, -1 if still has power
+	 * @param used - int the power needed
+	 * @return int the amount of used that was too much for the Equipment, -1 if still has power
 	 */
 	public int usePower(int used)
 	{

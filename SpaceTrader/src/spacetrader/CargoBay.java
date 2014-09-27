@@ -34,7 +34,7 @@ public class CargoBay {
 	/**
 	 * DANGEROUS - will destroy all current contents
 	 * use for creating new ship type
-	 * @param cap - new capacity
+	 * @param cap - int new capacity
 	 */
 	public void setCapacity(int cap)
 	{
