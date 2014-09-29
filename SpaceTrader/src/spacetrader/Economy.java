@@ -131,6 +131,7 @@ public class Economy {
     /**
     * Sell Resource functionality, removes the resource from the ship's cargo bay and
     * adds funds accordingly.
+    *@param a Resource r, the amount of the REsource being sold, the player and his/her ship.
     */
     public void sell(Resource r, int quantity, Player p, Ship s) {
         if (s.getCargo().getResourceStock(r) < quantity) {
