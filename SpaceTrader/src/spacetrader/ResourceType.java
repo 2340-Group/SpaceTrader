@@ -22,16 +22,9 @@ public enum ResourceType {
     private final String NAME;
 
     /**
-<<<<<<< HEAD
-    * Instatiates a ResourceType enumeration.
+    * Instantiates a ResourceType enumeration.
     */
     public ResourceType(String nam, int base) {
-=======
-     * @param nam - name of resource
-     * @param base - base Price of resource
-     */
-    private ResourceType(String nam, int base) {
->>>>>>> 6ff6c1003cac9b0542158b74a1434c3e4c04be4d
         NAME = nam;
         BASEPRICE = base;
     }

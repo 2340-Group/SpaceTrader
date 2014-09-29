@@ -25,7 +25,7 @@ public class Economy {
     public Economy(ArrayList<Resource> r) {
         resources = r;
         economyScore = 5;
-        currentInflation = 1;
+        currentInflation = (double) 1;
     }
     /**
     * returns a Raised price by a percent multiplier
@@ -37,7 +37,7 @@ public class Economy {
         adjustInflation(economyScore);
         percent = percent/100;
         int price = r.getPrice();
-        price = (price + price*percent) * currentInflation;
+        price = (int) ((price + price * percent) * currentInflation);
         r.setPrice(price);
     }
 
@@ -51,7 +51,7 @@ public class Economy {
         adjustInflation(economyScore);
         percent = percent/100;
         int price = r.getPrice();
-        price = (price - price*percent) * currentInflation;
+        price = (int) ((price - price * percent) * currentInflation);
         r.setPrice(price);
     }
 
@@ -83,27 +83,27 @@ public class Economy {
     */
     private void adjustInflation(int e) {
         switch (e) {
-            case 0: currentInflation = 0;
+            case 0: currentInflation = (double) 0;
                     break;
-            case 1: currentInflation = 5;
+            case 1: currentInflation = (double) 5;
                     break;
-            case 2: currentInflation = 4;
+            case 2: currentInflation = (double) 4;
                     break;
-            case 3: currentInflation = 3;
+            case 3: currentInflation = (double) 3;
                     break;
-            case 4: currentInflation = 2;
+            case 4: currentInflation = (double) 2;
                     break;
-            case 5: currentInflation = 1;
+            case 5: currentInflation = (double) 1;
                     break;
-            case 6: currentInflation = 2;
+            case 6: currentInflation = (double) 2;
                     break;
-            case 7: currentInflation = 3;
+            case 7: currentInflation = (double) 3;
                     break;
-            case 8: currentInflation = 4;
+            case 8: currentInflation = (double) 4;
                     break;
-            case 9: currentInflation = 5;
+            case 9: currentInflation = (double) 5;
                     break;
-            case 10: currentInflation = 0;
+            case 10: currentInflation = (double) 0;
                     break;
         }
 

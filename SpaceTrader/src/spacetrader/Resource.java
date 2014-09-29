@@ -26,6 +26,10 @@ public class Resource {
     public int getPrice() {
         return basePrice;
     }
+    
+    public void setPrice(int p) {
+        basePrice = p;
+    }
 
     public int getQuantity() {
         return quantity;
@@ -38,10 +42,6 @@ public class Resource {
     public ResourceType getResourceType()
     {
     	return type;
-    }
-
-    public ResourceType getResourceType() {
-        return type;
     }
 
     /**
