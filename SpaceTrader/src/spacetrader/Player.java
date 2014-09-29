@@ -34,7 +34,7 @@ public class Player {
 		ship = s;
 		locX = 0;
 		locY = 0;
-		funds = 10000;
+		funds = 2000000000;
 		
     }
 
@@ -109,6 +109,10 @@ public class Player {
 	
 	public Ship getShip () {
 		return ship;
+	}
+
+	public int getFunds() {
+		return funds;
 	}
 	
 	

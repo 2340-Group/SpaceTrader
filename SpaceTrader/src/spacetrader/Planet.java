@@ -42,6 +42,10 @@ public class Planet {
 	public void setEcon(Economy e) {
 		econ = e;
 	}
+
+	public Economy getEcon() {
+		return econ;
+	}
 	
 	/*public void setItems(Items[] i) {
 		items = i;

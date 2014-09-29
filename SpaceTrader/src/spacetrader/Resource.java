@@ -31,6 +31,10 @@ public class Resource {
         quantity = q;
     }
 
+    public ResourceType getResourceType() {
+        return type;
+    }
+
     /**
     * Consolidates the quantities of two Resource objects of the same ResourceType.
     */

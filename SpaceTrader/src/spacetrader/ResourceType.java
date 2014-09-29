@@ -19,6 +19,9 @@ public enum ResourceType {
     private final int BASEPRICE;
     private final String NAME;
 
+    /**
+    * Instatiates a ResourceType enumeration.
+    */
     public ResourceType(String nam, int base) {
         NAME = nam;
         BASEPRICE = base;

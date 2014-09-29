@@ -155,5 +155,9 @@ public class Ship {
 			return false;
 		}
 	}
+
+	public CargoBay getCargo() {
+		return cargo;
+	}
 }
 //>>>>>>> FETCH_HEAD

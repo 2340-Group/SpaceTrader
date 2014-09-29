@@ -41,10 +41,28 @@ public class CargoBay {
 		currentVolume = 0;
 	}
 
-	public void addStock(Resource r) {
+	public int getCurrentVolume() {
+		return currentVolume;
+	}
+
+	public void printCargo() {
+		for (Resource r: stock) {
+			System.out.println("You have " r.getQuantity() + " " + r.getName() + " in stock.");
+		}
+	}
+
+	public int getResourceStock(Resource r) {
 		for (Resource rs: stock) {
-			if (r.getResourceType = rs.getResourceType) {
-				rs.setQuantity = rs.getQuantity + r.getQuantity;
+			if (r.getResourceType().equals(rs.getResourceType())) {
+				return rs.getQuantity();
+			}
+		}
+	}
+
+	public void addStock(Resource r, int q) {
+		for (Resource rs: stock) {
+			if (r.getResourceType().equals(rs.getResourceType())) {
+				rs.setQuantity = rs.getQuantity + q;
 			}
 		}
 
