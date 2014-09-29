@@ -16,6 +16,7 @@ public class CargoBay {
 
 	public CargoBay(int cap)
 	{
+		stock = new ArrayList<Resource>();
 		capacity = cap;
 		stock.add(new Resource(ResourceType.WATER, 0));
 		stock.add(new Resource(ResourceType.ORE, 0));
@@ -49,38 +50,44 @@ public class CargoBay {
 
 	public void printCargo() {
 		for (Resource r: stock) {
-			System.out.println("You have " r.getQuantity() + " " + r.getName() + " in stock.");
+			System.out.println("You have " + r.getQuantity() + " " + r.getName() + " in stock.");
 		}
 	}
 
+	/**
+	 * returns resource stock
+	 * @param r
+	 * @return resource quantity
+	 */
 	public int getResourceStock(Resource r) {
 		for (Resource rs: stock) {
 			if (r.getResourceType().equals(rs.getResourceType())) {
 				return rs.getQuantity();
 			}
 		}
+		return 0;
 	}
 
-	public void addStock(Resource r, int q) {
-		for (Resource rs: stock) {
-			if (r.getResourceType().equals(rs.getResourceType())) {
-				rs.setQuantity = rs.getQuantity + q;
 	/**
 	 * Add a Resource to the CargoBay
 	 * @param r - Resource to be added
 	 * @return true if added otherwise false
 	 */
-	public void addStock(Resource r) {
-		if(capacity >= (currentVolume+r.getQuantity()))
+	public void addStock(Resource r, int q) {
+		if(capacity >= (currentVolume+q))
 		{
 			for (Resource rs: stock) {
 				if (r.getResourceType().equals(rs.getResourceType())) {
-					rs.setQuantity(rs.getQuantity() + r.getQuantity());
-					currentVolume += r.getQuantity();
+					rs.setQuantity(rs.getQuantity() + q);
+					currentVolume += q;
 				}
 			}
 		}
 		
+	}
+	
+	public int getCapacity() {
+		return capacity;
 	}
 
 }

@@ -17,6 +17,7 @@ public class Resource {
         this.name = t.getName();
         this.basePrice = t.getBasePrice();
         this.quantity = quantity;
+        type = t;
     }
 
     public String getName() {
@@ -39,8 +40,7 @@ public class Resource {
         quantity = q;
     }
     
-    public ResourceType getResourceType()
-    {
+    public ResourceType getResourceType() {
     	return type;
     }
 

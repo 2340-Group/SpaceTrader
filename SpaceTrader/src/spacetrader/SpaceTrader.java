@@ -76,7 +76,7 @@ public class SpaceTrader extends Application {
 		NoNameSystem.add(ERROR);
 		SolarSystem NoName = new SolarSystem("NONAME", 500, 100, NoNameSystem);
     	
-    	launch(args);
+    	//launch(args);
 
 
     	// ALL OF THIS IS SIMPLY TO TEST TRADE FUCNTIONALITY, CODE WILL BE REMOVED WHEN COMPLETED.
@@ -104,19 +104,21 @@ public class SpaceTrader extends Application {
         myStuff.printCargo();
 
         // buy one of everything.
-        for (int i = 0; i < richMerchant.length(); i++) {
-        	buy(richMerchant(i), 1, p, mahBoi);
+        for (int i = 0; i < richMerchant.size(); i++) {
+        	missingNo.buy(richMerchant.get(i), 1, p, mahBoi);
         }
 
         myStuff.printCargo();
         System.out.println("The player has "+ p.getFunds()+ " credits");
         // sell it back.
-        for (int i = 0; i < richMerchant.length(); i++) {
-        	sell(richMerchant(i), 1, p, mahBoi);
+        for (int i = 0; i < richMerchant.size(); i++) {
+        	missingNo.sell(richMerchant.get(i), 1, p, mahBoi);
         }
 
         myStuff.printCargo();
         System.out.println("The player has "+ p.getFunds()+ " credits");
+        
+        System.exit(0);
     }
     
 }

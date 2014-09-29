@@ -46,10 +46,6 @@ public class Player {
 		funds = 2000000000;
 		
     }
-
-    public int getFunds() {
-		return funds;
-	}
     
 	public void setLocation(int x, int y) {
 		locX = x;
