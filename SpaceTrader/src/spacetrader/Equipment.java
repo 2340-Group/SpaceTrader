@@ -6,6 +6,7 @@ public enum Equipment {
 	GADGET(100);
 	
 	private int powerLeft;
+	private final int MAXPOWER = 100;
 	
 	Equipment(int pow)
 	{
@@ -19,8 +20,8 @@ public enum Equipment {
 	
 	/**
 	 * 
-	 * @param how much power to give equipment
-	 * @return new power amount, -1 if refill amount <= 0 (invalid, try usePower())
+	 * @param refill - int how much power to give equipment
+	 * @return int new power amount, -1 if refill amount <= 0 (invalid, try usePower())
 	 */
 	public int upgrade(int refill)
 	{
@@ -31,24 +32,30 @@ public enum Equipment {
 		else
 		{
 			powerLeft = powerLeft + refill;
+			if(powerLeft > MAXPOWER)
+			{
+				powerLeft = MAXPOWER;
+			}
 			return powerLeft;
 		}
 	}
 	
 	/**
-	 * @param used - the power needed
-	 * @return the amount of used that was too much for the Equipment, -1 if still has power
+	 * @param used - int the power needed
+	 * @return int the amount of used that was too much for the Equipment, -1 if still has power
 	 */
 	public int usePower(int used)
 	{
-		powerLeft = powerLeft - used;
-		if(powerLeft <= 0)
+		int holding = powerLeft - used;
+		if(holding <= 0)
 		{
+			holding = used - powerLeft;
 			powerLeft = 0;
-			return (used - powerLeft);
+			return holding;
 		}
 		else
 		{
+			powerLeft = holding;
 			return -1;
 		}
 	}

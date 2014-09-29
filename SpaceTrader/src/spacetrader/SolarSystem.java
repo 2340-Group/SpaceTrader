@@ -22,6 +22,13 @@ public class SolarSystem {
 	private int locY;
 	//private String style;
 	    
+	/**
+	 * Part of Universe
+	 * @param n - String name
+	 * @param x - int location x-coordinate
+	 * @param y - int location y-coordinate
+	 * @param p - ArrayList<Planet> planets to be in system
+	 */
 	public SolarSystem(String n, int x, int y, ArrayList<Planet> p) {
 	    System.out.println("Making Solar Sytems: " + n);
 		name = n;

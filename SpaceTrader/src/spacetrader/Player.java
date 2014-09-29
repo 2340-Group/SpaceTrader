@@ -24,6 +24,15 @@ public class Player {
 	private Planet planet;
 	private int funds;
     
+	/**
+	 * Funds set to 1000 by default
+	 * @param n - String name
+	 * @param p - int piloting skill
+	 * @param f - int fighting skill
+	 * @param t - int trading skill
+	 * @param e - int engineering skill
+	 * @param s - Ship
+	 */
     public Player(String n, int p, int f, int t, int e, Ship s) {
         System.out.println("Making player: " + n);
 		name = n;
@@ -34,7 +43,7 @@ public class Player {
 		ship = s;
 		locX = 0;
 		locY = 0;
-		funds = 10000;
+		funds = 2000000000;
 		
     }
 
@@ -47,12 +56,20 @@ public class Player {
 		locY = y;
 	}
 	
+	/**
+	 * 
+	 * @param x - int amount to be added to money (x should be +)
+	 */
 	public void addFunds(int x) {
 		funds = funds + x;
 	}
 	
+	/**
+	 * 
+	 * @param x - int amount to be subtracted from money (x should be +)
+	 */
 	public void subtractFunds(int x) {
-		funds = funds + x;
+		funds = funds - x;
 	}
 	
 	public void setSolarSystem(SolarSystem ss) {
@@ -113,6 +130,10 @@ public class Player {
 	
 	public Ship getShip () {
 		return ship;
+	}
+
+	public int getFunds() {
+		return funds;
 	}
 	
 	

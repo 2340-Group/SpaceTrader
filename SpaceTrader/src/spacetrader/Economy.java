@@ -109,12 +109,37 @@ public class Economy {
 
     }
 
-    public int buy(Resource r, int quantity) {
+    /**
+    * Buy Resource functionality, adds the resource to the ship's cargo bay and
+    * subtracts funds accordingly.
+    * @param a Resource r, the amount of the Resource being bought, the player and his/her ship.
+    */
+    public void buy(Resource r, int quantity, Player p, Ship s) {
+        if (r.getPrice()*quantity > p.getFunds()) {
+            System.out.println("Insufficient Funds.");
+            return;
+        } else if (quantity > s.getCargo().getCurrentVolume()) {
+            System.out.println("Not enough Cargo Space.");
+            return;
+        } else {
+            s.getCargo().addStock(r, quantity);
+            p.subtractFunds(r.getPrice()*quantity);
+        }
 
     }
 
-    public int sell(Resource r, int quantity) {
-
+    /**
+    * Sell Resource functionality, removes the resource from the ship's cargo bay and
+    * adds funds accordingly.
+    */
+    public void sell(Resource r, int quantity, Player p, Ship s) {
+        if (s.getCargo().getResourceStock(r) < quantity) {
+            System.out.println("You don't that many!");
+            return;
+        } else {
+            s.getCargo().addStock(r, -quantity);
+            p.addFunds(r.getPrice()*quantity);
+        }
     }
 
     /**
