@@ -22,6 +22,15 @@ public class Planet {
 	private Economy econ;
     
     //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
+	
+	/**
+	 * 
+	 * @param n - String name
+	 * @param x - int location x-coordinate
+	 * @param y - int location y-coordinate
+	 * @param tl - int tech level
+	 * @param rl - int resource level
+	 */
     public Planet(String n, int x, int y, int tl, int rl) {
         System.out.println("Making planet: " + n + ", Tech Level: " + tl + ", Resource Level: " + rl + " Location (x,y): " + x + ", " + y);
 		name = n;

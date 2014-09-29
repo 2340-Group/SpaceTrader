@@ -1,3 +1,5 @@
+package spacetrader;
+
 import java.util.ArrayList;
 
 /**
@@ -30,17 +32,18 @@ public class CargoBay {
 
 	
 	/**
-	 * will destroy all current contents
+	 * DANGEROUS - will destroy all current contents
 	 * use for creating new ship type
-	 * @param cap - new capacity
+	 * @param cap - int new capacity
 	 */
-	void setCapacity(int cap)
+	public void setCapacity(int cap)
 	{
 		capacity = cap;
 		stock.clear();
 		currentVolume = 0;
 	}
 
+<<<<<<< HEAD
 	public int getCurrentVolume() {
 		return currentVolume;
 	}
@@ -63,9 +66,34 @@ public class CargoBay {
 		for (Resource rs: stock) {
 			if (r.getResourceType().equals(rs.getResourceType())) {
 				rs.setQuantity = rs.getQuantity + q;
+=======
+	/**
+	 * Add a Resource to the CargoBay
+	 * @param r - Resource to be added
+	 * @return true if added otherwise false
+	 */
+	public boolean addStock(Resource r) {
+		boolean notDone = true;
+		if(capacity >= (currentVolume+r.getQuantity()))
+		{
+			for (Resource rs: stock) {
+				if (r.getResourceType() == rs.getResourceType()) {	// should this be .equals() instead?
+					rs.setQuantity(rs.getQuantity() + r.getQuantity());
+					currentVolume += r.getQuantity();
+					notDone = false;
+					break;
+				}
+			}
+			if(notDone)
+			{
+				stock.add(r);
+				currentVolume += r.getQuantity();
+				notDone = false;
+>>>>>>> 6ff6c1003cac9b0542158b74a1434c3e4c04be4d
 			}
 		}
-
+		
+		return !notDone;
 	}
 
 }
