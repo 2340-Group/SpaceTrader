@@ -20,26 +20,50 @@ public class Resource {
         type = t;
     }
 
+    /**
+     * returns name
+     * @return name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * returns basePrice
+     * @return basePrice
+     */
     public int getPrice() {
         return basePrice;
     }
     
+    /**
+     * sets bacePrice
+     * @param p
+     */
     public void setPrice(int p) {
         basePrice = p;
     }
 
+    /**
+     * returns quantity
+     * @return quantity
+     */
     public int getQuantity() {
         return quantity;
     }
 
+    /**
+     * sets quantity
+     * @param q
+     */
     public void setQuantity(int q) {
         quantity = q;
     }
     
+    /**
+     * returns resource type
+     * @return type
+     */
     public ResourceType getResourceType() {
     	return type;
     }

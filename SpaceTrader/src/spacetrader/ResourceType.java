@@ -29,10 +29,18 @@ public enum ResourceType {
         BASEPRICE = base;
     }
 
+    /**
+     * returns NAME
+     * @return NAME
+     */
     public String getName() {
         return NAME;
     }
 
+    /**
+     * returns BASEPRICE
+     * @return
+     */
     public int getBasePrice() {
         return BASEPRICE;
     }

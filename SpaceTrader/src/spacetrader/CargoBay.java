@@ -14,6 +14,10 @@ public class CargoBay {
 	private ArrayList<Resource> stock;
 
 
+	/**
+	 * creates cargo bay
+	 * @param cap
+	 */
 	public CargoBay(int cap)
 	{
 		stock = new ArrayList<Resource>();
@@ -44,10 +48,17 @@ public class CargoBay {
 		currentVolume = 0;
 	}
 
+	/**
+	 * returns current volume
+	 * @return currentVolume
+	 */
 	public int getCurrentVolume() {
 		return currentVolume;
 	}
 
+	/**
+	 * prints cargo
+	 */
 	public void printCargo() {
 		for (Resource r: stock) {
 			System.out.println("You have " + r.getQuantity() + " " + r.getName() + " in stock.");
@@ -86,6 +97,10 @@ public class CargoBay {
 		
 	}
 	
+	/**
+	 * returns capacity
+	 * @return capacity
+	 */
 	public int getCapacity() {
 		return capacity;
 	}
