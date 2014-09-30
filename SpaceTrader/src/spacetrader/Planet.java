@@ -43,15 +43,28 @@ public class Planet {
 		
     }
 
+    /**
+     * sets location
+     * @param x
+     * @param y
+     */
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
 	}
 	
+	/**
+	 * sets economy
+	 * @param e
+	 */
 	public void setEcon(Economy e) {
 		econ = e;
 	}
 
+	/**
+	 * returns economy
+	 * @return econ
+	 */
 	public Economy getEcon() {
 		return econ;
 	}
@@ -60,6 +73,10 @@ public class Planet {
 		items = i;
 	}*/
 	
+	/**
+	 * returns name
+	 * @return name
+	 */
 	public String getName () {
 		return name;
 	}
@@ -68,10 +85,18 @@ public class Planet {
 		return items;
 	}*/
 	
+	/**
+	 * returns tech level
+	 * @return techLevel
+	 */
 	public int getTechLevel () {
 		return techLevel;
 	}
 	
+	/**
+	 * returns resource level
+	 * @return resourceLevel
+	 */
 	public int getresourceLevel () {
 		return resourceLevel;
 	}

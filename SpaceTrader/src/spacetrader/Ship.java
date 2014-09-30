@@ -49,15 +49,31 @@ public class Ship {
 		this.fuel = fuel;
 		this.health = health;
 	}
+	
+	/**
+	 * returns shipType
+	 * @return shipT
+	 */
 	public ShipType getType() {
 		return shipT;
 	}
+	
+	/**
+	 * sets ship type
+	 * @param shipT
+	 */
 	public void setType(ShipType shipT) {
 		this.shipT = shipT;
 	}
+	
+	/**
+	 * returns reputation
+	 * @return reputation
+	 */
 	public int getReputation() {
 		return reputation;
 	}
+	
 	/**
 	 * 
 	 * @param reputation - int amount to change current reputation by
@@ -68,9 +84,18 @@ public class Ship {
 		return reputation;
 	}
 
+	/**
+	 * returns name
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
+	
+	/**
+	 * returns weapons
+	 * @return weapons
+	 */
 	public ArrayList<Equipment> getWeapons() {
 		return weapons;
 	}
@@ -177,6 +202,10 @@ public class Ship {
 		}
 	}
 
+	/**
+	 * returns cargo
+	 * @return cargo
+	 */
 	public CargoBay getCargo() {
 		return cargo;
 	}

@@ -47,6 +47,11 @@ public class Player {
 		
     }
     
+    /**
+     * sets location
+     * @param x
+     * @param y
+     */
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
@@ -68,66 +73,130 @@ public class Player {
 		funds = funds - x;
 	}
 	
+	/**
+	 * sets solar system
+	 * @param ss
+	 */
 	public void setSolarSystem(SolarSystem ss) {
 		solarSystem = ss;
 	}
 	
+	/**
+	 * sets planet
+	 * @param p
+	 */
 	public void setPlanet(Planet p) {
 		planet = p;
 	}
 	
+	/**
+	 * sets engineering
+	 * @param e
+	 */
 	public void setEngineering (int e) {
 		engineering = e;
 	}
 	
+	/**
+	 * sets piloting
+	 * @param p
+	 */
 	public void setPiloting (int p) {
 		piloting = p;
 	}
 	
+	/**
+	 * sets fighting
+	 * @param f
+	 */
 	public void setFighting (int f) {
 		fighting = f;
 	}
 	
+	/**
+	 * sets trading
+	 * @param t
+	 */
 	public void setTrading (int t) {
 		trading = t;
 	}
 	
+	/**
+	 * sets ship
+	 * @param s
+	 */
 	public void setShip (Ship s) {
 		ship = s;
 	}
 	
+	/**
+	 * returns name
+	 * @return name
+	 */
 	public String getName () {
 		return name;
 	}
 	
+	/**
+	 * returns solar system
+	 * @return solarSystem
+	 */
 	public SolarSystem getSolarSystem () {
 		return solarSystem;
 	}
 		
+	/**
+	 * returns planet
+	 * @return planet
+	 */
 	public Planet getPlanet () {
 		return planet;
 	}
 	
+	/**
+	 * returns engineering
+	 * @return engineering
+	 */
 	public int getEngineering () {
 		return engineering;
 	}
-		
+	
+	/**
+	 * returns piloting
+	 * @return piloting
+	 */
 	public int getPiloting () {
 		return piloting;
 	}
-		
+	
+	/**
+	 * returns fighting
+	 * @return fighting
+	 */
 	public int getFighting () {
 		return fighting;
 	}
-		
+	
+	/**
+	 * returns trading
+	 * @return trading
+	 */
 	public int getTrading () {
 		return trading;
 	}
 	
+	/**
+	 * returns ship
+	 * @return ship
+	 */
 	public Ship getShip () {
 		return ship;
 	}
 
+	/**
+	 * returns funds
+	 * @return funds
+	 */
 	public int getFunds() {
 		return funds;
 	}
