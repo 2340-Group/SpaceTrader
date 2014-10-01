@@ -27,7 +27,7 @@ public class Marketplace {
         resources = new ArrayList<Resource>();
         for (Resource rs: r) {
             resources.add(rs);
-            resource.get(i).setPrice(resources.get(i).getPrice()*planetTech);
+            resources.get(i).setPrice(resources.get(i).getPrice()*planetTech);
             i++;
         }
       //  resources = r;

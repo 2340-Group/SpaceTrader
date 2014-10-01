@@ -57,7 +57,7 @@ public class SpaceTrader extends Application {
 		richMerchant.add(new Resource(ResourceType.MACHINES, 100));
 		richMerchant.add(new Resource(ResourceType.NARCOTICS, 100));
 		richMerchant.add(new Resource(ResourceType.ROBOTS, 100));
-		richMerchant.add(new Resource(ResourceType.MOON, 100));
+		//richMerchant.add(new Resource(ResourceType.MOON, 100));
     	Ship mahBoi = new Ship();
     	// player has been edited to start with 2 billion credits.
     	Player p = new Player("Trader", 0,0,0,0,0,0, mahBoi);
