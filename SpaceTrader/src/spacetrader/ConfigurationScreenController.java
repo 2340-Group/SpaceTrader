@@ -212,6 +212,8 @@ public class ConfigurationScreenController implements Initializable {
             }
             System.out.println(name);
             
+            
+            
             Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
             Scene sceneConfig = new Scene(config);
             Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -234,6 +236,22 @@ public class ConfigurationScreenController implements Initializable {
     
     public String getName() {
     	return name;
+    }
+    
+    public int getpilotPoints() {
+    	return pilotPoints;
+    }
+    
+    public int getfighterPoints() {
+    	return fighterPoints;
+    }
+    
+    public int getraderPoints() {
+    	return traderPoints;
+    }
+    
+    public int getengineerPoints() {
+    	return engineerPoints;
     }
     
 }

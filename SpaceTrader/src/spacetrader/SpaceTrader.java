@@ -7,7 +7,6 @@
 package spacetrader;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -29,17 +28,19 @@ public class SpaceTrader extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
     	Universe u = new Universe();
     	
     	u.generateUniverse();
     	
-    	//ArrayList<Planet> pl = u.getplanetList();
-    	
+    	playerGeneration plg = new playerGeneration();
+    	plg.getPlayer().setLocation(u.getPlanet("S1").getX(), u.getPlanet("S1").getY());
     	//launch(args);
     	
 

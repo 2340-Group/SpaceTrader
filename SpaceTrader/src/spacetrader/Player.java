@@ -201,5 +201,21 @@ public class Player {
 		return funds;
 	}
 	
+	/**
+	 * returns location X
+	 * @return locX
+	 */
+	public int getlocX() {
+		return locX;
+	}
+	
+	/**
+	 * returns location Y
+	 * @return locY
+	 */
+	public int getlocY() {
+		return locY;
+	}
+	
 	
 }

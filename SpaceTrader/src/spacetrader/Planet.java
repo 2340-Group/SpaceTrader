@@ -101,6 +101,14 @@ public class Planet {
 		return resourceLevel;
 	}
 	
+	public int getX () {
+		return locX;
+	}
+	
+	public int getY () {
+		return locY;
+	}
+	
 	/*public SolarSystem getSolarSystem () {
 		return solarSystem;
 	}*/
