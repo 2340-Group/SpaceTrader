@@ -39,8 +39,8 @@ public class SpaceTrader extends Application {
     	
     	u.generateUniverse();
     	
-    	playerGeneration plg = new playerGeneration();
-    	plg.getPlayer().setLocation(u.getPlanet("S1").getX(), u.getPlanet("S1").getY());
+    	//playerGeneration plg = new playerGeneration();
+    	//plg.getPlayer().setLocation(u.getPlanet("S1").getX(), u.getPlanet("S1").getY());
     	//launch(args);
     	
 
