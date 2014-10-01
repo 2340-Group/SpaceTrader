@@ -8,7 +8,7 @@
 package spacetrader;
 import java.util.ArrayList;
 
-public class Economy {
+public class Marketplace {
 
     private Double currentInflation;
     private final int ECON_SCORE_MAX = 10;
@@ -22,7 +22,7 @@ public class Economy {
     * initializes the economyScore as 5.
     * initializes inflation as baseline.
     */  
-    public Economy(ArrayList<Resource> r) {
+    public Marketplace(ArrayList<Resource> r) {
         resources = r;
         economyScore = 5;
         currentInflation = (double) 1;

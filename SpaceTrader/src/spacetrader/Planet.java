@@ -19,7 +19,7 @@ public class Planet {
 	private int techLevel;
 	private int resourceLevel;
 	//private Items[] items;
-	private Economy econ;
+	private Marketplace econ;
     
     //public void createPlanet(String n, int x, int y, int tl, Items[] i) {
 	
@@ -57,7 +57,7 @@ public class Planet {
 	 * sets economy
 	 * @param e
 	 */
-	public void setEcon(Economy e) {
+	public void setEcon(Marketplace e) {
 		econ = e;
 	}
 
@@ -65,7 +65,7 @@ public class Planet {
 	 * returns economy
 	 * @return econ
 	 */
-	public Economy getEcon() {
+	public Marketplace getEcon() {
 		return econ;
 	}
 	

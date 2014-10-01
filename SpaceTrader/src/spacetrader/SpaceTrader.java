@@ -65,8 +65,8 @@ public class SpaceTrader extends Application {
     	
     	Planet error = u.getPlanet("ERROR");
     	
-        error.setEcon(new Economy(richMerchant));
-        Economy missingNo = error.getEcon();
+        error.setEcon(new Marketplace(richMerchant));
+        Marketplace missingNo = error.getEcon();
         CargoBay myStuff = mahBoi.getCargo();
         // Should print out current stock before any trading.
         myStuff.printCargo();
