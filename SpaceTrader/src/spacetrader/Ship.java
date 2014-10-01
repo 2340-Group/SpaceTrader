@@ -180,6 +180,11 @@ public class Ship {
 			return used;
 		}
 	}
+	
+	/**
+	 * returns health
+	 * @return health
+	 */
 	public int getHealth() {
 		return health;
 	}

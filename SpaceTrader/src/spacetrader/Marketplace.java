@@ -158,9 +158,12 @@ public class Marketplace {
         return resources;
     }
 
+    /**
+     * lists prices
+     */
     public void listPrices() {
         for (Resource r: resources) {
-            System.out.println(r.getName() + " costs " + r.getPrice() + " chairs.");
+            System.out.println(r.getName() + " costs " + r.getPrice() + " credits.");
         }
     }
 
