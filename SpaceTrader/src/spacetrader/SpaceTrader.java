@@ -34,49 +34,14 @@ public class SpaceTrader extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-    	Random randomGenerator = new Random();
-    	//randomGenerator.nextInt((max - min) + 1) + min;
+    	Universe u = new Universe();
     	
-		System.out.println("Making Universe");
-		
-		//Create Planet ArrayLists
-		ArrayList<Planet> SpaceSystem = new ArrayList<Planet>();
-		ArrayList<Planet> NameSystem = new ArrayList<Planet>();
-		ArrayList<Planet> NoNameSystem = new ArrayList<Planet>();
-		
-		//Create Space system
-		Planet S1 = new Planet("S1", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet S2 = new Planet("S2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet S3 = new Planet("S3", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet S3PT2 = new Planet("S3PT2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet YNS = new Planet("Your Naming Sucks", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		SpaceSystem.add(S1);
-		SpaceSystem.add(S2);
-		SpaceSystem.add(S3);
-		SpaceSystem.add(S3PT2);
-		SpaceSystem.add(YNS);
-		SolarSystem Space = new SolarSystem("SPAAACE", 100, 100, SpaceSystem);
-		
-		//Create Name System
-		Planet Big = new Planet("Big", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet Giant = new Planet("Giant", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet Planet = new Planet("Planet", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		NameSystem.add(Big);
-		NameSystem.add(Giant);
-		NameSystem.add(Planet);
-		SolarSystem Name = new SolarSystem("NAME", 300, 300, NameSystem);
-		
-		//Create NoName System
-		Planet ERROR =  new Planet("ERROR", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet InsertName = new Planet("Insert Name", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet Blank = new Planet("[     ]", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		NoNameSystem.add(InsertName);
-		NoNameSystem.add(Blank);
-		NoNameSystem.add(ERROR);
-		SolarSystem NoName = new SolarSystem("NONAME", 500, 100, NoNameSystem);
+    	u.generateUniverse();
+    	
+    	//ArrayList<Planet> pl = u.getplanetList();
     	
     	//launch(args);
+    	
 
 
     	// ALL OF THIS IS SIMPLY TO TEST TRADE FUCNTIONALITY, CODE WILL BE REMOVED WHEN COMPLETED.
@@ -94,11 +59,14 @@ public class SpaceTrader extends Application {
 		richMerchant.add(new Resource(ResourceType.MOON, 100));
     	Ship mahBoi = new Ship();
     	// player has been edited to start with 2 billion credits.
-    	Player p = new Player("Trader", 0,0,0,0, mahBoi);
+    	Player p = new Player("Trader", 0,0,0,0,0,0, mahBoi);
     	// prints the money before the transaction, gosh I'm rich.
     	System.out.println("The player has " + p.getFunds()+ " credits");
-        ERROR.setEcon(new Economy(richMerchant));
-        Economy missingNo = ERROR.getEcon();
+    	
+    	Planet error = u.getPlanet("ERROR");
+    	
+        error.setEcon(new Economy(richMerchant));
+        Economy missingNo = error.getEcon();
         CargoBay myStuff = mahBoi.getCargo();
         // Should print out current stock before any trading.
         myStuff.printCargo();

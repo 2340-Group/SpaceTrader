@@ -33,7 +33,7 @@ public class Player {
 	 * @param e - int engineering skill
 	 * @param s - Ship
 	 */
-    public Player(String n, int p, int f, int t, int e, Ship s) {
+    public Player(String n, int p, int f, int t, int e, int x, int y, Ship s) {
         System.out.println("Making player: " + n);
 		name = n;
 		piloting = p;
@@ -41,8 +41,8 @@ public class Player {
 		trading = t;
 		engineering = e;
 		ship = s;
-		locX = 0;
-		locY = 0;
+		locX = x;
+		locY = y;
 		funds = 2000000000;
 		
     }

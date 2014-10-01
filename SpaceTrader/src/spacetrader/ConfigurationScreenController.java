@@ -212,7 +212,7 @@ public class ConfigurationScreenController implements Initializable {
             }
             System.out.println(name);
             
-            Parent config = FXMLLoader.load(getClass().getResource("Placeholder.fxml"));
+            Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
             Scene sceneConfig = new Scene(config);
             Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stageN.setScene(sceneConfig);
@@ -230,6 +230,10 @@ public class ConfigurationScreenController implements Initializable {
         click = new Media(new File("./src/spacetrader/Click Silencer 2.wav").toURI().toString());
         deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav").toURI().toString());
         mediaPlayer = new MediaPlayer(click);
-    }    
+    }
+    
+    public String getName() {
+    	return name;
+    }
     
 }

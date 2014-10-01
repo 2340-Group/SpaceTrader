@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.S1Controller">
    <children>
+      <ImageView fitHeight="630.0" fitWidth="872.0" layoutX="-15.0" layoutY="-122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@S!-artwork.png" />
+         </image>
+      </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
          <menus>
             <Menu mnemonicParsing="false" text="Information">
@@ -23,5 +29,6 @@
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
+      <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" text="Marketplace" />
    </children>
 </AnchorPane>
