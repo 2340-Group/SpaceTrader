@@ -66,7 +66,7 @@ public class SpaceTrader extends Application {
     	
     	Planet error = u.getPlanet("ERROR");
     	
-        error.setEcon(new Marketplace(richMerchant));
+        error.setEcon(new Marketplace(richMerchant, error.getTechLevel()));
         Marketplace missingNo = error.getEcon();
         CargoBay myStuff = mahBoi.getCargo();
         // Should print out current stock before any trading.
@@ -86,6 +86,8 @@ public class SpaceTrader extends Application {
 
         myStuff.printCargo();
         System.out.println("The player has "+ p.getFunds()+ " credits");
+
+        missingNo.listPrices();
         
         System.exit(0);
     }

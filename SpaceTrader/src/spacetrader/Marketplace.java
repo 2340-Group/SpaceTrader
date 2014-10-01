@@ -17,15 +17,22 @@ public class Marketplace {
     private int economyScore;
 
     /**
-    * Instantiates an instance of an Economy for a SolarSystem object.
+    * Instantiates an instance of an MarketPlace for a Planet object.
     * Stores the system's available resources in an ArrayList.
     * initializes the economyScore as 5.
     * initializes inflation as baseline.
     */  
-    public Marketplace(ArrayList<Resource> r) {
-        resources = r;
-        economyScore = 5;
-        currentInflation = (double) 1;
+    public Marketplace(ArrayList<Resource> r, int planetTech) {
+        int i = 0;
+        resources = new ArrayList<Resource>();
+        for (Resource rs: r) {
+            resources.add(rs);
+            resource.get(i).setPrice(resources.get(i).getPrice()*planetTech);
+            i++;
+        }
+      //  resources = r;
+      //  economyScore = 5;
+      //  currentInflation = (double) 1;
     }
     /**
     * returns a Raised price by a percent multiplier
@@ -149,6 +156,12 @@ public class Marketplace {
 
     public ArrayList<Resource> getResources() {
         return resources;
+    }
+
+    public void listPrices() {
+        for (Resource r: resources) {
+            System.out.println(r.getName() + " costs " + r.getPrice() + " chairs.");
+        }
     }
 
 }
