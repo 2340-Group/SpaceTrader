@@ -7,6 +7,7 @@
 package spacetrader;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -16,6 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -37,6 +41,31 @@ public class S1Controller implements Initializable {
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
+    }
+	
+	public void handleMarket(ActionEvent event) throws Exception {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        //dialog.initOwner(primaryStage);
+        VBox dialogVbox = new VBox(20);
+        
+        /*Universe u = new Universe();
+        u.generateUniverse();
+        //ArrayList<Planet> pl = u.getplanetList();
+        Planet s1 = u.getPlanet("S1");
+        Marketplace m = s1.getEcon();
+        ArrayList<Resource> resources = m.getResources();*/
+        
+        dialogVbox.getChildren().add(new Text("Market Items\n"));
+        
+        //for (Resource r: resources) {
+        //	dialogVbox.getChildren().add(new Text(r.getName() + " costs " + r.getPrice() + " credits."));
+
+        //}
+        dialogVbox.getChildren().add(new Text("HI\n"));
+        Scene dialogScene = new Scene(dialogVbox, 300, 200);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 
     /**

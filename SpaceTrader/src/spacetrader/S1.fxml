@@ -29,6 +29,6 @@
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
-      <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" text="Marketplace" />
+      <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
    </children>
 </AnchorPane>
