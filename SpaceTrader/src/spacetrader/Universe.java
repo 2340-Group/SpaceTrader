@@ -53,11 +53,11 @@ public class Universe {
 		NoNameSystem = new ArrayList<Planet>();
 		
 		//Create Space system
-		S1 = new Planet("S1", randomGenerator.nextInt(201), randomGenerator.nextInt(201), 0, 0);
-		S2 = new Planet("S2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		S3 = new Planet("S3", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		S3PT2 = new Planet("S3PT2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		YNS = new Planet("Your Naming Sucks", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
+		S1 = new Planet("S1", randomGenerator.nextInt(201), randomGenerator.nextInt(201), 1, 0);
+		S2 = new Planet("S2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		S3 = new Planet("S3", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		S3PT2 = new Planet("S3PT2", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		YNS = new Planet("Your Naming Sucks", randomGenerator.nextInt(201), randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
 		SpaceSystem.add(S1);
 		SpaceSystem.add(S2);
 		SpaceSystem.add(S3);
@@ -66,9 +66,9 @@ public class Universe {
 		Space = new SolarSystem("SPAAACE", 100, 100, SpaceSystem);
 		
 		//Create Name System
-		Big = new Planet("Big", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Giant = new Planet("Giant", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Planet = new Planet("Planet", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(8), randomGenerator.nextInt(13));
+		Big = new Planet("Big", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		Giant = new Planet("Giant", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		Planet = new Planet("Planet", randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(201) + 200, randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
 		NameSystem.add(Big);
 		NameSystem.add(Giant);
 		NameSystem.add(Planet);
@@ -76,8 +76,8 @@ public class Universe {
 		
 		//Create NoName System
 		ERROR =  new Planet("ERROR", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), 7, 12);
-		InsertName = new Planet("Insert Name", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
-		Blank = new Planet("[     ]", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(8), randomGenerator.nextInt(13));
+		InsertName = new Planet("Insert Name", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		Blank = new Planet("[     ]", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
 		NoNameSystem.add(InsertName);
 		NoNameSystem.add(Blank);
 		NoNameSystem.add(ERROR);

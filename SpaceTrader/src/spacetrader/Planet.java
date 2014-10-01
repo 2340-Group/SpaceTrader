@@ -101,10 +101,18 @@ public class Planet {
 		return resourceLevel;
 	}
 	
+	/**
+	 * get x location
+	 * @return locX
+	 */
 	public int getX () {
 		return locX;
 	}
 	
+	/**
+	 * get y location
+	 * @return locY
+	 */
 	public int getY () {
 		return locY;
 	}
