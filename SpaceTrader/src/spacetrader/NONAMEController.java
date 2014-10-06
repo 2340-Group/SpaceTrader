@@ -41,6 +41,8 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleERRORButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("ERROR");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("ERROR.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -50,6 +52,8 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleBlankButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("Blank");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Blank.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -59,6 +63,8 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleInsertNameButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("InsertName");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("InsertName.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();

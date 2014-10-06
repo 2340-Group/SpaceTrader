@@ -28,6 +28,8 @@ public class Universe {
 	
 	private ArrayList<Planet> planetList;
 	
+	//private ArrayList<Resource> Merchant;
+	
 	/**
 	 * universe constructor
 	 */
@@ -76,8 +78,8 @@ public class Universe {
 		
 		//Create NoName System
 		ERROR =  new Planet("ERROR", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), 7, 12);
-		InsertName = new Planet("Insert Name", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
-		Blank = new Planet("[     ]", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		InsertName = new Planet("InsertName", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+		Blank = new Planet("Blank", randomGenerator.nextInt(201) + 400, randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
 		NoNameSystem.add(InsertName);
 		NoNameSystem.add(Blank);
 		NoNameSystem.add(ERROR);
@@ -98,6 +100,8 @@ public class Universe {
 		planetList.add(InsertName);
 		planetList.add(Blank);
 		planetList.add(ERROR);
+
+		
 		
 	}
 	
@@ -117,11 +121,13 @@ public class Universe {
 	public Planet getPlanet(String str) {
 		 for (int i = 0; i < planetList.size();) {
 			 if (planetList.get(i).getName().equals(str)) {
+				 System.out.println("Got Planet");
 				 return planetList.get(i);
 			 } else {
 				 i++;
 			 }
 		 }
+		 System.out.println("No Planet");
 		 return null;
 	}
 }

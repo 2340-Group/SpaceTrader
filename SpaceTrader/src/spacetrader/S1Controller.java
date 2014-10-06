@@ -17,6 +17,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -28,6 +31,11 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class S1Controller implements Initializable {
+	
+	@FXML
+	private Label fuelLabel;
+	@FXML
+	private Label fundsLabel;
 	
 	/**
 	 * quit button
@@ -58,41 +66,13 @@ public class S1Controller implements Initializable {
 	 * @param event
 	 * @throws Exception
 	 */
+	@FXML
 	public void handleMarket(ActionEvent event) throws Exception {
-        final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        //dialog.initOwner(primaryStage);
-        VBox dialogVbox = new VBox(20);
-        
-        ArrayList<Resource> richMerchant = new ArrayList<>();
-		richMerchant.add(new Resource(ResourceType.WATER, 100));
-		richMerchant.add(new Resource(ResourceType.ORE, 100));
-		richMerchant.add(new Resource(ResourceType.FOOD, 100));
-		richMerchant.add(new Resource(ResourceType.FURS, 100));
-		richMerchant.add(new Resource(ResourceType.GAMES, 100));
-		richMerchant.add(new Resource(ResourceType.FIREARMS, 100));
-		richMerchant.add(new Resource(ResourceType.MEDICINE, 100));
-		richMerchant.add(new Resource(ResourceType.MACHINES, 100));
-		richMerchant.add(new Resource(ResourceType.NARCOTICS, 100));
-		richMerchant.add(new Resource(ResourceType.ROBOTS, 100));
-        Universe u = new Universe();
-        u.generateUniverse();
-        //ArrayList<Planet> pl = u.getplanetList();
-        Planet s1 = u.getPlanet("S1");
-        s1.setEcon(new Marketplace(richMerchant, s1.getTechLevel()));
-        Marketplace m = s1.getEcon();
-        ArrayList<Resource> resources = m.getResources();
-        
-        dialogVbox.getChildren().add(new Text("Market Items\n"));
-        
-        for (Resource r: resources) {
-        	dialogVbox.getChildren().add(new Text(r.getName() + " costs " + r.getPrice() + " credits."));
-
-        }
-        //dialogVbox.getChildren().add(new Text("HI\n"));
-        Scene dialogScene = new Scene(dialogVbox, 300, 200);
-        dialog.setScene(dialogScene);
-        dialog.show();
+		Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
     }
 
     /**
@@ -101,6 +81,9 @@ public class S1Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    	
+    	fundsLabel.setText("FUNDS\n" + MainController.getPlayer().getFunds());
+    	fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
     }    
     
 }

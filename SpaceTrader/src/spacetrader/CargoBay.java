@@ -32,7 +32,7 @@ public class CargoBay {
 		stock.add(new Resource(ResourceType.MACHINES, 0));
 		stock.add(new Resource(ResourceType.NARCOTICS, 0));
 		stock.add(new Resource(ResourceType.ROBOTS, 0));
-		stock.add(new Resource(ResourceType.MOON, 0));
+		//stock.add(new Resource(ResourceType.MOON, 0));
 	}
 
 	
@@ -59,10 +59,13 @@ public class CargoBay {
 	/**
 	 * prints cargo
 	 */
-	public void printCargo() {
+	public String printCargo() {
+		String s = new String();
 		for (Resource r: stock) {
 			System.out.println("You have " + r.getQuantity() + " " + r.getName() + " in stock.");
+			s = s + "You have " + r.getQuantity() + " " + r.getName() + " in stock.\n";
 		}
+		return s;
 	}
 
 	/**

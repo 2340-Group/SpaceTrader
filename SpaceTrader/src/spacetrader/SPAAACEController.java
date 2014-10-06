@@ -41,6 +41,8 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("S1");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -50,6 +52,8 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("S2");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S2.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -59,6 +63,8 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("S3");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S3.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -68,7 +74,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("S3 PT 2.fxml"));
+		MainController.setCurrentPlanet("S3PT2");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+		Parent config = FXMLLoader.load(getClass().getResource("S3PT2.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -77,6 +85,8 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("Your Naming Sucks");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Your Naming Sucks.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();

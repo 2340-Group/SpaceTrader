@@ -20,7 +20,8 @@ public class Ship {
 	public Ship()
 	{
 		shipT = ShipType.GNAT;
-		fuel = shipT.getMaxDistance();		
+		fuel = shipT.getMaxDistance();
+		//fuel = 14;
 		health = 100;
 		cargo = new CargoBay(shipT.getCargoSlots());
 	}

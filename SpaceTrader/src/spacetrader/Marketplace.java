@@ -6,7 +6,9 @@
 * @version 1.0
 */
 package spacetrader;
+
 import java.util.ArrayList;
+
 
 public class Marketplace {
 
@@ -161,12 +163,14 @@ public class Marketplace {
     /**
      * lists prices
      */
-    public void listPrices() {
-
+    public String listPrices() {
+    	String s = new String();
         for (Resource r: resources) {
             System.out.println(r.getName() + " costs " + r.getPrice() + " credits.");
+            s = s + r.getName() + " costs " + r.getPrice() + " credits.\n";
 
         }
+        return s;
 
     }
 
