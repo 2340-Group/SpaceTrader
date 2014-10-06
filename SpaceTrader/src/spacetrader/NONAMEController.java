@@ -41,7 +41,13 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleERRORButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("ERROR");
+		if (!MainController.getCurrentPlanet().equals("ERROR")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+			MainController.setCurrentPlanet("ERROR");
+			MainController.setCurrentSolarSystem("NONAME");
+			//MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("ERROR.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -52,7 +58,13 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleBlankButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("Blank");
+		if (!MainController.getCurrentPlanet().equals("Blank")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+			MainController.setCurrentPlanet("Blank");
+			MainController.setCurrentSolarSystem("NONAME");
+			//MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Blank.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -63,7 +75,13 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleInsertNameButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("InsertName");
+		if (!MainController.getCurrentPlanet().equals("InsertName")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+			MainController.setCurrentPlanet("InsertName");
+			MainController.setCurrentSolarSystem("NONAME");
+			//MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("InsertName.fxml"));
         Scene sceneConfig = new Scene(config);

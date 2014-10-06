@@ -41,7 +41,13 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleBigButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("Big");
+		if (!MainController.getCurrentPlanet().equals("Big")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
+			MainController.setCurrentPlanet("Big");
+			MainController.setCurrentSolarSystem("NAME");
+			
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Big.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -52,7 +58,13 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleGiantButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("Giant");
+		if (!MainController.getCurrentPlanet().equals("Giant")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
+			MainController.setCurrentPlanet("Giant");
+			MainController.setCurrentSolarSystem("NAME");
+			
+		}
+
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Giant.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -63,7 +75,12 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handlePlanetButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("Planet");
+		if (!MainController.getCurrentPlanet().equals("Planet")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
+			MainController.setCurrentPlanet("Planet");
+			MainController.setCurrentSolarSystem("NAME");
+			
+		}
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Planet.fxml"));
         Scene sceneConfig = new Scene(config);

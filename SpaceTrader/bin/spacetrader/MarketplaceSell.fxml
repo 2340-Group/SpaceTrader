@@ -45,7 +45,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="201.0" text="Sell All" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+            <Button mnemonicParsing="false" onAction="#handleSellAllMarketAction" prefHeight="26.0" prefWidth="201.0" text="Sell All" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="11" />
             <Button fx:id="minusGames" mnemonicParsing="false" onAction="#subtractGames" prefHeight="36.0" prefWidth="102.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4" />
             <Button fx:id="plusGames" alignment="CENTER" mnemonicParsing="false" onAction="#addGames" prefHeight="36.0" prefWidth="100.0" text="+" GridPane.columnIndex="6" GridPane.rowIndex="4" />
             <Button fx:id="minusFirearms" mnemonicParsing="false" onAction="#subtractFirearms" prefHeight="36.0" prefWidth="100.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="5" />
@@ -89,7 +89,7 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" text="Sell" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <Button mnemonicParsing="false" onAction="#handleSellMarketAction" prefHeight="41.0" prefWidth="120.0" text="Sell" GridPane.columnIndex="6" GridPane.rowIndex="10" />
             <Label fx:id="costLabel" prefHeight="157.0" prefWidth="256.0" text="dvjbbjvsvjsvbsvmxdfvxfbxfbfbfxbbfbf&#10;fbvfbdbgsbgsbg&#10;bddgsbbsbg&#10;bg&#10;bgbgbg&#10;bg&#10;bg&#10;gb&#10;b&#10;bs&#10;&#10;b&#10;bsg" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowSpan="5">
                <font>
                   <Font name="System Bold" size="13.0" />
