@@ -34,7 +34,7 @@ public class Player {
 	 * @param s - Ship
 	 */
     public Player(String n, int p, int f, int t, int e, int x, int y, Ship s) {
-        System.out.println("Making player: " + n);
+        System.out.println("Making player: " + n + " Location: " + x + ", " + y);
 		name = n;
 		piloting = p;
 		fighting = f;
@@ -43,7 +43,7 @@ public class Player {
 		ship = s;
 		locX = x;
 		locY = y;
-		funds = 2000000000;
+		funds = 1000;
 		
     }
     
@@ -55,6 +55,7 @@ public class Player {
 	public void setLocation(int x, int y) {
 		locX = x;
 		locY = y;
+		System.out.println("New Location: " + x + ", " + y);
 	}
 	
 	/**

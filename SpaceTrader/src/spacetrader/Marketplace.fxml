@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.MarketplaceController">
+   <children>
+      <ImageView fitHeight="479.0" fitWidth="891.0" layoutX="-158.0" layoutY="-21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@market.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="18.0" layoutY="56.0" text="Marketplace">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Button layoutX="157.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleBuyButtonAction" prefHeight="46.0" prefWidth="115.0" text="Buy" />
+      <Button layoutX="305.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleSellButtonAction" prefHeight="46.0" prefWidth="108.0" text="Sell" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleLeaveButtonAction" text="Leave Marketplace" />
+   </children>
+</AnchorPane>

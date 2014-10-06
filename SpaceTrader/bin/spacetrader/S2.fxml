@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -23,5 +24,13 @@
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
+      <Button layoutX="442.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
+      <Label fx:id="fundsLabel" layoutX="149.0" layoutY="335.0" text="Funds&#10;0" textAlignment="CENTER" />
+      <Label fx:id="fuelLabel" layoutX="292.0" layoutY="335.0" text="Fuel&#10;0" textAlignment="CENTER" />
+      <Label layoutX="94.0" layoutY="76.0" text="Planet S2">
+         <font>
+            <Font name="System Bold" size="83.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

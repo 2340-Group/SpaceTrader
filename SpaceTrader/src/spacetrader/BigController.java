@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,10 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class BigController implements Initializable {
+	@FXML
+	private Label fuelLabel;
+	@FXML
+	private Label fundsLabel;
 	
 	@FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
@@ -38,6 +43,20 @@ public class BigController implements Initializable {
         stageN.setScene(sceneConfig);
         stageN.show();
     }
+	
+	/**
+	 * market pop up
+	 * @param event
+	 * @throws Exception
+	 */
+	@FXML
+	public void handleMarket(ActionEvent event) throws Exception {
+		Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    }
 
     /**
      * Initializes the controller class.
@@ -45,6 +64,8 @@ public class BigController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    	fundsLabel.setText("FUNDS\n" + MainController.getPlayer().getFunds());
+    	fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
     }    
     
 }

@@ -1,0 +1,15 @@
+Completed:
+Player Spawns
+Player has location
+Player location changes w/ planet
+Planets labeled
+funds and fuel on hud
+inventory and prices on marketplace
+marketplace buy and sell screens
+
+
+TO DO BEFORE DEMO:
++/- fuel
+	- traveling planets, etc
++/- funds & inventory when buying/selling
+	- when passed boundary, dont worry about popups, just play deny sound.

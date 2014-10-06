@@ -35,18 +35,20 @@ public class SpaceTrader extends Application {
      */
     public static void main(String[] args) {
 
-    	Universe u = new Universe();
+    	/*Universe u = new Universe();
     	
-    	u.generateUniverse();
+    	u.generateUniverse();*/
     	
     	//playerGeneration plg = new playerGeneration();
     	//plg.getPlayer().setLocation(u.getPlanet("S1").getX(), u.getPlanet("S1").getY());
+    	MainController.makeUniverse();
+    	
     	
     	
     	launch(args);
     	
 
-
+    	/*
     	// ALL OF THIS IS SIMPLY TO TEST TRADE FUCNTIONALITY, CODE WILL BE REMOVED WHEN COMPLETED.
     	for (int k = 0; k < 8; k++) {
 	    	ArrayList<Resource> richMerchant = new ArrayList<>();
@@ -154,7 +156,7 @@ public class SpaceTrader extends Application {
         // buy one of everything.
         for (int j = 0; j < richMerchant.size(); j++) {
         	missingNo.buy(richMerchant.get(j), 10, pl, mahBoi);
-        }
+        }*/
     	
         
         System.exit(0);

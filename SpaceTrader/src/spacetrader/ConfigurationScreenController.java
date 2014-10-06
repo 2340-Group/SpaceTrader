@@ -212,7 +212,9 @@ public class ConfigurationScreenController implements Initializable {
             }
             System.out.println(name);
             
-            
+            MainController.makePlayer(name, pilotPoints, fighterPoints, traderPoints,
+            							engineerPoints, MainController.getUniverse().getPlanet("S1").getX(),
+            							MainController.getUniverse().getPlanet("S1").getY());
             
             Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
             Scene sceneConfig = new Scene(config);

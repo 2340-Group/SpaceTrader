@@ -41,6 +41,8 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleBigButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("Big");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Big.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -50,6 +52,8 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleGiantButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("Giant");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Giant.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -59,6 +63,8 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handlePlanetButtonAction(ActionEvent event) throws Exception {
+		MainController.setCurrentPlanet("Planet");
+		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Planet.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
