@@ -19,8 +19,9 @@ public class MarketSellController implements Initializable {
 	private int waterTotal = 0, OreTotal = 0, foodTotal = 0, 
 			fursTotal = 0, gamesTotal = 0, firearmsTotal = 0, 
 			medicineTotal = 0, machinesTotal = 0, 
-			narcoticsTotal = 0, robotsTotal = 0;
-    
+			narcoticsTotal = 0, robotsTotal = 0, tempFunds = 0;
+	@FXML
+	private Label fundsLabel;
 	@FXML
 	private Label costLabel;
 	@FXML
@@ -254,8 +255,42 @@ public class MarketSellController implements Initializable {
    	@FXML
      private void handleSellMarketAction(ActionEvent event) throws Exception {
    		//subtract inventory & add funds
+   		Marketplace missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
+   		if (waterTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(0), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (OreTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(1), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (foodTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(2), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (fursTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(3), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (gamesTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(4), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (firearmsTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(5), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (medicineTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(6), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (machinesTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(7), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (narcoticsTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(8), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
+   		if (robotsTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(9), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		}
    		
    		
+   		resetMarket();
+   		tempFunds = MainController.getPlayer().getFunds();
+   		fundsLabel.setText("FUNDS\n" + tempFunds);
    		inventoryLabel.setText(MainController.getPlayer().getShip().getCargo().printCargo());
    	}
    	
@@ -268,7 +303,37 @@ public class MarketSellController implements Initializable {
      private void handleSellAllMarketAction(ActionEvent event) throws Exception {
    		//subtract all inventory and add funds
    		
+   		
+   		
+   		
+   		
+   		
+   		
    		inventoryLabel.setText(MainController.getPlayer().getShip().getCargo().printCargo());
+   	}
+   	
+   	private void resetMarket() {
+   		waterTotal = 0;
+   		OreTotal = 0;
+   		foodTotal = 0; 
+   		fursTotal = 0;
+   		gamesTotal = 0;
+   		firearmsTotal = 0; 
+   		medicineTotal = 0;
+   		machinesTotal = 0; 
+   		narcoticsTotal = 0;
+   		robotsTotal = 0;
+   		tempFunds = 0;
+   		waterLabel.setText("WATER\n" + waterTotal);
+   		oreLabel.setText("ORE\n" + OreTotal);
+   		foodLabel.setText("FOOD\n" + foodTotal);
+   		fursLabel.setText("FURS\n" + fursTotal);
+   		gamesLabel.setText("GAMES\n" + gamesTotal);
+   		firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
+   		medicineLabel.setText("MEDICINE\n" + medicineTotal);
+   		machinesLabel.setText("MACHINES\n" + machinesTotal);
+   		narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
+   		robotsLabel.setText("ROBOTS\n" + robotsTotal);
    	}
     
     /**
@@ -288,6 +353,8 @@ public class MarketSellController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		tempFunds = MainController.getPlayer().getFunds();
+		fundsLabel.setText("FUNDS\n" + tempFunds);
 		costLabel.setText(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon().listPrices());
 		inventoryLabel.setText(MainController.getPlayer().getShip().getCargo().printCargo());
 	}

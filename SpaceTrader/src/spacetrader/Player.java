@@ -75,6 +75,14 @@ public class Player {
 	}
 	
 	/**
+	 * 
+	 * @param x - int amount of money (x should be +)
+	 */
+	public void setFunds(int x) {
+		funds = x;
+	}
+	
+	/**
 	 * sets solar system
 	 * @param ss
 	 */

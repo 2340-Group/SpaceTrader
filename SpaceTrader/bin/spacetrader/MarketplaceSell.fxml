@@ -106,6 +106,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
+            <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="83.0" text="FUNDS&#10;0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>
