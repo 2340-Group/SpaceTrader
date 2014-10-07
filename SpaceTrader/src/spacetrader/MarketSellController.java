@@ -20,6 +20,7 @@ public class MarketSellController implements Initializable {
 			fursTotal = 0, gamesTotal = 0, firearmsTotal = 0, 
 			medicineTotal = 0, machinesTotal = 0, 
 			narcoticsTotal = 0, robotsTotal = 0, tempFunds = 0;
+	private Marketplace missingNo;
 	@FXML
 	private Label fundsLabel;
 	@FXML
@@ -255,7 +256,7 @@ public class MarketSellController implements Initializable {
    	@FXML
      private void handleSellMarketAction(ActionEvent event) throws Exception {
    		//subtract inventory & add funds
-   		Marketplace missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
+   		missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
    		if (waterTotal > 0) {
    			missingNo.sell(missingNo.getResources().get(0), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
@@ -302,13 +303,13 @@ public class MarketSellController implements Initializable {
    	@FXML
      private void handleSellAllMarketAction(ActionEvent event) throws Exception {
    		//subtract all inventory and add funds
-   		
-   		
-   		
-   		
-   		
-   		
-   		
+   		missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
+   		for (int i = 0; i < missingNo.getResources().size(); i++) {
+        	missingNo.sell(missingNo.getResources().get(i), missingNo.getResources().get(i).getQuantity(), MainController.getPlayer(), MainController.getPlayer().getShip());
+        }
+   		resetMarket();
+   		tempFunds = MainController.getPlayer().getFunds();
+   		fundsLabel.setText("FUNDS\n" + tempFunds);
    		inventoryLabel.setText(MainController.getPlayer().getShip().getCargo().printCargo());
    	}
    	
