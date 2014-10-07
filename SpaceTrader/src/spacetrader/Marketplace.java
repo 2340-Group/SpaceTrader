@@ -155,10 +155,23 @@ public class Marketplace {
     /**
     * @return The Resource objects present in this planet's economy.
     */
-
     public ArrayList<Resource> getResources() {
         return resources;
     }
+    
+    /**
+     * @return resource cost
+     */
+     public int getResourceCost(String s) {
+    	 int h = 0;
+    	 for (int i = 0; i < resources.size(); i++) {
+    		 if (s.equals(resources.get(i).getName())) {
+    			 h = i;
+    		 }
+    	 }
+    	 //int x = resources.get(i).getPrice();
+         return resources.get(h).getPrice();
+     }
 
     /**
      * lists prices
