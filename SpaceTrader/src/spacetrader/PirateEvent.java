@@ -11,5 +11,12 @@ package spacetrader;
  * @author Jesse
  */
 public class PirateEvent implements Event {
+	
+	public Ship stealResources(Ship s) {
+		CargoBay cB= s.getCargo;
+		int cap = cB.getCapacity();
+		s.setCargo(new CargoBay(cap));
+		return s;
+	} 
     
 }
