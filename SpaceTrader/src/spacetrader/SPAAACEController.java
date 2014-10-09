@@ -32,11 +32,14 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+		if (MainController.getPlayer().getShip().getFuel() > 1) {
+			Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
+	        Scene sceneConfig = new Scene(config);
+	        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	        stageN.setScene(sceneConfig);
+	        stageN.show();
+		}
+		
     }
 	
 	@FXML

@@ -103,6 +103,8 @@
             </Label>
             <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="83.0" text="FUNDS&#10;0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Label fx:id="capacityLabel" prefHeight="16.0" prefWidth="358.0" text="Label" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="11" />
+            <Button mnemonicParsing="false" onAction="#handleBuyFuelAction" prefHeight="26.0" prefWidth="117.0" text="Buy Fuel" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+            <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="113.0" text="Fuel&#10;0" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </children>

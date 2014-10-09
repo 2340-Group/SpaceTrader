@@ -22,6 +22,8 @@ public class MarketBuyController implements Initializable {
 			narcoticsTotal = 0, robotsTotal = 0, tempFunds = 0, cargoTotal = 0;
 	private Marketplace missingNo;
 	@FXML
+	private Label fuelLabel;
+	@FXML
 	private Label capacityLabel;
 	@FXML
 	private Label fundsLabel;
@@ -91,6 +93,10 @@ public class MarketBuyController implements Initializable {
     private Button plusRobots;
     
     //Water
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractWater(ActionEvent event) {
     	if (waterTotal > 0) {
@@ -105,6 +111,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addWater(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Water")) {
@@ -117,6 +127,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //ORE
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractOre(ActionEvent event) {
     	if (OreTotal > 0) {
@@ -129,6 +143,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addOre(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Ore")) {
@@ -141,6 +159,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Food
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractFood(ActionEvent event) {
     	if (foodTotal > 0) {
@@ -153,6 +175,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addFood(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Food")) {
@@ -165,6 +191,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Furs
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractFurs(ActionEvent event) {
     	if (fursTotal > 0) {
@@ -177,6 +207,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addFurs(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Furs")) {
@@ -189,6 +223,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Games
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractGames(ActionEvent event) {
     	if (gamesTotal > 0) {
@@ -201,6 +239,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addGames(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Games")) {
@@ -213,6 +255,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Firearms
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractFirearms(ActionEvent event) {
     	if (firearmsTotal > 0) {
@@ -225,6 +271,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addFirearms(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Firearms")) {
@@ -237,6 +287,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Medicine
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractMedicine(ActionEvent event) {
     	if (medicineTotal > 0) {
@@ -250,6 +304,10 @@ public class MarketBuyController implements Initializable {
     	
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addMedicine(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Medicine")) {
@@ -262,6 +320,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Machines
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractMachines(ActionEvent event) {
     	if (machinesTotal > 0) {
@@ -274,6 +336,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addMachines(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Machines")) {
@@ -286,6 +352,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Narcotics
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractNarcotics(ActionEvent event) {
     	if (narcoticsTotal > 0) {
@@ -298,6 +368,10 @@ public class MarketBuyController implements Initializable {
     	//add deny sound for else
     }
     
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addNarcotics(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Narcotics")) {
@@ -310,6 +384,10 @@ public class MarketBuyController implements Initializable {
     }
     
     //Robots
+    /**
+     * remove from queue
+     * @param event
+     */
     @FXML
     private void subtractRobot(ActionEvent event) {
     	if (robotsTotal > 0) {
@@ -321,7 +399,10 @@ public class MarketBuyController implements Initializable {
     	}
     	//add deny sound for else
     }
-    
+    /**
+     * add to queue
+     * @param event
+     */
     @FXML
     private void addRobot(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Robots")) {
@@ -380,6 +461,20 @@ public class MarketBuyController implements Initializable {
    		cargoTotal = MainController.getPlayer().getShip().getCargo().getCurrentVolume();
    	}
    	
+   	@FXML
+   	private void handleBuyFuelAction(ActionEvent event) throws Exception {
+   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getType().getMaxDistance() - 10))) {
+   			MainController.getPlayer().subtractFunds(100);
+   			MainController.getPlayer().getShip().addFuel(10);
+   			tempFunds = MainController.getPlayer().getFunds();
+   	   		fundsLabel.setText("FUNDS\n" + tempFunds);
+   	   		fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
+   		}
+   	}
+   	
+   	/**
+   	 * resets totals
+   	 */
    	private void resetMarket() {
    		waterTotal = 0;
    		OreTotal = 0;
@@ -421,6 +516,7 @@ public class MarketBuyController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
 		missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
 		cargoTotal = MainController.getPlayer().getShip().getCargo().getCurrentVolume();
 		//System.out.println(cargoTotal);
