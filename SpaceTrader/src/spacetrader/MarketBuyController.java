@@ -345,31 +345,31 @@ public class MarketBuyController implements Initializable {
    			missingNo.buy(missingNo.getResources().get(0), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (OreTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(1), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(1), OreTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (foodTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(2), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(2), foodTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (fursTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(3), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(3), fursTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (gamesTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(4), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(4), gamesTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (firearmsTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(5), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(5), firearmsTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (medicineTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(6), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(6), medicineTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (machinesTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(7), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(7), machinesTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (narcoticsTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(8), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(8), narcoticsTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (robotsTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(9), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   			missingNo.buy(missingNo.getResources().get(9), robotsTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		
    		
