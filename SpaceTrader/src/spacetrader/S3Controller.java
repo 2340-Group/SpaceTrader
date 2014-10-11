@@ -37,11 +37,14 @@ public class S3Controller implements Initializable {
 	
 	@FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+		if (MainController.getPlayer().getShip().getFuel() > 0) {
+			Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
+	        Scene sceneConfig = new Scene(config);
+	        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	        stageN.setScene(sceneConfig);
+	        stageN.show();
+		}
+		
     }
 	
 	/**

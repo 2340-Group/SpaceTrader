@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 public class MainController implements Initializable {
 	
 	private static String currentPlanet;
+	private static String currentSolarSystem;
 	private static Universe u;
 	private static Player p;
 	private static ArrayList<Planet> pl;
@@ -26,10 +27,15 @@ public class MainController implements Initializable {
 		s = new Ship();
 		p = new Player(n, pilot, fight, trade, engineering, x, y, s);
 		currentPlanet = "S1";
+		currentSolarSystem = "SPAAACE";
 	}
 	
 	public static String getCurrentPlanet() {
 		return currentPlanet;
+	}
+	
+	public static String getCurrentSolarSystem() {
+		return currentSolarSystem;
 	}
 	
 	public static Player getPlayer() {
@@ -40,8 +46,19 @@ public class MainController implements Initializable {
 		currentPlanet = current;
 	}
 	
+	public static void setCurrentSolarSystem(String ss) {
+		currentSolarSystem = ss;
+	}
+	
 	public static Universe getUniverse() {
 		return u;
+	}
+	
+	public static int getFuelCost(String s) {
+		if (s.equals(currentSolarSystem)) {
+			return 1;
+		}
+		return 2;
 	}
 	
 	@Override

@@ -32,16 +32,25 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+		if (MainController.getPlayer().getShip().getFuel() > 1) {
+			Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
+	        Scene sceneConfig = new Scene(config);
+	        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	        stageN.setScene(sceneConfig);
+	        stageN.show();
+		}
+		
     }
 	
 	@FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("S1");
+		if (!MainController.getCurrentPlanet().equals("S1")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+			MainController.setCurrentPlanet("S1");
+			MainController.setCurrentSolarSystem("SPAAACE");
+			
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -52,7 +61,13 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("S2");
+		if (!MainController.getCurrentPlanet().equals("S2")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+			MainController.setCurrentPlanet("S2");
+			MainController.setCurrentSolarSystem("SPAAACE");
+			
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S2.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -63,7 +78,13 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("S3");
+		if (!MainController.getCurrentPlanet().equals("S3")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+			MainController.setCurrentPlanet("S3");
+			MainController.setCurrentSolarSystem("SPAAACE");
+			
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S3.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -74,7 +95,13 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("S3PT2");
+		if (!MainController.getCurrentPlanet().equals("S3PT2")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+			MainController.setCurrentPlanet("S3PT2");
+			MainController.setCurrentSolarSystem("SPAAACE");
+			
+		}
+		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("S3PT2.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -85,7 +112,13 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
-		MainController.setCurrentPlanet("Your Naming Sucks");
+		if (!MainController.getCurrentPlanet().equals("Your Naming Sucks")) {
+			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+			MainController.setCurrentPlanet("Your Naming Sucks");
+			MainController.setCurrentSolarSystem("SPAAACE");
+			
+		}
+		//MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
 		Parent config = FXMLLoader.load(getClass().getResource("Your Naming Sucks.fxml"));
         Scene sceneConfig = new Scene(config);

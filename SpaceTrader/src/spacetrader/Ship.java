@@ -160,8 +160,21 @@ public class Ship {
 	{
 		return gadgets.remove(0);
 	}
+	
+	/**
+	 * returns fuel
+	 * @return fuel
+	 */
 	public int getFuel() {
 		return fuel;
+	}
+	
+	/**
+	 * adds fuel
+	 * @param i
+	 */
+	public void addFuel(int i) {
+		fuel = fuel + i;
 	}
 	/**
 	 * 
@@ -214,6 +227,10 @@ public class Ship {
 	 */
 	public CargoBay getCargo() {
 		return cargo;
+	}
+	
+	public void setCargo(CargoBay cB) {
+		 cargo = cB;
 	}
 }
 //>>>>>>> FETCH_HEAD
