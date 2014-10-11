@@ -1,12 +1,19 @@
 package spacetrader;
 
+import java.io.Serializable;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 
-public class MainController implements Initializable {
+public class MainController implements Initializable, Serializable {
 	
 	private static String currentPlanet;
 	private static String currentSolarSystem;
@@ -66,4 +73,50 @@ public class MainController implements Initializable {
 		
 	}
 
+        public static void saveGame(MainController controller, String filePath) throws IOException {
+            ObjectOutputStream out = null;
+            
+            try {
+                out = new ObjectOutputStream(new FileOutputStream(filePath));
+                out.writeObject(controller);
+            } catch(FileNotFoundException ex) {
+                System.out.println("File not found.");
+                ex.printStackTrace();
+            } catch(IOException ex) {
+                System.out.println("IOException");
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if(out != null) {
+                        out.flush();
+                        out.close();
+                    }
+                } catch(IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        
+        public static MainController loadGame(String filePath) throws IOException {
+            MainController controller = null;
+            
+            try {
+                FileInputStream fileIn = new FileInputStream(filePath);
+                ObjectInputStream in = new ObjectInputStream(fileIn);
+                controller = (MainController) in.readObject();
+                in.close();
+                fileIn.close();
+            } catch(FileNotFoundException ex) {
+                System.out.println("File not found.");
+                ex.printStackTrace();
+            } catch(IOException ex) {
+                System.out.println("IOException");
+                ex.printStackTrace();
+            } catch(ClassNotFoundException ex) {
+                System.out.println("MainController class not found.");
+                ex.printStackTrace();
+            }
+            
+            return controller;
+        }
 }
