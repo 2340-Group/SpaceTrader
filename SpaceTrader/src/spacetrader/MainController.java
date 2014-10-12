@@ -1,5 +1,6 @@
 package spacetrader;
 
+import java.io.File;
 import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,70 +16,73 @@ import javafx.fxml.Initializable;
 
 public class MainController implements Initializable, Serializable {
 	
-	private static String currentPlanet;
-	private static String currentSolarSystem;
-	private static Universe u;
-	private static Player p;
-	private static ArrayList<Planet> pl;
-	private static Ship s;
-	private static ArrayList<Resource> Merchant;
+    private static String currentPlanet;
+    private static String currentSolarSystem;
+    private static Universe u;
+    private static Player p;
+    private static ArrayList<Planet> pl;
+    private static Ship s;
+    private static ArrayList<Resource> Merchant;
 
-	public static void makeUniverse() {
-		u = new Universe();
-		u.generateUniverse();
-		pl = u.getplanetList();
-		
-	}
-	
-	public static void makePlayer(String n, int pilot, int fight, int trade, int engineering, int x, int y) {
-		s = new Ship();
-		p = new Player(n, pilot, fight, trade, engineering, x, y, s);
-		currentPlanet = "S1";
-		currentSolarSystem = "SPAAACE";
-	}
-	
-	public static String getCurrentPlanet() {
-		return currentPlanet;
-	}
-	
-	public static String getCurrentSolarSystem() {
-		return currentSolarSystem;
-	}
-	
-	public static Player getPlayer() {
-		return p;
-	}
-	
-	public static void setCurrentPlanet(String current) {
-		currentPlanet = current;
-	}
-	
-	public static void setCurrentSolarSystem(String ss) {
-		currentSolarSystem = ss;
-	}
-	
-	public static Universe getUniverse() {
-		return u;
-	}
-	
-	public static int getFuelCost(String s) {
-		if (s.equals(currentSolarSystem)) {
-			return 1;
-		}
-		return 2;
-	}
-	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
+    public static void makeUniverse() {
+        u = new Universe();
+        u.generateUniverse();
+        pl = u.getplanetList();
+    }
 
-        public static void saveGame(MainController controller, String filePath) throws IOException {
-            ObjectOutputStream out = null;
-            
-            try {
-                out = new ObjectOutputStream(new FileOutputStream(filePath));
+    public static void makePlayer(String n, int pilot, int fight, int trade, int engineering, int x, int y) {
+        s = new Ship();
+        p = new Player(n, pilot, fight, trade, engineering, x, y, s);
+        currentPlanet = "S1";
+        currentSolarSystem = "SPAAACE";
+    }
+
+    public static String getCurrentPlanet() {
+        return currentPlanet;
+    }
+
+    public static String getCurrentSolarSystem() {
+        return currentSolarSystem;
+    }
+
+    public static Player getPlayer() {
+        return p;
+    }
+
+    public static void setCurrentPlanet(String current) {
+        currentPlanet = current;
+    }
+
+    public static void setCurrentSolarSystem(String ss) {
+        currentSolarSystem = ss;
+    }
+
+    public static Universe getUniverse() {
+        return u;
+    }
+
+    public static int getFuelCost(String s) {
+        if (s.equals(currentSolarSystem)) {
+            return 1;
+        }
+        return 2;
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public static void saveGame(MainController controller) throws IOException {
+    //public static void saveGame() throws IOException {
+        ObjectOutputStream out = null;
+
+        try {
+                out = new ObjectOutputStream(new FileOutputStream("saveFile.dat"));
                 out.writeObject(controller);
+                File f = new File("saveFile.dat");
+                System.out.println(f.getAbsolutePath());
+                System.out.println("Game saved.");
             } catch(FileNotFoundException ex) {
                 System.out.println("File not found.");
                 ex.printStackTrace();
@@ -97,26 +101,26 @@ public class MainController implements Initializable, Serializable {
             }
         }
         
-        public static MainController loadGame(String filePath) throws IOException {
-            MainController controller = null;
-            
-            try {
-                FileInputStream fileIn = new FileInputStream(filePath);
-                ObjectInputStream in = new ObjectInputStream(fileIn);
-                controller = (MainController) in.readObject();
-                in.close();
-                fileIn.close();
-            } catch(FileNotFoundException ex) {
-                System.out.println("File not found.");
-                ex.printStackTrace();
-            } catch(IOException ex) {
-                System.out.println("IOException");
-                ex.printStackTrace();
-            } catch(ClassNotFoundException ex) {
-                System.out.println("MainController class not found.");
-                ex.printStackTrace();
-            }
-            
-            return controller;
+    public static MainController loadGame() throws IOException {
+        MainController controller = null;
+
+        try {
+            FileInputStream fileIn = new FileInputStream("saveFile.dat");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            controller = (MainController) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch(FileNotFoundException ex) {
+            System.out.println("File not found.");
+            ex.printStackTrace();
+        } catch(IOException ex) {
+            System.out.println("IOException");
+            ex.printStackTrace();
+        } catch(ClassNotFoundException ex) {
+            System.out.println("MainController class not found.");
+            ex.printStackTrace();
         }
+
+        return controller;
+    }
 }

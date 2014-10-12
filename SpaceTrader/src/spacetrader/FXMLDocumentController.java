@@ -43,6 +43,11 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
+    private void handleLoadButtonAction(ActionEvent event) throws Exception {
+        MainController.loadGame();
+    }
+    
+    @FXML
     private void handleQuitButtonAction(ActionEvent event) throws Exception {
         System.exit(0);
     }

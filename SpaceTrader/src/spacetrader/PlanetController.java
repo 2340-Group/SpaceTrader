@@ -25,36 +25,40 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class PlanetController implements Initializable {
-	@FXML
-	private Label fuelLabel;
-	@FXML
-	private Label fundsLabel;
-	
-	@FXML
+    @FXML
+    private Label fuelLabel;
+    @FXML
+    private Label fundsLabel;
+
+    @FXML
+    private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
+        MainController.saveGame(SpaceTrader.getMainController());
+    }
+    
+    @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
         System.exit(0);
     }
 	
-	@FXML
+    @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-		if (MainController.getPlayer().getShip().getFuel() > 0) {
-			Parent config = FXMLLoader.load(getClass().getResource("NAME.fxml"));
-	        Scene sceneConfig = new Scene(config);
-	        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	        stageN.setScene(sceneConfig);
-	        stageN.show();
-		}
-		
+        if (MainController.getPlayer().getShip().getFuel() > 0) {
+            Parent config = FXMLLoader.load(getClass().getResource("NAME.fxml"));
+            Scene sceneConfig = new Scene(config);
+            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stageN.setScene(sceneConfig);
+            stageN.show();
+        }	
     }
 	
-	/**
-	 * market pop up
-	 * @param event
-	 * @throws Exception
-	 */
-	@FXML
-	public void handleMarket(ActionEvent event) throws Exception {
-		Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
+    /**
+     * market pop up
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    public void handleMarket(ActionEvent event) throws Exception {
+        Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
