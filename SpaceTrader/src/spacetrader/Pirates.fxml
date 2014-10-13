@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.PiratesController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="611.0" layoutX="-1.0">
+         <image>
+            <Image url="@PirateFlag.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="263.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleContinueButtonAction" text="Continue" />
+   </children>
+</AnchorPane>

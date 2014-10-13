@@ -44,19 +44,29 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
+                String eventType;
 		if (!MainController.getCurrentPlanet().equals("S1")) {
 			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
 			MainController.setCurrentPlanet("S1");
 			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
+			EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
+                    String trigger = randEvent.generate();
+                    if (trigger.compareTo("none") != 0) {
+                        eventType = randEvent.generate() + ".fxml";
+                    } else {
+                        eventType = "S1.fxml";
+                    }
+                } else {
+                    eventType = "S1.fxml";
+                }
 		
 		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
+             
     }
 	
 	@FXML
