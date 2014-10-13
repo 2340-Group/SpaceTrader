@@ -216,6 +216,8 @@ public class ConfigurationScreenController implements Initializable {
             							engineerPoints, MainController.getUniverse().getPlanet("S1").getX(),
             							MainController.getUniverse().getPlanet("S1").getY());
             
+            MainController.setCurrentPlanet("S1");
+            MainController.setCurrentSolarSystem("SPAAACE");
             Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
             Scene sceneConfig = new Scene(config);
             Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();

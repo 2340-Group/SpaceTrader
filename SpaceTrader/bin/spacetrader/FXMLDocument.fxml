@@ -21,7 +21,7 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets></Button>
-      <Button layoutX="169.0" layoutY="168.0" mnemonicParsing="false" opacity="0.41" text="Load Game" />
+      <Button fx:id="loadButton" layoutX="169.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleLoadButtonAction" opacity="0.41" text="Load Game" />
       <Button layoutX="284.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleQuitButtonAction" opacity="0.41" text="Quit" />
       <Label blendMode="SCREEN" layoutX="92.0" layoutY="68.0" text="Space Trader" textFill="#e40c0c">
          <font>

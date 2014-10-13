@@ -44,7 +44,7 @@ public class PlanetController implements Initializable {
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
         if (MainController.getPlayer().getShip().getFuel() > 0) {
-            Parent config = FXMLLoader.load(getClass().getResource("NAME.fxml"));
+            Parent config = FXMLLoader.load(getClass().getResource(MainController.getCurrentSolarSystem() + ".fxml"));
             Scene sceneConfig = new Scene(config);
             Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stageN.setScene(sceneConfig);
