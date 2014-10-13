@@ -19,8 +19,8 @@ import javafx.stage.Stage;
  */
 public class SpaceTrader extends Application {
     
-    private static MainController main = new MainController();
-    
+    private static MainController main;
+  
     public static MainController getMainController() {
         return main;
     }

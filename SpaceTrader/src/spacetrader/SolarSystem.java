@@ -1,5 +1,6 @@
 package spacetrader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /*
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  *
  */
 
-public class SolarSystem {
+public class SolarSystem implements Serializable {
 	
 	private String name;
 	private ArrayList<Planet> planets;

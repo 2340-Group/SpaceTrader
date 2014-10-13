@@ -1,7 +1,9 @@
 package spacetrader;
 
+import java.io.Serializable;
 
-public class Resource {
+
+public class Resource implements Serializable {
 
     private String name;
     private int basePrice;

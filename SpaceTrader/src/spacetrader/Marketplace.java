@@ -7,10 +7,11 @@
 */
 package spacetrader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Marketplace {
+public class Marketplace implements Serializable {
 
     private Double currentInflation;
     private final int ECON_SCORE_MAX = 10;

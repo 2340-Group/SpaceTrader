@@ -1,4 +1,7 @@
 package spacetrader;
+
+import java.io.Serializable;
+
 /*
  * Player.java
  *
@@ -10,7 +13,7 @@ package spacetrader;
  * @version 1.0
  *
  */
-public class Player {
+public class Player implements Serializable {
 	
 	private String name;
 	private int piloting;

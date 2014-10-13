@@ -1,4 +1,7 @@
 package spacetrader;
+
+import java.io.Serializable;
+
 /*
  * Planet.java
  *
@@ -10,7 +13,7 @@ package spacetrader;
  * @version 1.0
  *
  */
-public class Planet {
+public class Planet implements Serializable {
 	
 	private String name;
 	private int locX;

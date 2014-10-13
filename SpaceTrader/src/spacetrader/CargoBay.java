@@ -1,5 +1,6 @@
 package spacetrader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 * @author Kia Hadjkhan
 */
 
-public class CargoBay {
+public class CargoBay implements Serializable {
 
 	private int capacity;
 	private int currentVolume;

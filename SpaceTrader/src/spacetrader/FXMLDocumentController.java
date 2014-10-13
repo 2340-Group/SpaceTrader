@@ -45,6 +45,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleLoadButtonAction(ActionEvent event) throws Exception {
         MainController.loadGame();
+        
+        mediaPlayer.stop();
+        String planetName = MainController.getCurrentPlanet();
+        Parent currentPlanet = FXMLLoader.load(getClass().getResource(planetName + ".fxml"));
+        Scene scenePlanet = new Scene(currentPlanet);
+        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stageN.setScene(scenePlanet);
+        stageN.show();
     }
     
     @FXML

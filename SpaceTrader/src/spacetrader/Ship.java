@@ -1,8 +1,9 @@
 package spacetrader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Ship {
+public class Ship implements Serializable {
 	private ShipType shipT;
 	private int reputation;
 //	private Planet location; Kept by owner of Ship

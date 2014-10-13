@@ -1,9 +1,10 @@
 package spacetrader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Universe {
+public class Universe implements Serializable {
 	private ArrayList<SolarSystem> universe;
 	
 	private SolarSystem Space;

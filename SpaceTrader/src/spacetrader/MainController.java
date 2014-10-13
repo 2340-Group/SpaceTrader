@@ -22,8 +22,8 @@ public class MainController implements Initializable, Serializable {
     private static Player p;
     private static ArrayList<Planet> pl;
     private static Ship s;
-    private static ArrayList<Resource> Merchant;
-
+    private static ArrayList<Resource> merchant;
+    
     public static void makeUniverse() {
         u = new Universe();
         u.generateUniverse();
@@ -73,16 +73,28 @@ public class MainController implements Initializable, Serializable {
 
     }
 
-    public static void saveGame(MainController controller) throws IOException {
-    //public static void saveGame() throws IOException {
+    public static void saveGame() throws IOException {
+        String savePlanet = currentPlanet;
+        String saveSolarSystem = currentSolarSystem;
+        Universe saveUniverse = u;
+        Player savePlayer = p;
+        ArrayList<Planet> savePl = pl;
+        Ship saveShip = s;
+        ArrayList<Resource> saveMerchant = merchant;
+        
         ObjectOutputStream out = null;
 
         try {
                 out = new ObjectOutputStream(new FileOutputStream("saveFile.dat"));
-                out.writeObject(controller);
+                out.writeObject(savePlanet);
+                out.writeObject(saveSolarSystem);
+                out.writeObject(saveUniverse);
+                out.writeObject(savePlayer);
+                out.writeObject(savePl);
+                out.writeObject(saveShip);
+                out.writeObject(saveMerchant);
                 File f = new File("saveFile.dat");
-                System.out.println(f.getAbsolutePath());
-                System.out.println("Game saved.");
+                System.out.println("Game saved to " + f.getAbsolutePath());
             } catch(FileNotFoundException ex) {
                 System.out.println("File not found.");
                 ex.printStackTrace();
@@ -101,15 +113,23 @@ public class MainController implements Initializable, Serializable {
             }
         }
         
-    public static MainController loadGame() throws IOException {
-        MainController controller = null;
+    public static void loadGame() throws IOException {
 
         try {
             FileInputStream fileIn = new FileInputStream("saveFile.dat");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            controller = (MainController) in.readObject();
+            
+            currentPlanet = (String) in.readObject();
+            currentSolarSystem = (String) in.readObject();
+            u = (Universe) in.readObject();
+            p = (Player) in.readObject();
+            pl = (ArrayList<Planet>) in.readObject();
+            s = (Ship) in.readObject();
+            merchant = (ArrayList<Resource>) in.readObject();
+            
             in.close();
             fileIn.close();
+            System.out.println("Game loaded.");
         } catch(FileNotFoundException ex) {
             System.out.println("File not found.");
             ex.printStackTrace();
@@ -120,7 +140,5 @@ public class MainController implements Initializable, Serializable {
             System.out.println("MainController class not found.");
             ex.printStackTrace();
         }
-
-        return controller;
     }
 }

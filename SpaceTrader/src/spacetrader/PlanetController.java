@@ -32,7 +32,8 @@ public class PlanetController implements Initializable {
 
     @FXML
     private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
-        MainController.saveGame(SpaceTrader.getMainController());
+        //MainController.saveGame(SpaceTrader.getMainController());
+        MainController.saveGame();
     }
     
     @FXML
