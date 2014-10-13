@@ -85,33 +85,33 @@ public class MainController implements Initializable, Serializable {
         ObjectOutputStream out = null;
 
         try {
-                out = new ObjectOutputStream(new FileOutputStream("saveFile.dat"));
-                out.writeObject(savePlanet);
-                out.writeObject(saveSolarSystem);
-                out.writeObject(saveUniverse);
-                out.writeObject(savePlayer);
-                out.writeObject(savePl);
-                out.writeObject(saveShip);
-                out.writeObject(saveMerchant);
-                File f = new File("saveFile.dat");
-                System.out.println("Game saved to " + f.getAbsolutePath());
-            } catch(FileNotFoundException ex) {
-                System.out.println("File not found.");
-                ex.printStackTrace();
-            } catch(IOException ex) {
-                System.out.println("IOException");
-                ex.printStackTrace();
-            } finally {
-                try {
-                    if(out != null) {
-                        out.flush();
-                        out.close();
-                    }
-                } catch(IOException ex) {
-                    ex.printStackTrace();
+            out = new ObjectOutputStream(new FileOutputStream("saveFile.dat"));
+            out.writeObject(savePlanet);
+            out.writeObject(saveSolarSystem);
+            out.writeObject(saveUniverse);
+            out.writeObject(savePlayer);
+            out.writeObject(savePl);
+            out.writeObject(saveShip);
+            out.writeObject(saveMerchant);
+            File f = new File("saveFile.dat");
+            System.out.println("Game saved to " + f.getAbsolutePath());
+        } catch(FileNotFoundException ex) {
+            System.out.println("File not found.");
+            ex.printStackTrace();
+        } catch(IOException ex) {
+            System.out.println("IOException");
+            ex.printStackTrace();
+        } finally {
+            try {
+                if(out != null) {
+                    out.flush();
+                    out.close();
                 }
+            } catch(IOException ex) {
+                ex.printStackTrace();
             }
         }
+    }
         
     public static void loadGame() throws IOException {
 
