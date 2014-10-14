@@ -24,6 +24,8 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class SPAAACEController implements Initializable {
+    
+    private String eventType;
 	
 	@FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
@@ -44,15 +46,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("S1")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-			MainController.setCurrentPlanet("S1");
-			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
-		
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+        NameHelper("S1", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -61,15 +57,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("S2")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-			MainController.setCurrentPlanet("S2");
-			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
-		
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("S2.fxml"));
+        NameHelper("S2", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -78,15 +68,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("S3")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-			MainController.setCurrentPlanet("S3");
-			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
-		
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("S3.fxml"));
+	NameHelper("S3", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -95,15 +79,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("S3PT2")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-			MainController.setCurrentPlanet("S3PT2");
-			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
-		
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("S3PT2.fxml"));
+	NameHelper("S3PT2", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -112,15 +90,9 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("Your Naming Sucks")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-			MainController.setCurrentPlanet("Your Naming Sucks");
-			MainController.setCurrentSolarSystem("SPAAACE");
-			
-		}
-		//MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("Your Naming Sucks.fxml"));
+	NameHelper("Your Naming Sucks", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -133,6 +105,29 @@ public class SPAAACEController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
+    private void NameHelper(String planet, ActionEvent event)throws Exception{
+        this.eventType = "none";
+		if (!MainController.getCurrentPlanet().equals(planet)) {
+                    MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+                    MainController.setCurrentPlanet(planet);
+                    MainController.setCurrentSolarSystem("SPAAACE");
+                    EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
+                    this.eventType = randEvent.generate();
+                    if (!eventType.equals("none")) {
+                        if(eventType.equals("Pirates") || eventType.equals("Police")) {
+                        this.eventType = eventType + ".fxml";
+                        System.out.print(eventType);
+                        return;
+                        } else {
+                            this.eventType = planet + ".fxml";
+                            return;
+                        }
+                    }
+                }
+                this.eventType = planet + ".fxml";
+		
+    }
     
 }

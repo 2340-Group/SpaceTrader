@@ -20,7 +20,7 @@ public class PirateEvent implements Event {
 		return s;
 	}
 	
-	//
+	//challenge the pirates
 	public boolean attack(Ship s) {
 		return s.takeDamageRepair(-20);
 	}

@@ -52,6 +52,8 @@ public class EventGenerator {
      * @return Event type that is randomly chosen based on the corresponding
      *          event probability.
      */
+    
+    
     public Event generate() {
         double policeProb = calculatePolice();
         double pirateProb = calculatePirate();
@@ -78,4 +80,4 @@ public class EventGenerator {
         
         return null;
     }
-}
+   }

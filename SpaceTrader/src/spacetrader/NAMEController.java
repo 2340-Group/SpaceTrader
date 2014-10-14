@@ -25,6 +25,8 @@ import javafx.stage.Stage;
  */
 public class NAMEController implements Initializable {
 	
+    private String eventType;
+    
 	@FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
         System.exit(0);
@@ -44,15 +46,9 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleBigButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("Big")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
-			MainController.setCurrentPlanet("Big");
-			MainController.setCurrentSolarSystem("NAME");
-			
-		}
-		
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("Big.fxml"));
+	NameHelper("Big", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -61,15 +57,9 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleGiantButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("Giant")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
-			MainController.setCurrentPlanet("Giant");
-			MainController.setCurrentSolarSystem("NAME");
-			
-		}
-
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("Giant.fxml"));
+	NameHelper("Giant", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -78,14 +68,9 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handlePlanetButtonAction(ActionEvent event) throws Exception {
-		if (!MainController.getCurrentPlanet().equals("Planet")) {
-			MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
-			MainController.setCurrentPlanet("Planet");
-			MainController.setCurrentSolarSystem("NAME");
-			
-		}
-		MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-		Parent config = FXMLLoader.load(getClass().getResource("Planet.fxml"));
+	NameHelper("Planet", event);
+        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
+        Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stageN.setScene(sceneConfig);
@@ -99,5 +84,28 @@ public class NAMEController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    private void NameHelper(String planet, ActionEvent event)throws Exception{
+        this.eventType = "none";
+		if (!MainController.getCurrentPlanet().equals(planet)) {
+                    MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
+                    MainController.setCurrentPlanet(planet);
+                    MainController.setCurrentSolarSystem("NAME");
+                    EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
+                    this.eventType = randEvent.generate();
+                    if (!eventType.equals("none")) {
+                        if(eventType.equals("Pirates") || eventType.equals("Police")) {
+                        this.eventType = eventType + ".fxml";
+                        //System.out.print(eventType);
+                        return;
+                        } else {
+                            this.eventType = planet + ".fxml";
+                            return;
+                        }
+                    }
+                }
+                this.eventType = planet + ".fxml";
+		
+    }
     
 }
