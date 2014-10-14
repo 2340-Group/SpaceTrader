@@ -29,6 +29,11 @@ public class FXMLDocumentController implements Initializable {
     private Media introSong;
     private MediaPlayer mediaPlayer;
 
+    /**
+     * Goes to ConfigurationScreen to start new game
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws Exception {
         mediaPlayer.stop();
@@ -42,6 +47,11 @@ public class FXMLDocumentController implements Initializable {
         stageN.show();
     }
     
+    /**
+     * Loads the saved game file
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleLoadButtonAction(ActionEvent event) throws Exception {
         MainController.loadGame();
@@ -55,6 +65,11 @@ public class FXMLDocumentController implements Initializable {
         stageN.show();
     }
     
+    /**
+     * Quits the game
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleQuitButtonAction(ActionEvent event) throws Exception {
         System.exit(0);

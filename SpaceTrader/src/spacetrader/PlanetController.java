@@ -30,16 +30,31 @@ public class PlanetController implements Initializable {
     @FXML
     private Label fundsLabel;
 
+    /**
+     * Saves the game
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
         MainController.saveGame();
     }
     
+    /**
+     * Quits the game
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
         System.exit(0);
     }
-	
+    
+    /**
+     * Exits to the SolarSystem
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
         if (MainController.getPlayer().getShip().getFuel() > 0) {

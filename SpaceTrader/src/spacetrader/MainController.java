@@ -73,6 +73,10 @@ public class MainController implements Initializable, Serializable {
 
     }
 
+    /**
+     * Saves the game
+     * @throws IOException 
+     */
     public static void saveGame() throws IOException {
         String savePlanet = currentPlanet;
         String saveSolarSystem = currentSolarSystem;
@@ -113,6 +117,10 @@ public class MainController implements Initializable, Serializable {
         }
     }
         
+    /**
+     * Loads the saved game file
+     * @throws IOException 
+     */
     public static void loadGame() throws IOException {
 
         try {
