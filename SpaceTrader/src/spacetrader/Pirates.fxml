@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -15,5 +16,15 @@
          </image>
       </ImageView>
       <Button layoutX="263.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleContinueButtonAction" text="Continue" />
+      <Text fill="RED" layoutX="211.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pirate Attack!">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fill="RED" layoutX="51.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items in Cargo Bay: 0" wrappingWidth="125.8310546875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

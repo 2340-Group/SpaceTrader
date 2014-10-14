@@ -35,17 +35,17 @@ public class EventGeneratorSimple {
      *          event probability.
      */
     public String generate() {
-        double policeProb = 0;
-        double pirateProb = 1;
+        double policeProb = Math.random();
+        double pirateProb = Math.random();
         double policeRNG = Math.random();
         double pirateRNG = Math.random();
         double eventChance = Math.random();
         
-        if(eventChance <= baseProb) {
+        if(eventChance <= 1) {
         if (policeRNG <= policeProb && pirateRNG <= pirateProb) {
             if (policeRNG > pirateRNG) {
                 PoliceEvent pe = new PoliceEvent();
-                pe.confiscateCash(player);
+                pe.act(player);
                 return "Police";
             } else if (pirateRNG > policeRNG) {
                 PirateEvent pe = new PirateEvent();
@@ -54,7 +54,7 @@ public class EventGeneratorSimple {
             } else {
                 if (Math.random() < 0.5) {
                     PoliceEvent pe = new PoliceEvent();
-                    pe.confiscateCash(player);
+                    pe.act(player);
                     return "Police";
                 } else {
                     PirateEvent pe = new PirateEvent();
@@ -64,12 +64,14 @@ public class EventGeneratorSimple {
             }
         } else if (policeRNG <= policeProb) {
             PoliceEvent pe = new PoliceEvent();
-            pe.confiscateCash(player);
+            pe.act(player);
             return "Police";
         } else if (pirateRNG <= pirateProb) {
             PirateEvent pe = new PirateEvent();
             pe.stealResources(player.getShip());
             return "Pirates";
+        } else {
+            return "none";
         }
         }
         return "none";
