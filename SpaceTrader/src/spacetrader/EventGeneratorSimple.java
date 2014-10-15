@@ -41,7 +41,7 @@ public class EventGeneratorSimple {
         double pirateRNG = Math.random();
         double eventChance = Math.random();
         
-        if(eventChance <= 1) {
+        if(eventChance <= baseProb) {
         if (policeRNG <= policeProb && pirateRNG <= pirateProb) {
             if (policeRNG > pirateRNG) {
                 PoliceEvent pe = new PoliceEvent();
