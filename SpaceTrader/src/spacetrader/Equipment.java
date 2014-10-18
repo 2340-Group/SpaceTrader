@@ -1,16 +1,19 @@
 package spacetrader;
 
 public enum Equipment {
-	SHEILD(100),
-	WEAPON(100),
-	GADGET(100);
+	
+	BASIC(50),
+	NORMAL(100),
+	ADVANCED(200),
+	CHEAPSHOT(Integer.MAX_VALUE);
 	
 	private int powerLeft;
-	private final int MAXPOWER = 100;
+	private final int MAXPOWER;
 	
 	Equipment(int pow)
 	{
 		powerLeft = pow;
+		MAXPOWER = pow;
 	}
 	
 	public int getPower()
