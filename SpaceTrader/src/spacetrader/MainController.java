@@ -36,9 +36,28 @@ public class MainController implements Initializable, Serializable {
         currentPlanet = "S1";
         currentSolarSystem = "SPAAACE";
     }
-
+    
+    /**
+     * @return the String name of current location
+     */
     public static String getCurrentPlanet() {
         return currentPlanet;
+    }
+    
+    /**
+     * @return the Planet Object of current location
+     */
+    public static Planet getPlanetNotString() {
+    	Planet currentP = new Planet(currentPlanet, 0, 0, 0, 0);
+        int i = pl.indexOf(currentP);
+        if(i >= 0)
+        {
+        	return pl.get(i);
+        }
+        else
+        {
+        	return null;
+        }
     }
 
     public static String getCurrentSolarSystem() {

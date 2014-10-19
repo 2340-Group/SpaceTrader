@@ -32,5 +32,6 @@
             <Font name="System Bold" size="45.0" />
          </font>
       </Label>
+      <Button layoutX="491.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

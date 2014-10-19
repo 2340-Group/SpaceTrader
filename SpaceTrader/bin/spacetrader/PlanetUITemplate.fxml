@@ -23,5 +23,6 @@
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" text="Leave Planet" />
+      <Button layoutX="491.0" layoutY="311.0" mnemonicParsing="false" text="Shipyard" />
    </children>
 </AnchorPane>

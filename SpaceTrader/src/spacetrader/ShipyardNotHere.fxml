@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.ShipyardNotHereController">
+   <children>
+      <ImageView fitHeight="412.0" fitWidth="607.0" layoutX="-2.0" layoutY="-6.0">
+         <image>
+            <Image url="@ShipyardNot.JPG" />
+         </image>
+      </ImageView>
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleLeaveShipyard" text="Leave Shipyard" />
+      <Text layoutX="109.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This planet has too low a Tech Level.">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="56.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="When you asked for directions to the Shipyard,">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="198.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="they sent you here.">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
