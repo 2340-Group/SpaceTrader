@@ -79,6 +79,20 @@ public class PlanetController implements Initializable {
         stageN.setScene(sceneConfig);
         stageN.show();
     }
+    
+    /**
+     * ship stats
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    public void handleAccessShip(ActionEvent event) throws Exception {
+        Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    }
 
     /**
      * Initializes the controller class.

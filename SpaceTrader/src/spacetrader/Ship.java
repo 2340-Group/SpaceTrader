@@ -8,9 +8,9 @@ public class Ship implements Serializable {
 	private int reputation;
 //	private Planet location; Kept by owner of Ship
 	private String name;
-	private ArrayList<Equipment> weapons;
-	private ArrayList<Equipment> sheilds;
-	private ArrayList<Equipment> gadgets;
+	private ArrayList<Equipment> weapons = new ArrayList<Equipment>();
+	private ArrayList<Equipment> sheilds = new ArrayList<Equipment>();
+	private ArrayList<Equipment> gadgets = new ArrayList<Equipment>();
 	private int fuel;
 	private int health;
 	private CargoBay cargo;
@@ -122,6 +122,13 @@ public class Ship implements Serializable {
 		return weapons.remove(0);
 	}
 	/**
+	 * returns sheilds
+	 * @return sheilds
+	 */
+	public ArrayList<Equipment> getSheilds() {
+		return sheilds;
+	}
+	/**
 	 * @param she - Equipment Sheild to be added (does NOT check to ensure it is a sheild)
 	 * @return true if added properly
 	 */
@@ -140,6 +147,13 @@ public class Ship implements Serializable {
 	public Equipment removeSheild()
 	{
 		return sheilds.remove(0);
+	}
+	/**
+	 * returns gadgets
+	 * @return gadgets
+	 */
+	public ArrayList<Equipment> getGadgets() {
+		return gadgets;
 	}
 	/**
 	 * @param gad - Equipment Gadget to be added (does NOT check to ensure it is a Gadget)
