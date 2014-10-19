@@ -441,6 +441,7 @@
             <Button fx:id="buyMOSQUITO" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Button fx:id="buyFIREFLY" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="buyGNAT" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#handleShipUpgrade" text="Buy Ship Upgrades" GridPane.columnIndex="2" GridPane.rowIndex="11" />
          </children>
       </GridPane>
    </children>

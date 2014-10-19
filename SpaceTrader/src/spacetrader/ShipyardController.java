@@ -83,7 +83,7 @@ public class ShipyardController implements Initializable {
    	 * buys the ship
    	 * destroys all cargo, weapons, sheilds, and gadgets
    	 * can easily result in losing the game
-   	 * drops successful buyer off at the Ship.fxml screen
+   	 * drops successful buyer off at the ShipUpgrade.fxml screen
    	 * @param event
    	 * @throws Exception
    	 */
@@ -123,16 +123,21 @@ public class ShipyardController implements Initializable {
 		   		MainController.getPlayer().setShip(newShip);
 		   		fundsLabel.setText("Funds\n" + funds);
 		   		
-		   		Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
-		        Scene sceneConfig = new Scene(config);
-		        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
-		        stageN.setScene(sceneConfig);
-		        stageN.show();
+		   		handleShipUpgrade(event);
 	   		}else{
 	   			mediaPlayer = new MediaPlayer(deny);
 	            mediaPlayer.play();
 	   		}
 	   	}
+   	}
+   	
+   	@FXML
+   	private void handleShipUpgrade(ActionEvent event) throws Exception {
+   		Parent config = FXMLLoader.load(getClass().getResource("ShipUpgrade.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
    	}
    	
     /**
