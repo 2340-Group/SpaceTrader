@@ -432,7 +432,6 @@
                </font>
             </Text>
             <Button fx:id="buyFLEA" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="buyGNAT" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button fx:id="buyBUMBLEBEE" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Button fx:id="buyBEETLE" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Button fx:id="buyHORNET" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="7" />
@@ -441,6 +440,7 @@
             <Button fx:id="buyWASP" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <Button fx:id="buyMOSQUITO" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Button fx:id="buyFIREFLY" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="buyGNAT" mnemonicParsing="false" text="Current Ship" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

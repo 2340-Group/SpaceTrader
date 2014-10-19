@@ -21,6 +21,26 @@ public class ShipyardController implements Initializable {
 	private Label fundsLabel;
 	@FXML
 	private Label maxFuelLabel;
+	@FXML
+	private Button buyFLEA;
+	@FXML
+	private Button buyGNAT;
+	@FXML
+	private Button buyBUMBLEBEE;
+	@FXML
+	private Button buyBEETLE;
+	@FXML
+	private Button buyHORNET;
+	@FXML
+	private Button buyGRASSHOPPER;
+	@FXML
+	private Button buyTERMITE;
+	@FXML
+	private Button buyWASP;
+	@FXML
+	private Button buyMOSQUITO;
+	@FXML
+	private Button buyFIREFLY;
 	
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
@@ -52,6 +72,48 @@ public class ShipyardController implements Initializable {
 		fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
 	   	fuelLabel.setText("Fuel\n" + MainController.getPlayer().getShip().getFuel());
 	   	maxFuelLabel.setText("Max Fuel\n" + MainController.getPlayer().getShip().getType().getMaxDistance());
+	   	ShipType st = MainController.getPlayer().getShip().getType();
+	   	switch (st) {
+			case FLEA:
+				buyFLEA.setDisable(true);
+				buyFLEA.setText("Current Ship");
+				break;
+			case FIREFLY:
+				buyFIREFLY.setDisable(true);
+				buyFIREFLY.setText("Current Ship");
+				break;
+			case MOSQUITO:
+				buyMOSQUITO.setDisable(true);
+				buyMOSQUITO.setText("Current Ship");
+				break;
+			case BUMBLEBEE:
+				buyBUMBLEBEE.setDisable(true);
+				buyBUMBLEBEE.setText("Current Ship");
+				break;
+			case BEETLE:
+				buyBEETLE.setDisable(true);
+				buyBEETLE.setText("Current Ship");
+				break;
+			case HORNET:
+				buyHORNET.setDisable(true);
+				buyHORNET.setText("Current Ship");
+				break;
+			case GRASSHOPPER:
+				buyGRASSHOPPER.setDisable(true);
+				buyGRASSHOPPER.setText("Current Ship");
+				break;
+			case TERMITE:
+				buyTERMITE.setDisable(true);
+				buyTERMITE.setText("Current Ship");
+				break;
+			case WASP:
+				buyWASP.setDisable(true);
+				buyWASP.setText("Current Ship");
+				break;
+			default:
+				buyGNAT.setDisable(true);
+				//GNAT already says current Ship
+				break;
+		}
 	}
-
 }
