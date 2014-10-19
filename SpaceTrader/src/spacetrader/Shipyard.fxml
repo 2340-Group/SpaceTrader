@@ -376,52 +376,52 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Label text="1000000" GridPane.rowIndex="1">
+            <Label fx:id="fleaPrice" text="1000000" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="2">
+            <Label fx:id="gnatPrice" text="1000000" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="3">
+            <Label fx:id="fireflyPrice" text="1000000" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="7">
+            <Label fx:id="hornetPrice" text="1000000" GridPane.rowIndex="7">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="8">
+            <Label fx:id="grasshopperPrice" text="1000000" GridPane.rowIndex="8">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="9">
+            <Label fx:id="termitePrice" text="1000000" GridPane.rowIndex="9">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="10">
+            <Label fx:id="waspPrice" text="1000000" GridPane.rowIndex="10">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="5">
+            <Label fx:id="bumblebeePrice" text="1000000" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="4">
+            <Label fx:id="mosquitoPrice" text="1000000" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="1000000" GridPane.rowIndex="6">
+            <Label fx:id="beetlePrice" text="1000000" GridPane.rowIndex="6">
                <font>
                   <Font size="18.0" />
                </font>
@@ -431,16 +431,16 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button fx:id="buyFLEA" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="buyBUMBLEBEE" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button fx:id="buyBEETLE" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button fx:id="buyHORNET" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Button fx:id="buyGRASSHOPPER" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button fx:id="buyTERMITE" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Button fx:id="buyWASP" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Button fx:id="buyMOSQUITO" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="buyFIREFLY" mnemonicParsing="false" text="Out of Stock" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="buyGNAT" mnemonicParsing="false" text="Current Ship" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="buyFLEA" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="buyBUMBLEBEE" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button fx:id="buyBEETLE" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button fx:id="buyHORNET" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Button fx:id="buyGRASSHOPPER" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="buyTERMITE" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Button fx:id="buyWASP" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Button fx:id="buyMOSQUITO" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="buyFIREFLY" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="buyGNAT" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

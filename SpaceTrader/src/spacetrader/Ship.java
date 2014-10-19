@@ -33,9 +33,9 @@ public class Ship implements Serializable {
 	 * @param shipType
 	 * @param reputation - int
 	 * @param name - String
-	 * @param weapons - ArrayList<Equipment>
-	 * @param sheilds - ArrayList<Equipment>
-	 * @param gadgets - ArrayList<Equipment>
+	 * @param weapons - ArrayList<Equipment> (if null, will create empty ArrayList)
+	 * @param sheilds - ArrayList<Equipment> (if null, will create empty ArrayList)
+	 * @param gadgets - ArrayList<Equipment> (if null, will create empty ArrayList)
 	 * @param fuel - int
 	 * @param health - int
 	 */
@@ -45,11 +45,27 @@ public class Ship implements Serializable {
 		this.shipT = shipT;
 		this.reputation = reputation;
 		this.name = name;
-		this.weapons = weapons;
-		this.sheilds = sheilds;
-		this.gadgets = gadgets;
 		this.fuel = fuel;
 		this.health = health;
+		
+		if(weapons != null){
+			this.weapons = weapons;
+		}else{
+			this.weapons = new ArrayList<Equipment>();
+		}
+		
+		if(sheilds != null){
+			this.sheilds = sheilds;
+		}else{
+			this.sheilds = new ArrayList<Equipment>();
+		}
+		
+		if(gadgets != null){
+			this.gadgets = gadgets;
+		}else{
+			this.gadgets = new ArrayList<Equipment>();
+		}
+		cargo = new CargoBay(shipT.getCargoSlots());
 	}
 	
 	/**

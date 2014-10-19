@@ -1,5 +1,6 @@
 package spacetrader;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,15 +13,41 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class ShipyardController implements Initializable {
+	
+    private Media deny;
+    private MediaPlayer mediaPlayer;
+	
 	@FXML
 	private Label fuelLabel;
 	@FXML
 	private Label fundsLabel;
 	@FXML
 	private Label maxFuelLabel;
+	@FXML
+	private Label fleaPrice;
+	@FXML
+	private Label gnatPrice;
+	@FXML
+	private Label bumblebeePrice;
+	@FXML
+	private Label beetlePrice;
+	@FXML
+	private Label hornetPrice;
+	@FXML
+	private Label grasshopperPrice;
+	@FXML
+	private Label termitePrice;
+	@FXML
+	private Label waspPrice;
+	@FXML
+	private Label mosquitoPrice;
+	@FXML
+	private Label fireflyPrice;
 	@FXML
 	private Button buyFLEA;
 	@FXML
@@ -52,6 +79,62 @@ public class ShipyardController implements Initializable {
    		}
    	}
    	
+   	/**
+   	 * buys the ship
+   	 * destroys all cargo, weapons, sheilds, and gadgets
+   	 * can easily result in losing the game
+   	 * drops successful buyer off at the Ship.fxml screen
+   	 * @param event
+   	 * @throws Exception
+   	 */
+   	@FXML
+   	private void handleBuyShip(ActionEvent event) throws Exception {
+	   	Button clicked = (Button) event.getSource();
+	   	ShipType st = ShipType.ESCAPE;
+	   	if(clicked.equals(buyFLEA)){
+	   		st = ShipType.FLEA;
+	   	}else if(clicked.equals(buyGNAT)){
+	   		st = ShipType.GNAT;
+	   	}else if(clicked.equals(buyBUMBLEBEE)){
+	   		st = ShipType.BUMBLEBEE;
+	   	}else if(clicked.equals(buyBEETLE)){
+	   		st = ShipType.BEETLE;
+	   	}else if(clicked.equals(buyHORNET)){
+	   		st = ShipType.HORNET;
+	   	}else if(clicked.equals(buyGRASSHOPPER)){
+	   		st = ShipType.GRASSHOPPER;
+	   	}else if(clicked.equals(buyTERMITE)){
+	   		st = ShipType.TERMITE;
+	   	}else if(clicked.equals(buyWASP)){
+	   		st = ShipType.WASP;
+	   	}else if(clicked.equals(buyMOSQUITO)){
+	   		st = ShipType.MOSQUITO;
+	   	}else if(clicked.equals(buyFIREFLY)){
+	   		st = ShipType.FIREFLY;
+	   	}
+	   	if(st != ShipType.ESCAPE)
+	   	{
+	   		int funds = MainController.getPlayer().getFunds();
+	   		if(funds >= st.getPrice())
+	   		{
+	   			funds = funds - st.getPrice();
+	   			MainController.getPlayer().setFunds(funds);
+		   		Ship newShip = new Ship(st, MainController.getPlayer().getShip().getReputation(), MainController.getPlayer().getName(), null, null, null, st.getMaxDistance(), 100);
+		   		MainController.getPlayer().setShip(newShip);
+		   		fundsLabel.setText("Funds\n" + funds);
+		   		
+		   		Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
+		        Scene sceneConfig = new Scene(config);
+		        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+		        stageN.setScene(sceneConfig);
+		        stageN.show();
+	   		}else{
+	   			mediaPlayer = new MediaPlayer(deny);
+	            mediaPlayer.play();
+	   		}
+	   	}
+   	}
+   	
     /**
 	 * Leave button
 	 * @param event
@@ -69,9 +152,22 @@ public class ShipyardController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
+		deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav").toURI().toString());
+        mediaPlayer = new MediaPlayer(deny);
 		fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
 	   	fuelLabel.setText("Fuel\n" + MainController.getPlayer().getShip().getFuel());
 	   	maxFuelLabel.setText("Max Fuel\n" + MainController.getPlayer().getShip().getType().getMaxDistance());
+	   	fleaPrice.setText(" " + ShipType.FLEA.getPrice());
+	   	gnatPrice.setText(" " + ShipType.GNAT.getPrice());
+	   	bumblebeePrice.setText(" " + ShipType.BUMBLEBEE.getPrice());
+	   	beetlePrice.setText(" " + ShipType.BEETLE.getPrice());
+	   	hornetPrice.setText(" " + ShipType.HORNET.getPrice());
+	   	grasshopperPrice.setText(" " + ShipType.GRASSHOPPER.getPrice());
+	   	termitePrice.setText(" " + ShipType.TERMITE.getPrice());
+	   	waspPrice.setText(" " + ShipType.WASP.getPrice());
+	   	mosquitoPrice.setText(" " + ShipType.MOSQUITO.getPrice());
+	   	fireflyPrice.setText(" " + ShipType.FIREFLY.getPrice());
+		
 	   	ShipType st = MainController.getPlayer().getShip().getType();
 	   	switch (st) {
 			case FLEA:
@@ -112,8 +208,34 @@ public class ShipyardController implements Initializable {
 				break;
 			default:
 				buyGNAT.setDisable(true);
-				//GNAT already says current Ship
+				buyGNAT.setText("Current Ship");
 				break;
 		}
+	   	int tech = MainController.getPlanetNotString().getTechLevel();
+	   	switch(tech)	// fall through on purpose
+	   	{
+	   	case 3:
+	   		buyFIREFLY.setDisable(true);
+			buyFIREFLY.setText("Out of Stock");
+			buyMOSQUITO.setDisable(true);
+			buyMOSQUITO.setText("Out of Stock");
+	   	case 4:
+			buyBUMBLEBEE.setDisable(true);
+			buyBUMBLEBEE.setText("Out of Stock");
+			buyBEETLE.setDisable(true);
+			buyBEETLE.setText("Out of Stock");
+	   	case 5:
+			buyHORNET.setDisable(true);
+			buyHORNET.setText("Out of Stock");
+			buyGRASSHOPPER.setDisable(true);
+			buyGRASSHOPPER.setText("Out of Stock");
+	   	case 6:
+	   		buyWASP.setDisable(true);
+			buyWASP.setText("Out of Stock");
+			buyTERMITE.setDisable(true);
+			buyTERMITE.setText("Out of Stock");
+	   	default:
+	   		break;	//tech level seven has all ships
+	   	}
 	}
 }
