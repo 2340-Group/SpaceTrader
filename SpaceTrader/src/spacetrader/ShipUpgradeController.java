@@ -51,6 +51,9 @@ public class ShipUpgradeController implements Initializable{
         stageN.show();
 	}
 	
+	/**
+	 * sets price of each Equipment
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{

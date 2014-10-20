@@ -47,7 +47,10 @@ public class ShipScreenController implements Initializable {
     @FXML
     private Label maxCargo;
 
-	@Override
+	/**
+	 * sets display for current Ship, CargoBay, fuel, and Equipment
+	 */
+    @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Ship displayMe = MainController.getPlayer().getShip();
 		shipType.setText("" + displayMe.getType());
@@ -97,6 +100,11 @@ public class ShipScreenController implements Initializable {
 		}
 	}
 	
+	/**
+	 * goes to Planet screen
+	 * @param event
+	 * @throws Exception
+	 */
 	@FXML
 	private void handleBackToSpaceButtonAction(ActionEvent event) throws Exception {
 		Parent config = FXMLLoader.load(getClass().getResource(MainController.getCurrentPlanet() + ".fxml"));

@@ -31,6 +31,10 @@ public class ShipyardNotHereController implements Initializable {
         stageN.setScene(sceneConfig);
         stageN.show();
     }
+    
+    /**
+     * entirely set up by the .fxml
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     	

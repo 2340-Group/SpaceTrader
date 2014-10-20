@@ -6,11 +6,10 @@ import java.util.ArrayList;
 public class Ship implements Serializable {
 	private ShipType shipT;
 	private int reputation;
-//	private Planet location; Kept by owner of Ship
 	private String name;
-	private ArrayList<Equipment> weapons = new ArrayList<Equipment>();
-	private ArrayList<Equipment> sheilds = new ArrayList<Equipment>();
-	private ArrayList<Equipment> gadgets = new ArrayList<Equipment>();
+	private ArrayList<Equipment> weapons;
+	private ArrayList<Equipment> sheilds;
+	private ArrayList<Equipment> gadgets;
 	private int fuel;
 	private int health;
 	private CargoBay cargo;
@@ -21,8 +20,12 @@ public class Ship implements Serializable {
 	public Ship()
 	{
 		shipT = ShipType.GNAT;
+		reputation = 0;
+		name = "";
+		weapons = new ArrayList<Equipment>();
+		sheilds = new ArrayList<Equipment>();
+		gadgets = new ArrayList<Equipment>();
 		fuel = shipT.getMaxDistance();
-		//fuel = 14;
 		health = 100;
 		cargo = new CargoBay(shipT.getCargoSlots());
 	}
@@ -30,9 +33,9 @@ public class Ship implements Serializable {
 	/**
 	 * None of these are checked to ensure validity with the specified ShipType
 	 * DO THIS BEFOREHAND
-	 * @param shipType
+	 * @param shipType (if null, will be default GNAT)
 	 * @param reputation - int
-	 * @param name - String
+	 * @param name - String (if null, will be set to "")
 	 * @param weapons - ArrayList<Equipment> (if null, will create empty ArrayList)
 	 * @param sheilds - ArrayList<Equipment> (if null, will create empty ArrayList)
 	 * @param gadgets - ArrayList<Equipment> (if null, will create empty ArrayList)
@@ -42,11 +45,20 @@ public class Ship implements Serializable {
 	public Ship(ShipType shipT, int reputation, String name,
 			ArrayList<Equipment> weapons, ArrayList<Equipment> sheilds, ArrayList<Equipment> gadgets,
 			int fuel, int health) {
-		this.shipT = shipT;
 		this.reputation = reputation;
-		this.name = name;
 		this.fuel = fuel;
 		this.health = health;
+		cargo = new CargoBay(shipT.getCargoSlots());
+		
+		this.shipT = shipT;
+		if(this.shipT == null){
+			this.shipT = ShipType.GNAT;
+		}
+		
+		this.name = name;
+		if(this.name == null){
+			this.name = "";
+		}
 		
 		if(weapons != null){
 			this.weapons = weapons;
@@ -65,7 +77,6 @@ public class Ship implements Serializable {
 		}else{
 			this.gadgets = new ArrayList<Equipment>();
 		}
-		cargo = new CargoBay(shipT.getCargoSlots());
 	}
 	
 	/**
@@ -73,14 +84,22 @@ public class Ship implements Serializable {
 	 * @return shipT
 	 */
 	public ShipType getType() {
+		if(shipT == null)
+		{
+			shipT = ShipType.GNAT;
+		}
 		return shipT;
 	}
 	
 	/**
 	 * sets ship type
-	 * @param shipT
+	 * @param shipT - if null, ShipType will be GNAT (default starter)
 	 */
 	public void setType(ShipType shipT) {
+		if(shipT == null)
+		{
+			shipT = ShipType.GNAT;
+		}
 		this.shipT = shipT;
 	}
 	
@@ -93,7 +112,7 @@ public class Ship implements Serializable {
 	}
 	
 	/**
-	 * 
+	 * no checks in this method
 	 * @param reputation - int amount to change current reputation by
 	 * @return int, new reputation
 	 */
@@ -104,17 +123,25 @@ public class Ship implements Serializable {
 
 	/**
 	 * returns name
-	 * @return name
+	 * @return name - might be "" but never null
 	 */
 	public String getName() {
+		if(name == null)
+		{
+			name = "";
+		}
 		return name;
 	}
 	
 	/**
 	 * returns weapons
-	 * @return weapons
+	 * @return weapons - might be empty, but never null
 	 */
 	public ArrayList<Equipment> getWeapons() {
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
 		return weapons;
 	}
 	/**
@@ -123,9 +150,14 @@ public class Ship implements Serializable {
 	 */
 	public boolean addWeapon(Equipment wea)
 	{
-		if(weapons.size() < shipT.getWeaponSlots())
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
+		if(weapons.size() < shipT.getGadgetSlots())
 		{
 			weapons.add(wea);
+			return true;
 		}
 		return false;
 	}
@@ -135,13 +167,25 @@ public class Ship implements Serializable {
 	 */
 	public Equipment removeWeapon()
 	{
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
+		if(weapons.size() < 1)
+		{
+			return Equipment.NOTHING;
+		}
 		return weapons.remove(0);
 	}
 	/**
 	 * returns sheilds
-	 * @return sheilds
+	 * @return sheilds  - might be empty, but never null
 	 */
 	public ArrayList<Equipment> getSheilds() {
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
 		return sheilds;
 	}
 	/**
@@ -150,9 +194,14 @@ public class Ship implements Serializable {
 	 */
 	public boolean addSheild(Equipment she)
 	{
-		if(sheilds.size() < shipT.getSheildSlots())
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
+		if(sheilds.size() < shipT.getGadgetSlots())
 		{
 			sheilds.add(she);
+			return true;
 		}
 		return false;
 	}
@@ -162,13 +211,25 @@ public class Ship implements Serializable {
 	 */
 	public Equipment removeSheild()
 	{
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
+		if(sheilds.size() < 1)
+		{
+			return Equipment.NOTHING;
+		}
 		return sheilds.remove(0);
 	}
 	/**
 	 * returns gadgets
-	 * @return gadgets
+	 * @return gadgets - might be empty, but never null
 	 */
 	public ArrayList<Equipment> getGadgets() {
+		if(gadgets == null)
+		{
+			gadgets = new ArrayList<Equipment>();
+		}
 		return gadgets;
 	}
 	/**
@@ -177,9 +238,14 @@ public class Ship implements Serializable {
 	 */
 	public boolean addGadget(Equipment gad)
 	{
+		if(gadgets == null)
+		{
+			gadgets = new ArrayList<Equipment>();
+		}
 		if(gadgets.size() < shipT.getGadgetSlots())
 		{
 			gadgets.add(gad);
+			return true;
 		}
 		return false;
 	}
@@ -189,6 +255,14 @@ public class Ship implements Serializable {
 	 */
 	public Equipment removeGadget()
 	{
+		if(gadgets == null)
+		{
+			gadgets = new ArrayList<Equipment>();
+		}
+		if(gadgets.size() < 1)
+		{
+			return Equipment.NOTHING;
+		}
 		return gadgets.remove(0);
 	}
 	
@@ -202,6 +276,8 @@ public class Ship implements Serializable {
 	
 	/**
 	 * adds fuel
+	 * can unsafely use fuel if i<0
+	 * no checks are made
 	 * @param i
 	 */
 	public void addFuel(int i) {
@@ -228,9 +304,13 @@ public class Ship implements Serializable {
 	
 	/**
 	 * returns health
-	 * @return health
+	 * @return health - never less than zero
 	 */
 	public int getHealth() {
+		if(health < 0)
+		{
+			health = 0;
+		}
 		return health;
 	}
 	/**
@@ -254,14 +334,25 @@ public class Ship implements Serializable {
 
 	/**
 	 * returns cargo
-	 * @return cargo
+	 * @return cargo - might be empty, but never null
 	 */
 	public CargoBay getCargo() {
+		if(cargo == null)
+		 {
+			 cargo = new CargoBay(shipT.getMaxDistance());
+		 }
 		return cargo;
 	}
 	
+	/**
+	 * 
+	 * @param cB - if null, cargo set to empty CargoBay
+	 */
 	public void setCargo(CargoBay cB) {
 		 cargo = cB;
+		 if(cargo == null)
+		 {
+			 cargo = new CargoBay(shipT.getMaxDistance());
+		 }
 	}
 }
-//>>>>>>> FETCH_HEAD

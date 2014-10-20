@@ -5,7 +5,8 @@ public enum Equipment {
 	BASIC(50),
 	NORMAL(100),
 	ADVANCED(200),
-	CHEAPSHOT(Integer.MAX_VALUE);
+	CHEAPSHOT(Integer.MAX_VALUE),
+	NOTHING(0);
 	
 	private int powerLeft;
 	private final int MAXPOWER;

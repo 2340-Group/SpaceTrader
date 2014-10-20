@@ -71,6 +71,11 @@ public class ShipyardController implements Initializable {
 	@FXML
 	private Button buyFIREFLY;
 	
+	/**
+	 * buys one unit of fuel if sufficient funds
+	 * @param event - clicked BuyFuel
+	 * @throws Exception
+	 */
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
    		if (MainController.getPlayer().getFunds() >= 10 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getType().getMaxDistance() - 1))) {
@@ -133,6 +138,11 @@ public class ShipyardController implements Initializable {
 	   	}
    	}
    	
+   	/**
+   	 * leaves screen for ShipUpgrade.fxml
+   	 * @param event - clicked buyShipUpgrade
+   	 * @throws Exception
+   	 */
    	@FXML
    	private void handleShipUpgrade(ActionEvent event) throws Exception {
    		Parent config = FXMLLoader.load(getClass().getResource("ShipUpgrade.fxml"));
@@ -143,7 +153,7 @@ public class ShipyardController implements Initializable {
    	}
    	
     /**
-	 * Leave button
+	 * Leave button goes back to planet
 	 * @param event
 	 * @throws Exception
 	 */
@@ -156,6 +166,15 @@ public class ShipyardController implements Initializable {
         stageN.show();
 	}
 	
+	/**
+	 * sets displayed numbers for:
+	 *  prices
+	 *  ability to buy based on tech level
+	 *  ability to buy based on what ship owned
+	 *  currrent fuel
+	 *  max fuel
+	 *  current funds
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
@@ -182,6 +201,10 @@ public class ShipyardController implements Initializable {
 			case FLEA:
 				buyFLEA.setDisable(true);
 				buyFLEA.setText("Current Ship");
+				break;
+			case GNAT:
+				buyGNAT.setDisable(true);
+				buyGNAT.setText("Current Ship");
 				break;
 			case FIREFLY:
 				buyFIREFLY.setDisable(true);
@@ -216,8 +239,7 @@ public class ShipyardController implements Initializable {
 				buyWASP.setText("Current Ship");
 				break;
 			default:
-				buyGNAT.setDisable(true);
-				buyGNAT.setText("Current Ship");
+				// using ESCAPE
 				break;
 		}
 	   	
