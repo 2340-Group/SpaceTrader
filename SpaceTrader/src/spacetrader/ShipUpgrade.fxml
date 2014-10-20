@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.ShipUpgradeController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weapon" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gadget" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sheild" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Basic" GridPane.columnIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced" GridPane.columnIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Normal" GridPane.columnIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button mnemonicParsing="false" onAction="#handleReturnAction" text="Leave Shipyard" GridPane.rowIndex="8" />
+      <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Funds" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label text="MaxWeapons" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="MaxGadget" GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="MaxShield" GridPane.rowIndex="6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceWB" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceWN" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceSN" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceSA" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceGA" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceWA" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceGN" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceGB" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="priceSB" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+   </children>
+</GridPane>

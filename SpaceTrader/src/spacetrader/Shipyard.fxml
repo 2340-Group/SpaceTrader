@@ -442,6 +442,7 @@
             <Button fx:id="buyFIREFLY" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Button fx:id="buyGNAT" mnemonicParsing="false" onAction="#handleBuyShip" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#handleShipUpgrade" text="Buy Ship Upgrades" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label fx:id="techLevelLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="113.0" text="Tech Level&#10;0" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.rowIndex="11" />
          </children>
       </GridPane>
    </children>

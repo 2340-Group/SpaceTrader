@@ -22,6 +22,8 @@ public class ShipyardController implements Initializable {
     private Media deny;
     private MediaPlayer mediaPlayer;
 	
+    @FXML
+	private Label techLevelLabel;
 	@FXML
 	private Label fuelLabel;
 	@FXML
@@ -172,6 +174,8 @@ public class ShipyardController implements Initializable {
 	   	waspPrice.setText(" " + ShipType.WASP.getPrice());
 	   	mosquitoPrice.setText(" " + ShipType.MOSQUITO.getPrice());
 	   	fireflyPrice.setText(" " + ShipType.FIREFLY.getPrice());
+	   	int tech = MainController.getPlanetNotString().getTechLevel();
+	   	techLevelLabel.setText("TechLevel\n" + tech);
 		
 	   	ShipType st = MainController.getPlayer().getShip().getType();
 	   	switch (st) {
@@ -216,7 +220,7 @@ public class ShipyardController implements Initializable {
 				buyGNAT.setText("Current Ship");
 				break;
 		}
-	   	int tech = MainController.getPlanetNotString().getTechLevel();
+	   	
 	   	switch(tech)	// fall through on purpose
 	   	{
 	   	case 3:
