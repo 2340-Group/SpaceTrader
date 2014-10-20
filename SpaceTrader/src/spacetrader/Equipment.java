@@ -9,16 +9,23 @@ public enum Equipment {
 	
 	private int powerLeft;
 	private final int MAXPOWER;
+	private int price;
 	
 	Equipment(int pow)
 	{
 		powerLeft = pow;
 		MAXPOWER = pow;
+		price = pow;
 	}
 	
 	public int getPower()
 	{
 		return powerLeft;
+	}
+	
+	public int getPrice()
+	{
+		return price;
 	}
 	
 	/**

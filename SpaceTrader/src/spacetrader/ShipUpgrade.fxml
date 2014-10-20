@@ -58,12 +58,12 @@
          </font>
       </Text>
       <Button mnemonicParsing="false" onAction="#handleReturnAction" text="Leave Shipyard" GridPane.rowIndex="8" />
-      <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="8">
+      <Label fx:id="funds" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="8">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Funds" GridPane.columnIndex="1" GridPane.rowIndex="8">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Funds:" GridPane.columnIndex="1" GridPane.rowIndex="8">
          <font>
             <Font size="18.0" />
          </font>
@@ -83,47 +83,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label text="priceWB" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceWN" GridPane.columnIndex="2" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceSN" GridPane.columnIndex="2" GridPane.rowIndex="5">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceSA" GridPane.columnIndex="3" GridPane.rowIndex="5">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceGA" GridPane.columnIndex="3" GridPane.rowIndex="3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceWA" GridPane.columnIndex="3" GridPane.rowIndex="1">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceGN" GridPane.columnIndex="2" GridPane.rowIndex="3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceGB" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label text="priceSB" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Label fx:id="priceBasicS" text="priceB" GridPane.columnIndex="1" GridPane.rowIndex="5">
          <font>
             <Font size="18.0" />
          </font>
@@ -137,5 +97,45 @@
       <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="4" />
       <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <Button mnemonicParsing="false" text="Buy" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Label fx:id="priceBasicW" text="priceB" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceBasicG" text="priceB" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceNormalW" text="priceN" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAdvanceW" text="priceA" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAdvanceS" text="priceA" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceAdvanceG" text="priceA" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceNormalS" text="priceN" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceNormalG" text="priceN" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </GridPane>
