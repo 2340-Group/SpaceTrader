@@ -33,7 +33,7 @@ public class Ship implements Serializable {
 	/**
 	 * None of these are checked to ensure validity with the specified ShipType
 	 * DO THIS BEFOREHAND
-	 * @param shipType (if null, will be default GNAT)
+	 * @param shipType (if null, will be NOSHIP)
 	 * @param reputation - int
 	 * @param name - String (if null, will be set to "")
 	 * @param weapons - ArrayList<Equipment> (if null, will create empty ArrayList)
@@ -52,7 +52,7 @@ public class Ship implements Serializable {
 		
 		this.shipT = shipT;
 		if(this.shipT == null){
-			this.shipT = ShipType.GNAT;
+			this.shipT = ShipType.NOSHIP;
 		}
 		
 		this.name = name;
@@ -86,7 +86,7 @@ public class Ship implements Serializable {
 	public ShipType getType() {
 		if(shipT == null)
 		{
-			shipT = ShipType.GNAT;
+			shipT = ShipType.NOSHIP;
 		}
 		return shipT;
 	}
@@ -98,7 +98,7 @@ public class Ship implements Serializable {
 	public void setType(ShipType shipT) {
 		if(shipT == null)
 		{
-			shipT = ShipType.GNAT;
+			shipT = ShipType.NOSHIP;
 		}
 		this.shipT = shipT;
 	}

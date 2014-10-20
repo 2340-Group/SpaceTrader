@@ -2,7 +2,7 @@ package spacetrader;
 
 public enum ShipType
 {
-	ESCAPE(0,0,0,0,0,0), 				//nearest planet, can be made into FLEA
+	NOSHIP(0,0,0,0,0,0), 				//nearest planet, can be made into FLEA
 	FLEA(20,0,0,0,0,1000), 			//20 parsecs,
 	GNAT(14,15,1,1,0,2000),			//14 parsecs, 15 cargo, 1 weapon, 1 gadget
 	FIREFLY(17,20,1,1,1,3000),		//17 parsecs, 20 cargo, 1 weapon, 1 gadget, 1 shield
