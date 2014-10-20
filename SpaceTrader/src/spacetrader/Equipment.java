@@ -2,9 +2,9 @@ package spacetrader;
 
 public enum Equipment {
 	
-	BASIC(50),
-	NORMAL(100),
-	ADVANCED(200),
+	BASIC_FUEL(50),
+	NORMAL_CARGO(100),
+	ADVANCED_ESC(200),
 	CHEAPSHOT(Integer.MAX_VALUE),
 	NOTHING(0);
 	
@@ -16,7 +16,7 @@ public enum Equipment {
 	{
 		powerLeft = pow;
 		MAXPOWER = pow;
-		price = pow;
+		price = pow*10;
 	}
 	
 	public int getPower()
