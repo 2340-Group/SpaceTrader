@@ -14,10 +14,10 @@
       <Button fx:id="returnToPlanet" layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#handleBackToSpaceButtonAction" text="Back to Planet" />
       <GridPane gridLinesVisible="true" layoutX="6.0" layoutY="6.0" prefHeight="358.0" prefWidth="588.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="107.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="156.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="172.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="153.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -63,47 +63,47 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild1" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="sheild1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild2" text="Empty" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="sheild2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild3" text="Empty" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Label fx:id="sheild3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon1" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="weapon1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon2" text="Empty" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Label fx:id="weapon2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon3" text="Empty" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Label fx:id="weapon3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget1" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="gadget1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget2" text="Empty" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Label fx:id="gadget2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget3" text="Empty" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Label fx:id="gadget3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>

@@ -30,6 +30,13 @@ public enum ShipType
 		SHEILD = she;
 		PRICE = pri;
 	}
+	
+	/**
+	 * DO NOT USE FOR FUEL
+	 * Ship has method .getMaxFuel()
+	 * use that instead
+	 * @return
+	 */
 	public int getMaxDistance() {
 		return PARSECS;
 	}

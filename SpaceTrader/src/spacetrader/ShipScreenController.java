@@ -53,50 +53,82 @@ public class ShipScreenController implements Initializable {
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		Ship displayMe = MainController.getPlayer().getShip();
-		shipType.setText("" + displayMe.getType());
+		ShipType st = displayMe.getType();
+		shipType.setText("" + st);
 		currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
 		currentFuel.setText("" + displayMe.getFuel());
-		maxFuel.setText("" + displayMe.getType().getMaxDistance());
+		maxFuel.setText("" + displayMe.getMaxFuel());
 		maxCargo.setText("" + displayMe.getType().getCargoSlots());
 		
-		ArrayList<Equipment> l = displayMe.getSheilds();	//Sorry
-		if(!l.isEmpty())
-		{
-			sheild1.setText("" + l.remove(0));
+		int remain = st.getSheildSlots();
+		switch (remain) {
+		case 3:
+			sheild3.setText("EMPTY");
+		case 2:
+			sheild2.setText("EMPTY");
+		case 1:
+			sheild1.setText("EMPTY");
+		default:
+			break;
 		}
-		if(!l.isEmpty())
-		{
-			sheild2.setText("" + l.remove(0));
+		remain = st.getWeaponSlots();
+		switch (remain) {
+		case 3:
+			weapon3.setText("EMPTY");
+		case 2:
+			weapon2.setText("EMPTY");
+		case 1:
+			weapon1.setText("EMPTY");
+		default:
+			break;
 		}
-		if(!l.isEmpty())
-		{
-			sheild3.setText("" + l.remove(0));
+		remain = st.getGadgetSlots();
+		switch (remain) {
+		case 3:
+			gadget3.setText("EMPTY");
+		case 2:
+			gadget2.setText("EMPTY");
+		case 1:
+			gadget1.setText("EMPTY");
+		default:
+			break;
 		}
+		
+		
+		ArrayList<Equipment> l = displayMe.getSheilds();
+		switch (l.size()) {
+		case 3:
+			sheild3.setText("" + l.get(2));
+		case 2:
+			sheild2.setText("" + l.get(1));
+		case 1:
+			sheild1.setText("" + l.get(0));
+		default:
+			break;
+		}
+		
 		l = displayMe.getWeapons();
-		if(!l.isEmpty())
-		{
-			weapon1.setText("" + l.remove(0));
+		switch (l.size()) {
+		case 3:
+			weapon3.setText("" + l.get(2));
+		case 2:
+			weapon2.setText("" + l.get(1));
+		case 1:
+			weapon1.setText("" + l.get(0));
+		default:
+			break;
 		}
-		if(!l.isEmpty())
-		{
-			weapon2.setText("" + l.remove(0));
-		}
-		if(!l.isEmpty())
-		{
-			weapon3.setText("" + l.remove(0));
-		}
+		
 		l = displayMe.getGadgets();
-		if(!l.isEmpty())
-		{
-			gadget1.setText("" + l.remove(0));
-		}
-		if(!l.isEmpty())
-		{
-			gadget2.setText("" + l.remove(0));
-		}
-		if(!l.isEmpty())
-		{
-			gadget3.setText("" + l.remove(0));
+		switch (l.size()) {
+		case 3:
+			gadget3.setText("" + l.get(2));
+		case 2:
+			gadget2.setText("" + l.get(1));
+		case 1:
+			gadget1.setText("" + l.get(0));
+		default:
+			break;
 		}
 	}
 	

@@ -78,7 +78,7 @@ public class ShipyardController implements Initializable {
 	 */
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
-   		if (MainController.getPlayer().getFunds() >= 10 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getType().getMaxDistance() - 1))) {
+   		if (MainController.getPlayer().getFunds() >= 10 && (MainController.getPlayer().getShip().getFuel() < (MainController.getPlayer().getShip().getMaxFuel()))) {
    			MainController.getPlayer().subtractFunds(10);
    			MainController.getPlayer().getShip().addFuel(1);
    	   		fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
@@ -182,7 +182,7 @@ public class ShipyardController implements Initializable {
         mediaPlayer = new MediaPlayer(deny);
 		fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
 	   	fuelLabel.setText("Fuel\n" + MainController.getPlayer().getShip().getFuel());
-	   	maxFuelLabel.setText("Max Fuel\n" + MainController.getPlayer().getShip().getType().getMaxDistance());
+	   	maxFuelLabel.setText("Max Fuel\n" + MainController.getPlayer().getShip().getMaxFuel());
 	   	fleaPrice.setText(" " + ShipType.FLEA.getPrice());
 	   	gnatPrice.setText(" " + ShipType.GNAT.getPrice());
 	   	bumblebeePrice.setText(" " + ShipType.BUMBLEBEE.getPrice());

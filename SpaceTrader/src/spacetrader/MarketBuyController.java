@@ -463,7 +463,7 @@ public class MarketBuyController implements Initializable {
    	
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
-   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getType().getMaxDistance() - 10))) {
+   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getMaxFuel() - 10))) {
    			MainController.getPlayer().subtractFunds(100);
    			MainController.getPlayer().getShip().addFuel(10);
    			tempFunds = MainController.getPlayer().getFunds();

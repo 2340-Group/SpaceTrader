@@ -135,7 +135,7 @@ public class Ship implements Serializable {
 	
 	/**
 	 * returns weapons
-	 * @return weapons - might be empty, but never null
+	 * @return weapons - NOT A COPY!!! might be empty, but never null
 	 */
 	public ArrayList<Equipment> getWeapons() {
 		if(weapons == null)
@@ -179,7 +179,7 @@ public class Ship implements Serializable {
 	}
 	/**
 	 * returns sheilds
-	 * @return sheilds  - might be empty, but never null
+	 * @return sheilds  - NOT A COPY!!! might be empty, but never null
 	 */
 	public ArrayList<Equipment> getSheilds() {
 		if(sheilds == null)
@@ -223,7 +223,7 @@ public class Ship implements Serializable {
 	}
 	/**
 	 * returns gadgets
-	 * @return gadgets - might be empty, but never null
+	 * @return gadgets - NOT A COPY!!! might be empty, but never null
 	 */
 	public ArrayList<Equipment> getGadgets() {
 		if(gadgets == null)
@@ -272,6 +272,19 @@ public class Ship implements Serializable {
 	 */
 	public int getFuel() {
 		return fuel;
+	}
+	
+	/**
+	 * returns max fuel based on ShipType and gadget
+	 * Use this, not .getType.getMaxDistance()
+	 */
+	public int getMaxFuel(){
+		int retVal = shipT.getMaxDistance();
+		if(gadgets.contains(Equipment.BASIC))
+		{
+			retVal += 5;
+		}
+		return retVal;
 	}
 	
 	/**
@@ -339,7 +352,7 @@ public class Ship implements Serializable {
 	public CargoBay getCargo() {
 		if(cargo == null)
 		 {
-			 cargo = new CargoBay(shipT.getMaxDistance());
+			 cargo = new CargoBay(shipT.getCargoSlots());
 		 }
 		return cargo;
 	}
@@ -352,7 +365,7 @@ public class Ship implements Serializable {
 		 cargo = cB;
 		 if(cargo == null)
 		 {
-			 cargo = new CargoBay(shipT.getMaxDistance());
+			 cargo = new CargoBay(shipT.getCargoSlots());
 		 }
 	}
 }
