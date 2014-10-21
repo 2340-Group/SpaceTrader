@@ -14,8 +14,7 @@ public class PirateEvent implements Event {
 	
 	//Pirates steal all of your resources
 	public Ship stealResources(Ship s) {
-		CargoBay cB= s.getCargo();
-		int cap = cB.getCapacity();
+		int cap = s.getMaxCargo();
 		s.setCargo(new CargoBay(cap));
 		return s;
 	}

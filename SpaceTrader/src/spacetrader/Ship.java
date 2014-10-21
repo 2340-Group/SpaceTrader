@@ -49,11 +49,7 @@ public class Ship implements Serializable {
 		this.fuel = fuel;
 		this.health = health;
 		cargo = new CargoBay(shipT.getCargoSlots());
-		
-		this.shipT = shipT;
-		if(this.shipT == null){
-			this.shipT = ShipType.NOSHIP;
-		}
+		setType(shipT);
 		
 		this.name = name;
 		if(this.name == null){
@@ -74,6 +70,10 @@ public class Ship implements Serializable {
 		
 		if(gadgets != null){
 			this.gadgets = gadgets;
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
 		}else{
 			this.gadgets = new ArrayList<Equipment>();
 		}
@@ -223,6 +223,7 @@ public class Ship implements Serializable {
 	}
 	/**
 	 * returns gadgets
+	 * if enlarge cargo bay removed, the CargoBay will continue having extra slots
 	 * @return gadgets - NOT A COPY!!! might be empty, but never null
 	 */
 	public ArrayList<Equipment> getGadgets() {
@@ -238,32 +239,22 @@ public class Ship implements Serializable {
 	 */
 	public boolean addGadget(Equipment gad)
 	{
-		if(gadgets == null)
-		{
+		if(gad == Equipment.NOTHING){
+			return false;
+		}else if(gadgets == null){
 			gadgets = new ArrayList<Equipment>();
 		}
+		
 		if(gadgets.size() < shipT.getGadgetSlots())
 		{
 			gadgets.add(gad);
+			if(gad == Equipment.NORMAL)
+			{
+				cargo.enlargeCapacity();
+			}
 			return true;
 		}
 		return false;
-	}
-	/**
-	 * to use a Gadget, remove it, then add it back once done
-	 * @return Equipment - longest dormant Gadget of the ship
-	 */
-	public Equipment removeGadget()
-	{
-		if(gadgets == null)
-		{
-			gadgets = new ArrayList<Equipment>();
-		}
-		if(gadgets.size() < 1)
-		{
-			return Equipment.NOTHING;
-		}
-		return gadgets.remove(0);
 	}
 	
 	/**
@@ -344,6 +335,14 @@ public class Ship implements Serializable {
 			return false;
 		}
 	}
+	
+	/**
+	 * Accounts for gadgets
+	 * @return - max capacity of CargoBay
+	 */
+	public int getMaxCargo(){
+		return cargo.getCapacity();
+	}
 
 	/**
 	 * returns cargo
@@ -352,7 +351,11 @@ public class Ship implements Serializable {
 	public CargoBay getCargo() {
 		if(cargo == null)
 		 {
-			 cargo = new CargoBay(shipT.getCargoSlots());
+			cargo = new CargoBay(shipT.getCargoSlots());
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
 		 }
 		return cargo;
 	}
@@ -365,7 +368,11 @@ public class Ship implements Serializable {
 		 cargo = cB;
 		 if(cargo == null)
 		 {
-			 cargo = new CargoBay(shipT.getCargoSlots());
+			cargo = new CargoBay(shipT.getCargoSlots());
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
 		 }
 	}
 }

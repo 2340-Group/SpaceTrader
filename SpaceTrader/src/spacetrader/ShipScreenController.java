@@ -58,7 +58,7 @@ public class ShipScreenController implements Initializable {
 		currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
 		currentFuel.setText("" + displayMe.getFuel());
 		maxFuel.setText("" + displayMe.getMaxFuel());
-		maxCargo.setText("" + displayMe.getType().getCargoSlots());
+		maxCargo.setText("" + displayMe.getMaxCargo());
 		
 		int remain = st.getSheildSlots();
 		switch (remain) {
