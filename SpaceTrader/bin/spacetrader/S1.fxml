@@ -18,19 +18,25 @@
             <Menu mnemonicParsing="false" text="Information">
                <items>
                   <MenuItem mnemonicParsing="false" text="Inventory" />
-                  <MenuItem mnemonicParsing="false" text="Ship" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAccessShip" text="Ship" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Save/Quit">
+            <Menu mnemonicParsing="false" text="Save/Quit">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Quit" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveMenuItemAction" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Quit" />
                </items>
             </Menu>
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
       <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
+      <Button layoutX="260.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleBuyMoon" text="Buy Moon" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="200.0" text="Moon Cost 2147483647" textAlignment="CENTER">
+               <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
       <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="319.0" layoutY="291.0" text="FUEL&#10;0" textAlignment="CENTER">
          <font>
             <Font size="34.0" />
@@ -41,5 +47,6 @@
             <Font size="34.0" />
          </font>
       </Label>
+      <Button layoutX="491.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

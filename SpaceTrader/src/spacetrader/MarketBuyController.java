@@ -117,7 +117,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addWater(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Water")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Water")) {
     		cargoTotal++;
     		waterTotal++;
     		waterLabel.setText("WATER\n" + waterTotal);
@@ -149,7 +149,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addOre(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Ore")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Ore")) {
     		cargoTotal++;
     		OreTotal++;
     		oreLabel.setText("ORE\n" + OreTotal);
@@ -181,7 +181,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFood(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Food")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Food")) {
     		cargoTotal++;
     		foodTotal++;
     		foodLabel.setText("FOOD\n" + foodTotal);
@@ -213,7 +213,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFurs(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Furs")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Furs")) {
     		cargoTotal++;
     		fursTotal++;
     		fursLabel.setText("FURS\n" + fursTotal);
@@ -245,7 +245,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addGames(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Games")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Games")) {
     		cargoTotal++;
     		gamesTotal++;
     		gamesLabel.setText("GAMES\n" + gamesTotal);
@@ -277,7 +277,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFirearms(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Firearms")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Firearms")) {
     		cargoTotal++;
     		firearmsTotal++;
     		firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
@@ -310,7 +310,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addMedicine(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Medicine")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Medicine")) {
     		cargoTotal++;
     		medicineTotal++;
     		medicineLabel.setText("MEDICINE\n" + medicineTotal);
@@ -342,7 +342,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addMachines(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Machines")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Machines")) {
     		cargoTotal++;
     		machinesTotal++;
     		machinesLabel.setText("MACHINES\n" + machinesTotal);
@@ -374,7 +374,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addNarcotics(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Narcotics")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Narcotics")) {
     		cargoTotal++;
     		narcoticsTotal++;
     		narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
@@ -405,7 +405,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addRobot(ActionEvent event) {
-    	if (cargoTotal < MainController.getPlayer().getShip().getType().getCargoSlots() && tempFunds >= missingNo.getResourceCost("Robots")) {
+    	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Robots")) {
     		cargoTotal++;
     		robotsTotal++;
     		robotsLabel.setText("ROBOTS\n" + robotsTotal);
@@ -463,7 +463,7 @@ public class MarketBuyController implements Initializable {
    	
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
-   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getType().getMaxDistance() - 10))) {
+   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getMaxFuel() - 10))) {
    			MainController.getPlayer().subtractFunds(100);
    			MainController.getPlayer().getShip().addFuel(10);
    			tempFunds = MainController.getPlayer().getFunds();
@@ -515,12 +515,10 @@ public class MarketBuyController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
 		missingNo = MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon();
 		cargoTotal = MainController.getPlayer().getShip().getCargo().getCurrentVolume();
-		//System.out.println(cargoTotal);
-		capacityLabel.setText("Your ship holds a maximum of " + MainController.getPlayer().getShip().getType().getCargoSlots() + " resources.");
+		capacityLabel.setText("Your ship holds a maximum of " + MainController.getPlayer().getShip().getMaxCargo() + " resources.");
 		tempFunds = MainController.getPlayer().getFunds();
 		fundsLabel.setText("FUNDS\n" + tempFunds);
 		costLabel.setText(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon().listPrices());

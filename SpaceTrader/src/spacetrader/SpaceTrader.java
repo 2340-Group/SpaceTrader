@@ -29,7 +29,7 @@ public class SpaceTrader extends Application {
     public void start(Stage stage) throws Exception {
     	Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
-        
+        System.out.println("" + Integer.MAX_VALUE);
         stage.setScene(scene);
         stage.show();
     }

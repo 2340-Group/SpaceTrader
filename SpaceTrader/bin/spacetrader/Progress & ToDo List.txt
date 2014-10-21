@@ -1,4 +1,14 @@
 Completed:
+
+
+ToDo:
+
+
+
+
+**********************************************
+M7
+Completed:
 Player Spawns
 Player has location
 Player location changes w/ planet

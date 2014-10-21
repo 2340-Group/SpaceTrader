@@ -45,6 +45,22 @@ public class Planet implements Serializable {
 		//items = i;
 		
     }
+    
+    /**
+     * Planets are now considered equal if they have the same name
+     */
+    @Override
+    public boolean equals(Object obj) {
+    	if(obj != null && obj instanceof Planet)
+    	{
+    		return ((Planet)obj).name.equals(this.name);
+    	}
+    	return false;
+    }
+    @Override
+    public int hashCode() {
+    	return name.hashCode();
+    }
 
     /**
      * sets location

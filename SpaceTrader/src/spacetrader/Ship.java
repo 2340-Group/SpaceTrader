@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Ship implements Serializable {
 	private ShipType shipT;
 	private int reputation;
-//	private Planet location; Kept by owner of Ship
 	private String name;
 	private ArrayList<Equipment> weapons;
 	private ArrayList<Equipment> sheilds;
@@ -21,8 +20,12 @@ public class Ship implements Serializable {
 	public Ship()
 	{
 		shipT = ShipType.GNAT;
+		reputation = 0;
+		name = "";
+		weapons = new ArrayList<Equipment>();
+		sheilds = new ArrayList<Equipment>();
+		gadgets = new ArrayList<Equipment>();
 		fuel = shipT.getMaxDistance();
-		//fuel = 14;
 		health = 100;
 		cargo = new CargoBay(shipT.getCargoSlots());
 	}
@@ -30,26 +33,50 @@ public class Ship implements Serializable {
 	/**
 	 * None of these are checked to ensure validity with the specified ShipType
 	 * DO THIS BEFOREHAND
-	 * @param shipType
+	 * @param shipType (if null, will be NOSHIP)
 	 * @param reputation - int
-	 * @param name - String
-	 * @param weapons - ArrayList<Equipment>
-	 * @param sheilds - ArrayList<Equipment>
-	 * @param gadgets - ArrayList<Equipment>
+	 * @param name - String (if null, will be set to "")
+	 * @param weapons - ArrayList<Equipment> (if null, will create empty ArrayList)
+	 * @param sheilds - ArrayList<Equipment> (if null, will create empty ArrayList)
+	 * @param gadgets - ArrayList<Equipment> (if null, will create empty ArrayList)
 	 * @param fuel - int
 	 * @param health - int
 	 */
 	public Ship(ShipType shipT, int reputation, String name,
 			ArrayList<Equipment> weapons, ArrayList<Equipment> sheilds, ArrayList<Equipment> gadgets,
 			int fuel, int health) {
-		this.shipT = shipT;
 		this.reputation = reputation;
-		this.name = name;
-		this.weapons = weapons;
-		this.sheilds = sheilds;
-		this.gadgets = gadgets;
 		this.fuel = fuel;
 		this.health = health;
+		cargo = new CargoBay(shipT.getCargoSlots());
+		setType(shipT);
+		
+		this.name = name;
+		if(this.name == null){
+			this.name = "";
+		}
+		
+		if(weapons != null){
+			this.weapons = weapons;
+		}else{
+			this.weapons = new ArrayList<Equipment>();
+		}
+		
+		if(sheilds != null){
+			this.sheilds = sheilds;
+		}else{
+			this.sheilds = new ArrayList<Equipment>();
+		}
+		
+		if(gadgets != null){
+			this.gadgets = gadgets;
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
+		}else{
+			this.gadgets = new ArrayList<Equipment>();
+		}
 	}
 	
 	/**
@@ -57,14 +84,22 @@ public class Ship implements Serializable {
 	 * @return shipT
 	 */
 	public ShipType getType() {
+		if(shipT == null)
+		{
+			shipT = ShipType.NOSHIP;
+		}
 		return shipT;
 	}
 	
 	/**
 	 * sets ship type
-	 * @param shipT
+	 * @param shipT - if null, ShipType will be GNAT (default starter)
 	 */
 	public void setType(ShipType shipT) {
+		if(shipT == null)
+		{
+			shipT = ShipType.NOSHIP;
+		}
 		this.shipT = shipT;
 	}
 	
@@ -77,7 +112,7 @@ public class Ship implements Serializable {
 	}
 	
 	/**
-	 * 
+	 * no checks in this method
 	 * @param reputation - int amount to change current reputation by
 	 * @return int, new reputation
 	 */
@@ -88,17 +123,25 @@ public class Ship implements Serializable {
 
 	/**
 	 * returns name
-	 * @return name
+	 * @return name - might be "" but never null
 	 */
 	public String getName() {
+		if(name == null)
+		{
+			name = "";
+		}
 		return name;
 	}
 	
 	/**
 	 * returns weapons
-	 * @return weapons
+	 * @return weapons - NOT A COPY!!! might be empty, but never null
 	 */
 	public ArrayList<Equipment> getWeapons() {
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
 		return weapons;
 	}
 	/**
@@ -107,9 +150,14 @@ public class Ship implements Serializable {
 	 */
 	public boolean addWeapon(Equipment wea)
 	{
-		if(weapons.size() < shipT.getWeaponSlots())
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
+		if(weapons.size() < shipT.getGadgetSlots())
 		{
 			weapons.add(wea);
+			return true;
 		}
 		return false;
 	}
@@ -119,7 +167,26 @@ public class Ship implements Serializable {
 	 */
 	public Equipment removeWeapon()
 	{
+		if(weapons == null)
+		{
+			weapons = new ArrayList<Equipment>();
+		}
+		if(weapons.size() < 1)
+		{
+			return Equipment.NOTHING;
+		}
 		return weapons.remove(0);
+	}
+	/**
+	 * returns sheilds
+	 * @return sheilds  - NOT A COPY!!! might be empty, but never null
+	 */
+	public ArrayList<Equipment> getSheilds() {
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
+		return sheilds;
 	}
 	/**
 	 * @param she - Equipment Sheild to be added (does NOT check to ensure it is a sheild)
@@ -127,9 +194,14 @@ public class Ship implements Serializable {
 	 */
 	public boolean addSheild(Equipment she)
 	{
-		if(sheilds.size() < shipT.getSheildSlots())
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
+		if(sheilds.size() < shipT.getGadgetSlots())
 		{
 			sheilds.add(she);
+			return true;
 		}
 		return false;
 	}
@@ -139,7 +211,27 @@ public class Ship implements Serializable {
 	 */
 	public Equipment removeSheild()
 	{
+		if(sheilds == null)
+		{
+			sheilds = new ArrayList<Equipment>();
+		}
+		if(sheilds.size() < 1)
+		{
+			return Equipment.NOTHING;
+		}
 		return sheilds.remove(0);
+	}
+	/**
+	 * returns gadgets
+	 * if enlarge cargo bay removed, the CargoBay will continue having extra slots
+	 * @return gadgets - NOT A COPY!!! might be empty, but never null
+	 */
+	public ArrayList<Equipment> getGadgets() {
+		if(gadgets == null)
+		{
+			gadgets = new ArrayList<Equipment>();
+		}
+		return gadgets;
 	}
 	/**
 	 * @param gad - Equipment Gadget to be added (does NOT check to ensure it is a Gadget)
@@ -147,19 +239,22 @@ public class Ship implements Serializable {
 	 */
 	public boolean addGadget(Equipment gad)
 	{
+		if(gad == Equipment.NOTHING){
+			return false;
+		}else if(gadgets == null){
+			gadgets = new ArrayList<Equipment>();
+		}
+		
 		if(gadgets.size() < shipT.getGadgetSlots())
 		{
 			gadgets.add(gad);
+			if(gad == Equipment.NORMAL)
+			{
+				cargo.enlargeCapacity();
+			}
+			return true;
 		}
 		return false;
-	}
-	/**
-	 * to use a Gadget, remove it, then add it back once done
-	 * @return Equipment - longest dormant Gadget of the ship
-	 */
-	public Equipment removeGadget()
-	{
-		return gadgets.remove(0);
 	}
 	
 	/**
@@ -171,7 +266,22 @@ public class Ship implements Serializable {
 	}
 	
 	/**
+	 * returns max fuel based on ShipType and gadget
+	 * Use this, not .getType.getMaxDistance()
+	 */
+	public int getMaxFuel(){
+		int retVal = shipT.getMaxDistance();
+		if(gadgets.contains(Equipment.BASIC))
+		{
+			retVal += 5;
+		}
+		return retVal;
+	}
+	
+	/**
 	 * adds fuel
+	 * can unsafely use fuel if i<0
+	 * no checks are made
 	 * @param i
 	 */
 	public void addFuel(int i) {
@@ -198,9 +308,13 @@ public class Ship implements Serializable {
 	
 	/**
 	 * returns health
-	 * @return health
+	 * @return health - never less than zero
 	 */
 	public int getHealth() {
+		if(health < 0)
+		{
+			health = 0;
+		}
 		return health;
 	}
 	/**
@@ -221,17 +335,44 @@ public class Ship implements Serializable {
 			return false;
 		}
 	}
+	
+	/**
+	 * Accounts for gadgets
+	 * @return - max capacity of CargoBay
+	 */
+	public int getMaxCargo(){
+		return cargo.getCapacity();
+	}
 
 	/**
 	 * returns cargo
-	 * @return cargo
+	 * @return cargo - might be empty, but never null
 	 */
 	public CargoBay getCargo() {
+		if(cargo == null)
+		 {
+			cargo = new CargoBay(shipT.getCargoSlots());
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
+		 }
 		return cargo;
 	}
 	
+	/**
+	 * 
+	 * @param cB - if null, cargo set to empty CargoBay
+	 */
 	public void setCargo(CargoBay cB) {
 		 cargo = cB;
+		 if(cargo == null)
+		 {
+			cargo = new CargoBay(shipT.getCargoSlots());
+			if(gadgets.contains(Equipment.NORMAL))
+			{
+				cargo.enlargeCapacity();
+			}
+		 }
 	}
 }
-//>>>>>>> FETCH_HEAD

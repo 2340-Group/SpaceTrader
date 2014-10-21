@@ -12,19 +12,19 @@
             <Menu mnemonicParsing="false" text="Information">
                <items>
                   <MenuItem mnemonicParsing="false" text="Inventory" />
-                  <MenuItem mnemonicParsing="false" text="Ship" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAccessShip" text="Ship" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Save/Quit">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveMenuItemAction" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Quit" />
                </items>
             </Menu>
          </menus>
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
-      <Button layoutX="492.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleMarket" text="MarketPlace" />
+      <Button layoutX="491.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleMarket" text="MarketPlace" />
       <Label fx:id="fundsLabel" layoutX="154.0" layoutY="339.0" text="Funds&#10;0" textAlignment="CENTER" />
       <Label fx:id="fuelLabel" layoutX="357.0" layoutY="339.0" text="Fuel&#10;0" textAlignment="CENTER" />
       <Label layoutX="104.0" layoutY="86.0" text="Big">
@@ -32,5 +32,6 @@
             <Font name="System Bold" size="83.0" />
          </font>
       </Label>
+      <Button layoutX="491.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

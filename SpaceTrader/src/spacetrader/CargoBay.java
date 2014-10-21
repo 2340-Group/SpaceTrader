@@ -48,6 +48,14 @@ public class CargoBay implements Serializable {
 		stock.clear();
 		currentVolume = 0;
 	}
+	
+	/**
+	 * adds five cargo empty slots to current cargo
+	 */
+	public void enlargeCapacity()
+	{
+		capacity += 5;
+	}
 
 	/**
 	 * returns current volume
@@ -86,6 +94,7 @@ public class CargoBay implements Serializable {
 	/**
 	 * Add a Resource to the CargoBay
 	 * @param r - Resource to be added
+	 * @param q - quantity of r to be added
 	 * @return true if added otherwise false
 	 */
 	public void addStock(Resource r, int q) {

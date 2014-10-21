@@ -12,12 +12,12 @@
             <Menu mnemonicParsing="false" text="Information">
                <items>
                   <MenuItem mnemonicParsing="false" text="Inventory" />
-                  <MenuItem mnemonicParsing="false" text="Ship" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAccessShip" text="Ship" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Save/Quit">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveMenuItemAction" text="Save" />
                   <MenuItem mnemonicParsing="false" onAction="#handleQuitMenuItemAction" text="Quit" />
                </items>
             </Menu>
@@ -32,5 +32,6 @@
             <Font name="System Bold" size="45.0" />
          </font>
       </Label>
+      <Button layoutX="491.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

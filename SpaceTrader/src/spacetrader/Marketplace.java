@@ -128,7 +128,7 @@ public class Marketplace implements Serializable {
         if (r.getPrice()*quantity > p.getFunds()) {
             System.out.println("Insufficient Funds.");
             return;
-        } else if (quantity > (s.getCargo().getCapacity() - s.getCargo().getCurrentVolume())) {
+        } else if (quantity > (s.getMaxCargo() - s.getCargo().getCurrentVolume())) {
             System.out.println("Not enough Cargo Space.");
             return;
         } else {

@@ -25,6 +25,8 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class PlanetController implements Initializable {
+	private int minTechLevelNeeded = 3;
+	
     @FXML
     private Label fuelLabel;
     @FXML
@@ -38,6 +40,18 @@ public class PlanetController implements Initializable {
     @FXML
     private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
         MainController.saveGame();
+    }
+    
+    @FXML
+    private void handleBuyMoon(ActionEvent event) throws Exception {
+    	if(MainController.getPlayer().getFunds() >= Integer.MAX_VALUE)
+    	{
+    		Parent config = FXMLLoader.load(getClass().getResource("Moon.fxml"));
+            Scene sceneConfig = new Scene(config);
+            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stageN.setScene(sceneConfig);
+            stageN.show();
+    	}
     }
     
     /**
@@ -76,6 +90,38 @@ public class PlanetController implements Initializable {
         Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
         Scene sceneConfig = new Scene(config);
         Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    }
+    
+    /**
+     * to the shipyard
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    public void handleShipyard(ActionEvent event) throws Exception {
+    	Parent config = FXMLLoader.load(getClass().getResource("Shipyard.fxml"));
+    	if(MainController.getPlanetNotString().getTechLevel() < minTechLevelNeeded)
+    	{
+	       config = FXMLLoader.load(getClass().getResource("ShipyardNotHere.fxml"));
+    	}
+    	Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+    }
+    
+    /**
+     * ship stats
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    public void handleAccessShip(ActionEvent event) throws Exception {
+        Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
     }

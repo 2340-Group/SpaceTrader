@@ -384,9 +384,8 @@ public class MarketSellController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 		//cargoTotal = MainController.getPlayer().getShip().getCargo().getCurrentVolume();
-		capacityLabel.setText("Your ship holds a maximum of " + MainController.getPlayer().getShip().getType().getCargoSlots() + " resources.");
+		capacityLabel.setText("Your ship holds a maximum of " + MainController.getPlayer().getShip().getMaxCargo() + " resources.");
 		tempFunds = MainController.getPlayer().getFunds();
 		fundsLabel.setText("FUNDS\n" + tempFunds);
 		costLabel.setText(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getEcon().listPrices());

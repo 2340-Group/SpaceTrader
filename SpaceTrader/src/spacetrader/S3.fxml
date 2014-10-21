@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -7,12 +8,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.PlanetController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@3rd.jpg" />
+         </image>
+      </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
          <menus>
             <Menu mnemonicParsing="false" text="Information">
                <items>
                   <MenuItem mnemonicParsing="false" text="Inventory" />
-                  <MenuItem mnemonicParsing="false" text="Ship" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleAccessShip" text="Ship" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Save/Quit">
@@ -23,14 +29,21 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
-      <Button layoutX="469.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
-      <Label fx:id="fundsLabel" layoutX="169.0" layoutY="313.0" text="Funds&#10;0" textAlignment="CENTER" />
-      <Label fx:id="fuelLabel" layoutX="330.0" layoutY="329.0" text="Fuel&#10;0" textAlignment="CENTER" />
-      <Label layoutX="104.0" layoutY="86.0" text="Planet S3">
+      <Button layoutX="93.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
+      <Button layoutX="400.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
+      <Label fx:id="fundsLabel" layoutX="170.0" layoutY="225.0" text="Funds&#10;0" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font></Label>
+      <Label fx:id="fuelLabel" layoutX="365.0" layoutY="225.0" text="Fuel&#10;0" textAlignment="CENTER">
+         <font>
+            <Font size="28.0" />
+         </font></Label>
+      <Label blendMode="BLUE" layoutX="119.0" layoutY="90.0" text="Planet S3">
          <font>
             <Font name="System Bold" size="83.0" />
          </font>
       </Label>
+      <Button layoutX="259.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>
