@@ -70,6 +70,7 @@ public class ShipUpgradeController implements Initializable{
 	
 	/**
 	 * tried to buy something
+	 * impossible to buy something that your ship cannot hold, these checks are made elsewhere
 	 * @param event
 	 * @throws Exception
 	 */
@@ -94,6 +95,7 @@ public class ShipUpgradeController implements Initializable{
 			e = Equipment.ADVANCED_ESC;
 			isGadget = true;
 		}
+
 		if(e != Equipment.NOTHING)
 		{
 			int fund = MainController.getPlayer().getFunds();
@@ -102,6 +104,16 @@ public class ShipUpgradeController implements Initializable{
 	   			fund = fund - e.getPrice();
 	   			MainController.getPlayer().setFunds(fund);
 	   			funds.setText("" + fund);
+	   			
+	   			Ship ship = MainController.getPlayer().getShip();
+	   			
+	   			if(isGadget){
+	   				ship.addGadget(e);
+	   			}else if(clicked.equals(weaponBasic) || clicked.equals(weaponNormal) || clicked.equals(weaponAdvanced)){
+	   				ship.addWeapon(e);
+	   			}else if(clicked.equals(sheildBasic) || clicked.equals(sheildNormal) || clicked.equals(sheildAdvanced)){
+	   				ship.addSheild(e);
+	   			}
                 
 		   		greyOut();
 	   		}else{

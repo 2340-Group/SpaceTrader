@@ -91,15 +91,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="weaponBasic" mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button fx:id="weaponNormal" mnemonicParsing="false" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-      <Button fx:id="weaponAdvanced" mnemonicParsing="false" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-      <Button fx:id="gadgetFuel" mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-      <Button fx:id="gadgetCargo" mnemonicParsing="false" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-      <Button fx:id="gadgetEscape" mnemonicParsing="false" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-      <Button fx:id="sheildBasic" mnemonicParsing="false" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <Button fx:id="sheildNormal" mnemonicParsing="false" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-      <Button fx:id="sheildAdvanced" mnemonicParsing="false" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <Button fx:id="weaponBasic" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="weaponNormal" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Button fx:id="weaponAdvanced" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <Button fx:id="gadgetFuel" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button fx:id="gadgetCargo" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <Button fx:id="gadgetEscape" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+      <Button fx:id="sheildBasic" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button fx:id="sheildNormal" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Button fx:id="sheildAdvanced" mnemonicParsing="false" onAction="#handleBuy" text="Buy" GridPane.columnIndex="6" GridPane.rowIndex="3" />
       <Label fx:id="priceBasicW" text="priceB" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
             <Font size="18.0" />
