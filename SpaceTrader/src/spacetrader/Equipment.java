@@ -2,21 +2,28 @@ package spacetrader;
 
 public enum Equipment {
 	
-	BASIC_FUEL(50),
-	NORMAL_CARGO(100),
-	ADVANCED_ESC(200),
-	CHEAPSHOT(Integer.MAX_VALUE),
-	NOTHING(0);
+	BASIC(50, "FUEL ENHANCEMENT"),
+	NORMAL(100, "CARGO ENHANCEMENT"),
+	ADVANCED(200, "ESCAPE POD"),
+	CHEAPSHOT(Integer.MAX_VALUE, "CHEATER"),
+	NOTHING(0, "NOTHING");
 	
 	private int powerLeft;
 	private final int MAXPOWER;
 	private int price;
+	private String gadgetName;
 	
-	Equipment(int pow)
+	Equipment(int pow, String name)
 	{
 		powerLeft = pow;
 		MAXPOWER = pow;
 		price = pow*10;
+		gadgetName = name;
+	}
+	
+	public String getGadgetName()
+	{
+		return gadgetName;
 	}
 	
 	public int getPower()

@@ -80,19 +80,19 @@ public class ShipUpgradeController implements Initializable{
 		Equipment e = Equipment.NOTHING;
 		boolean isGadget = false;
 		if(clicked.equals(weaponBasic) || clicked.equals(sheildBasic)){
-			e = Equipment.BASIC_FUEL;
+			e = Equipment.BASIC;
 		}else if(clicked.equals(weaponNormal) || clicked.equals(sheildNormal)){
-			e = Equipment.NORMAL_CARGO;
+			e = Equipment.NORMAL;
 		}else if(clicked.equals(weaponAdvanced) || clicked.equals(sheildAdvanced)){
-			e = Equipment.ADVANCED_ESC;
+			e = Equipment.ADVANCED;
 		}else if(clicked.equals(gadgetFuel)){
-			e = Equipment.BASIC_FUEL;
+			e = Equipment.BASIC;
 			isGadget = true;
 		}else if(clicked.equals(gadgetCargo)){
-			e = Equipment.NORMAL_CARGO;
+			e = Equipment.NORMAL;
 			isGadget = true;
 		}else if(clicked.equals(gadgetEscape)){
-			e = Equipment.ADVANCED_ESC;
+			e = Equipment.ADVANCED;
 			isGadget = true;
 		}
 
@@ -150,15 +150,15 @@ public class ShipUpgradeController implements Initializable{
 		deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav").toURI().toString());
         mediaPlayer = new MediaPlayer(deny);
 		funds.setText("" + MainController.getPlayer().getFunds());
-		priceBasicW.setText("" + Equipment.BASIC_FUEL.getPrice());
-		priceNormalW.setText("" + Equipment.NORMAL_CARGO.getPrice());
-		priceAdvanceW.setText("" + Equipment.ADVANCED_ESC.getPrice());
-		priceBasicG.setText("" + Equipment.BASIC_FUEL.getPrice());
-		priceNormalG.setText("" + Equipment.NORMAL_CARGO.getPrice());
-		priceAdvanceG.setText("" + Equipment.ADVANCED_ESC.getPrice());
-		priceBasicS.setText("" + Equipment.BASIC_FUEL.getPrice());
-		priceNormalS.setText("" + Equipment.NORMAL_CARGO.getPrice());
-		priceAdvanceS.setText("" + Equipment.ADVANCED_ESC.getPrice());
+		priceBasicW.setText("" + Equipment.BASIC.getPrice());
+		priceNormalW.setText("" + Equipment.NORMAL.getPrice());
+		priceAdvanceW.setText("" + Equipment.ADVANCED.getPrice());
+		priceBasicG.setText("" + Equipment.BASIC.getPrice());
+		priceNormalG.setText("" + Equipment.NORMAL.getPrice());
+		priceAdvanceG.setText("" + Equipment.ADVANCED.getPrice());
+		priceBasicS.setText("" + Equipment.BASIC.getPrice());
+		priceNormalS.setText("" + Equipment.NORMAL.getPrice());
+		priceAdvanceS.setText("" + Equipment.ADVANCED.getPrice());
 		
 		int tech = MainController.getPlanetNotString().getTechLevel();
 		switch(tech)	// fall through on purpose
@@ -188,6 +188,11 @@ public class ShipUpgradeController implements Initializable{
 		greyOut();
 	}
 	
+	/**
+	 * greys out the buttons that the player cannot select based upon:
+	 * what the player's ship can hold
+	 * what the player already owns
+	 */
 	private void greyOut()
 	{
 		Ship ship = MainController.getPlayer().getShip();
@@ -227,15 +232,15 @@ public class ShipUpgradeController implements Initializable{
 			for(Equipment e: gadgets)
 			{
 				switch (e) {
-				case BASIC_FUEL:
+				case BASIC:
 					gadgetFuel.setText("Own");
 					gadgetFuel.setDisable(true);
 					break;
-				case NORMAL_CARGO:
+				case NORMAL:
 					gadgetCargo.setText("Own");
 					gadgetCargo.setDisable(true);
 					break;
-				case ADVANCED_ESC:
+				case ADVANCED:
 					gadgetEscape.setText("Own");
 					gadgetEscape.setDisable(true);
 				default:
