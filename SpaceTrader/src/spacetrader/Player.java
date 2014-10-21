@@ -66,6 +66,10 @@ public class Player implements Serializable {
 	 * @param x - int amount to be added to money (x should be +)
 	 */
 	public void addFunds(int x) {
+		if(funds > 0 && (funds+x) < 0)
+		{
+			funds = Integer.MAX_VALUE;
+		}
 		funds = funds + x;
 	}
 	
