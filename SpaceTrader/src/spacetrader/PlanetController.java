@@ -42,6 +42,18 @@ public class PlanetController implements Initializable {
         MainController.saveGame();
     }
     
+    @FXML
+    private void handleBuyMoon(ActionEvent event) throws Exception {
+    	if(MainController.getPlayer().getFunds() >= Integer.MAX_VALUE)
+    	{
+    		Parent config = FXMLLoader.load(getClass().getResource("Moon.fxml"));
+            Scene sceneConfig = new Scene(config);
+            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stageN.setScene(sceneConfig);
+            stageN.show();
+    	}
+    }
+    
     /**
      * Quits the game
      * @param event
