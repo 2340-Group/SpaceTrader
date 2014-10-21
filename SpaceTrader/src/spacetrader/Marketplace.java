@@ -30,7 +30,7 @@ public class Marketplace implements Serializable {
         resources = new ArrayList<Resource>();
         for (Resource rs: r) {
             resources.add(rs);
-            resources.get(i).setPrice(resources.get(i).getPrice()*planetTech);
+            resources.get(i).setPrice((int) (resources.get(i).getPrice() * planetTech * ((100 - MainController.getPlayer().getTrading()) / 100.0)));
             i++;
         }
       //  resources = r;
