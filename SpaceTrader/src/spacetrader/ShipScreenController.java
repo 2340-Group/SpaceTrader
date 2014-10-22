@@ -122,11 +122,11 @@ public class ShipScreenController implements Initializable {
 		l = displayMe.getGadgets();
 		switch (l.size()) {
 		case 3:
-			gadget3.setText("" + l.get(2));
+			gadget3.setText("" + l.get(2).getGadgetName());
 		case 2:
-			gadget2.setText("" + l.get(1));
+			gadget2.setText("" + l.get(1).getGadgetName());
 		case 1:
-			gadget1.setText("" + l.get(0));
+			gadget1.setText("" + l.get(0).getGadgetName());
 		default:
 			break;
 		}
