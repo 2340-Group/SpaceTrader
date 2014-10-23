@@ -119,22 +119,20 @@ public class ShipyardController implements Initializable {
 	   	}else if(clicked.equals(buyFIREFLY)){
 	   		st = ShipType.FIREFLY;
 	   	}
-	   	if(st != ShipType.NOSHIP)
+	   	
+		int funds = MainController.getPlayer().getFunds();
+	   	if(funds >= st.getPrice())
 	   	{
-	   		int funds = MainController.getPlayer().getFunds();
-	   		if(funds >= st.getPrice())
-	   		{
-	   			funds = funds - st.getPrice();
-	   			MainController.getPlayer().setFunds(funds);
-		   		Ship newShip = new Ship(st, MainController.getPlayer().getShip().getReputation(), MainController.getPlayer().getName(), null, null, null, st.getMaxDistance(), 100);
-		   		MainController.getPlayer().setShip(newShip);
-		   		fundsLabel.setText("Funds\n" + funds);
-		   		
-		   		handleShipUpgrade(event);
-	   		}else{
-	   			mediaPlayer = new MediaPlayer(deny);
-	            mediaPlayer.play();
-	   		}
+	   		funds = funds - st.getPrice();
+	   		MainController.getPlayer().setFunds(funds);
+		   	Ship newShip = new Ship(st, MainController.getPlayer().getShip().getReputation(), MainController.getPlayer().getName(), null, null, null, st.getMaxDistance(), 100);
+		   	MainController.getPlayer().setShip(newShip);
+		   	fundsLabel.setText("Funds\n" + funds);
+		   	
+		   	handleShipUpgrade(event);
+	   	}else{
+	   		mediaPlayer = new MediaPlayer(deny);
+	        mediaPlayer.play();
 	   	}
    	}
    	

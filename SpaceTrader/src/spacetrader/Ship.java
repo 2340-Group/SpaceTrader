@@ -239,7 +239,7 @@ public class Ship implements Serializable {
 	 */
 	public boolean addGadget(Equipment gad)
 	{
-		if(gad == Equipment.NOTHING){
+		if(gad == Equipment.NOTHING || gad == null){
 			return false;
 		}else if(gadgets == null){
 			gadgets = new ArrayList<Equipment>();
