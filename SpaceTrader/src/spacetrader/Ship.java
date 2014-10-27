@@ -324,7 +324,7 @@ public class Ship implements Serializable {
 	 */
 	public boolean takeDamageRepair(int health) 
 	{
-		this.health = health;
+		this.health += health;
 		if(this.health > 0)
 		{
 			return true;

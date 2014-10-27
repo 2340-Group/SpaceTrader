@@ -16,10 +16,12 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class ShipScreenController implements Initializable {
-	@FXML
-	private Button returnToPlanet;
+    @FXML
+    private Button returnToPlanet;
     @FXML
     private Label shipType;
+    @FXML
+    private Label health;
     @FXML
     private Label sheild1;
     @FXML
@@ -55,8 +57,9 @@ public class ShipScreenController implements Initializable {
 		Ship displayMe = MainController.getPlayer().getShip();
 		ShipType st = displayMe.getType();
 		shipType.setText("" + st);
-		currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
+                health.setText("" + displayMe.getHealth());
 		currentFuel.setText("" + displayMe.getFuel());
+                currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
 		maxFuel.setText("" + displayMe.getMaxFuel());
 		maxCargo.setText("" + displayMe.getMaxCargo());
 		

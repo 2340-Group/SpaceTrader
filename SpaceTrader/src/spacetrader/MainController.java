@@ -67,6 +67,10 @@ public class MainController implements Initializable, Serializable {
     public static Player getPlayer() {
         return p;
     }
+    
+    public static Ship getShip() {
+        return s;
+    }
 
     public static void setCurrentPlanet(String current) {
         currentPlanet = current;
