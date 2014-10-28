@@ -46,7 +46,7 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleBigButtonAction(ActionEvent event) throws Exception {
-	NameHelper("Big", event);
+	nameHelper("Big", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -57,7 +57,7 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handleGiantButtonAction(ActionEvent event) throws Exception {
-	NameHelper("Giant", event);
+	nameHelper("Giant", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -68,7 +68,7 @@ public class NAMEController implements Initializable {
 	
 	@FXML
     private void handlePlanetButtonAction(ActionEvent event) throws Exception {
-	NameHelper("Planet", event);
+	nameHelper("Planet", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -85,7 +85,7 @@ public class NAMEController implements Initializable {
         // TODO
     }    
     
-    private void NameHelper(String planet, ActionEvent event)throws Exception{
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
         this.eventType = "none";
 		if (!MainController.getCurrentPlanet().equals(planet)) {
                     MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));

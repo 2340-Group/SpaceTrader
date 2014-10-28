@@ -46,7 +46,7 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
-        NameHelper("S1", event);
+        nameHelper("S1", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -57,7 +57,7 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
-        NameHelper("S2", event);
+        nameHelper("S2", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -68,7 +68,7 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
-	NameHelper("S3", event);
+	nameHelper("S3", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -79,7 +79,7 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
-	NameHelper("S3PT2", event);
+	nameHelper("S3PT2", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -90,7 +90,7 @@ public class SPAAACEController implements Initializable {
 	
 	@FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
-	NameHelper("Your Naming Sucks", event);
+	nameHelper("Your Naming Sucks", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -107,7 +107,7 @@ public class SPAAACEController implements Initializable {
         // TODO
     } 
     
-    private void NameHelper(String planet, ActionEvent event)throws Exception{
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
         this.eventType = "none";
 		if (!MainController.getCurrentPlanet().equals(planet)) {
                     MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));

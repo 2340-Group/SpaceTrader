@@ -46,7 +46,7 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleERRORButtonAction(ActionEvent event) throws Exception {
-	NameHelper("ERROR", event);
+	nameHelper("ERROR", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -57,7 +57,7 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleBlankButtonAction(ActionEvent event) throws Exception {
-	NameHelper("Blank", event);
+	nameHelper("Blank", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -68,7 +68,7 @@ public class NONAMEController implements Initializable {
 	
 	@FXML
     private void handleInsertNameButtonAction(ActionEvent event) throws Exception {
-	NameHelper("InsertName", event);
+	nameHelper("InsertName", event);
         MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
         Parent config = FXMLLoader.load(getClass().getResource(eventType));
         Scene sceneConfig = new Scene(config);
@@ -85,7 +85,7 @@ public class NONAMEController implements Initializable {
         // TODO
     } 
     
-    private void NameHelper(String planet, ActionEvent event)throws Exception{
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
         this.eventType = "none";
 		if (!MainController.getCurrentPlanet().equals(planet)) {
                     MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));

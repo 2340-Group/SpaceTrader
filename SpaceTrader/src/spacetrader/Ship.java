@@ -56,26 +56,26 @@ public class Ship implements Serializable {
 			this.name = "";
 		}
 		
-		if(weapons != null){
-			this.weapons = weapons;
-		}else{
+		if(weapons == null){
 			this.weapons = new ArrayList<Equipment>();
-		}
-		
-		if(sheilds != null){
-			this.sheilds = sheilds;
 		}else{
-			this.sheilds = new ArrayList<Equipment>();
+			this.weapons = weapons;
 		}
 		
-		if(gadgets != null){
+		if(sheilds == null){
+			this.sheilds = new ArrayList<Equipment>();
+		}else{
+			this.sheilds = sheilds;
+		}
+		
+		if(gadgets == null){
+			this.gadgets = new ArrayList<Equipment>();
+		}else{
 			this.gadgets = gadgets;
 			if(gadgets.contains(Equipment.NORMAL))
 			{
 				cargo.enlargeCapacity();
 			}
-		}else{
-			this.gadgets = new ArrayList<Equipment>();
 		}
 	}
 	
@@ -96,11 +96,11 @@ public class Ship implements Serializable {
 	 * @param shipT - if null, ShipType will be GNAT (default starter)
 	 */
 	public void setType(ShipType shipT) {
-		if(shipT == null)
-		{
-			shipT = ShipType.NOSHIP;
+		if(shipT == null){
+			this.shipT = ShipType.NOSHIP;
+		}else{
+			this.shipT = shipT;
 		}
-		this.shipT = shipT;
 	}
 	
 	/**
@@ -171,7 +171,7 @@ public class Ship implements Serializable {
 		{
 			weapons = new ArrayList<Equipment>();
 		}
-		if(weapons.size() < 1)
+		if(weapons.isEmpty())
 		{
 			return Equipment.NOTHING;
 		}
@@ -284,8 +284,8 @@ public class Ship implements Serializable {
 	 * no checks are made
 	 * @param i
 	 */
-	public void addFuel(int i) {
-		fuel = fuel + i;
+	public void addFuel(int addFuel) {
+		fuel = fuel + addFuel;
 	}
 	/**
 	 * 
@@ -322,18 +322,19 @@ public class Ship implements Serializable {
 	 * @param health - int to be taken (negative) or given in repairs (possitive)
 	 * @return true if still alive
 	 */
-	public boolean takeDamageRepair(int health) 
+	public boolean takeDamageRepair(int hea) 
 	{
-		this.health += health;
-		if(this.health > 0)
+		boolean alive = true;
+		if(this.health-hea > 0)
 		{
-			return true;
+			this.health += hea;
 		}
 		else
 		{
-			health = 0;
-			return false;
+			this.health = 0;
+			alive = false;
 		}
+		return alive;
 	}
 	
 	/**
