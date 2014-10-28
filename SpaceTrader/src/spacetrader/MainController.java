@@ -98,9 +98,10 @@ public class MainController implements Initializable, Serializable {
 
     /**
      * Saves the game
+     * @return true if game saved successfully, otherwise false
      * @throws IOException 
      */
-    public static void saveGame() throws IOException {
+    public static boolean saveGame() throws IOException {
         String savePlanet = currentPlanet;
         String saveSolarSystem = currentSolarSystem;
         Universe saveUniverse = u;
@@ -125,26 +126,31 @@ public class MainController implements Initializable, Serializable {
         } catch(FileNotFoundException ex) {
             System.out.println("File not found.");
             ex.printStackTrace();
+            return false;
         } catch(IOException ex) {
             System.out.println("IOException");
             ex.printStackTrace();
+            return false;
         } finally {
             try {
                 if(out != null) {
                     out.flush();
                     out.close();
                 }
+                return true;
             } catch(IOException ex) {
                 ex.printStackTrace();
+                return false;
             }
         }
     }
         
     /**
      * Loads the saved game file
+     * @return true if game loaded successfully, otherwise false
      * @throws IOException 
      */
-    public static void loadGame() throws IOException {
+    public static boolean loadGame() throws IOException {
 
         try {
             FileInputStream fileIn = new FileInputStream("saveFile.dat");
@@ -161,15 +167,20 @@ public class MainController implements Initializable, Serializable {
             in.close();
             fileIn.close();
             System.out.println("Game loaded.");
+            
+            return true;
         } catch(FileNotFoundException ex) {
             System.out.println("File not found.");
             ex.printStackTrace();
+            return false;
         } catch(IOException ex) {
             System.out.println("IOException");
             ex.printStackTrace();
+            return false;
         } catch(ClassNotFoundException ex) {
             System.out.println("MainController class not found.");
             ex.printStackTrace();
+            return false;
         }
     }
 }
