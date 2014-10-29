@@ -8,6 +8,7 @@ package spacetrader;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.media.*;
+
 import java.io.*;
+
 import javafx.scene.control.Button;
 
 /**
@@ -74,8 +77,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    pilotPoints--;
 	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Pilot Points: " + pilotPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -92,8 +95,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    pilotPoints++;
 	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Pilot Points: " + pilotPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -110,8 +113,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    fighterPoints--;
 	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Fighter Points: " + fighterPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -128,8 +131,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    fighterPoints++;
 	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Fighter Points: " + fighterPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -146,8 +149,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    traderPoints--;
 	    traderPointsLabel.setText("Trader\n" + traderPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Trader Points: " + traderPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Trader Points: " + traderPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -164,8 +167,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    traderPoints++;
 	    traderPointsLabel.setText("Trader\n" + traderPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Trader Points: " + traderPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Trader Points: " + traderPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -182,8 +185,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    engineerPoints--;
 	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Engineer Points: " + engineerPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Engineer Points: " + engineerPoints);
 	} else {
 	    mediaPlayer = new MediaPlayer(deny);
 	    mediaPlayer.play();
@@ -200,8 +203,8 @@ public class ConfigurationScreenController implements Initializable {
 		    .setText("Remaining Points\n" + remainingPoints);
 	    engineerPoints++;
 	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
-	    System.out.println("Remaining Points: " + remainingPoints);
-	    System.out.println("Engineer Points: " + engineerPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Engineer Points: " + engineerPoints);
 	}
     }
 
@@ -223,7 +226,7 @@ public class ConfigurationScreenController implements Initializable {
 		    && !nameField.getText().trim().isEmpty()) {
 		name = nameField.getText().trim();
 	    }
-	    System.out.println(name);
+//	    System.out.println(name);
 
 	    MainController.makePlayer(name, pilotPoints, fighterPoints,
 		    traderPoints, engineerPoints, MainController.getUniverse()
@@ -239,7 +242,8 @@ public class ConfigurationScreenController implements Initializable {
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
 	} else {
-	    // Make a pop-up dialog that tells user to use remaining points.
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
 	}
     }
 

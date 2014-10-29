@@ -5,12 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-
-public class ShipTest_jrule3 {
-
-public class ShipTest_jrule3 {
-    Ship defaultShip;
-
 public class ShipTest_jrule3 {
     Ship defaultShip;
     Ship mostGadgets;

@@ -71,8 +71,7 @@ public class CargoBay implements Serializable {
     public String printCargo() {
 	String s = "";
 	for (Resource r : stock) {
-	    System.out.println("You have " + r.getQuantity() + " "
-		    + r.getName() + " in stock.");
+//	    System.out.println("You have " + r.getQuantity() + " " + r.getName() + " in stock.");
 	    s = s + "You have " + r.getQuantity() + " " + r.getName()
 		    + " in stock.\n";
 	}

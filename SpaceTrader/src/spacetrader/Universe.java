@@ -38,7 +38,7 @@ public class Universe implements Serializable {
 	Random randomGenerator = new Random();
 	// randomGenerator.nextInt((max - min) + 1) + min;
 
-	System.out.println("Making Universe");
+//	System.out.println("Making Universe");
 
 	universeList = new ArrayList<SolarSystem>();
 	planetList = new ArrayList<Planet>();
@@ -136,13 +136,11 @@ public class Universe implements Serializable {
     public Planet getPlanet(String str) {
 	for (int i = 0; i < planetList.size();) {
 	    if (planetList.get(i).getName().equals(str)) {
-		System.out.println("Got Planet");
 		return planetList.get(i);
 	    } else {
 		i++;
 	    }
 	}
-	System.out.println("No Planet");
 	return null;
     }
 }

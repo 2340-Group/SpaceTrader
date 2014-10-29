@@ -105,16 +105,14 @@ public class NONAMEController implements Initializable {
     
 
     private void nameHelper(String planet, ActionEvent event)throws Exception{
-        if (!MainController.getCurrentPlanet().equals(planet)) {
+	if (MainController.getCurrentPlanet().equals(planet)) {
+            this.eventType = planet + ".fxml";
+        } else {
             MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
             MainController.setCurrentPlanet(planet);
             MainController.setCurrentSolarSystem("NONAME");
             EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
             this.eventType = randEvent.generateEvent(planet) + ".fxml";
-            System.out.print(eventType);
-        } else {
-            this.eventType = planet + ".fxml";
         }
-
     }
 }

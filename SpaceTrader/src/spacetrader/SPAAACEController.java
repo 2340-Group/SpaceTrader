@@ -134,15 +134,14 @@ public class SPAAACEController implements Initializable {
     }
     
     private void nameHelper(String planet, ActionEvent event)throws Exception{
-        if (!MainController.getCurrentPlanet().equals(planet)) {
+        if (MainController.getCurrentPlanet().equals(planet)) {
+            this.eventType = planet + ".fxml";
+        } else {
             MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
             MainController.setCurrentPlanet(planet);
             MainController.setCurrentSolarSystem("SPAAACE");
             EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
             this.eventType = randEvent.generateEvent(planet) + ".fxml";
-            System.out.print(eventType);
-        } else {
-            this.eventType = planet + ".fxml";
         }
     }
 

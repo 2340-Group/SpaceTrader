@@ -1,6 +1,5 @@
 package spacetrader;
 
-import java.io.File;
 import java.io.Serializable;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -115,14 +114,14 @@ public class MainController implements Serializable {
 	    out.writeObject(savePl);
 	    out.writeObject(saveShip);
 	    out.writeObject(saveMerchant);
-	    File f = new File("saveFile.dat");
-	    System.out.println("Game saved to " + f.getAbsolutePath());
+//	    File f = new File("saveFile.dat");
+//	    System.out.println("Game saved to " + f.getAbsolutePath());
 	} catch (FileNotFoundException ex) {
-	    System.out.println("File not found.");
+//	    System.out.println("File not found.");
 	    ex.printStackTrace();
 	    return false;
 	} catch (IOException ex) {
-	    System.out.println("IOException");
+//	    System.out.println("IOException");
 	    ex.printStackTrace();
 	    return false;
 	} finally {
@@ -161,19 +160,19 @@ public class MainController implements Serializable {
 
 	    in.close();
 	    fileIn.close();
-	    System.out.println("Game loaded.");
+//	    System.out.println("Game loaded.");
 
 	    return true;
 	} catch (FileNotFoundException ex) {
-	    System.out.println("File not found.");
+//	    System.out.println("File not found.");
 	    ex.printStackTrace();
 	    return false;
 	} catch (IOException ex) {
-	    System.out.println("IOException");
+//	    System.out.println("IOException");
 	    ex.printStackTrace();
 	    return false;
 	} catch (ClassNotFoundException ex) {
-	    System.out.println("MainController class not found.");
+//	    System.out.println("MainController class not found.");
 	    ex.printStackTrace();
 	    return false;
 	}

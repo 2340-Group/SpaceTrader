@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class Marketplace implements Serializable {
 
     private Double currentInflation;
-    private final int ECON_SCORE_MAX = 10;
-    private final int ECON_SCORE_MIN = 0;
+    private final static int ECON_SCORE_MAX = 10;
+    private final static int ECON_SCORE_MIN = 0;
     private ArrayList<Resource> resources;
     private int economyScore;
 
@@ -78,17 +78,11 @@ public class Marketplace implements Serializable {
      */
     public boolean checkEconomy() {
 	adjustInflation(economyScore);
-	if (economyScore == ECON_SCORE_MIN) {
-	    System.out.println("The economy has fallen apart on this Planet.");
-	    System.out.println("No one can afford to trade here.");
-	    return false;
-	} else if (economyScore == ECON_SCORE_MAX) {
-	    System.out.println("The economy is thriving on this Planet.");
-	    System.out.println("No one has any interest to trade here.");
+	if (economyScore == ECON_SCORE_MIN || economyScore == ECON_SCORE_MAX) {
 	    return false;
 	} else {
-	    System.out.println("The current inflation rate is "
-		    + currentInflation + ".");
+//	    System.out.println("The current inflation rate is "
+//		    + currentInflation + ".");
 	    return true;
 	}
     }
@@ -149,11 +143,10 @@ public class Marketplace implements Serializable {
      */
     public void buy(Resource r, int quantity, Player p, Ship s) {
 	if (r.getPrice() * quantity > p.getFunds()) {
-	    System.out.println("Insufficient Funds.");
 	    return;
 	} else if (quantity > (s.getMaxCargo() - s.getCargo()
 		.getCurrentVolume())) {
-	    System.out.println("Not enough Cargo Space.");
+//	    System.out.println("Not enough Cargo Space.");
 	    return;
 	} else {
 	    s.getCargo().addStock(r, quantity);
@@ -172,7 +165,6 @@ public class Marketplace implements Serializable {
      */
     public void sell(Resource r, int quantity, Player p, Ship s) {
 	if (s.getCargo().getResourceStock(r) < quantity) {
-	    System.out.println("You don't that many!");
 	    return;
 	} else {
 	    s.getCargo().addStock(r, -quantity);
@@ -207,10 +199,7 @@ public class Marketplace implements Serializable {
     public String listPrices() {
 	String s = "";
 	for (Resource r : resources) {
-	    System.out.println(r.getName() + " costs " + r.getPrice()
-		    + " credits.");
 	    s = s + r.getName() + " costs " + r.getPrice() + " credits.\n";
-
 	}
 	return s;
 

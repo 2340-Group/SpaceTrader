@@ -45,8 +45,8 @@ public class Player implements Serializable {
      */
     public Player(String newName, int pilot, int fight, int trade,
 	    int engineer, int xLoc, int yLoc, Ship newShip) {
-	System.out.println("Making player: " + newName + " Location: " + xLoc
-		+ ", " + yLoc);
+//	System.out.println("Making player: " + newName + " Location: " + xLoc
+//		+ ", " + yLoc);
 	name = newName;
 	piloting = pilot;
 	fighting = fight;
@@ -68,7 +68,6 @@ public class Player implements Serializable {
     public void setLocation(int x, int y) {
 	locX = x;
 	locY = y;
-	System.out.println("New Location: " + x + ", " + y);
     }
 
     /**

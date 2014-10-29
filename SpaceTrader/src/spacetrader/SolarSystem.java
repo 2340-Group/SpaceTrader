@@ -37,7 +37,7 @@ public class SolarSystem implements Serializable {
      *            - ArrayList<Planet> planets to be in system
      */
     public SolarSystem(String n, int x, int y, ArrayList<Planet> p) {
-	System.out.println("Making Solar Sytems: " + n);
+//	System.out.println("Making Solar Sytems: " + n);
 	name = n;
 	locX = x;
 	locY = y;
