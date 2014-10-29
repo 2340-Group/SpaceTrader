@@ -32,6 +32,7 @@ public class EventGeneratorSimple {
      * a new random number with a 50/50 chance. If no event is chosen, then
      * there is no event.
 <<<<<<< HEAD
+<<<<<<< HEAD
      * 
      * @param next next planet to go to
      * 
@@ -41,7 +42,6 @@ public class EventGeneratorSimple {
      * @return Event type that is randomly chosen based on the corresponding
      *         event probability.
      */
-<<<<<<< HEAD
     public String generateEvent(String next) {
         double policeProb = Math.random();
         double pirateProb = Math.random();
@@ -83,7 +83,13 @@ public class EventGeneratorSimple {
         }
         }
         return next;
+
+}
 =======
+     *
+     * @return Event type that is randomly chosen based on the corresponding
+     *         event probability.
+     */
     public String generate() {
 	double policeProb = Math.random();
 	double pirateProb = Math.random();
@@ -113,6 +119,6 @@ public class EventGeneratorSimple {
 	    }
 	}
 	return "none";
->>>>>>> FETCH_HEAD
     }
+>>>>>>> FETCH_HEAD
 }

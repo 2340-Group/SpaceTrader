@@ -132,10 +132,9 @@ public class SPAAACEController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 <<<<<<< HEAD
-        // TODO
     } 
     
-    private void NameHelper(String planet, ActionEvent event)throws Exception{
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
         if (!MainController.getCurrentPlanet().equals(planet)) {
             MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
             MainController.setCurrentPlanet(planet);
@@ -147,6 +146,8 @@ public class SPAAACEController implements Initializable {
             this.eventType = planet + ".fxml";
         }
     }
+    }
+
 =======
 	// TODO
     }
@@ -176,5 +177,5 @@ public class SPAAACEController implements Initializable {
 
     }
 
->>>>>>> FETCH_HEAD
 }
+>>>>>>> FETCH_HEAD

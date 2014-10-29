@@ -101,7 +101,6 @@ public class NONAMEController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 <<<<<<< HEAD
-        // TODO
     } 
     
     private void NameHelper(String planet, ActionEvent event)throws Exception{
@@ -144,5 +143,18 @@ public class NONAMEController implements Initializable {
 	this.eventType = planet + ".fxml";
 
 >>>>>>> FETCH_HEAD
+    }
+
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
+        if (!MainController.getCurrentPlanet().equals(planet)) {
+            MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));
+            MainController.setCurrentPlanet(planet);
+            MainController.setCurrentSolarSystem("NONAME");
+            EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
+            this.eventType = randEvent.generateEvent(planet) + ".fxml";
+            System.out.print(eventType);
+        } else {
+            this.eventType = planet + ".fxml";
+        }
     }
 }

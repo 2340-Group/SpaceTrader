@@ -100,11 +100,10 @@ public class NAMEController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 <<<<<<< HEAD
-        // TODO
     }    
     
-    private void NameHelper(String planet, ActionEvent event)throws Exception{
-	if (!MainController.getCurrentPlanet().equals(planet)) {
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
+        if (!MainController.getCurrentPlanet().equals(planet)) {
             MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NAME"));
             MainController.setCurrentPlanet(planet);
             MainController.setCurrentSolarSystem("NAME");
@@ -114,7 +113,6 @@ public class NAMEController implements Initializable {
         } else {
             this.eventType = planet + ".fxml";
         }
-		
 =======
 	// TODO
     }
