@@ -19,10 +19,10 @@ import javafx.fxml.Initializable;
  * @author Ryan
  */
 public class UIController implements Initializable {
-	
-	@FXML
+
+    @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
-        System.exit(0);
+	System.exit(0);
     }
 
     /**
@@ -30,7 +30,7 @@ public class UIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+	// TODO
+    }
+
 }

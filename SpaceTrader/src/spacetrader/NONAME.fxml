@@ -7,9 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.NONAMEController">
    <children>
-      <ImageView fitHeight="619.0" fitWidth="615.0" layoutX="-7.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@NONAME.png" />
+            <Image url="@noname.jpg" />
          </image>
       </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
@@ -28,10 +28,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="6.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
-      <Button layoutX="497.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleERRORButtonAction" text="ERROR" />
-      <Button layoutX="497.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBlankButtonAction" text="[          ]" />
-      <Button layoutX="497.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleInsertNameButtonAction" text="Insert Name" />
-      <Label layoutX="492.0" layoutY="35.0" text="Planets" textFill="#da1818" />
+      <Button layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
+      <Button layoutX="169.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleERRORButtonAction" text="ERROR" />
+      <Button layoutX="374.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleBlankButtonAction" text="[          ]" />
+      <Button layoutX="53.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleInsertNameButtonAction" text="Insert Name" />
    </children>
 </AnchorPane>

@@ -7,9 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.SPAAACEController">
    <children>
-      <ImageView fitHeight="623.0" fitWidth="947.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@SPAACE.png" />
+            <Image url="@Spaaace.jpg" />
          </image>
       </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
@@ -28,12 +28,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="6.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
-      <Button layoutX="497.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleS1ButtonAction" text="S1" />
-      <Button layoutX="497.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleS2ButtonAction" text="S2" />
-      <Button layoutX="497.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleS3ButtonAction" text="S3" />
-      <Button layoutX="481.0" layoutY="166.0" mnemonicParsing="false" onAction="#handleS3PT2ButtonAction" text="S3 PT 2" />
-      <Button layoutX="436.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleYNSButtonAction" prefHeight="29.0" prefWidth="155.0" text="Your Naming Sucks" />
-      <Label layoutX="492.0" layoutY="35.0" text="Planets" textFill="#da1818" />
+      <Button layoutX="464.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
+      <Button layoutX="542.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleS1ButtonAction" text="S1" />
+      <Button layoutX="464.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleS2ButtonAction" text="S2" />
+      <Button layoutX="227.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleS3ButtonAction" text="S3" />
+      <Button layoutX="80.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleS3PT2ButtonAction" text="S3 PT 2" />
+      <Button layoutX="363.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleYNSButtonAction" prefHeight="26.0" prefWidth="51.0" text="YNR" />
    </children>
 </AnchorPane>

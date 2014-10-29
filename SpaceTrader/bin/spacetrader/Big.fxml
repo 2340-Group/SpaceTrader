@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -7,6 +8,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.PlanetController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@Desert%20Castle.jpg" />
+         </image>
+      </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
          <menus>
             <Menu mnemonicParsing="false" text="Information">
@@ -23,15 +29,21 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
-      <Button layoutX="491.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleMarket" text="MarketPlace" />
-      <Label fx:id="fundsLabel" layoutX="154.0" layoutY="339.0" text="Funds&#10;0" textAlignment="CENTER" />
-      <Label fx:id="fuelLabel" layoutX="357.0" layoutY="339.0" text="Fuel&#10;0" textAlignment="CENTER" />
-      <Label layoutX="104.0" layoutY="86.0" text="Big">
+      <Button layoutX="491.0" layoutY="238.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
+      <Button layoutX="491.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleMarket" text="MarketPlace" />
+      <Label fx:id="fundsLabel" layoutX="43.0" layoutY="168.0" text="Funds&#10;0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="fuelLabel" layoutX="138.0" layoutY="168.0" text="Fuel&#10;0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="43.0" layoutY="57.0" text="Big">
          <font>
             <Font name="System Bold" size="83.0" />
          </font>
       </Label>
-      <Button layoutX="491.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
+      <Button layoutX="491.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

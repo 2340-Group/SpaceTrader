@@ -30,15 +30,17 @@ import javafx.scene.control.Button;
 public class ConfigurationScreenController implements Initializable {
 
     private String name = "Trader";
-    private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0, traderPoints = 0, engineerPoints = 0;
+    private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0,
+	    traderPoints = 0, engineerPoints = 0;
     private Media click;
     private Media deny;
     private MediaPlayer mediaPlayer;
-    
+
     @FXML
     private TextField nameField;
-    //@FXML
-    //private Button minusPilot, plusPilot, minusFighter, plusFighter, minusTrader, plusTrader, minusEngineer, plusEngineer, cancelBtn, doneBtn;
+    // @FXML
+    // private Button minusPilot, plusPilot, minusFighter, plusFighter,
+    // minusTrader, plusTrader, minusEngineer, plusEngineer, cancelBtn, doneBtn;
     @FXML
     private Label remainingPointsLabel, pilotPointsLabel, fighterPointsLabel, traderPointsLabel, engineerPointsLabel;
     @FXML
@@ -61,201 +63,216 @@ public class ConfigurationScreenController implements Initializable {
     private Button cancelBtn;
     @FXML
     private Button doneBtn;
-    
+
     @FXML
     private void subtractPilot(ActionEvent event) {
-        if (pilotPoints > 0) {
+	if (pilotPoints > 0) {
             mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints++;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            pilotPoints--;
-            pilotPointsLabel.setText("Pilot\n" + pilotPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Pilot Points: " + pilotPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	    mediaPlayer.play();
+	    remainingPoints++;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    pilotPoints--;
+	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Pilot Points: " + pilotPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void addPilot(ActionEvent event) {
-        if (remainingPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints--;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            pilotPoints++;
-            pilotPointsLabel.setText("Pilot\n" + pilotPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Pilot Points: " + pilotPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (remainingPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints--;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    pilotPoints++;
+	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Pilot Points: " + pilotPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void subtractFighter(ActionEvent event) {
-        if (fighterPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints++;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            fighterPoints--;
-            fighterPointsLabel.setText("Fighter\n" + fighterPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Fighter Points: " + fighterPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (fighterPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints++;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    fighterPoints--;
+	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Fighter Points: " + fighterPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void addFighter(ActionEvent event) {
-        if (remainingPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints--;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            fighterPoints++;
-            fighterPointsLabel.setText("Fighter\n" + fighterPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Fighter Points: " + fighterPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (remainingPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints--;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    fighterPoints++;
+	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Fighter Points: " + fighterPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void subtractTrader(ActionEvent event) {
-        if (traderPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints++;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            traderPoints--;
-            traderPointsLabel.setText("Trader\n" + traderPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Trader Points: " + traderPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (traderPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints++;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    traderPoints--;
+	    traderPointsLabel.setText("Trader\n" + traderPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Trader Points: " + traderPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void addTrader(ActionEvent event) {
-        if (remainingPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints--;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            traderPoints++;
-            traderPointsLabel.setText("Trader\n" + traderPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Trader Points: " + traderPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (remainingPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints--;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    traderPoints++;
+	    traderPointsLabel.setText("Trader\n" + traderPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Trader Points: " + traderPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void subtractEngineer(ActionEvent event) {
-        if (engineerPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints++;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            engineerPoints--;
-            engineerPointsLabel.setText("Engineer\n" + engineerPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Engineer Points: " + engineerPoints);
-        } else {
-            mediaPlayer = new MediaPlayer(deny);
-            mediaPlayer.play();
-        }
+	if (engineerPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints++;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    engineerPoints--;
+	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Engineer Points: " + engineerPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
     }
-    
+
     @FXML
     private void addEngineer(ActionEvent event) {
-        if (remainingPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-            mediaPlayer.play();
-            remainingPoints--;
-            remainingPointsLabel.setText("Remaining Points\n" + remainingPoints);
-            engineerPoints++;
-            engineerPointsLabel.setText("Engineer\n" + engineerPoints);
-            System.out.println("Remaining Points: " + remainingPoints);
-            System.out.println("Engineer Points: " + engineerPoints);
-        }
+	if (remainingPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints--;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+	    engineerPoints++;
+	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
+	    System.out.println("Remaining Points: " + remainingPoints);
+	    System.out.println("Engineer Points: " + engineerPoints);
+	}
     }
-    
+
     @FXML
     private void cancel(ActionEvent event) throws Exception {
-        Parent config = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	Parent config = FXMLLoader.load(getClass().getResource(
+		"FXMLDocument.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-    
+
     @FXML
     private void done(ActionEvent event) throws Exception {
-        if (remainingPoints == 0) {
-            if (nameField.getText() != null && !nameField.getText().trim().isEmpty()) {
-                name = nameField.getText().trim();
-            }
-            System.out.println(name);
-            
-            MainController.makePlayer(name, pilotPoints, fighterPoints, traderPoints,
-            							engineerPoints, MainController.getUniverse().getPlanet("S1").getX(),
-            							MainController.getUniverse().getPlanet("S1").getY());
-            
-            MainController.setCurrentPlanet("S1");
-            MainController.setCurrentSolarSystem("SPAAACE");
-            Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
-            Scene sceneConfig = new Scene(config);
-            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stageN.setScene(sceneConfig);
-            stageN.show();
-        } else {
-            //Make a pop-up dialog that tells user to use remaining points.
-        }
+	if (remainingPoints == 0) {
+	    if (nameField.getText() != null
+		    && !nameField.getText().trim().isEmpty()) {
+		name = nameField.getText().trim();
+	    }
+	    System.out.println(name);
+
+	    MainController.makePlayer(name, pilotPoints, fighterPoints,
+		    traderPoints, engineerPoints, MainController.getUniverse()
+			    .getPlanet("S1").getX(), MainController
+			    .getUniverse().getPlanet("S1").getY());
+
+	    MainController.setCurrentPlanet("S1");
+	    MainController.setCurrentSolarSystem("SPAAACE");
+	    Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	} else {
+	    // Make a pop-up dialog that tells user to use remaining points.
+	}
     }
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        click = new Media(new File("./src/spacetrader/Click Silencer 2.wav").toURI().toString());
-        deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav").toURI().toString());
-        mediaPlayer = new MediaPlayer(click);
+	click = new Media(new File("./src/spacetrader/Click Silencer 2.wav")
+		.toURI().toString());
+	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
+		.toURI().toString());
+	mediaPlayer = new MediaPlayer(click);
     }
-    
+
     public String getName() {
-    	return name;
+	return name;
     }
-    
+
     public int getpilotPoints() {
-    	return pilotPoints;
+	return pilotPoints;
     }
-    
+
     public int getfighterPoints() {
-    	return fighterPoints;
+	return fighterPoints;
     }
-    
+
     public int getraderPoints() {
-    	return traderPoints;
+	return traderPoints;
     }
-    
+
     public int getengineerPoints() {
-    	return engineerPoints;
+	return engineerPoints;
     }
-    
+
 }

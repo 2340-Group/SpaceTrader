@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.NAMEController">
    <children>
-      <ImageView fitHeight="617.0" fitWidth="834.0" layoutX="-8.0" layoutY="-88.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@NAME.png" />
          </image>
@@ -29,9 +29,8 @@
         </menus>
       </MenuBar>
       <Button layoutX="6.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Exit to Universe" />
-      <Button layoutX="497.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleBigButtonAction" text="Big" />
-      <Button layoutX="497.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleGiantButtonAction" text="Giant" />
-      <Button layoutX="497.0" layoutY="129.0" mnemonicParsing="false" onAction="#handlePlanetButtonAction" text="Planet" />
-      <Label layoutX="492.0" layoutY="35.0" text="Planets" textFill="#da1818" />
+      <Button layoutX="504.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleBigButtonAction" text="Big" />
+      <Button layoutX="37.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleGiantButtonAction" text="Giant" />
+      <Button layoutX="149.0" layoutY="263.0" mnemonicParsing="false" onAction="#handlePlanetButtonAction" text="Planet" />
    </children>
 </AnchorPane>

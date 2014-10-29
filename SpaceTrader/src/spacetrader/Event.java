@@ -8,8 +8,9 @@ package spacetrader;
 
 /**
  * Interface for police/pirate/etc. events.
+ *
  * @author Jesse
  */
 public interface Event {
-    
+
 }

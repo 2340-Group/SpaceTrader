@@ -23,12 +23,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Shields" GridPane.rowIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Shields" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -38,22 +39,22 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Fuel:" GridPane.rowIndex="4">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current Fuel:" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Merchandise:" GridPane.rowIndex="5">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Merchandise:" GridPane.rowIndex="6">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weapons" GridPane.rowIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weapons" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gadgets" GridPane.rowIndex="3">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gadgets" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
@@ -63,81 +64,91 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="sheild1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Label fx:id="sheild2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="sheild3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Label fx:id="sheild3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label fx:id="weapon1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Label fx:id="weapon2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weapon3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Label fx:id="weapon3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="gadget1" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Label fx:id="gadget2" text="-" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="gadget3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Label fx:id="gadget3" text="-" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="currentFuel" text="curFuel" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="currentFuel" text="curFuel" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="currentCargo" text="curCargo" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label fx:id="currentCargo" text="curCargo" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="maxFuel" text="maxFuel" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Label fx:id="maxFuel" text="maxFuel" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="maxCargo" text="maxCargo" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <Label fx:id="maxCargo" text="maxCargo" GridPane.columnIndex="3" GridPane.rowIndex="6">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max Fuel:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max Fuel:" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Capacity:" GridPane.columnIndex="2" GridPane.rowIndex="5">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Capacity:" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Health" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="health" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </children>
