@@ -1,32 +1,18 @@
 package spacetrader;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-<<<<<<< HEAD
-<<<<<<< HEAD
-*/
+
 
 public class ShipTest_jrule3 {
- /*   Ship defaultShip;
-=======
 
 public class ShipTest_jrule3 {
     Ship defaultShip;
->>>>>>> FETCH_HEAD
-=======
 
 public class ShipTest_jrule3 {
     Ship defaultShip;
->>>>>>> FETCH_HEAD
     Ship mostGadgets;
     Ship noGadgets;
     Ship oneGadget;
@@ -45,12 +31,5 @@ public class ShipTest_jrule3 {
 	defaultShip.addGadget(Equipment.BASIC);
 	assertTrue(defaultShip.getGadgets().contains(Equipment.BASIC));
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    */
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 
 }
