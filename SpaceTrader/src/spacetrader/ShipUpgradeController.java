@@ -77,8 +77,7 @@ public class ShipUpgradeController implements Initializable{
 	@FXML
     private void handleBuy(ActionEvent event) throws Exception {
 		Button clicked = (Button) event.getSource();
-		Equipment e = Equipment.NOTHING;
-		boolean isGadget = false;
+		Equipment e;
 		if(clicked.equals(weaponBasic) || clicked.equals(sheildBasic)){
 			e = Equipment.BASIC;
 		}else if(clicked.equals(weaponNormal) || clicked.equals(sheildNormal)){
@@ -87,13 +86,12 @@ public class ShipUpgradeController implements Initializable{
 			e = Equipment.ADVANCED;
 		}else if(clicked.equals(gadgetFuel)){
 			e = Equipment.BASIC;
-			isGadget = true;
 		}else if(clicked.equals(gadgetCargo)){
 			e = Equipment.NORMAL;
-			isGadget = true;
 		}else if(clicked.equals(gadgetEscape)){
 			e = Equipment.ADVANCED;
-			isGadget = true;
+		}else{
+			e = Equipment.NOTHING;
 		}
 
 		if(e != Equipment.NOTHING)
@@ -107,7 +105,7 @@ public class ShipUpgradeController implements Initializable{
 	   			
 	   			Ship ship = MainController.getPlayer().getShip();
 	   			
-	   			if(isGadget){
+	   			if(clicked.equals(gadgetFuel) || clicked.equals(gadgetCargo) || clicked.equals(gadgetEscape)){
 	   				ship.addGadget(e);
 	   			}else if(clicked.equals(weaponBasic) || clicked.equals(weaponNormal) || clicked.equals(weaponAdvanced)){
 	   				ship.addWeapon(e);
@@ -231,7 +229,7 @@ public class ShipUpgradeController implements Initializable{
 			ArrayList<Equipment> gadgets = ship.getGadgets();
 			for(Equipment e: gadgets)
 			{
-				switch (e) {
+				switch (e) {		// fall through on purpose
 				case BASIC:
 					gadgetFuel.setText("Own");
 					gadgetFuel.setDisable(true);

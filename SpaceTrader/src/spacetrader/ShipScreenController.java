@@ -64,7 +64,7 @@ public class ShipScreenController implements Initializable {
 		maxCargo.setText("" + displayMe.getMaxCargo());
 		
 		int remain = st.getSheildSlots();
-		switch (remain) {
+		switch (remain) {		// fall through on purpose
 		case 3:
 			sheild3.setText("EMPTY");
 		case 2:
@@ -75,7 +75,7 @@ public class ShipScreenController implements Initializable {
 			break;
 		}
 		remain = st.getWeaponSlots();
-		switch (remain) {
+		switch (remain) {		// fall through on purpose
 		case 3:
 			weapon3.setText("EMPTY");
 		case 2:
@@ -86,7 +86,7 @@ public class ShipScreenController implements Initializable {
 			break;
 		}
 		remain = st.getGadgetSlots();
-		switch (remain) {
+		switch (remain) {		// fall through on purpose
 		case 3:
 			gadget3.setText("EMPTY");
 		case 2:
@@ -99,7 +99,7 @@ public class ShipScreenController implements Initializable {
 		
 		
 		ArrayList<Equipment> l = displayMe.getSheilds();
-		switch (l.size()) {
+		switch (l.size()) {		// fall through on purpose
 		case 3:
 			sheild3.setText("" + l.get(2));
 		case 2:
@@ -111,7 +111,7 @@ public class ShipScreenController implements Initializable {
 		}
 		
 		l = displayMe.getWeapons();
-		switch (l.size()) {
+		switch (l.size()) {		// fall through on purpose
 		case 3:
 			weapon3.setText("" + l.get(2));
 		case 2:
@@ -123,13 +123,13 @@ public class ShipScreenController implements Initializable {
 		}
 		
 		l = displayMe.getGadgets();
-		switch (l.size()) {
+		switch (l.size()) {		// fall through on purpose
 		case 3:
-			gadget3.setText("" + l.get(2).getGadgetName());
+			gadget3.setText(l.get(2).getGadgetName());
 		case 2:
-			gadget2.setText("" + l.get(1).getGadgetName());
+			gadget2.setText(l.get(1).getGadgetName());
 		case 1:
-			gadget1.setText("" + l.get(0).getGadgetName());
+			gadget1.setText(l.get(0).getGadgetName());
 		default:
 			break;
 		}

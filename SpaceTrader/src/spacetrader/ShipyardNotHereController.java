@@ -37,7 +37,7 @@ public class ShipyardNotHereController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	
+    	// entirely set up by .fxml
     }    
     
 }

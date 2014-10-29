@@ -19,17 +19,16 @@ import javafx.stage.Stage;
  */
 public class SpaceTrader extends Application {
     
-    private static MainController main;
+    private static MainController mainC;
   
     public static MainController getMainController() {
-        return main;
+        return mainC;
     }
     
     @Override
     public void start(Stage stage) throws Exception {
     	Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
-        System.out.println("" + Integer.MAX_VALUE);
         stage.setScene(scene);
         stage.show();
     }
@@ -39,7 +38,7 @@ public class SpaceTrader extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	main.makeUniverse();
+    	mainC.makeUniverse();
 
     	launch(args);
 

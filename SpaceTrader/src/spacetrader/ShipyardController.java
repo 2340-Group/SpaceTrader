@@ -97,7 +97,7 @@ public class ShipyardController implements Initializable {
    	@FXML
    	private void handleBuyShip(ActionEvent event) throws Exception {
 	   	Button clicked = (Button) event.getSource();
-	   	ShipType st = ShipType.NOSHIP;
+	   	ShipType st;
 	   	if(clicked.equals(buyFLEA)){
 	   		st = ShipType.FLEA;
 	   	}else if(clicked.equals(buyGNAT)){
@@ -118,6 +118,8 @@ public class ShipyardController implements Initializable {
 	   		st = ShipType.MOSQUITO;
 	   	}else if(clicked.equals(buyFIREFLY)){
 	   		st = ShipType.FIREFLY;
+	   	}else{
+	   		st = ShipType.NOSHIP;
 	   	}
 	   	
 		int funds = MainController.getPlayer().getFunds();

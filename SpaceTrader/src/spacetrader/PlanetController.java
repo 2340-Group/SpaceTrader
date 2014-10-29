@@ -101,10 +101,12 @@ public class PlanetController implements Initializable {
      */
     @FXML
     public void handleShipyard(ActionEvent event) throws Exception {
-    	Parent config = FXMLLoader.load(getClass().getResource("Shipyard.fxml"));
+    	Parent config;
     	if(MainController.getPlanetNotString().getTechLevel() < minTechLevelNeeded)
     	{
 	       config = FXMLLoader.load(getClass().getResource("ShipyardNotHere.fxml"));
+    	}else{
+    		config = FXMLLoader.load(getClass().getResource("Shipyard.fxml"));
     	}
     	Scene sceneConfig = new Scene(config);
 	    Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();

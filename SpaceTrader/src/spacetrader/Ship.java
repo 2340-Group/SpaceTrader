@@ -215,7 +215,7 @@ public class Ship implements Serializable {
 		{
 			sheilds = new ArrayList<Equipment>();
 		}
-		if(sheilds.size() < 1)
+		if(sheilds.isEmpty())
 		{
 			return Equipment.NOTHING;
 		}
@@ -324,7 +324,6 @@ public class Ship implements Serializable {
 	 */
 	public boolean takeDamageRepair(int hea) 
 	{
-		boolean alive = true;
 		if(this.health-hea > 0)
 		{
 			this.health += hea;
@@ -332,9 +331,8 @@ public class Ship implements Serializable {
 		else
 		{
 			this.health = 0;
-			alive = false;
 		}
-		return alive;
+		return health == 0;
 	}
 	
 	/**

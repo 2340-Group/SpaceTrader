@@ -8,13 +8,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-import javafx.fxml.Initializable;
-
-public class MainController implements Initializable, Serializable {
+public class MainController implements Serializable {
 	
     private static String currentPlanet;
     private static String currentSolarSystem;
@@ -91,10 +87,6 @@ public class MainController implements Initializable, Serializable {
         return 2;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 
     /**
      * Saves the game

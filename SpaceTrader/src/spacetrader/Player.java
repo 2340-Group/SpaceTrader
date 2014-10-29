@@ -29,23 +29,23 @@ public class Player implements Serializable {
     
 	/**
 	 * Funds set to 1000 by default
-	 * @param n - String name
-	 * @param p - int piloting skill
-	 * @param f - int fighting skill
-	 * @param t - int trading skill
-	 * @param e - int engineering skill
-	 * @param s - Ship
+	 * @param newName - String name
+	 * @param pilot - int piloting skill
+	 * @param fight - int fighting skill
+	 * @param trade - int trading skill
+	 * @param engineer - int engineering skill
+	 * @param newShip - Ship
 	 */
-    public Player(String n, int p, int f, int t, int e, int x, int y, Ship s) {
-        System.out.println("Making player: " + n + " Location: " + x + ", " + y);
-		name = n;
-		piloting = p;
-		fighting = f;
-		trading = t;
-		engineering = e;
-		ship = s;
-		locX = x;
-		locY = y;
+    public Player(String newName, int pilot, int fight, int trade, int engineer, int xLoc, int yLoc, Ship newShip) {
+        System.out.println("Making player: " + newName + " Location: " + xLoc + ", " + yLoc);
+		name = newName;
+		piloting = pilot;
+		fighting = fight;
+		trading = trade;
+		engineering = engineer;
+		ship = newShip;
+		locX = xLoc;
+		locY = yLoc;
 		funds = 1000;
 		
     }
@@ -63,14 +63,14 @@ public class Player implements Serializable {
 	
 	/**
 	 * 
-	 * @param x - int amount to be added to money (x should be +)
+	 * @param add - int amount to be added to money (x should be +)
 	 */
-	public void addFunds(int x) {
-		if(funds > 0 && (funds+x) < 0)
+	public void addFunds(int add) {
+		if(funds > 0 && (funds+add) < 0)
 		{
 			funds = Integer.MAX_VALUE;
 		}
-		funds = funds + x;
+		funds = funds + add;
 	}
 	
 	/**

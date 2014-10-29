@@ -77,14 +77,14 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
+ //       try {
           introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3").toURI().toString());
           mediaPlayer = new MediaPlayer(introSong);
           mediaPlayer.play();
           mediaPlayer.setCycleCount(4);
-        } catch (Exception e) {
-          System.err.println(e.getMessage());
-        }
+//        } catch (Exception e) {
+//          System.err.println(e.getMessage());
+//        }
 
     }    
     
