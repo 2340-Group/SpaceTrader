@@ -131,8 +131,7 @@ public class SPAAACEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-<<<<<<< HEAD
-    } 
+    }
     
     private void nameHelper(String planet, ActionEvent event)throws Exception{
         if (!MainController.getCurrentPlanet().equals(planet)) {
@@ -146,36 +145,6 @@ public class SPAAACEController implements Initializable {
             this.eventType = planet + ".fxml";
         }
     }
-    }
-
-=======
-	// TODO
-    }
-
-    private void nameHelper(String planet, ActionEvent event) throws Exception {
-	this.eventType = "none";
-	if (!MainController.getCurrentPlanet().equals(planet)) {
-	    MainController.getPlayer().getShip()
-	    .useFuel(MainController.getFuelCost("SPAAACE"));
-	    MainController.setCurrentPlanet(planet);
-	    MainController.setCurrentSolarSystem("SPAAACE");
-	    EventGeneratorSimple randEvent = new EventGeneratorSimple(
-		    MainController.getPlayer());
-	    this.eventType = randEvent.generate();
-	    if (!eventType.equals("none")) {
-		if (eventType.equals("Pirates") || eventType.equals("Police")) {
-		    this.eventType = eventType + ".fxml";
-		    System.out.print(eventType);
-		    return;
-		} else {
-		    this.eventType = planet + ".fxml";
-		    return;
-		}
-	    }
-	}
-	this.eventType = planet + ".fxml";
-
-    }
 
 }
->>>>>>> FETCH_HEAD
+
