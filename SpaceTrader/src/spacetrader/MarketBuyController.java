@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 public class MarketBuyController implements Initializable {
 
-	private int waterTotal = 0, OreTotal = 0, foodTotal = 0, 
+	private int waterTotal = 0, oreTotal = 0, foodTotal = 0, 
 			fursTotal = 0, gamesTotal = 0, firearmsTotal = 0, 
 			medicineTotal = 0, machinesTotal = 0, 
 			narcoticsTotal = 0, robotsTotal = 0, tempFunds = 0, cargoTotal = 0;
@@ -133,10 +133,10 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractOre(ActionEvent event) {
-    	if (OreTotal > 0) {
+    	if (oreTotal > 0) {
     		cargoTotal--;
-	    	OreTotal--;
-	        oreLabel.setText("ORE\n" + OreTotal);
+	    	oreTotal--;
+	        oreLabel.setText("ORE\n" + oreTotal);
 	        tempFunds = tempFunds + missingNo.getResourceCost("Ore");
     		fundsLabel.setText("FUNDS\n" + tempFunds);
     	}
@@ -151,8 +151,8 @@ public class MarketBuyController implements Initializable {
     private void addOre(ActionEvent event) {
     	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo() && tempFunds >= missingNo.getResourceCost("Ore")) {
     		cargoTotal++;
-    		OreTotal++;
-    		oreLabel.setText("ORE\n" + OreTotal);
+    		oreTotal++;
+    		oreLabel.setText("ORE\n" + oreTotal);
     		tempFunds = tempFunds - missingNo.getResourceCost("Ore");
     		fundsLabel.setText("FUNDS\n" + tempFunds);
     	}
@@ -425,8 +425,8 @@ public class MarketBuyController implements Initializable {
    		if (waterTotal > 0) {
    			missingNo.buy(missingNo.getResources().get(0), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
-   		if (OreTotal > 0) {
-   			missingNo.buy(missingNo.getResources().get(1), OreTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		if (oreTotal > 0) {
+   			missingNo.buy(missingNo.getResources().get(1), oreTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (foodTotal > 0) {
    			missingNo.buy(missingNo.getResources().get(2), foodTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
@@ -463,7 +463,7 @@ public class MarketBuyController implements Initializable {
    	
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
-   		if (MainController.getPlayer().getFunds() >= 100 && (MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getMaxFuel() - 10))) {
+   		if (MainController.getPlayer().getFunds() >= 100 && MainController.getPlayer().getShip().getFuel() <= (MainController.getPlayer().getShip().getMaxFuel() - 10)) {
    			MainController.getPlayer().subtractFunds(100);
    			MainController.getPlayer().getShip().addFuel(10);
    			tempFunds = MainController.getPlayer().getFunds();
@@ -477,7 +477,7 @@ public class MarketBuyController implements Initializable {
    	 */
    	private void resetMarket() {
    		waterTotal = 0;
-   		OreTotal = 0;
+   		oreTotal = 0;
    		foodTotal = 0; 
    		fursTotal = 0;
    		gamesTotal = 0;
@@ -488,7 +488,7 @@ public class MarketBuyController implements Initializable {
    		robotsTotal = 0;
    		tempFunds = 0;
    		waterLabel.setText("WATER\n" + waterTotal);
-   		oreLabel.setText("ORE\n" + OreTotal);
+   		oreLabel.setText("ORE\n" + oreTotal);
    		foodLabel.setText("FOOD\n" + foodTotal);
    		fursLabel.setText("FURS\n" + fursTotal);
    		gamesLabel.setText("GAMES\n" + gamesTotal);

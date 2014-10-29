@@ -78,7 +78,7 @@ public class ShipyardController implements Initializable {
 	 */
    	@FXML
    	private void handleBuyFuelAction(ActionEvent event) throws Exception {
-   		if (MainController.getPlayer().getFunds() >= 10 && (MainController.getPlayer().getShip().getFuel() < (MainController.getPlayer().getShip().getMaxFuel()))) {
+   		if (MainController.getPlayer().getFunds() >= 10 && MainController.getPlayer().getShip().getFuel() < MainController.getPlayer().getShip().getMaxFuel()) {
    			MainController.getPlayer().subtractFunds(10);
    			MainController.getPlayer().getShip().addFuel(1);
    	   		fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());

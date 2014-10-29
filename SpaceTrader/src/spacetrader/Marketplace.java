@@ -45,9 +45,7 @@ public class Marketplace implements Serializable {
     */
     public void raisePrice(Resource r, Double percent) {
         adjustInflation(economyScore);
-        percent = percent/100;
-        int price = r.getPrice();
-        price = (int) ((price + price * percent) * currentInflation);
+        int price = (int) ((r.getPrice() + r.getPrice() * (percent/100)) * currentInflation);
         r.setPrice(price);
     }
 
@@ -59,9 +57,7 @@ public class Marketplace implements Serializable {
     */
     public void lowerPrice(Resource r, Double percent) {
         adjustInflation(economyScore);
-        percent = percent/100;
-        int price = r.getPrice();
-        price = (int) ((price - price * percent) * currentInflation);
+        int price = (int) ((r.getPrice() - r.getPrice() * (percent/100)) * currentInflation);
         r.setPrice(price);
     }
 
@@ -178,7 +174,7 @@ public class Marketplace implements Serializable {
      * lists prices
      */
     public String listPrices() {
-    	String s = new String();
+    	String s = "";
         for (Resource r: resources) {
             System.out.println(r.getName() + " costs " + r.getPrice() + " credits.");
             s = s + r.getName() + " costs " + r.getPrice() + " credits.\n";

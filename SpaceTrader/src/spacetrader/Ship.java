@@ -293,16 +293,16 @@ public class Ship implements Serializable {
 	 * @return int the amount lacking, -1 if ship has enough
 	 */
 	public int useFuel(int used) {
-		fuel = fuel - used;
-		if(fuel > 0)
+		int check = fuel - used;
+		if(check > 0)
 		{
+			fuel = check;
 			return -1;
 		}
 		else
 		{
-			used = fuel * (-1);
 			fuel = 0;
-			return used;
+			return check * (-1);
 		}
 	}
 	

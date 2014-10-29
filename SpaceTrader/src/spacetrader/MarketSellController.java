@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 public class MarketSellController implements Initializable {
 
-	private int waterTotal = 0, OreTotal = 0, foodTotal = 0, 
+	private int waterTotal = 0, oreTotal = 0, foodTotal = 0, 
 			fursTotal = 0, gamesTotal = 0, firearmsTotal = 0, 
 			medicineTotal = 0, machinesTotal = 0, 
 			narcoticsTotal = 0, robotsTotal = 0, tempFunds = 0;
@@ -111,18 +111,18 @@ public class MarketSellController implements Initializable {
     //ORE
     @FXML
     private void subtractOre(ActionEvent event) {
-    	if (OreTotal > 0) {
-	    	OreTotal--;
-	        oreLabel.setText("ORE\n" + OreTotal);
+    	if (oreTotal > 0) {
+	    	oreTotal--;
+	        oreLabel.setText("ORE\n" + oreTotal);
     	}
     	//add deny sound for else
     }
     
     @FXML
     private void addOre(ActionEvent event) {
-    	if (OreTotal < MainController.getPlayer().getShip().getCargo().getResourceStock(new Resource(ResourceType.ORE, 100))) {
-    		OreTotal++;
-    		oreLabel.setText("ORE\n" + OreTotal);
+    	if (oreTotal < MainController.getPlayer().getShip().getCargo().getResourceStock(new Resource(ResourceType.ORE, 100))) {
+    		oreTotal++;
+    		oreLabel.setText("ORE\n" + oreTotal);
     	}
     	
     }
@@ -291,8 +291,8 @@ public class MarketSellController implements Initializable {
    		if (waterTotal > 0) {
    			missingNo.sell(missingNo.getResources().get(0), waterTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
-   		if (OreTotal > 0) {
-   			missingNo.sell(missingNo.getResources().get(1), OreTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
+   		if (oreTotal > 0) {
+   			missingNo.sell(missingNo.getResources().get(1), oreTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
    		}
    		if (foodTotal > 0) {
    			missingNo.sell(missingNo.getResources().get(2), foodTotal, MainController.getPlayer(), MainController.getPlayer().getShip());
@@ -346,7 +346,7 @@ public class MarketSellController implements Initializable {
    	
    	private void resetMarket() {
    		waterTotal = 0;
-   		OreTotal = 0;
+   		oreTotal = 0;
    		foodTotal = 0; 
    		fursTotal = 0;
    		gamesTotal = 0;
@@ -357,7 +357,7 @@ public class MarketSellController implements Initializable {
    		robotsTotal = 0;
    		tempFunds = 0;
    		waterLabel.setText("WATER\n" + waterTotal);
-   		oreLabel.setText("ORE\n" + OreTotal);
+   		oreLabel.setText("ORE\n" + oreTotal);
    		foodLabel.setText("FOOD\n" + foodTotal);
    		fursLabel.setText("FURS\n" + fursTotal);
    		gamesLabel.setText("GAMES\n" + gamesTotal);
