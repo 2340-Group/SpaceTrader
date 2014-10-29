@@ -24,28 +24,30 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class MoonController implements Initializable {
-	/**
+    /**
      * Exits to the SolarSystem
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleStupidity(ActionEvent event) throws Exception {
-        if (MainController.getPlayer().getShip().getFuel() > 0) {
-            Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
-            Scene sceneConfig = new Scene(config);
-            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stageN.setScene(sceneConfig);
-            stageN.show();
-        }	
+	if (MainController.getPlayer().getShip().getFuel() > 0) {
+	    Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
     }
-	
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	    // entriely delt with by the .fxml
-    }  
-    
+	// entriely delt with by the .fxml
+    }
+
 }

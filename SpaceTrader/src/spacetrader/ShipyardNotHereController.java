@@ -20,24 +20,27 @@ import javafx.stage.Stage;
 public class ShipyardNotHereController implements Initializable {
     /**
      * Exits to the Planet
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleLeaveShipyard(ActionEvent event) throws Exception {
-    	Parent config = FXMLLoader.load(getClass().getResource(MainController.getCurrentPlanet() + ".fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-    
+
     /**
      * entirely set up by the .fxml
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    	// entirely set up by .fxml
-    }    
-    
+	// entirely set up by .fxml
+    }
+
 }

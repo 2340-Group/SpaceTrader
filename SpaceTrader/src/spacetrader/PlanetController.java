@@ -25,8 +25,8 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class PlanetController implements Initializable {
-	private int minTechLevelNeeded = 3;
-	
+    private int minTechLevelNeeded = 3;
+
     @FXML
     private Label fuelLabel;
     @FXML
@@ -34,98 +34,110 @@ public class PlanetController implements Initializable {
 
     /**
      * Saves the game
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
-        MainController.saveGame();
+	MainController.saveGame();
     }
-    
+
     @FXML
     private void handleBuyMoon(ActionEvent event) throws Exception {
-    	if(MainController.getPlayer().getFunds() >= Integer.MAX_VALUE)
-    	{
-    		Parent config = FXMLLoader.load(getClass().getResource("Moon.fxml"));
-            Scene sceneConfig = new Scene(config);
-            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stageN.setScene(sceneConfig);
-            stageN.show();
-    	}
+	if (MainController.getPlayer().getFunds() >= Integer.MAX_VALUE) {
+	    Parent config = FXMLLoader
+		    .load(getClass().getResource("Moon.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
     }
-    
+
     /**
      * Quits the game
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
-        System.exit(0);
+	System.exit(0);
     }
-    
+
     /**
      * Exits to the SolarSystem
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-        if (MainController.getPlayer().getShip().getFuel() > 0) {
-            Parent config = FXMLLoader.load(getClass().getResource(MainController.getCurrentSolarSystem() + ".fxml"));
-            Scene sceneConfig = new Scene(config);
-            Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stageN.setScene(sceneConfig);
-            stageN.show();
-        }	
+	if (MainController.getPlayer().getShip().getFuel() > 0) {
+	    Parent config = FXMLLoader.load(getClass().getResource(
+		    MainController.getCurrentSolarSystem() + ".fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
     }
-	
+
     /**
      * market pop up
+     *
      * @param event
      * @throws Exception
      */
     @FXML
     public void handleMarket(ActionEvent event) throws Exception {
-        Parent config = FXMLLoader.load(getClass().getResource("Marketplace.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	Parent config = FXMLLoader.load(getClass().getResource(
+		"Marketplace.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-    
+
     /**
      * to the shipyard
+     *
      * @param event
      * @throws Exception
      */
     @FXML
     public void handleShipyard(ActionEvent event) throws Exception {
-    	Parent config;
-    	if(MainController.getPlanetNotString().getTechLevel() < minTechLevelNeeded)
-    	{
-	       config = FXMLLoader.load(getClass().getResource("ShipyardNotHere.fxml"));
-    	}else{
-    		config = FXMLLoader.load(getClass().getResource("Shipyard.fxml"));
-    	}
-    	Scene sceneConfig = new Scene(config);
-	    Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	    stageN.setScene(sceneConfig);
-	    stageN.show();
+	Parent config;
+	if (MainController.getPlanetNotString().getTechLevel() < minTechLevelNeeded) {
+	    config = FXMLLoader.load(getClass().getResource(
+		    "ShipyardNotHere.fxml"));
+	} else {
+	    config = FXMLLoader.load(getClass().getResource("Shipyard.fxml"));
+	}
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-    
+
     /**
      * ship stats
+     *
      * @param event
      * @throws Exception
      */
     @FXML
     public void handleAccessShip(ActionEvent event) throws Exception {
-        Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) fuelLabel.getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
 
     /**
@@ -133,9 +145,10 @@ public class PlanetController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    	fundsLabel.setText("FUNDS\n" + MainController.getPlayer().getFunds());
-    	fuelLabel.setText("FUEL\n" + MainController.getPlayer().getShip().getFuel());
-    }    
-    
+	// TODO
+	fundsLabel.setText("FUNDS\n" + MainController.getPlayer().getFunds());
+	fuelLabel.setText("FUEL\n"
+		+ MainController.getPlayer().getShip().getFuel());
+    }
+
 }

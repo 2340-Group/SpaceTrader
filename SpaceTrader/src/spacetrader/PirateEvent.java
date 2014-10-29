@@ -11,36 +11,37 @@ package spacetrader;
  * @author Jesse
  */
 public class PirateEvent implements Event {
-	
-    //Pirates steal all of your resources
+
+    // Pirates steal all of your resources
     public Ship stealResources(Ship s) {
-        int cap = s.getMaxCargo();
-        s.setCargo(new CargoBay(cap));
-        
-        return s;
+	int cap = s.getMaxCargo();
+	s.setCargo(new CargoBay(cap));
+
+	return s;
     }
 
-    //Fight the pirates
+    // Fight the pirates
     public boolean fight(Ship s) {
-        int pirateFighting = (int) (Math.random() * 20);
-        
-        if(MainController.getPlayer().getFighting() >= pirateFighting) {
-            int damage = -25 + MainController.getPlayer().getFighting() + MainController.getPlayer().getPiloting();
-            if(damage > 0) {
-                damage = 0;
-            }
-            s.takeDamageRepair(damage);
-            return true;
-        } else {
-            s.takeDamageRepair(-999);
-            return false;
-        }
+	int pirateFighting = (int) (Math.random() * 20);
+
+	if (MainController.getPlayer().getFighting() >= pirateFighting) {
+	    int damage = -25 + MainController.getPlayer().getFighting()
+		    + MainController.getPlayer().getPiloting();
+	    if (damage > 0) {
+		damage = 0;
+	    }
+	    s.takeDamageRepair(damage);
+	    return true;
+	} else {
+	    s.takeDamageRepair(-999);
+	    return false;
+	}
     }
 
-    //Flee the pirates
+    // Flee the pirates
     public boolean flee(Ship s) {
-        int damage = -25 + MainController.getPlayer().getPiloting();
-        
-        return s.takeDamageRepair(damage);
+	int damage = -25 + MainController.getPlayer().getPiloting();
+
+	return s.takeDamageRepair(damage);
     }
 }

@@ -24,79 +24,106 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class SPAAACEController implements Initializable {
-    
+
     private String eventType;
-	
-	@FXML
+
+    @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
-        System.exit(0);
+	System.exit(0);
     }
-	
-	@FXML
+
+    @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-		if (MainController.getPlayer().getShip().getFuel() > 1) {
-			Parent config = FXMLLoader.load(getClass().getResource("Universe.fxml"));
-	        Scene sceneConfig = new Scene(config);
-	        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	        stageN.setScene(sceneConfig);
-	        stageN.show();
-		}
-		
+	if (MainController.getPlayer().getShip().getFuel() > 1) {
+	    Parent config = FXMLLoader.load(getClass().getResource(
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
     }
-	
-	@FXML
+
+    @FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
-        nameHelper("S1", event);
-        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-        Parent config = FXMLLoader.load(getClass().getResource(eventType));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	nameHelper("S1", event);
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-	
-	@FXML
+
+    @FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
-        nameHelper("S2", event);
-        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-        Parent config = FXMLLoader.load(getClass().getResource(eventType));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	nameHelper("S2", event);
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-	
-	@FXML
+
+    @FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
 	nameHelper("S3", event);
-        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-        Parent config = FXMLLoader.load(getClass().getResource(eventType));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-	
-	@FXML
+
+    @FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
 	nameHelper("S3PT2", event);
-        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-        Parent config = FXMLLoader.load(getClass().getResource(eventType));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-	
-	@FXML
+
+    @FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
 	nameHelper("Your Naming Sucks", event);
-        MainController.getPlayer().setLocation(MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getX(), MainController.getUniverse().getPlanet(MainController.getCurrentPlanet()).getY());
-        Parent config = FXMLLoader.load(getClass().getResource(eventType));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
 
     /**
@@ -104,30 +131,32 @@ public class SPAAACEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    } 
-    
-    private void nameHelper(String planet, ActionEvent event)throws Exception{
-        this.eventType = "none";
-		if (!MainController.getCurrentPlanet().equals(planet)) {
-                    MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
-                    MainController.setCurrentPlanet(planet);
-                    MainController.setCurrentSolarSystem("SPAAACE");
-                    EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
-                    this.eventType = randEvent.generate();
-                    if (!eventType.equals("none")) {
-                        if(eventType.equals("Pirates") || eventType.equals("Police")) {
-                        this.eventType = eventType + ".fxml";
-                        System.out.print(eventType);
-                        return;
-                        } else {
-                            this.eventType = planet + ".fxml";
-                            return;
-                        }
-                    }
-                }
-                this.eventType = planet + ".fxml";
-		
+	// TODO
     }
-    
+
+    private void nameHelper(String planet, ActionEvent event) throws Exception {
+	this.eventType = "none";
+	if (!MainController.getCurrentPlanet().equals(planet)) {
+	    MainController.getPlayer().getShip()
+	    .useFuel(MainController.getFuelCost("SPAAACE"));
+	    MainController.setCurrentPlanet(planet);
+	    MainController.setCurrentSolarSystem("SPAAACE");
+	    EventGeneratorSimple randEvent = new EventGeneratorSimple(
+		    MainController.getPlayer());
+	    this.eventType = randEvent.generate();
+	    if (!eventType.equals("none")) {
+		if (eventType.equals("Pirates") || eventType.equals("Police")) {
+		    this.eventType = eventType + ".fxml";
+		    System.out.print(eventType);
+		    return;
+		} else {
+		    this.eventType = planet + ".fxml";
+		    return;
+		}
+	    }
+	}
+	this.eventType = planet + ".fxml";
+
+    }
+
 }

@@ -24,27 +24,29 @@ import javafx.stage.Stage;
  * @author lewisdiego
  */
 public class PoliceController implements Initializable {
-    
+
     private PoliceEvent policeEvent = new PoliceEvent();
     @FXML
     private Label funds;
-    
+
     @FXML
     private void handleContinueButtonAction(ActionEvent event) throws Exception {
-        Parent config = FXMLLoader.load(getClass().getResource(MainController.getCurrentPlanet()+".fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
     }
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        policeEvent.act(MainController.getPlayer());
-        funds.setText("" + (MainController.getPlayer().getFunds()));
-    }    
-    
+	policeEvent.act(MainController.getPlayer());
+	funds.setText("" + (MainController.getPlayer().getFunds()));
+    }
+
 }
