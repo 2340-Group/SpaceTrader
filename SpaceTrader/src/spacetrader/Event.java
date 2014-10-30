@@ -13,4 +13,6 @@ package spacetrader;
  */
 public interface Event {
 
+    public String act(Player p);
+    
 }

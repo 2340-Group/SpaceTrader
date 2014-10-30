@@ -19,6 +19,13 @@ public class PirateEvent implements Event {
 
 	return s;
     }
+    
+    public String act(Player p) {
+        int cap = p.getShip().getMaxCargo();
+        p.getShip().setCargo(new CargoBay(cap));
+        
+        return "Pirates";
+    }
 
     // Fight the pirates
     public boolean fight(Ship s) {
@@ -44,4 +51,5 @@ public class PirateEvent implements Event {
 
 	return s.takeDamageRepair(damage);
     }
+    
 }
