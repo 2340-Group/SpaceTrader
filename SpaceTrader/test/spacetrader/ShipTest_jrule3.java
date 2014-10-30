@@ -5,13 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import org.junit.Test;
 
-<<<<<<< Updated upstream:SpaceTrader/src/spacetrader/ShipTest_jrule3.java
 /**
  * Tests the single method addGadget() in Ship.java
  * @author Jamie
  */
-=======
->>>>>>> Stashed changes:SpaceTrader/test/spacetrader/ShipTest_jrule3.java
 public class ShipTest_jrule3 {
     /**
      * noGadgets - has no gadget slots
