@@ -41,11 +41,13 @@ public class PlanetController implements Initializable {
     @FXML
     private void handleSaveMenuItemAction(ActionEvent event) throws Exception {
 	MainController.saveGame();
+        SoundController.click();
     }
 
     @FXML
     private void handleBuyMoon(ActionEvent event) throws Exception {
 	if (MainController.getPlayer().getFunds() >= Integer.MAX_VALUE) {
+            SoundController.click();
 	    Parent config = FXMLLoader
 		    .load(getClass().getResource("Moon.fxml"));
 	    Scene sceneConfig = new Scene(config);
@@ -53,7 +55,9 @@ public class PlanetController implements Initializable {
 		    .getWindow();
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
-	}
+	} else {
+            SoundController.click();
+        }
     }
 
     /**
@@ -76,6 +80,7 @@ public class PlanetController implements Initializable {
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
 	if (MainController.getPlayer().getShip().getFuel() > 0) {
+            SoundController.click();
 	    Parent config = FXMLLoader.load(getClass().getResource(
 		    MainController.getCurrentSolarSystem() + ".fxml"));
 	    Scene sceneConfig = new Scene(config);
@@ -83,7 +88,9 @@ public class PlanetController implements Initializable {
 		    .getWindow();
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -94,6 +101,7 @@ public class PlanetController implements Initializable {
      */
     @FXML
     public void handleMarket(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"Marketplace.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -111,6 +119,7 @@ public class PlanetController implements Initializable {
      */
     @FXML
     public void handleShipyard(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config;
 	if (MainController.getPlanetNotString().getTechLevel() < minTechNeeded) {
 	    config = FXMLLoader.load(getClass().getResource(
@@ -133,6 +142,7 @@ public class PlanetController implements Initializable {
      */
     @FXML
     public void handleAccessShip(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource("Ship.fxml"));
 	Scene sceneConfig = new Scene(config);
 	Stage stageN = (Stage) fuelLabel.getScene().getWindow();

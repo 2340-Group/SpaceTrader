@@ -47,6 +47,7 @@ public class PiratesController implements Initializable {
     @FXML
     private void handleSurrenderButtonAction(ActionEvent event)
 	    throws Exception {
+        SoundController.click();
 	pirateEvent.stealResources(MainController.getShip());
 
 	text.setText("You surrendered and\nlost all of your cargo.");
@@ -64,6 +65,7 @@ public class PiratesController implements Initializable {
      */
     @FXML
     private void handleFightButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	if (pirateEvent.fight(MainController.getShip())) {
 	    text.setText("You fought off the\npirates, but your ship\nhas taken damage.");
 	} else {
@@ -84,6 +86,7 @@ public class PiratesController implements Initializable {
      */
     @FXML
     private void handleFleeButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	pirateEvent.flee(MainController.getShip());
 
 	text.setText("You fled the pirates,\nbut your ship has taken\ndamage.");
@@ -95,6 +98,7 @@ public class PiratesController implements Initializable {
 
     @FXML
     private void handleContinueButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);

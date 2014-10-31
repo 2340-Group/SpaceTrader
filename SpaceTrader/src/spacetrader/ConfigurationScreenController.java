@@ -35,9 +35,6 @@ public class ConfigurationScreenController implements Initializable {
     private String name = "Trader";
     private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0,
 	    traderPoints = 0, engineerPoints = 0;
-    private Media click;
-    private Media deny;
-    private MediaPlayer mediaPlayer;
 
     @FXML
     private TextField nameField;
@@ -72,8 +69,7 @@ public class ConfigurationScreenController implements Initializable {
     @FXML
     private void subtractPilot(ActionEvent event) {
 	if (pilotPoints > 0) {
-            mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+            SoundController.click();
 	    remainingPoints++;
 	    remainingPointsL.setText(pmd + remainingPoints);
 	    pilotPoints--;
@@ -81,16 +77,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void addPilot(ActionEvent event) {
 	if (remainingPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints--;
 	    remainingPointsL.setText(pmd + remainingPoints);
 	    pilotPoints++;
@@ -98,16 +92,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void subtractFighter(ActionEvent event) {
 	if (fighterPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints++;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -116,16 +108,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void addFighter(ActionEvent event) {
 	if (remainingPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints--;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -134,16 +124,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void subtractTrader(ActionEvent event) {
 	if (traderPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints++;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -152,16 +140,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Trader Points: " + traderPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void addTrader(ActionEvent event) {
 	if (remainingPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints--;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -170,16 +156,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Trader Points: " + traderPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void subtractEngineer(ActionEvent event) {
 	if (engineerPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints++;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -188,16 +172,14 @@ public class ConfigurationScreenController implements Initializable {
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Engineer Points: " + engineerPoints);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
     @FXML
     private void addEngineer(ActionEvent event) {
 	if (remainingPoints > 0) {
-	    mediaPlayer = new MediaPlayer(click);
-	    mediaPlayer.play();
+	    SoundController.click();
 	    remainingPoints--;
 	    remainingPointsL
 		    .setText(pmd + remainingPoints);
@@ -205,11 +187,15 @@ public class ConfigurationScreenController implements Initializable {
 	    engineerPointsL.setText("Engineer\n" + engineerPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Engineer Points: " + engineerPoints);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void cancel(ActionEvent event) throws Exception {
+        SoundController.click();
+        SoundController.stopSong();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"FXMLDocument.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -222,6 +208,8 @@ public class ConfigurationScreenController implements Initializable {
     @FXML
     private void done(ActionEvent event) throws Exception {
 	if (remainingPoints == 0) {
+            SoundController.stopSong();
+            SoundController.swoop();
 	    if (nameField.getText() != null
 		    && !nameField.getText().trim().isEmpty()) {
 		name = nameField.getText().trim();
@@ -242,8 +230,7 @@ public class ConfigurationScreenController implements Initializable {
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
@@ -252,11 +239,7 @@ public class ConfigurationScreenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	click = new Media(new File("./src/spacetrader/Click Silencer 2.wav")
-		.toURI().toString());
-	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
-		.toURI().toString());
-	mediaPlayer = new MediaPlayer(click);
+
     }
 
     public String getName() {

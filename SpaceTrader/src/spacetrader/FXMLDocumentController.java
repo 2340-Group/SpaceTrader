@@ -24,10 +24,6 @@ import javafx.stage.*;
  */
 public class FXMLDocumentController implements Initializable {
 
-    @FXML
-    private Media introSong;
-    private MediaPlayer mediaPlayer;
-
     /**
      * Goes to ConfigurationScreen to start new game
      *
@@ -36,11 +32,7 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws Exception {
-	mediaPlayer.stop();
-	Media swoop = new Media(new File("./src/spacetrader/Sweep Droga.wav")
-	.toURI().toString());
-	mediaPlayer = new MediaPlayer(swoop);
-	mediaPlayer.play();
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"ConfigurationScreen.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -59,8 +51,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleLoadButtonAction(ActionEvent event) throws Exception {
 	MainController.loadGame();
-
-	mediaPlayer.stop();
+        SoundController.stopSong();
+	SoundController.click();
 	String planetName = MainController.getCurrentPlanet();
 	Parent currentPlanet = FXMLLoader.load(getClass().getResource(
 		planetName + ".fxml"));
@@ -79,12 +71,13 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void handleQuitButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	System.exit(0);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	// try {
+	/* try {
 	introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
 	.toURI().toString());
 	mediaPlayer = new MediaPlayer(introSong);
@@ -93,6 +86,9 @@ public class FXMLDocumentController implements Initializable {
 	// } catch (Exception e) {
 	// System.err.println(e.getMessage());
 	// }
+        */
+        SoundController.init();
+        SoundController.intro();
 
     }
 

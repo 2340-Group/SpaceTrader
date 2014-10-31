@@ -48,6 +48,7 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("S1", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -64,6 +65,7 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("S2", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -80,6 +82,7 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("S3", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -96,6 +99,7 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("S3PT2", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -112,6 +116,7 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("Your Naming Sucks", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
