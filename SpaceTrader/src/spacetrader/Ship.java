@@ -156,6 +156,17 @@ public class Ship implements Serializable {
 	}
 	return weapons;
     }
+    
+    /**
+     * @param which - index of weapon you want
+     * @return String name if no weapon returns Equipment.NOTHING
+     */
+    public String getWeapon(int which) {
+	if (weapons == null || weapons.size() <= which || which > shipT.getWeaponSlots()) {
+	    return "NOTHING";
+	}
+	return "" + weapons.get(which);
+    }
 
     /**
      * @param wea
@@ -199,6 +210,17 @@ public class Ship implements Serializable {
 	    sheilds = new ArrayList<Equipment>();
 	}
 	return sheilds;
+    }
+    
+    /**
+     * @param which - index of sheild you want
+     * @return String name if no sheild returns Equipment.NOTHING
+     */
+    public String getSheild(int which) {
+	if (sheilds == null || sheilds.size() <= which || which > shipT.getSheildSlots()) {
+	    return "NOTHING";
+	}
+	return "" + sheilds.get(which);
     }
 
     /**
@@ -245,6 +267,17 @@ public class Ship implements Serializable {
 	}
 	return gadgets;
     }
+    
+    /**
+     * @param which - index of gadget you want
+     * @return String name if no gadgets returns Equipment.NOTHING
+     */
+    public String getGadget(int which) {
+	if (gadgets == null || gadgets.size() <= which || which > shipT.getGadgetSlots()) {
+	    return "NOTHING";
+	}
+	return gadgets.get(which).getGadgetName();
+    }
 
     /**
      * @param gad
@@ -267,6 +300,31 @@ public class Ship implements Serializable {
 	    return true;
 	}
 	return false;
+    }
+    
+    /**
+     * Law of Demeter
+     * @return int - num Gadgets currently own
+     */
+    public int numGadgets(){
+	return gadgets.size();
+    }
+    
+    /**
+     * Law of Demeter
+     * @param gad - Equipment
+     * @return true if Ship has gad
+     */
+    public boolean haveGadget(Equipment gad){
+	return gadgets.contains(gad);
+    }
+    
+    /**
+     * Law of Demeter
+     * @return true if have no Gadgets
+     */
+    public boolean gadgetIsEmpty(){
+	return gadgets.isEmpty();
     }
 
     /**

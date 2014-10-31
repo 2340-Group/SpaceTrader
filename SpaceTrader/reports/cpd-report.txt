@@ -1,0 +1,1494 @@
+Found a 45 line (206 tokens) duplication in the following files: 
+Starting at line 384 of MarketSellController.java
+Starting at line 530 of MarketBuyController.java
+
+    }
+
+    private void resetMarket() {
+	waterTotal = 0;
+	oreTotal = 0;
+	foodTotal = 0;
+	fursTotal = 0;
+	gamesTotal = 0;
+	firearmsTotal = 0;
+	medicineTotal = 0;
+	machinesTotal = 0;
+	narcoticsTotal = 0;
+	robotsTotal = 0;
+	tempFunds = 0;
+	waterLabel.setText("WATER\n" + waterTotal);
+	oreLabel.setText("ORE\n" + oreTotal);
+	foodLabel.setText("FOOD\n" + foodTotal);
+	fursLabel.setText("FURS\n" + fursTotal);
+	gamesLabel.setText("GAMES\n" + gamesTotal);
+	firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
+	medicineLabel.setText("MEDICINE\n" + medicineTotal);
+	machinesLabel.setText("MACHINES\n" + machinesTotal);
+	narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
+	robotsLabel.setText("ROBOTS\n" + robotsTotal);
+    }
+
+    /**
+     * Leave button
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void handleLeaveMarketAction(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		"Marketplace.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+=====================================================================
+Found a 73 line (187 tokens) duplication in the following files: 
+Starting at line 24 of MarketSellController.java
+Starting at line 26 of MarketBuyController.java
+
+    @FXML
+    private Label capacityLabel;
+    @FXML
+    private Label fundsLabel;
+    @FXML
+    private Label costLabel;
+    @FXML
+    private Label inventoryLabel;
+    @FXML
+    private Label waterLabel;
+    @FXML
+    private Label oreLabel;
+    @FXML
+    private Label foodLabel;
+    @FXML
+    private Label fursLabel;
+    @FXML
+    private Label gamesLabel;
+    @FXML
+    private Label firearmsLabel;
+    @FXML
+    private Label medicineLabel;
+    @FXML
+    private Label machinesLabel;
+    @FXML
+    private Label narcoticsLabel;
+    @FXML
+    private Label robotsLabel;
+    @FXML
+    private Button minusWater;
+    @FXML
+    private Button minusOre;
+    @FXML
+    private Button minusFood;
+    @FXML
+    private Button minusFurs;
+    @FXML
+    private Button minusGames;
+    @FXML
+    private Button minusFirearms;
+    @FXML
+    private Button minusMedicine;
+    @FXML
+    private Button minusMachines;
+    @FXML
+    private Button minusNarcotics;
+    @FXML
+    private Button minusRobots;
+    @FXML
+    private Button plusWater;
+    @FXML
+    private Button plusOre;
+    @FXML
+    private Button plusFood;
+    @FXML
+    private Button plusFurs;
+    @FXML
+    private Button plusGames;
+    @FXML
+    private Button plusFirearms;
+    @FXML
+    private Button plusMedicine;
+    @FXML
+    private Button plusMachines;
+    @FXML
+    private Button plusNarcotics;
+    @FXML
+    private Button plusRobots;
+
+    // Water
+    @FXML
+    private void subtractWater(ActionEvent event) {
+	if (waterTotal > 0) {
+=====================================================================
+Found a 26 line (176 tokens) duplication in the following files: 
+Starting at line 115 of SPAAACEController.java
+Starting at line 84 of NONAMEController.java
+Starting at line 83 of NAMEController.java
+
+	nameHelper("Your Naming Sucks", event);
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
+    
+    private void nameHelper(String planet, ActionEvent event)throws Exception{
+        if (MainController.getCurrentPlanet().equals(planet)) {
+            this.eventType = planet + ".fxml";
+        } else {
+            MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("SPAAACE"));
+=====================================================================
+Found a 25 line (121 tokens) duplication in the following files: 
+Starting at line 26 of SPAAACEController.java
+Starting at line 26 of NAMEController.java
+
+public class SPAAACEController implements Initializable {
+
+    private String eventType;
+
+    @FXML
+    private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
+	System.exit(0);
+    }
+
+    @FXML
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+	if (MainController.getPlayer().getShip().getFuel() > 1) {
+	    Parent config = FXMLLoader.load(getClass().getResource(
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
+    }
+
+    @FXML
+    private void handleS1ButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 16 line (113 tokens) duplication in the following files: 
+Starting at line 51 of SPAAACEController.java
+Starting at line 67 of SPAAACEController.java
+Starting at line 83 of SPAAACEController.java
+Starting at line 99 of SPAAACEController.java
+Starting at line 51 of NONAMEController.java
+Starting at line 67 of NONAMEController.java
+Starting at line 51 of NAMEController.java
+Starting at line 67 of NAMEController.java
+
+	nameHelper("S1", event);
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+    private void handleS2ButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 15 line (110 tokens) duplication in the following files: 
+Starting at line 51 of SPAAACEController.java
+Starting at line 67 of SPAAACEController.java
+Starting at line 83 of SPAAACEController.java
+Starting at line 99 of SPAAACEController.java
+Starting at line 115 of SPAAACEController.java
+Starting at line 51 of NONAMEController.java
+Starting at line 67 of NONAMEController.java
+Starting at line 84 of NONAMEController.java
+Starting at line 51 of NAMEController.java
+Starting at line 67 of NAMEController.java
+Starting at line 83 of NAMEController.java
+
+	nameHelper("S1", event);
+	MainController.getPlayer().setLocation(
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getX(),
+		MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getY());
+	Parent config = FXMLLoader.load(getClass().getResource(eventType));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+=====================================================================
+Found a 16 line (96 tokens) duplication in the following files: 
+Starting at line 35 of SPAAACEController.java
+Starting at line 35 of NONAMEController.java
+Starting at line 35 of NAMEController.java
+
+    @FXML
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+	if (MainController.getPlayer().getShip().getFuel() > 1) {
+	    Parent config = FXMLLoader.load(getClass().getResource(
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
+    }
+
+    @FXML
+    private void handleS1ButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 13 line (92 tokens) duplication in the following files: 
+Starting at line 431 of MarketSellController.java
+Starting at line 584 of MarketBuyController.java
+
+	capacityLabel.setText("Your ship holds a maximum of "
+		+ MainController.getPlayer().getShip().getMaxCargo()
+		+ " resources.");
+	tempFunds = MainController.getPlayer().getFunds();
+	fundsLabel.setText("FUNDS\n" + tempFunds);
+	costLabel.setText(MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getEcon()
+		.listPrices());
+	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+		.printCargo());
+    }
+
+}
+=====================================================================
+Found a 16 line (91 tokens) duplication in the following files: 
+Starting at line 32 of PoliceController.java
+Starting at line 96 of PiratesController.java
+
+    @FXML
+    private void handleContinueButtonAction(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 19 line (88 tokens) duplication in the following files: 
+Starting at line 28 of ShipyardNotHereController.java
+Starting at line 97 of PiratesController.java
+
+    private void handleLeaveShipyard(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * entirely set up by the .fxml
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+	// entirely set up by .fxml
+    }
+
+}
+=====================================================================
+Found a 15 line (86 tokens) duplication in the following files: 
+Starting at line 28 of ShipyardNotHereController.java
+Starting at line 33 of PoliceController.java
+
+    private void handleLeaveShipyard(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * entirely set up by the .fxml
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 17 line (86 tokens) duplication in the following files: 
+Starting at line 172 of ShipyardController.java
+Starting at line 41 of MarketplaceController.java
+
+    private void handleLeaveShipyardAction(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * sets displayed numbers for: prices ability to buy based on tech level
+     * ability to buy based on what ship owned currrent fuel max fuel current
+     * funds
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+=====================================================================
+Found a 15 line (80 tokens) duplication in the following files: 
+Starting at line 28 of ShipyardNotHereController.java
+Starting at line 172 of ShipyardController.java
+Starting at line 33 of PoliceController.java
+Starting at line 97 of PiratesController.java
+Starting at line 41 of MarketplaceController.java
+
+    private void handleLeaveShipyard(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * entirely set up by the .fxml
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 12 line (75 tokens) duplication in the following files: 
+Starting at line 349 of MarketSellController.java
+Starting at line 504 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(9), robotsTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+
+	// cargoTotal =
+	// MainController.getPlayer().getShip().getCargo().getCurrentVolume();
+	resetMarket();
+	tempFunds = MainController.getPlayer().getFunds();
+	fundsLabel.setText("FUNDS\n" + tempFunds);
+	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+		.printCargo());
+=====================================================================
+Found a 14 line (74 tokens) duplication in the following files: 
+Starting at line 28 of ShipyardNotHereController.java
+Starting at line 172 of ShipyardController.java
+Starting at line 78 of ShipUpgradeController.java
+Starting at line 33 of PoliceController.java
+Starting at line 97 of PiratesController.java
+Starting at line 41 of MarketplaceController.java
+
+    private void handleLeaveShipyard(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * entirely set up by the .fxml
+     */
+    @Override
+=====================================================================
+Found a 9 line (73 tokens) duplication in the following files: 
+Starting at line 28 of ShipyardNotHereController.java
+Starting at line 172 of ShipyardController.java
+Starting at line 78 of ShipUpgradeController.java
+Starting at line 144 of ShipScreenController.java
+Starting at line 33 of PoliceController.java
+Starting at line 97 of PiratesController.java
+Starting at line 41 of MarketplaceController.java
+
+    private void handleLeaveShipyard(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+=====================================================================
+Found a 17 line (68 tokens) duplication in the following files: 
+Starting at line 96 of PlanetController.java
+Starting at line 417 of MarketSellController.java
+Starting at line 566 of MarketBuyController.java
+
+    public void handleMarket(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		"Marketplace.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * to the shipyard
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+=====================================================================
+Found a 13 line (63 tokens) duplication in the following files: 
+Starting at line 349 of MarketSellController.java
+Starting at line 376 of MarketSellController.java
+
+	    missingNo.sell(missingNo.getResources().get(9), robotsTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+
+	// cargoTotal =
+	// MainController.getPlayer().getShip().getCargo().getCurrentVolume();
+	resetMarket();
+	tempFunds = MainController.getPlayer().getFunds();
+	fundsLabel.setText("FUNDS\n" + tempFunds);
+	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+		.printCargo());
+    }
+=====================================================================
+Found a 8 line (62 tokens) duplication in the following files: 
+Starting at line 376 of MarketSellController.java
+Starting at line 504 of MarketBuyController.java
+
+		    .getResources().get(i).getQuantity(), MainController
+		    .getPlayer(), MainController.getPlayer().getShip());
+	}
+	resetMarket();
+	tempFunds = MainController.getPlayer().getFunds();
+	fundsLabel.setText("FUNDS\n" + tempFunds);
+	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+		.printCargo());
+=====================================================================
+Found a 17 line (61 tokens) duplication in the following files: 
+Starting at line 55 of UniverseController.java
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 99 of PiratesController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+	// TODO
+    }
+
+}
+=====================================================================
+Found a 15 line (60 tokens) duplication in the following files: 
+Starting at line 55 of UniverseController.java
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 121 of SPAAACEController.java
+Starting at line 99 of PiratesController.java
+Starting at line 90 of NONAMEController.java
+Starting at line 89 of NAMEController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+	// TODO
+    }
+=====================================================================
+Found a 7 line (60 tokens) duplication in the following files: 
+Starting at line 36 of MoonController.java
+Starting at line 238 of ConfigurationScreenController.java
+
+	    Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+=====================================================================
+Found a 13 line (59 tokens) duplication in the following files: 
+Starting at line 55 of UniverseController.java
+Starting at line 121 of SPAAACEController.java
+Starting at line 35 of PoliceController.java
+Starting at line 90 of NONAMEController.java
+Starting at line 89 of NAMEController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 15 line (59 tokens) duplication in the following files: 
+Starting at line 174 of ShipyardController.java
+Starting at line 43 of MarketplaceController.java
+Starting at line 419 of MarketSellController.java
+Starting at line 568 of MarketBuyController.java
+
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * sets displayed numbers for: prices ability to buy based on tech level
+     * ability to buy based on what ship owned currrent fuel max fuel current
+     * funds
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+=====================================================================
+Found a 13 line (53 tokens) duplication in the following files: 
+Starting at line 55 of UniverseController.java
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 174 of ShipyardController.java
+Starting at line 121 of SPAAACEController.java
+Starting at line 35 of PoliceController.java
+Starting at line 99 of PiratesController.java
+Starting at line 90 of NONAMEController.java
+Starting at line 89 of NAMEController.java
+Starting at line 43 of MarketplaceController.java
+Starting at line 419 of MarketSellController.java
+Starting at line 568 of MarketBuyController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 8 line (51 tokens) duplication in the following files: 
+Starting at line 147 of ShipScreenController.java
+Starting at line 80 of PlanetController.java
+
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+}
+=====================================================================
+Found a 12 line (51 tokens) duplication in the following files: 
+Starting at line 39 of SPAAACEController.java
+Starting at line 50 of PlanetController.java
+Starting at line 39 of NONAMEController.java
+Starting at line 39 of NAMEController.java
+
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
+    }
+
+    @FXML
+    private void handleS1ButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 10 line (50 tokens) duplication in the following files: 
+Starting at line 35 of UniverseController.java
+Starting at line 45 of UniverseController.java
+Starting at line 80 of ShipUpgradeController.java
+Starting at line 57 of SPAAACEController.java
+Starting at line 73 of SPAAACEController.java
+Starting at line 89 of SPAAACEController.java
+Starting at line 105 of SPAAACEController.java
+Starting at line 57 of NONAMEController.java
+Starting at line 73 of NONAMEController.java
+Starting at line 57 of NAMEController.java
+Starting at line 73 of NAMEController.java
+Starting at line 21 of MarketplaceController.java
+Starting at line 32 of MarketplaceController.java
+Starting at line 45 of FXMLDocumentController.java
+Starting at line 214 of ConfigurationScreenController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+    private void handleNameButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 7 line (50 tokens) duplication in the following files: 
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 174 of ShipyardController.java
+Starting at line 80 of ShipUpgradeController.java
+Starting at line 35 of PoliceController.java
+Starting at line 80 of PlanetController.java
+Starting at line 99 of PiratesController.java
+Starting at line 43 of MarketplaceController.java
+
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+=====================================================================
+Found a 11 line (49 tokens) duplication in the following files: 
+Starting at line 39 of SPAAACEController.java
+Starting at line 50 of PlanetController.java
+Starting at line 80 of PlanetController.java
+Starting at line 39 of NONAMEController.java
+Starting at line 39 of NAMEController.java
+
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
+    }
+
+    @FXML
+=====================================================================
+Found a 9 line (48 tokens) duplication in the following files: 
+Starting at line 35 of UniverseController.java
+Starting at line 45 of UniverseController.java
+Starting at line 80 of ShipUpgradeController.java
+Starting at line 57 of SPAAACEController.java
+Starting at line 73 of SPAAACEController.java
+Starting at line 89 of SPAAACEController.java
+Starting at line 105 of SPAAACEController.java
+Starting at line 98 of PlanetController.java
+Starting at line 57 of NONAMEController.java
+Starting at line 73 of NONAMEController.java
+Starting at line 57 of NAMEController.java
+Starting at line 73 of NAMEController.java
+Starting at line 21 of MarketplaceController.java
+Starting at line 32 of MarketplaceController.java
+Starting at line 45 of FXMLDocumentController.java
+Starting at line 214 of ConfigurationScreenController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+=====================================================================
+Found a 11 line (48 tokens) duplication in the following files: 
+Starting at line 39 of SPAAACEController.java
+Starting at line 50 of PlanetController.java
+Starting at line 80 of PlanetController.java
+Starting at line 39 of NONAMEController.java
+Starting at line 39 of NAMEController.java
+Starting at line 36 of MoonController.java
+
+		    "Universe.fxml"));
+	    Scene sceneConfig = new Scene(config);
+	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		    .getWindow();
+	    stageN.setScene(sceneConfig);
+	    stageN.show();
+	}
+
+    }
+
+    @FXML
+=====================================================================
+Found a 15 line (48 tokens) duplication in the following files: 
+Starting at line 99 of PlanetController.java
+Starting at line 121 of PlanetController.java
+
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * to the shipyard
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    public void handleShipyard(ActionEvent event) throws Exception {
+=====================================================================
+Found a 6 line (48 tokens) duplication in the following files: 
+Starting at line 17 of MarketSellController.java
+Starting at line 17 of MarketBuyController.java
+
+public class MarketSellController implements Initializable {
+
+    private int waterTotal = 0, oreTotal = 0, foodTotal = 0, fursTotal = 0,
+	    gamesTotal = 0, firearmsTotal = 0, medicineTotal = 0,
+	    machinesTotal = 0, narcoticsTotal = 0, robotsTotal = 0,
+	    tempFunds = 0;
+=====================================================================
+Found a 9 line (47 tokens) duplication in the following files: 
+Starting at line 35 of UniverseController.java
+Starting at line 45 of UniverseController.java
+Starting at line 55 of UniverseController.java
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 174 of ShipyardController.java
+Starting at line 80 of ShipUpgradeController.java
+Starting at line 57 of SPAAACEController.java
+Starting at line 73 of SPAAACEController.java
+Starting at line 89 of SPAAACEController.java
+Starting at line 105 of SPAAACEController.java
+Starting at line 121 of SPAAACEController.java
+Starting at line 35 of PoliceController.java
+Starting at line 98 of PlanetController.java
+Starting at line 99 of PiratesController.java
+Starting at line 57 of NONAMEController.java
+Starting at line 73 of NONAMEController.java
+Starting at line 90 of NONAMEController.java
+Starting at line 57 of NAMEController.java
+Starting at line 73 of NAMEController.java
+Starting at line 89 of NAMEController.java
+Starting at line 21 of MarketplaceController.java
+Starting at line 32 of MarketplaceController.java
+Starting at line 43 of MarketplaceController.java
+Starting at line 419 of MarketSellController.java
+Starting at line 568 of MarketBuyController.java
+Starting at line 45 of FXMLDocumentController.java
+Starting at line 214 of ConfigurationScreenController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+=====================================================================
+Found a 8 line (47 tokens) duplication in the following files: 
+Starting at line 147 of ShipScreenController.java
+Starting at line 39 of SPAAACEController.java
+Starting at line 50 of PlanetController.java
+Starting at line 39 of NONAMEController.java
+Starting at line 39 of NAMEController.java
+Starting at line 36 of MoonController.java
+
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+}
+=====================================================================
+Found a 8 line (47 tokens) duplication in the following files: 
+Starting at line 30 of SPAAACEController.java
+Starting at line 65 of PlanetController.java
+Starting at line 30 of NAMEController.java
+
+    @FXML
+    private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
+	System.exit(0);
+    }
+
+    @FXML
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+	if (MainController.getPlayer().getShip().getFuel() > 1) {
+=====================================================================
+Found a 7 line (46 tokens) duplication in the following files: 
+Starting at line 35 of UniverseController.java
+Starting at line 45 of UniverseController.java
+Starting at line 55 of UniverseController.java
+Starting at line 30 of ShipyardNotHereController.java
+Starting at line 174 of ShipyardController.java
+Starting at line 80 of ShipUpgradeController.java
+Starting at line 147 of ShipScreenController.java
+Starting at line 39 of SPAAACEController.java
+Starting at line 57 of SPAAACEController.java
+Starting at line 73 of SPAAACEController.java
+Starting at line 89 of SPAAACEController.java
+Starting at line 105 of SPAAACEController.java
+Starting at line 121 of SPAAACEController.java
+Starting at line 35 of PoliceController.java
+Starting at line 50 of PlanetController.java
+Starting at line 80 of PlanetController.java
+Starting at line 98 of PlanetController.java
+Starting at line 99 of PiratesController.java
+Starting at line 39 of NONAMEController.java
+Starting at line 57 of NONAMEController.java
+Starting at line 73 of NONAMEController.java
+Starting at line 90 of NONAMEController.java
+Starting at line 39 of NAMEController.java
+Starting at line 57 of NAMEController.java
+Starting at line 73 of NAMEController.java
+Starting at line 89 of NAMEController.java
+Starting at line 36 of MoonController.java
+Starting at line 21 of MarketplaceController.java
+Starting at line 32 of MarketplaceController.java
+Starting at line 43 of MarketplaceController.java
+Starting at line 419 of MarketSellController.java
+Starting at line 568 of MarketBuyController.java
+Starting at line 45 of FXMLDocumentController.java
+Starting at line 214 of ConfigurationScreenController.java
+Starting at line 238 of ConfigurationScreenController.java
+
+	Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+=====================================================================
+Found a 8 line (46 tokens) duplication in the following files: 
+Starting at line 36 of UniverseController.java
+Starting at line 46 of UniverseController.java
+Starting at line 81 of ShipUpgradeController.java
+Starting at line 58 of SPAAACEController.java
+Starting at line 74 of SPAAACEController.java
+Starting at line 90 of SPAAACEController.java
+Starting at line 106 of SPAAACEController.java
+Starting at line 121 of PlanetController.java
+Starting at line 58 of NONAMEController.java
+Starting at line 74 of NONAMEController.java
+Starting at line 58 of NAMEController.java
+Starting at line 74 of NAMEController.java
+Starting at line 22 of MarketplaceController.java
+Starting at line 33 of MarketplaceController.java
+Starting at line 46 of FXMLDocumentController.java
+Starting at line 215 of ConfigurationScreenController.java
+
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    @FXML
+=====================================================================
+Found a 11 line (45 tokens) duplication in the following files: 
+Starting at line 56 of UniverseController.java
+Starting at line 31 of ShipyardNotHereController.java
+Starting at line 175 of ShipyardController.java
+Starting at line 122 of SPAAACEController.java
+Starting at line 36 of PoliceController.java
+Starting at line 121 of PlanetController.java
+Starting at line 100 of PiratesController.java
+Starting at line 91 of NONAMEController.java
+Starting at line 90 of NAMEController.java
+Starting at line 44 of MarketplaceController.java
+Starting at line 420 of MarketSellController.java
+Starting at line 569 of MarketBuyController.java
+
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+=====================================================================
+Found a 6 line (44 tokens) duplication in the following files: 
+Starting at line 148 of ShipScreenController.java
+Starting at line 40 of SPAAACEController.java
+Starting at line 51 of PlanetController.java
+Starting at line 81 of PlanetController.java
+Starting at line 121 of PlanetController.java
+Starting at line 40 of NONAMEController.java
+Starting at line 40 of NAMEController.java
+Starting at line 37 of MoonController.java
+Starting at line 239 of ConfigurationScreenController.java
+
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+=====================================================================
+Found a 12 line (40 tokens) duplication in the following files: 
+Starting at line 180 of ShipyardController.java
+Starting at line 144 of ShipUpgradeController.java
+
+    }
+
+    /**
+     * sets displayed numbers for: prices ability to buy based on tech level
+     * ability to buy based on what ship owned currrent fuel max fuel current
+     * funds
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
+	.toURI().toString());
+	mediaPlayer = new MediaPlayer(deny);
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 304 of MarketSellController.java
+Starting at line 459 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(0), waterTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (oreTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(1), oreTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 309 of MarketSellController.java
+Starting at line 464 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(1), oreTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (foodTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(2), foodTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 314 of MarketSellController.java
+Starting at line 469 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(2), foodTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (fursTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(3), fursTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 319 of MarketSellController.java
+Starting at line 474 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(3), fursTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (gamesTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(4), gamesTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 324 of MarketSellController.java
+Starting at line 479 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(4), gamesTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (firearmsTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(5), firearmsTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 329 of MarketSellController.java
+Starting at line 484 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(5), firearmsTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (medicineTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(6), medicineTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 334 of MarketSellController.java
+Starting at line 489 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(6), medicineTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (machinesTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(7), machinesTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 339 of MarketSellController.java
+Starting at line 494 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(7), machinesTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (narcoticsTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(8), narcoticsTotal,
+=====================================================================
+Found a 6 line (40 tokens) duplication in the following files: 
+Starting at line 344 of MarketSellController.java
+Starting at line 499 of MarketBuyController.java
+
+	    missingNo.sell(missingNo.getResources().get(8), narcoticsTotal,
+		    MainController.getPlayer(), MainController.getPlayer()
+		    .getShip());
+	}
+	if (robotsTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(9), robotsTotal,
+=====================================================================
+Found a 3 line (39 tokens) duplication in the following files: 
+Starting at line 77 of PlanetController.java
+Starting at line 34 of MoonController.java
+
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+	if (MainController.getPlayer().getShip().getFuel() > 0) {
+	    Parent config = FXMLLoader.load(getClass().getResource(
+=====================================================================
+Found a 14 line (38 tokens) duplication in the following files: 
+Starting at line 158 of ShipyardController.java
+Starting at line 136 of PlanetController.java
+
+		"ShipUpgrade.fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Leave button goes back to planet
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+=====================================================================
+Found a 5 line (37 tokens) duplication in the following files: 
+Starting at line 87 of ShipyardController.java
+Starting at line 191 of ShipyardController.java
+
+	    MainController.getPlayer().getShip().addFuel(1);
+	    fundsLabel.setText("Funds\n"
+		    + MainController.getPlayer().getFunds());
+	    fuelLabel.setText("Fuel\n"
+		    + MainController.getPlayer().getShip().getFuel());
+=====================================================================
+Found a 6 line (37 tokens) duplication in the following files: 
+Starting at line 386 of Ship.java
+Starting at line 402 of Ship.java
+
+	if (cargo == null) {
+	    cargo = new CargoBay(shipT.getCargoSlots());
+	    if (gadgets.contains(Equipment.NORMAL)) {
+		cargo.enlargeCapacity();
+	    }
+	}
+=====================================================================
+Found a 6 line (36 tokens) duplication in the following files: 
+Starting at line 299 of MarketSellController.java
+Starting at line 455 of MarketBuyController.java
+
+    private void handleSellMarketAction(ActionEvent event) throws Exception {
+	// subtract inventory & add funds
+	missingNo = MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getEcon();
+	if (waterTotal > 0) {
+	    missingNo.sell(missingNo.getResources().get(0), waterTotal,
+=====================================================================
+Found a 3 line (35 tokens) duplication in the following files: 
+Starting at line 74 of Universe.java
+Starting at line 77 of Universe.java
+Starting at line 80 of Universe.java
+
+	Big = new Planet("Big", randomGenerator.nextInt(201) + 200,
+		randomGenerator.nextInt(201) + 200,
+		randomGenerator.nextInt(7) + 1, randomGenerator.nextInt(13));
+=====================================================================
+Found a 7 line (34 tokens) duplication in the following files: 
+Starting at line 89 of ConfigurationScreenController.java
+Starting at line 125 of ConfigurationScreenController.java
+Starting at line 161 of ConfigurationScreenController.java
+Starting at line 197 of ConfigurationScreenController.java
+
+    private void addPilot(ActionEvent event) {
+	if (remainingPoints > 0) {
+	    mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints--;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+=====================================================================
+Found a 11 line (33 tokens) duplication in the following files: 
+Starting at line 57 of UniverseController.java
+Starting at line 32 of ShipyardNotHereController.java
+Starting at line 123 of SPAAACEController.java
+Starting at line 37 of PoliceController.java
+Starting at line 138 of PlanetController.java
+Starting at line 101 of PiratesController.java
+Starting at line 92 of NONAMEController.java
+Starting at line 91 of NAMEController.java
+
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 4 line (33 tokens) duplication in the following files: 
+Starting at line 91 of Universe.java
+Starting at line 95 of Universe.java
+
+	InsertName = new Planet("InsertName",
+		randomGenerator.nextInt(201) + 400,
+		randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1,
+		randomGenerator.nextInt(13));
+=====================================================================
+Found a 3 line (31 tokens) duplication in the following files: 
+Starting at line 54 of Universe.java
+Starting at line 57 of Universe.java
+Starting at line 60 of Universe.java
+Starting at line 63 of Universe.java
+
+	S2 = new Planet("S2", randomGenerator.nextInt(201),
+		randomGenerator.nextInt(201), randomGenerator.nextInt(7) + 1,
+		randomGenerator.nextInt(13));
+=====================================================================
+Found a 15 line (30 tokens) duplication in the following files: 
+Starting at line 52 of PiratesController.java
+Starting at line 89 of PiratesController.java
+
+	text.setText("You surrendered and\nlost all of your cargo.");
+	surrenderBtn.setVisible(false);
+	fightBtn.setVisible(false);
+	fleeBtn.setVisible(false);
+	continueBtn.setVisible(true);
+    }
+
+    /**
+     * Try to fight the pirates to defend your cargo
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void handleFightButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 4 line (29 tokens) duplication in the following files: 
+Starting at line 36 of UniverseController.java
+Starting at line 46 of UniverseController.java
+Starting at line 56 of UniverseController.java
+Starting at line 31 of ShipyardNotHereController.java
+Starting at line 175 of ShipyardController.java
+Starting at line 81 of ShipUpgradeController.java
+Starting at line 148 of ShipScreenController.java
+Starting at line 40 of SPAAACEController.java
+Starting at line 58 of SPAAACEController.java
+Starting at line 74 of SPAAACEController.java
+Starting at line 90 of SPAAACEController.java
+Starting at line 106 of SPAAACEController.java
+Starting at line 122 of SPAAACEController.java
+Starting at line 36 of PoliceController.java
+Starting at line 51 of PlanetController.java
+Starting at line 81 of PlanetController.java
+Starting at line 99 of PlanetController.java
+Starting at line 121 of PlanetController.java
+Starting at line 100 of PiratesController.java
+Starting at line 40 of NONAMEController.java
+Starting at line 58 of NONAMEController.java
+Starting at line 74 of NONAMEController.java
+Starting at line 91 of NONAMEController.java
+Starting at line 40 of NAMEController.java
+Starting at line 58 of NAMEController.java
+Starting at line 74 of NAMEController.java
+Starting at line 90 of NAMEController.java
+Starting at line 37 of MoonController.java
+Starting at line 22 of MarketplaceController.java
+Starting at line 33 of MarketplaceController.java
+Starting at line 44 of MarketplaceController.java
+Starting at line 420 of MarketSellController.java
+Starting at line 569 of MarketBuyController.java
+Starting at line 46 of FXMLDocumentController.java
+Starting at line 67 of FXMLDocumentController.java
+Starting at line 215 of ConfigurationScreenController.java
+Starting at line 239 of ConfigurationScreenController.java
+
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+=====================================================================
+Found a 14 line (29 tokens) duplication in the following files: 
+Starting at line 53 of PiratesController.java
+Starting at line 73 of PiratesController.java
+Starting at line 90 of PiratesController.java
+
+	surrenderBtn.setVisible(false);
+	fightBtn.setVisible(false);
+	fleeBtn.setVisible(false);
+	continueBtn.setVisible(true);
+    }
+
+    /**
+     * Try to fight the pirates to defend your cargo
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void handleFightButtonAction(ActionEvent event) throws Exception {
+=====================================================================
+Found a 3 line (29 tokens) duplication in the following files: 
+Starting at line 121 of MarketBuyController.java
+Starting at line 156 of MarketBuyController.java
+Starting at line 191 of MarketBuyController.java
+Starting at line 226 of MarketBuyController.java
+Starting at line 261 of MarketBuyController.java
+Starting at line 296 of MarketBuyController.java
+Starting at line 332 of MarketBuyController.java
+Starting at line 367 of MarketBuyController.java
+Starting at line 402 of MarketBuyController.java
+Starting at line 437 of MarketBuyController.java
+
+    private void addWater(ActionEvent event) {
+	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+		&& tempFunds >= missingNo.getResourceCost("Water")) {
+=====================================================================
+Found a 9 line (29 tokens) duplication in the following files: 
+Starting at line 119 of MainController.java
+Starting at line 166 of MainController.java
+
+	} catch (FileNotFoundException ex) {
+//	    System.out.println("File not found.");
+	    ex.printStackTrace();
+	    return false;
+	} catch (IOException ex) {
+//	    System.out.println("IOException");
+	    ex.printStackTrace();
+	    return false;
+	} finally {
+=====================================================================
+Found a 11 line (29 tokens) duplication in the following files: 
+Starting at line 79 of ConfigurationScreenController.java
+Starting at line 97 of ConfigurationScreenController.java
+
+	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Pilot Points: " + pilotPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
+    }
+
+    @FXML
+    private void addPilot(ActionEvent event) {
+=====================================================================
+Found a 11 line (29 tokens) duplication in the following files: 
+Starting at line 115 of ConfigurationScreenController.java
+Starting at line 133 of ConfigurationScreenController.java
+
+	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Fighter Points: " + fighterPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
+    }
+
+    @FXML
+    private void addFighter(ActionEvent event) {
+=====================================================================
+Found a 11 line (29 tokens) duplication in the following files: 
+Starting at line 151 of ConfigurationScreenController.java
+Starting at line 169 of ConfigurationScreenController.java
+
+	    traderPointsLabel.setText("Trader\n" + traderPoints);
+//	    System.out.println("Remaining Points: " + remainingPoints);
+//	    System.out.println("Trader Points: " + traderPoints);
+	} else {
+	    mediaPlayer = new MediaPlayer(deny);
+	    mediaPlayer.play();
+	}
+    }
+
+    @FXML
+    private void addTrader(ActionEvent event) {
+=====================================================================
+Found a 7 line (28 tokens) duplication in the following files: 
+Starting at line 142 of SPAAACEController.java
+Starting at line 113 of NONAMEController.java
+Starting at line 111 of NAMEController.java
+
+            MainController.setCurrentSolarSystem("SPAAACE");
+            EventGeneratorSimple randEvent = new EventGeneratorSimple(MainController.getPlayer());
+            this.eventType = randEvent.generateEvent(planet) + ".fxml";
+        }
+    }
+
+}
+=====================================================================
+Found a 3 line (28 tokens) duplication in the following files: 
+Starting at line 76 of PlanetController.java
+Starting at line 35 of NONAMEController.java
+
+    @FXML
+    private void handleExitMenuItemAction(ActionEvent event) throws Exception {
+	if (MainController.getPlayer().getShip().getFuel() > 0) {
+=====================================================================
+Found a 3 line (28 tokens) duplication in the following files: 
+Starting at line 87 of CargoBay.java
+Starting at line 106 of CargoBay.java
+
+    public int getResourceStock(Resource r) {
+	for (Resource rs : stock) {
+	    if (r.getResourceType().equals(rs.getResourceType())) {
+=====================================================================
+Found a 9 line (27 tokens) duplication in the following files: 
+Starting at line 24 of UIController.java
+Starting at line 81 of FXMLDocumentController.java
+
+    private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
+	System.exit(0);
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+=====================================================================
+Found a 13 line (27 tokens) duplication in the following files: 
+Starting at line 176 of ShipyardController.java
+Starting at line 138 of PlanetController.java
+Starting at line 45 of MarketplaceController.java
+Starting at line 421 of MarketSellController.java
+Starting at line 570 of MarketBuyController.java
+
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
+
+    /**
+     * sets displayed numbers for: prices ability to buy based on tech level
+     * ability to buy based on what ship owned currrent fuel max fuel current
+     * funds
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+=====================================================================
+Found a 4 line (27 tokens) duplication in the following files: 
+Starting at line 299 of MarketSellController.java
+Starting at line 370 of MarketSellController.java
+Starting at line 455 of MarketBuyController.java
+
+    private void handleSellMarketAction(ActionEvent event) throws Exception {
+	// subtract inventory & add funds
+	missingNo = MainController.getUniverse()
+		.getPlanet(MainController.getCurrentPlanet()).getEcon();
+=====================================================================
+Found a 6 line (26 tokens) duplication in the following files: 
+Starting at line 72 of ConfigurationScreenController.java
+Starting at line 108 of ConfigurationScreenController.java
+Starting at line 144 of ConfigurationScreenController.java
+Starting at line 180 of ConfigurationScreenController.java
+
+	if (pilotPoints > 0) {
+            mediaPlayer = new MediaPlayer(click);
+	    mediaPlayer.play();
+	    remainingPoints++;
+	    remainingPointsLabel
+		    .setText("Remaining Points\n" + remainingPoints);
+=====================================================================
+Found a 3 line (25 tokens) duplication in the following files: 
+Starting at line 52 of Marketplace.java
+Starting at line 67 of Marketplace.java
+
+    public void raisePrice(Resource r, Double percent) {
+	adjustInflation(economyScore);
+	int price = (int) ((r.getPrice() + r.getPrice() * (percent / 100)) * currentInflation);

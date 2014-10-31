@@ -25,7 +25,7 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class PlanetController implements Initializable {
-    private int minTechLevelNeeded = 3;
+    private int minTechNeeded = 3;
 
     @FXML
     private Label fuelLabel;
@@ -112,7 +112,7 @@ public class PlanetController implements Initializable {
     @FXML
     public void handleShipyard(ActionEvent event) throws Exception {
 	Parent config;
-	if (MainController.getPlanetNotString().getTechLevel() < minTechLevelNeeded) {
+	if (MainController.getPlanetNotString().getTechLevel() < minTechNeeded) {
 	    config = FXMLLoader.load(getClass().getResource(
 		    "ShipyardNotHere.fxml"));
 	} else {

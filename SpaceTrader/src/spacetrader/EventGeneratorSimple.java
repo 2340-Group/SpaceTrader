@@ -14,12 +14,12 @@ package spacetrader;
 public class EventGeneratorSimple {
 
     private double baseProb = 0.7;
-    Player player;
-    double policeProb;
-    double pirateProb;
-    double policeRNG;
-    double pirateRNG;
-    double eventChance;
+    private Player player;
+    private double policeProb;
+    private double pirateProb;
+    private double policeRNG;
+    private double pirateRNG;
+    private double eventChance;
 
     /**
      * Constructor

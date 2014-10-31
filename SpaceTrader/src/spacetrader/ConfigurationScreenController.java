@@ -45,7 +45,7 @@ public class ConfigurationScreenController implements Initializable {
     // private Button minusPilot, plusPilot, minusFighter, plusFighter,
     // minusTrader, plusTrader, minusEngineer, plusEngineer, cancelBtn, doneBtn;
     @FXML
-    private Label remainingPointsLabel, pilotPointsLabel, fighterPointsLabel, traderPointsLabel, engineerPointsLabel;
+    private Label remainingPointsL, pilotPointsL, fighterPointsL, traderPointsL, engineerPointsL;
     @FXML
     private Button minusPilot;
     @FXML
@@ -66,6 +66,8 @@ public class ConfigurationScreenController implements Initializable {
     private Button cancelBtn;
     @FXML
     private Button doneBtn;
+    
+    private String pmd = "Remaining Points\n";
 
     @FXML
     private void subtractPilot(ActionEvent event) {
@@ -73,10 +75,9 @@ public class ConfigurationScreenController implements Initializable {
             mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints++;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL.setText(pmd + remainingPoints);
 	    pilotPoints--;
-	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
+	    pilotPointsL.setText("Pilot\n" + pilotPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
@@ -91,10 +92,9 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints--;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL.setText(pmd + remainingPoints);
 	    pilotPoints++;
-	    pilotPointsLabel.setText("Pilot\n" + pilotPoints);
+	    pilotPointsL.setText("Pilot\n" + pilotPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Pilot Points: " + pilotPoints);
 	} else {
@@ -109,10 +109,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints++;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    fighterPoints--;
-	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
+	    fighterPointsL.setText("Fighter\n" + fighterPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
@@ -127,10 +127,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints--;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    fighterPoints++;
-	    fighterPointsLabel.setText("Fighter\n" + fighterPoints);
+	    fighterPointsL.setText("Fighter\n" + fighterPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Fighter Points: " + fighterPoints);
 	} else {
@@ -145,10 +145,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints++;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    traderPoints--;
-	    traderPointsLabel.setText("Trader\n" + traderPoints);
+	    traderPointsL.setText("Trader\n" + traderPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Trader Points: " + traderPoints);
 	} else {
@@ -163,10 +163,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints--;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    traderPoints++;
-	    traderPointsLabel.setText("Trader\n" + traderPoints);
+	    traderPointsL.setText("Trader\n" + traderPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Trader Points: " + traderPoints);
 	} else {
@@ -181,10 +181,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints++;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    engineerPoints--;
-	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
+	    engineerPointsL.setText("Engineer\n" + engineerPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Engineer Points: " + engineerPoints);
 	} else {
@@ -199,10 +199,10 @@ public class ConfigurationScreenController implements Initializable {
 	    mediaPlayer = new MediaPlayer(click);
 	    mediaPlayer.play();
 	    remainingPoints--;
-	    remainingPointsLabel
-		    .setText("Remaining Points\n" + remainingPoints);
+	    remainingPointsL
+		    .setText(pmd + remainingPoints);
 	    engineerPoints++;
-	    engineerPointsLabel.setText("Engineer\n" + engineerPoints);
+	    engineerPointsL.setText("Engineer\n" + engineerPoints);
 //	    System.out.println("Remaining Points: " + remainingPoints);
 //	    System.out.println("Engineer Points: " + engineerPoints);
 	}

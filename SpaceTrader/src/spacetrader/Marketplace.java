@@ -78,13 +78,7 @@ public class Marketplace implements Serializable {
      */
     public boolean checkEconomy() {
 	adjustInflation(economyScore);
-	if (economyScore == ECON_SCORE_MIN || economyScore == ECON_SCORE_MAX) {
-	    return false;
-	} else {
-//	    System.out.println("The current inflation rate is "
-//		    + currentInflation + ".");
-	    return true;
-	}
+	return economyScore == ECON_SCORE_MIN || economyScore == ECON_SCORE_MAX;
     }
 
     /**

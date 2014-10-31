@@ -100,7 +100,7 @@ public class NONAMEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+	// taken care of by the .fxml
     } 
     
 

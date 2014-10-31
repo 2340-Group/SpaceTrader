@@ -26,7 +26,7 @@ import javafx.stage.Stage;
  */
 public class PiratesController implements Initializable {
 
-    PirateEvent pirateEvent = new PirateEvent();
+    public PirateEvent pirateEvent = new PirateEvent();
     @FXML
     private Label text;
     @FXML
@@ -109,7 +109,7 @@ public class PiratesController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	// TODO
+	//taken care of by .fxml
     }
 
 }

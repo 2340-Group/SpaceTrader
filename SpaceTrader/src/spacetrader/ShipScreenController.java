@@ -1,7 +1,6 @@
 package spacetrader;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -66,69 +65,33 @@ public class ShipScreenController implements Initializable {
 	int remain = st.getSheildSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
-	    sheild3.setText("EMPTY");
+	    sheild3.setText(displayMe.getSheild(2));
 	case 2:
-	    sheild2.setText("EMPTY");
+	    sheild2.setText(displayMe.getSheild(1));
 	case 1:
-	    sheild1.setText("EMPTY");
+	    sheild1.setText(displayMe.getSheild(0));
 	default:
 	    break;
 	}
 	remain = st.getWeaponSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
-	    weapon3.setText("EMPTY");
+	    weapon3.setText(displayMe.getWeapon(2));
 	case 2:
-	    weapon2.setText("EMPTY");
+	    weapon2.setText(displayMe.getWeapon(1));
 	case 1:
-	    weapon1.setText("EMPTY");
+	    weapon1.setText(displayMe.getWeapon(0));
 	default:
 	    break;
 	}
 	remain = st.getGadgetSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
-	    gadget3.setText("EMPTY");
+	    gadget3.setText(displayMe.getGadget(2));
 	case 2:
-	    gadget2.setText("EMPTY");
+	    gadget2.setText(displayMe.getGadget(1));
 	case 1:
-	    gadget1.setText("EMPTY");
-	default:
-	    break;
-	}
-
-	ArrayList<Equipment> l = displayMe.getSheilds();
-	switch (l.size()) { // fall through on purpose
-	case 3:
-	    sheild3.setText("" + l.get(2));
-	case 2:
-	    sheild2.setText("" + l.get(1));
-	case 1:
-	    sheild1.setText("" + l.get(0));
-	default:
-	    break;
-	}
-
-	l = displayMe.getWeapons();
-	switch (l.size()) { // fall through on purpose
-	case 3:
-	    weapon3.setText("" + l.get(2));
-	case 2:
-	    weapon2.setText("" + l.get(1));
-	case 1:
-	    weapon1.setText("" + l.get(0));
-	default:
-	    break;
-	}
-
-	l = displayMe.getGadgets();
-	switch (l.size()) { // fall through on purpose
-	case 3:
-	    gadget3.setText(l.get(2).getGadgetName());
-	case 2:
-	    gadget2.setText(l.get(1).getGadgetName());
-	case 1:
-	    gadget1.setText(l.get(0).getGadgetName());
+	    gadget1.setText(displayMe.getGadget(0));
 	default:
 	    break;
 	}

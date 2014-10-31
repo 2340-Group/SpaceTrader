@@ -91,6 +91,8 @@ public class MarketBuyController implements Initializable {
     private Button plusNarcotics;
     @FXML
     private Button plusRobots;
+    
+    private String pmd = "FUNDS\n";
 
     // Water
     /**
@@ -105,7 +107,7 @@ public class MarketBuyController implements Initializable {
 	    waterTotal--;
 	    waterLabel.setText("WATER\n" + waterTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Water");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 
 	    //
 	}
@@ -125,7 +127,7 @@ public class MarketBuyController implements Initializable {
 	    waterTotal++;
 	    waterLabel.setText("WATER\n" + waterTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Water");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -142,7 +144,7 @@ public class MarketBuyController implements Initializable {
 	    oreTotal--;
 	    oreLabel.setText("ORE\n" + oreTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Ore");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -160,7 +162,7 @@ public class MarketBuyController implements Initializable {
 	    oreTotal++;
 	    oreLabel.setText("ORE\n" + oreTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Ore");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -177,7 +179,7 @@ public class MarketBuyController implements Initializable {
 	    foodTotal--;
 	    foodLabel.setText("FOOD\n" + foodTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Food");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -195,7 +197,7 @@ public class MarketBuyController implements Initializable {
 	    foodTotal++;
 	    foodLabel.setText("FOOD\n" + foodTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Food");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -212,7 +214,7 @@ public class MarketBuyController implements Initializable {
 	    fursTotal--;
 	    fursLabel.setText("FURS\n" + fursTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Furs");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -230,7 +232,7 @@ public class MarketBuyController implements Initializable {
 	    fursTotal++;
 	    fursLabel.setText("FURS\n" + fursTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Furs");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -247,7 +249,7 @@ public class MarketBuyController implements Initializable {
 	    gamesTotal--;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Games");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -265,7 +267,7 @@ public class MarketBuyController implements Initializable {
 	    gamesTotal++;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Games");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -282,7 +284,7 @@ public class MarketBuyController implements Initializable {
 	    firearmsTotal--;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Firearms");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -300,7 +302,7 @@ public class MarketBuyController implements Initializable {
 	    firearmsTotal++;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Firearms");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -317,7 +319,7 @@ public class MarketBuyController implements Initializable {
 	    medicineTotal--;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Medicine");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
 
@@ -336,7 +338,7 @@ public class MarketBuyController implements Initializable {
 	    medicineTotal++;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Medicine");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -353,7 +355,7 @@ public class MarketBuyController implements Initializable {
 	    machinesTotal--;
 	    machinesLabel.setText("MACHINES/n" + machinesTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Machines");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -371,7 +373,7 @@ public class MarketBuyController implements Initializable {
 	    machinesTotal++;
 	    machinesLabel.setText("MACHINES\n" + machinesTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Machines");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -388,7 +390,7 @@ public class MarketBuyController implements Initializable {
 	    narcoticsTotal--;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Narcotics");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -406,7 +408,7 @@ public class MarketBuyController implements Initializable {
 	    narcoticsTotal++;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Narcotics");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -423,7 +425,7 @@ public class MarketBuyController implements Initializable {
 	    robotsTotal--;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Robots");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
 	// add deny sound for else
     }
@@ -441,7 +443,7 @@ public class MarketBuyController implements Initializable {
 	    robotsTotal++;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Robots");
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	}
     }
 
@@ -508,7 +510,7 @@ public class MarketBuyController implements Initializable {
 
 	resetMarket();
 	tempFunds = MainController.getPlayer().getFunds();
-	fundsLabel.setText("FUNDS\n" + tempFunds);
+	fundsLabel.setText(pmd + tempFunds);
 	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
 		.printCargo());
 	cargoTotal = MainController.getPlayer().getShip().getCargo()
@@ -523,7 +525,7 @@ public class MarketBuyController implements Initializable {
 	    MainController.getPlayer().subtractFunds(100);
 	    MainController.getPlayer().getShip().addFuel(10);
 	    tempFunds = MainController.getPlayer().getFunds();
-	    fundsLabel.setText("FUNDS\n" + tempFunds);
+	    fundsLabel.setText(pmd + tempFunds);
 	    fuelLabel.setText("FUEL\n"
 		    + MainController.getPlayer().getShip().getFuel());
 	}
@@ -585,7 +587,7 @@ public class MarketBuyController implements Initializable {
 		+ MainController.getPlayer().getShip().getMaxCargo()
 		+ " resources.");
 	tempFunds = MainController.getPlayer().getFunds();
-	fundsLabel.setText("FUNDS\n" + tempFunds);
+	fundsLabel.setText(pmd + tempFunds);
 	costLabel.setText(MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon()
 		.listPrices());

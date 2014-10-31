@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class MainController implements Serializable {
 
     private static String currentPlanet;
-    private static String currentSolarSystem;
+    private static String currentSystem;
     private static Universe u;
     private static Player p;
     private static ArrayList<Planet> pl;
@@ -34,7 +34,7 @@ public class MainController implements Serializable {
 	s = new Ship();
 	p = new Player(n, pilot, fight, trade, engineering, x, y, s);
 	currentPlanet = "S1";
-	currentSolarSystem = "SPAAACE";
+	currentSystem = "SPAAACE";
     }
 
     /**
@@ -58,7 +58,7 @@ public class MainController implements Serializable {
     }
 
     public static String getCurrentSolarSystem() {
-	return currentSolarSystem;
+	return currentSystem;
     }
 
     public static Player getPlayer() {
@@ -74,7 +74,7 @@ public class MainController implements Serializable {
     }
 
     public static void setCurrentSolarSystem(String ss) {
-	currentSolarSystem = ss;
+	currentSystem = ss;
     }
 
     public static Universe getUniverse() {
@@ -82,7 +82,7 @@ public class MainController implements Serializable {
     }
 
     public static int getFuelCost(String s) {
-	if (s.equals(currentSolarSystem)) {
+	if (s.equals(currentSystem)) {
 	    return 1;
 	}
 	return 2;
@@ -96,7 +96,7 @@ public class MainController implements Serializable {
      */
     public static boolean saveGame() throws IOException {
 	String savePlanet = currentPlanet;
-	String saveSolarSystem = currentSolarSystem;
+	String saveSolarSystem = currentSystem;
 	Universe saveUniverse = u;
 	Player savePlayer = p;
 	ArrayList<Planet> savePl = pl;
@@ -104,7 +104,8 @@ public class MainController implements Serializable {
 	ArrayList<Resource> saveMerchant = merchant;
 
 	ObjectOutputStream out = null;
-
+	boolean worked = false;
+	
 	try {
 	    out = new ObjectOutputStream(new FileOutputStream("saveFile.dat"));
 	    out.writeObject(savePlanet);
@@ -130,12 +131,12 @@ public class MainController implements Serializable {
 		    out.flush();
 		    out.close();
 		}
-		return true;
+		worked = true;
 	    } catch (IOException ex) {
 		ex.printStackTrace();
-		return false;
 	    }
 	}
+	return worked;
     }
 
     /**
@@ -151,7 +152,7 @@ public class MainController implements Serializable {
 	    ObjectInputStream in = new ObjectInputStream(fileIn);
 
 	    currentPlanet = (String) in.readObject();
-	    currentSolarSystem = (String) in.readObject();
+	    currentSystem = (String) in.readObject();
 	    u = (Universe) in.readObject();
 	    p = (Player) in.readObject();
 	    pl = (ArrayList<Planet>) in.readObject();

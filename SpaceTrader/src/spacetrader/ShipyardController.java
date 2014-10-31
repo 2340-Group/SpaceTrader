@@ -206,76 +206,78 @@ public class ShipyardController implements Initializable {
 	fireflyPrice.setText(" " + ShipType.FIREFLY.getPrice());
 	int tech = MainController.getPlanetNotString().getTechLevel();
 	techLevelLabel.setText("TechLevel\n" + tech);
-
+	
+	String current = "Current Ship";
 	ShipType st = MainController.getPlayer().getShip().getType();
 	switch (st) {
 	case FLEA:
 	    buyFLEA.setDisable(true);
-	    buyFLEA.setText("Current Ship");
+	    buyFLEA.setText(current);
 	    break;
 	case GNAT:
 	    buyGNAT.setDisable(true);
-	    buyGNAT.setText("Current Ship");
+	    buyGNAT.setText(current);
 	    break;
 	case FIREFLY:
 	    buyFIREFLY.setDisable(true);
-	    buyFIREFLY.setText("Current Ship");
+	    buyFIREFLY.setText(current);
 	    break;
 	case MOSQUITO:
 	    buyMOSQUITO.setDisable(true);
-	    buyMOSQUITO.setText("Current Ship");
+	    buyMOSQUITO.setText(current);
 	    break;
 	case BUMBLEBEE:
 	    buyBUMBLEBEE.setDisable(true);
-	    buyBUMBLEBEE.setText("Current Ship");
+	    buyBUMBLEBEE.setText(current);
 	    break;
 	case BEETLE:
 	    buyBEETLE.setDisable(true);
-	    buyBEETLE.setText("Current Ship");
+	    buyBEETLE.setText(current);
 	    break;
 	case HORNET:
 	    buyHORNET.setDisable(true);
-	    buyHORNET.setText("Current Ship");
+	    buyHORNET.setText(current);
 	    break;
 	case GRASSHOPPER:
 	    buyGRASSHOPPER.setDisable(true);
-	    buyGRASSHOPPER.setText("Current Ship");
+	    buyGRASSHOPPER.setText(current);
 	    break;
 	case TERMITE:
 	    buyTERMITE.setDisable(true);
-	    buyTERMITE.setText("Current Ship");
+	    buyTERMITE.setText(current);
 	    break;
 	case WASP:
 	    buyWASP.setDisable(true);
-	    buyWASP.setText("Current Ship");
+	    buyWASP.setText(current);
 	    break;
 	default:
 	    // using ESCAPE
 	    break;
 	}
-
+	
+	String out = "Out of Stock";
 	switch (tech) // fall through on purpose
 	{
 	case 3:
 	    buyFIREFLY.setDisable(true);
-	    buyFIREFLY.setText("Out of Stock");
+	    buyFIREFLY.setText(out);
 	    buyMOSQUITO.setDisable(true);
-	    buyMOSQUITO.setText("Out of Stock");
+	    buyMOSQUITO.setText(out);
 	case 4:
 	    buyBUMBLEBEE.setDisable(true);
-	    buyBUMBLEBEE.setText("Out of Stock");
+	    buyBUMBLEBEE.setText(out);
 	    buyBEETLE.setDisable(true);
-	    buyBEETLE.setText("Out of Stock");
+	    buyBEETLE.setText(out);
 	case 5:
 	    buyHORNET.setDisable(true);
-	    buyHORNET.setText("Out of Stock");
+	    buyHORNET.setText(out);
 	    buyGRASSHOPPER.setDisable(true);
-	    buyGRASSHOPPER.setText("Out of Stock");
+	    buyGRASSHOPPER.setText(out);
 	case 6:
 	    buyWASP.setDisable(true);
-	    buyWASP.setText("Out of Stock");
+	    buyWASP.setText(out);
 	    buyTERMITE.setDisable(true);
-	    buyTERMITE.setText("Out of Stock");
+	    buyTERMITE.setText(out);
 	default:
 	    break; // tech level seven has all ships
 	}

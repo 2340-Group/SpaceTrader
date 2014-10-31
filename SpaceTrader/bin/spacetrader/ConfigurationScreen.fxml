@@ -28,22 +28,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="pilotPointsLabel" alignment="CENTER" prefHeight="186.0" prefWidth="592.0" text="Pilot&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="pilotPointsL" alignment="CENTER" prefHeight="186.0" prefWidth="592.0" text="Pilot&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="fighterPointsLabel" alignment="CENTER" prefHeight="186.0" prefWidth="608.0" text="Fighter&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Label fx:id="fighterPointsL" alignment="CENTER" prefHeight="186.0" prefWidth="608.0" text="Fighter&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="traderPointsLabel" alignment="CENTER" prefHeight="140.0" prefWidth="662.0" text="Trader&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Label fx:id="traderPointsL" alignment="CENTER" prefHeight="140.0" prefWidth="662.0" text="Trader&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="engineerPointsLabel" alignment="CENTER" prefHeight="83.0" prefWidth="513.0" text="Engineer&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <Label fx:id="engineerPointsL" alignment="CENTER" prefHeight="83.0" prefWidth="513.0" text="Engineer&#10;0" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <font>
                   <Font size="15.0" />
                </font>
@@ -93,7 +93,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Label fx:id="remainingPointsLabel" alignment="CENTER" prefHeight="108.0" prefWidth="507.0" text="Remaining Points&#10;15" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label fx:id="remainingPointsL" alignment="CENTER" prefHeight="108.0" prefWidth="507.0" text="Remaining Points&#10;15" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="15.0" />
                </font>

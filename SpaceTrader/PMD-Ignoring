@@ -1,0 +1,26 @@
+2364 / 2500
+
+PMD's complaints are either fixed, on this list, or have not yet been looked at. Have Fun.
+
+Things I can't figure out:
+UseStringBufferForStringAppends - line 75 of CargoBay and line 196 of Marketplace
+GodClass - Ship and MarketSellController
+NPathComplexity - MarketBuyController and MarketSellController - it is saying the handleBuyMarketAction() is
+		too complicated and should have less if statements
+
+
+
+Violations to be Ignored And Why:
+1 - ShortClassName for Ship.java - This is the simplest thing to call the class 
+		that deals with the Player's ship and a longer name would be unnecessary.
+17 - VariableNamingConventions in Universe.java - These are all Proper Names of 
+		our Planets and SolarSystems and are capitalized everywhere
+6 - SuspiciousConstantFieldName in Universe.java - These are, again, Proper Names
+		of Planets and SolarSystems and are capitalized everywhere
+5 - TooManyMethods - These classes are split by which screen they are controlling
+		or by their specific task. To break them any further would be fragmenting
+		their usefullness
+5 - AvoidLiteralsInIfCondition - these are obvious literals that do not need to be
+		replaced with defining variables such as you must have fuel to travel
+6 - MissingBreakInSwitch - These fall through on purpose and it was more efficient
+		to do so

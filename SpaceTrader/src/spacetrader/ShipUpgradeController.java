@@ -67,6 +67,23 @@ public class ShipUpgradeController implements Initializable {
     private Label priceNormalG;
     @FXML
     private Label priceAdvanceG;
+    
+    /**
+     * Leave button
+     *
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void handleReturnAction(ActionEvent event) throws Exception {
+	Parent config = FXMLLoader.load(getClass().getResource(
+		MainController.getCurrentPlanet() + ".fxml"));
+	Scene sceneConfig = new Scene(config);
+	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+		.getWindow();
+	stageN.setScene(sceneConfig);
+	stageN.show();
+    }
 
     /**
      * tried to buy something impossible to buy something that your ship cannot
@@ -127,23 +144,6 @@ public class ShipUpgradeController implements Initializable {
     }
 
     /**
-     * Leave button
-     *
-     * @param event
-     * @throws Exception
-     */
-    @FXML
-    private void handleReturnAction(ActionEvent event) throws Exception {
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
-    }
-
-    /**
      * sets: price of each Equipment how much of each you can get how much you
      * currently have unbuyable based on tech level
      */
@@ -162,28 +162,29 @@ public class ShipUpgradeController implements Initializable {
 	priceBasicS.setText("" + Equipment.BASIC.getPrice());
 	priceNormalS.setText("" + Equipment.NORMAL.getPrice());
 	priceAdvanceS.setText("" + Equipment.ADVANCED.getPrice());
-
+	
+	String out = "Out of Stock";
 	int tech = MainController.getPlanetNotString().getTechLevel();
 	switch (tech) // fall through on purpose
 	{
 	case 3:
 	    gadgetFuel.setDisable(true);
-	    gadgetFuel.setText("Out of Stock");
+	    gadgetFuel.setText(out);
 	case 4:
 	    sheildNormal.setDisable(true);
-	    sheildNormal.setText("Out of Stock");
+	    sheildNormal.setText(out);
 	    weaponNormal.setDisable(true);
-	    weaponNormal.setText("Out of Stock");
+	    weaponNormal.setText(out);
 	case 5:
 	    gadgetCargo.setDisable(true);
-	    gadgetCargo.setText("Out of Stock");
+	    gadgetCargo.setText(out);
 	    sheildAdvanced.setDisable(true);
-	    sheildAdvanced.setText("Out of Stock");
+	    sheildAdvanced.setText(out);
 	    weaponAdvanced.setDisable(true);
-	    weaponAdvanced.setText("Out of Stock");
+	    weaponAdvanced.setText(out);
 	case 6:
 	    gadgetEscape.setDisable(true);
-	    gadgetEscape.setText("Out of Stock");
+	    gadgetEscape.setText(out);
 	default:
 	    break; // tech level seven has all ships
 	}

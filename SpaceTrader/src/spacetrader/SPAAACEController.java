@@ -131,6 +131,7 @@ public class SPAAACEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+	// taken care of by the .fxml
     }
     
     private void nameHelper(String planet, ActionEvent event)throws Exception{
