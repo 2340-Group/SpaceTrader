@@ -8,9 +8,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.PlanetController">
    <children>
-      <ImageView fitHeight="630.0" fitWidth="872.0" layoutX="-15.0" layoutY="-122.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@S!-artwork.png" />
+            <Image url="@cylinder.jpg" />
          </image>
       </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
@@ -31,22 +31,27 @@
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
       <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
-      <Button layoutX="260.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleBuyMoon" text="Buy Moon" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="200.0" text="Moon Costs 2147483647" textAlignment="CENTER">
+      <Button layoutX="399.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleBuyMoon" text="Buy Moon" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="323.0" layoutY="48.0" text="Moon Costs 2147483647" textAlignment="CENTER">
                <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="319.0" layoutY="291.0" text="FUEL&#10;0" textAlignment="CENTER">
+      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="188.0" text="FUEL&#10;0" textAlignment="CENTER">
          <font>
-            <Font size="34.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="169.0" layoutY="291.0" text="FUNDS&#10;0" textAlignment="CENTER">
+      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="188.0" text="FUNDS&#10;0" textAlignment="CENTER">
          <font>
-            <Font size="34.0" />
+            <Font size="20.0" />
          </font>
       </Label>
       <Button layoutX="491.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
+      <Text layoutX="70.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S1">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

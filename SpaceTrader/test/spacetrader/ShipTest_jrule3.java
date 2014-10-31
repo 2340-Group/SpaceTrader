@@ -1,9 +1,7 @@
 package spacetrader;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.*;
+import spacetrader.*;
 
 /**
  * Tests the single method addGadget() in Ship.java
