@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
-            <Image url="@cylinder.jpg" />
+            <Image url="@dust2.jpg" />
          </image>
       </ImageView>
       <MenuBar prefHeight="29.0" prefWidth="600.0">
@@ -30,22 +30,22 @@
          </menus>
       </MenuBar>
       <Button layoutX="21.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
-      <Button layoutX="493.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
-      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="285.0" layoutY="121.0" text="FUNDS&#10;0" textAlignment="CENTER">
+      <Button layoutX="494.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
+      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="116.0" layoutY="157.0" text="FUNDS&#10;0" textAlignment="CENTER">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="121.0" text="FUEL&#10;0" textAlignment="CENTER">
+      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="157.0" text="FUEL&#10;0" textAlignment="CENTER">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="221.0" layoutY="36.0" prefHeight="71.0" prefWidth="358.0" text="Insert Name">
+      <Label layoutX="30.0" layoutY="85.0" prefHeight="71.0" prefWidth="358.0" text="Insert Name">
          <font>
             <Font name="System Bold" size="60.0" />
          </font>
       </Label>
-      <Button layoutX="238.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
+      <Button layoutX="331.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>
