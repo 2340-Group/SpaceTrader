@@ -32,6 +32,7 @@ public class UniverseController implements Initializable {
 
     @FXML
     private void handleSPAAACEButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource("SPAAACE.fxml"));
 	Scene sceneConfig = new Scene(config);
 	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
@@ -42,6 +43,7 @@ public class UniverseController implements Initializable {
 
     @FXML
     private void handleNameButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource("NAME.fxml"));
 	Scene sceneConfig = new Scene(config);
 	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
@@ -52,6 +54,7 @@ public class UniverseController implements Initializable {
 
     @FXML
     private void handleNoNameButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource("NONAME.fxml"));
 	Scene sceneConfig = new Scene(config);
 	Stage stageN = (Stage) ((Node) event.getSource()).getScene()

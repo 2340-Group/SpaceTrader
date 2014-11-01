@@ -106,6 +106,7 @@ public class ShipScreenController implements Initializable {
     @FXML
     private void handleBackToSpaceButtonAction(ActionEvent event)
 	    throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);

@@ -94,28 +94,36 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractWater(ActionEvent event) {
 	if (waterTotal > 0) {
+            SoundController.click();
 	    waterTotal--;
 	    waterLabel.setText("WATER\n" + waterTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addWater(ActionEvent event) {
 	if (waterTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.WATER, 100))) {
+            SoundController.click();
 	    waterTotal++;
 	    waterLabel.setText("WATER\n" + waterTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // ORE
     @FXML
     private void subtractOre(ActionEvent event) {
 	if (oreTotal > 0) {
+            SoundController.click();
 	    oreTotal--;
 	    oreLabel.setText("ORE\n" + oreTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 	// add deny sound for else
     }
 
@@ -123,9 +131,12 @@ public class MarketSellController implements Initializable {
     private void addOre(ActionEvent event) {
 	if (oreTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.ORE, 100))) {
+            SoundController.click();
 	    oreTotal++;
 	    oreLabel.setText("ORE\n" + oreTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -133,9 +144,12 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractFood(ActionEvent event) {
 	if (foodTotal > 0) {
+            SoundController.click();
 	    foodTotal--;
 	    foodLabel.setText("FOOD\n" + foodTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 	// add deny sound for else
     }
 
@@ -143,9 +157,12 @@ public class MarketSellController implements Initializable {
     private void addFood(ActionEvent event) {
 	if (foodTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.FOOD, 100))) {
+            SoundController.click();
 	    foodTotal++;
 	    foodLabel.setText("FOOD\n" + foodTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -153,9 +170,12 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractFurs(ActionEvent event) {
 	if (fursTotal > 0) {
+            SoundController.click();
 	    fursTotal--;
 	    fursLabel.setText("FURS\n" + fursTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 	// add deny sound for else
     }
 
@@ -163,9 +183,12 @@ public class MarketSellController implements Initializable {
     private void addFurs(ActionEvent event) {
 	if (fursTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.FURS, 100))) {
+            SoundController.click();
 	    fursTotal++;
 	    fursLabel.setText("FURS\n" + fursTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -173,19 +196,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractGames(ActionEvent event) {
 	if (gamesTotal > 0) {
+            SoundController.click();
 	    gamesTotal--;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addGames(ActionEvent event) {
 	if (gamesTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.GAMES, 100))) {
+            SoundController.click();
 	    gamesTotal++;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -193,19 +221,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractFirearms(ActionEvent event) {
 	if (firearmsTotal > 0) {
+            SoundController.click();
 	    firearmsTotal--;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addFirearms(ActionEvent event) {
 	if (firearmsTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.FIREARMS, 100))) {
+            SoundController.click();
 	    firearmsTotal++;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -213,19 +246,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractMedicine(ActionEvent event) {
 	if (medicineTotal > 0) {
+            SoundController.click();
 	    medicineTotal--;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addMedicine(ActionEvent event) {
 	if (medicineTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.MEDICINE, 100))) {
+            SoundController.click();
 	    medicineTotal++;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -233,19 +271,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractMachines(ActionEvent event) {
 	if (machinesTotal > 0) {
+            SoundController.click();
 	    machinesTotal--;
 	    machinesLabel.setText("MACHINES/n" + machinesTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addMachines(ActionEvent event) {
 	if (machinesTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.MACHINES, 100))) {
+            SoundController.click();
 	    machinesTotal++;
 	    machinesLabel.setText("MACHINES\n" + machinesTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -253,19 +296,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractNarcotics(ActionEvent event) {
 	if (narcoticsTotal > 0) {
+            SoundController.click();
 	    narcoticsTotal--;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addNarcotics(ActionEvent event) {
 	if (narcoticsTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.NARCOTICS, 100))) {
+            SoundController.click();
 	    narcoticsTotal++;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -273,19 +321,24 @@ public class MarketSellController implements Initializable {
     @FXML
     private void subtractRobot(ActionEvent event) {
 	if (robotsTotal > 0) {
+            SoundController.click();
 	    robotsTotal--;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     @FXML
     private void addRobot(ActionEvent event) {
 	if (robotsTotal < MainController.getPlayer().getShip().getCargo()
 		.getResourceStock(new Resource(ResourceType.ROBOTS, 100))) {
+            SoundController.click();
 	    robotsTotal++;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
@@ -298,6 +351,7 @@ public class MarketSellController implements Initializable {
     @FXML
     private void handleSellMarketAction(ActionEvent event) throws Exception {
 	// subtract inventory & add funds
+        SoundController.click();
 	missingNo = MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon();
 	if (waterTotal > 0) {
@@ -369,6 +423,7 @@ public class MarketSellController implements Initializable {
     @FXML
     private void handleSellAllMarketAction(ActionEvent event) throws Exception {
 	// subtract all inventory and add funds
+        SoundController.click();
 	missingNo = MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon();
 	for (int i = 0; i < missingNo.getResources().size(); i++) {
@@ -415,6 +470,7 @@ public class MarketSellController implements Initializable {
      */
     @FXML
     private void handleLeaveMarketAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"Marketplace.fxml"));
 	Scene sceneConfig = new Scene(config);

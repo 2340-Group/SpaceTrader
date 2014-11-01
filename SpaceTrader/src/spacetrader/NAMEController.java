@@ -35,6 +35,7 @@ public class NAMEController implements Initializable {
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
 	if (MainController.getPlayer().getShip().getFuel() > 1) {
+            SoundController.click();
 	    Parent config = FXMLLoader.load(getClass().getResource(
 		    "Universe.fxml"));
 	    Scene sceneConfig = new Scene(config);
@@ -42,12 +43,15 @@ public class NAMEController implements Initializable {
 		    .getWindow();
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
     @FXML
     private void handleBigButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("Big", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -64,6 +68,7 @@ public class NAMEController implements Initializable {
 
     @FXML
     private void handleGiantButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("Giant", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -80,6 +85,7 @@ public class NAMEController implements Initializable {
 
     @FXML
     private void handlePlanetButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("Planet", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()

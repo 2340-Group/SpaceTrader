@@ -35,6 +35,7 @@ public class SPAAACEController implements Initializable {
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
 	if (MainController.getPlayer().getShip().getFuel() > 1) {
+            SoundController.click();
 	    Parent config = FXMLLoader.load(getClass().getResource(
 		    "Universe.fxml"));
 	    Scene sceneConfig = new Scene(config);
@@ -42,7 +43,9 @@ public class SPAAACEController implements Initializable {
 		    .getWindow();
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 

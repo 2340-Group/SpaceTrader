@@ -19,9 +19,6 @@ import javafx.stage.Stage;
 
 public class ShipyardController implements Initializable {
 
-    private Media deny;
-    private MediaPlayer mediaPlayer;
-
     @FXML
     private Label techLevelLabel;
     @FXML
@@ -83,13 +80,16 @@ public class ShipyardController implements Initializable {
 	if (MainController.getPlayer().getFunds() >= 10
 		&& MainController.getPlayer().getShip().getFuel() < MainController
 		.getPlayer().getShip().getMaxFuel()) {
+            SoundController.click();
 	    MainController.getPlayer().subtractFunds(10);
 	    MainController.getPlayer().getShip().addFuel(1);
 	    fundsLabel.setText("Funds\n"
 		    + MainController.getPlayer().getFunds());
 	    fuelLabel.setText("Fuel\n"
 		    + MainController.getPlayer().getShip().getFuel());
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -130,6 +130,7 @@ public class ShipyardController implements Initializable {
 
 	int funds = MainController.getPlayer().getFunds();
 	if (funds >= st.getPrice()) {
+            SoundController.click();
 	    funds = funds - st.getPrice();
 	    MainController.getPlayer().setFunds(funds);
 	    Ship newShip = new Ship(st, MainController.getPlayer().getShip()
@@ -140,8 +141,7 @@ public class ShipyardController implements Initializable {
 
 	    handleShipUpgrade(event);
 	} else {
-	    mediaPlayer = new MediaPlayer(deny);
-	    mediaPlayer.play();
+	    SoundController.deny();
 	}
     }
 
@@ -154,6 +154,7 @@ public class ShipyardController implements Initializable {
      */
     @FXML
     private void handleShipUpgrade(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"ShipUpgrade.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -170,6 +171,7 @@ public class ShipyardController implements Initializable {
      */
     @FXML
     private void handleLeaveShipyardAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -186,9 +188,6 @@ public class ShipyardController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
-	.toURI().toString());
-	mediaPlayer = new MediaPlayer(deny);
 	fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
 	fuelLabel.setText("Fuel\n"
 		+ MainController.getPlayer().getShip().getFuel());

@@ -35,6 +35,7 @@ public class NONAMEController implements Initializable {
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
 	if (MainController.getPlayer().getShip().getFuel() > 1) {
+            SoundController.click();
 	    Parent config = FXMLLoader.load(getClass().getResource(
 		    "Universe.fxml"));
 	    Scene sceneConfig = new Scene(config);
@@ -42,12 +43,15 @@ public class NONAMEController implements Initializable {
 		    .getWindow();
 	    stageN.setScene(sceneConfig);
 	    stageN.show();
-	}
+	} else {
+            SoundController.deny();
+        }
 
     }
 
     @FXML
     private void handleERRORButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("ERROR", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -64,6 +68,7 @@ public class NONAMEController implements Initializable {
 
     @FXML
     private void handleBlankButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	nameHelper("Blank", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()
@@ -81,6 +86,7 @@ public class NONAMEController implements Initializable {
     @FXML
     private void handleInsertNameButtonAction(ActionEvent event)
 	    throws Exception {
+        SoundController.click();
 	nameHelper("InsertName", event);
 	MainController.getPlayer().setLocation(
 		MainController.getUniverse()

@@ -103,6 +103,7 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractWater(ActionEvent event) {
 	if (waterTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    waterTotal--;
 	    waterLabel.setText("WATER\n" + waterTotal);
@@ -110,8 +111,9 @@ public class MarketBuyController implements Initializable {
 	    fundsLabel.setText(pmd + tempFunds);
 
 	    //
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -123,12 +125,15 @@ public class MarketBuyController implements Initializable {
     private void addWater(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Water")) {
+            SoundController.click();
 	    cargoTotal++;
 	    waterTotal++;
 	    waterLabel.setText("WATER\n" + waterTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Water");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // ORE
@@ -140,13 +145,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractOre(ActionEvent event) {
 	if (oreTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    oreTotal--;
 	    oreLabel.setText("ORE\n" + oreTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Ore");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -158,12 +165,15 @@ public class MarketBuyController implements Initializable {
     private void addOre(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Ore")) {
+            SoundController.click();
 	    cargoTotal++;
 	    oreTotal++;
 	    oreLabel.setText("ORE\n" + oreTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Ore");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Food
@@ -175,13 +185,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractFood(ActionEvent event) {
 	if (foodTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    foodTotal--;
 	    foodLabel.setText("FOOD\n" + foodTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Food");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -193,12 +205,15 @@ public class MarketBuyController implements Initializable {
     private void addFood(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Food")) {
+            SoundController.click();
 	    cargoTotal++;
 	    foodTotal++;
 	    foodLabel.setText("FOOD\n" + foodTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Food");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Furs
@@ -210,13 +225,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractFurs(ActionEvent event) {
 	if (fursTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    fursTotal--;
 	    fursLabel.setText("FURS\n" + fursTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Furs");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -228,12 +245,15 @@ public class MarketBuyController implements Initializable {
     private void addFurs(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Furs")) {
+            SoundController.click();
 	    cargoTotal++;
 	    fursTotal++;
 	    fursLabel.setText("FURS\n" + fursTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Furs");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Games
@@ -245,13 +265,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractGames(ActionEvent event) {
 	if (gamesTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    gamesTotal--;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Games");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -263,12 +285,15 @@ public class MarketBuyController implements Initializable {
     private void addGames(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Games")) {
+            SoundController.click();
 	    cargoTotal++;
 	    gamesTotal++;
 	    gamesLabel.setText("GAMES\n" + gamesTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Games");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Firearms
@@ -280,13 +305,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractFirearms(ActionEvent event) {
 	if (firearmsTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    firearmsTotal--;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Firearms");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -298,12 +325,15 @@ public class MarketBuyController implements Initializable {
     private void addFirearms(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Firearms")) {
+            SoundController.click();
 	    cargoTotal++;
 	    firearmsTotal++;
 	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Firearms");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Medicine
@@ -315,14 +345,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractMedicine(ActionEvent event) {
 	if (medicineTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    medicineTotal--;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Medicine");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
-
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -334,12 +365,15 @@ public class MarketBuyController implements Initializable {
     private void addMedicine(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Medicine")) {
+            SoundController.click();
 	    cargoTotal++;
 	    medicineTotal++;
 	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Medicine");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Machines
@@ -351,13 +385,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractMachines(ActionEvent event) {
 	if (machinesTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    machinesTotal--;
 	    machinesLabel.setText("MACHINES/n" + machinesTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Machines");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -369,12 +405,15 @@ public class MarketBuyController implements Initializable {
     private void addMachines(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Machines")) {
+            SoundController.click();
 	    cargoTotal++;
 	    machinesTotal++;
 	    machinesLabel.setText("MACHINES\n" + machinesTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Machines");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Narcotics
@@ -386,13 +425,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractNarcotics(ActionEvent event) {
 	if (narcoticsTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    narcoticsTotal--;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Narcotics");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -404,12 +445,15 @@ public class MarketBuyController implements Initializable {
     private void addNarcotics(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Narcotics")) {
+            SoundController.click();
 	    cargoTotal++;
 	    narcoticsTotal++;
 	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Narcotics");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     // Robots
@@ -421,13 +465,15 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void subtractRobot(ActionEvent event) {
 	if (robotsTotal > 0) {
+            SoundController.click();
 	    cargoTotal--;
 	    robotsTotal--;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
 	    tempFunds = tempFunds + missingNo.getResourceCost("Robots");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
-	// add deny sound for else
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -439,12 +485,15 @@ public class MarketBuyController implements Initializable {
     private void addRobot(ActionEvent event) {
 	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
 		&& tempFunds >= missingNo.getResourceCost("Robots")) {
+            SoundController.click();
 	    cargoTotal++;
 	    robotsTotal++;
 	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
 	    tempFunds = tempFunds - missingNo.getResourceCost("Robots");
 	    fundsLabel.setText(pmd + tempFunds);
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -455,6 +504,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void handleBuyMarketAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	missingNo = MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon();
 	if (waterTotal > 0) {
@@ -522,13 +572,16 @@ public class MarketBuyController implements Initializable {
 	if (MainController.getPlayer().getFunds() >= 100
 		&& MainController.getPlayer().getShip().getFuel() <= (MainController
 			.getPlayer().getShip().getMaxFuel() - 10)) {
+            SoundController.click();
 	    MainController.getPlayer().subtractFunds(100);
 	    MainController.getPlayer().getShip().addFuel(10);
 	    tempFunds = MainController.getPlayer().getFunds();
 	    fundsLabel.setText(pmd + tempFunds);
 	    fuelLabel.setText("FUEL\n"
 		    + MainController.getPlayer().getShip().getFuel());
-	}
+	} else {
+            SoundController.deny();
+        }
     }
 
     /**
@@ -566,6 +619,7 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void handleLeaveMarketAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"Marketplace.fxml"));
 	Scene sceneConfig = new Scene(config);

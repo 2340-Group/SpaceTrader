@@ -26,6 +26,7 @@ public class ShipyardNotHereController implements Initializable {
      */
     @FXML
     private void handleLeaveShipyard(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);

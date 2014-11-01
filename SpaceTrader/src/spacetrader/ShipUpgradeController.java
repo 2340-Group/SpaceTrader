@@ -76,6 +76,7 @@ public class ShipUpgradeController implements Initializable {
      */
     @FXML
     private void handleReturnAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -116,6 +117,7 @@ public class ShipUpgradeController implements Initializable {
 	if (e != Equipment.NOTHING) {
 	    int fund = MainController.getPlayer().getFunds();
 	    if (fund >= e.getPrice()) {
+                SoundController.click();
 		fund = fund - e.getPrice();
 		MainController.getPlayer().setFunds(fund);
 		funds.setText("" + fund);
@@ -137,8 +139,7 @@ public class ShipUpgradeController implements Initializable {
 
 		greyOut();
 	    } else {
-		mediaPlayer = new MediaPlayer(deny);
-		mediaPlayer.play();
+		SoundController.deny();
 	    }
 	}
     }

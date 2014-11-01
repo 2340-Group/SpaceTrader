@@ -17,6 +17,7 @@ public class MarketplaceController implements Initializable {
 
     @FXML
     private void handleBuyButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"MarketplaceBuy.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -28,6 +29,7 @@ public class MarketplaceController implements Initializable {
 
     @FXML
     private void handleSellButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		"MarketplaceSell.fxml"));
 	Scene sceneConfig = new Scene(config);
@@ -39,6 +41,7 @@ public class MarketplaceController implements Initializable {
 
     @FXML
     private void handleLeaveButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
 	Parent config = FXMLLoader.load(getClass().getResource(
 		MainController.getCurrentPlanet() + ".fxml"));
 	Scene sceneConfig = new Scene(config);
