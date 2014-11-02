@@ -24,7 +24,10 @@ import javafx.stage.Stage;
  * @author Ryan
  */
 public class SPAAACEController implements Initializable {
-
+    
+    /**
+     * Name of next screen
+     */
     private String eventType;
 
     @FXML

@@ -13,6 +13,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Access Buy/Sell screens
+ * @author
+ */
 public class MarketplaceController implements Initializable {
 
     @FXML
@@ -51,6 +55,9 @@ public class MarketplaceController implements Initializable {
 	stageN.show();
     }
 
+    /**
+     * shows screen and sets up economy
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 	ArrayList<Resource> merchant = new ArrayList<>();

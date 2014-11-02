@@ -30,6 +30,9 @@ public class NONAMEController implements Initializable {
 	System.exit(0);
     }
 
+    /**
+     * This is the name of the next screen
+     */
     private String eventType;
 
     @FXML

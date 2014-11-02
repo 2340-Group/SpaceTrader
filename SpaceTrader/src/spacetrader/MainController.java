@@ -9,6 +9,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+/**
+ * Holds Game info
+ * @author
+ */
 public class MainController implements Serializable {
 
     private static String currentPlanet;

@@ -13,8 +13,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Jamie
+ * The class that starts the application
+ * @author Meeskond
  */
 public class SpaceTrader extends Application {
 
@@ -24,6 +24,9 @@ public class SpaceTrader extends Application {
 	return mainC;
     }
 
+    /**
+     * Starts the Game
+     */
     @Override
     public void start(Stage stage) throws Exception {
 	Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));

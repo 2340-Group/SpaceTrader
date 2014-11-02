@@ -10,13 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+/**
+ * Ship Screen controller
+ * @author Jamie
+ */
 public class ShipScreenController implements Initializable {
-    @FXML
-    private Button returnToPlanet;
     @FXML
     private Label shipType;
     @FXML
@@ -54,15 +55,15 @@ public class ShipScreenController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 	Ship displayMe = MainController.getPlayer().getShip();
-	ShipType st = displayMe.getType();
-	shipType.setText("" + st);
+	ShipType shipT = displayMe.getType();
+	shipType.setText("" + shipT);
 	health.setText("" + displayMe.getHealth());
 	currentFuel.setText("" + displayMe.getFuel());
 	currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
 	maxFuel.setText("" + displayMe.getMaxFuel());
 	maxCargo.setText("" + displayMe.getMaxCargo());
 
-	int remain = st.getSheildSlots();
+	int remain = shipT.getSheildSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
 	    sheild3.setText(displayMe.getSheild(2));
@@ -73,7 +74,7 @@ public class ShipScreenController implements Initializable {
 	default:
 	    break;
 	}
-	remain = st.getWeaponSlots();
+	remain = shipT.getWeaponSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
 	    weapon3.setText(displayMe.getWeapon(2));
@@ -84,7 +85,7 @@ public class ShipScreenController implements Initializable {
 	default:
 	    break;
 	}
-	remain = st.getGadgetSlots();
+	remain = shipT.getGadgetSlots();
 	switch (remain) { // fall through on purpose
 	case 3:
 	    gadget3.setText(displayMe.getGadget(2));

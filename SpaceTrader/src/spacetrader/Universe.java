@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * keeps track of SolarSystems
+ * @author
+ */
 public class Universe implements Serializable {
     private ArrayList<SolarSystem> universeList;
 

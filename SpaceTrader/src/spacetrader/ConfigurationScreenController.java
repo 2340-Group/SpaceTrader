@@ -19,9 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.scene.media.*;
-
-import java.io.*;
 
 import javafx.scene.control.Button;
 
@@ -32,6 +29,9 @@ import javafx.scene.control.Button;
  */
 public class ConfigurationScreenController implements Initializable {
 
+    /**
+     * name entered by Player
+     */
     private String name = "Trader";
     private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0,
 	    traderPoints = 0, engineerPoints = 0;
@@ -239,7 +239,7 @@ public class ConfigurationScreenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+	//taken care of by .fxml
     }
 
     public String getName() {

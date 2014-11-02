@@ -10,6 +10,10 @@ package spacetrader;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Backing for Buy/Sell Controllers
+ * @author
+ */
 public class Marketplace implements Serializable {
 
     private Double currentInflation;

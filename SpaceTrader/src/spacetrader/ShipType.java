@@ -1,5 +1,9 @@
 package spacetrader;
 
+/**
+ * Enumeration of Ships
+ * @author Jamie
+ */
 public enum ShipType {
     NOSHIP(0, 0, 0, 0, 0, 0), // nearest planet, can be made into FLEA
     FLEA(20, 0, 0, 0, 0, 2000), // 20 parsecs,
@@ -22,11 +26,29 @@ public enum ShipType {
     // 2 shield
     // MAX(20,60,3,3,3,10000)
 
+    /**
+     * Distance Ship can go
+     */
     private final int PARSECS;
+    /**
+     * Amount resources Ship can hold
+     */
     private final int CARGO;
+    /**
+     * Amount of weapons Ship can hold
+     */
     private final int WEAPON;
+    /**
+     * Amount of gadgets Ship can hold
+     */
     private final int GADGET;
+    /**
+     * Amount of sheilds Ship can hold
+     */
     private final int SHEILD;
+    /**
+     * Base price not accounting for skill points
+     */
     private final int PRICE;
 
     ShipType(int par, int car, int wea, int gad, int she, int pri) {

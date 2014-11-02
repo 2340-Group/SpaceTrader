@@ -30,7 +30,7 @@ public class UIController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	// TODO
+	// handled by .fxml
     }
 
 }

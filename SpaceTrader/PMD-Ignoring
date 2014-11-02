@@ -1,5 +1,3 @@
-2364 / 2500
-
 PMD's complaints are either fixed, on this list, or have not yet been looked at. Have Fun.
 
 Things I can't figure out:
@@ -7,6 +5,8 @@ UseStringBufferForStringAppends - line 75 of CargoBay and line 196 of Marketplac
 GodClass - Ship and MarketSellController
 NPathComplexity - MarketBuyController and MarketSellController - it is saying the handleBuyMarketAction() is
 		too complicated and should have less if statements
+UseUtilityClass - SoundController
+UnusedModifier - Event
 
 
 
@@ -24,3 +24,15 @@ Violations to be Ignored And Why:
 		replaced with defining variables such as you must have fuel to travel
 6 - MissingBreakInSwitch - These fall through on purpose and it was more efficient
 		to do so
+MethodArgumentCouldBeFinal & LocalArgumentCouldBeFinal - it is a controversial rule, 
+		and there is no particular reason for us to implement it here
+AtLeastOneConstructor - most of these are screen controllers that use their
+		initialize() instead of a constructor
+AddEmptyString - this is to ensure that the integers and other variables will be
+		represented properly in the UI
+SignatureDeclareThrowsException - The vague Exception being thrown will be a problem
+		with JavaFX and not handled anyway. This is found in Controllers dealing
+		with Button clicks.
+CommentSize - the javaDocs are whatever length they need to be in order to get the
+		point across
+ 

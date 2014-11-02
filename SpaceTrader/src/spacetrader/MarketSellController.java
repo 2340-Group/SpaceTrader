@@ -14,6 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+/**
+ * Marketplace Sell
+ * @author
+ */
 public class MarketSellController implements Initializable {
 
     private int waterTotal = 0, oreTotal = 0, foodTotal = 0, fursTotal = 0,

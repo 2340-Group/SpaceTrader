@@ -2,6 +2,10 @@ package spacetrader;
 
 import java.io.Serializable;
 
+/**
+ * holder of quantity of Resources
+ * @author
+ */
 public class Resource implements Serializable {
 
     private String name;

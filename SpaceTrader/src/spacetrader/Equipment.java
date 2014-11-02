@@ -1,19 +1,32 @@
 package spacetrader;
 
+/**
+ * Enumeration of Ship Upgrades
+ * @author Jamie
+ */
 public enum Equipment {
 
     BASIC(50, "MORE FUEL"), NORMAL(100, "LARGER CARGO"), ADVANCED(200,
 	    "ESCAPE POD"), CHEAPSHOT(Integer.MAX_VALUE, "CHEATER"), NOTHING(0,
 		    "NOTHING");
 
+    /**
+     * The amount of sheilding or blasting power the sheild or weapon has left
+     */
     private int powerLeft;
-    private final int MAXPOWER;
+    
+    /**
+     * price not accounting for skill points
+     */
     private int price;
+    
+    /**
+     * UI-Friendly gadget name
+     */
     private String gadgetName;
 
     Equipment(int pow, String name) {
 	powerLeft = pow;
-	MAXPOWER = pow;
 	price = pow * 10;
 	gadgetName = name;
     }
@@ -28,25 +41,6 @@ public enum Equipment {
 
     public int getPrice() {
 	return price;
-    }
-
-    /**
-     *
-     * @param refill
-     *            - int how much power to give equipment
-     * @return int new power amount, -1 if refill amount <= 0 (invalid, try
-     *         usePower())
-     */
-    public int upgrade(int refill) {
-	if (refill <= 0) {
-	    return -1;
-	} else {
-	    powerLeft = powerLeft + refill;
-	    if (powerLeft > MAXPOWER) {
-		powerLeft = MAXPOWER;
-	    }
-	    return powerLeft;
-	}
     }
 
     /**

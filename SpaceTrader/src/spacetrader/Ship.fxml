@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.ShipScreenController">
    <children>
-      <Button fx:id="returnToPlanet" layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#handleBackToSpaceButtonAction" text="Back to Planet" />
+      <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#handleBackToSpaceButtonAction" text="Back to Planet" />
       <GridPane gridLinesVisible="true" layoutX="6.0" layoutY="6.0" prefHeight="358.0" prefWidth="588.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="107.0" />

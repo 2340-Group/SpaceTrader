@@ -49,7 +49,7 @@ public class MoonController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rbu) {
 	// entriely delt with by the .fxml
     }
 

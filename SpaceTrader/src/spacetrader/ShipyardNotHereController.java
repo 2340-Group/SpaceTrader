@@ -17,6 +17,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * For planets with too low a Tech Level to have a shipyard
+ * @author Jamie
+ */
 public class ShipyardNotHereController implements Initializable {
     /**
      * Exits to the Planet
@@ -40,7 +44,7 @@ public class ShipyardNotHereController implements Initializable {
      * entirely set up by the .fxml
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rbu) {
 	// entirely set up by .fxml
     }
 

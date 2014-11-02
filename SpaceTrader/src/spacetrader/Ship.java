@@ -3,6 +3,10 @@ package spacetrader;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * The Ship a player owns
+ * @author Jamie
+ */
 public class Ship implements Serializable {
     private ShipType shipT;
     private int reputation;

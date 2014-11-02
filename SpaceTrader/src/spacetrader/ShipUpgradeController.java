@@ -1,6 +1,5 @@
 package spacetrader;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -14,14 +13,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+/**
+ * Where Player buys upgrades
+ * @author Jamie
+ */
 public class ShipUpgradeController implements Initializable {
-
-    private Media deny;
-    private MediaPlayer mediaPlayer;
 
     @FXML
     private Button weaponBasic;
@@ -150,9 +148,6 @@ public class ShipUpgradeController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
-	.toURI().toString());
-	mediaPlayer = new MediaPlayer(deny);
 	funds.setText("" + MainController.getPlayer().getFunds());
 	priceBasicW.setText("" + Equipment.BASIC.getPrice());
 	priceNormalW.setText("" + Equipment.NORMAL.getPrice());

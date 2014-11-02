@@ -75,6 +75,9 @@ public class FXMLDocumentController implements Initializable {
 	System.exit(0);
     }
 
+    /**
+     * Shows screen and initializes the SoundController
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 	/* try {

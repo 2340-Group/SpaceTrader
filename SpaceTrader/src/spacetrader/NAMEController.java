@@ -25,6 +25,9 @@ import javafx.stage.Stage;
  */
 public class NAMEController implements Initializable {
 
+    /**
+     * Name of next screen
+     */
     private String eventType;
 
     @FXML

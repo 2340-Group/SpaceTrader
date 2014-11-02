@@ -12,7 +12,9 @@ package spacetrader;
  */
 public class PoliceEvent implements Event {
 
-    // Cops confiscate half of your funds
+    /**
+     * Cops confiscate half of your funds
+     */
     public String act(Player p) {
 	int funds = p.getFunds();
 //	System.out.print(funds);
