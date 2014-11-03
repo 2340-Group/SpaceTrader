@@ -33,8 +33,8 @@ public class ConfigurationScreenController implements Initializable {
      * name entered by Player
      */
     private String name = "Trader";
-    private int remainingPoints = 15, pilotPoints = 0, fighterPoints = 0,
-	    traderPoints = 0, engineerPoints = 0;
+    private int remainingPoints = 15, pilotPoints, fighterPoints,
+	    traderPoints, engineerPoints; //automatically set to zero
 
     @FXML
     private TextField nameField;

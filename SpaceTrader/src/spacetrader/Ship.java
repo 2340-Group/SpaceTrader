@@ -434,8 +434,8 @@ public class Ship implements Serializable {
      * @param cB
      *            - if null, cargo set to empty CargoBay
      */
-    public void setCargo(CargoBay cB) {
-	cargo = cB;
+    public void setCargo(CargoBay cBay) {
+	cargo = cBay;
 	if (cargo == null) {
 	    cargo = new CargoBay(shipT.getCargoSlots());
 	    if (gadgets.contains(Equipment.NORMAL)) {

@@ -20,10 +20,10 @@ import javafx.stage.Stage;
  */
 public class MarketSellController implements Initializable {
 
-    private int waterTotal = 0, oreTotal = 0, foodTotal = 0, fursTotal = 0,
-	    gamesTotal = 0, firearmsTotal = 0, medicineTotal = 0,
-	    machinesTotal = 0, narcoticsTotal = 0, robotsTotal = 0,
-	    tempFunds = 0;
+    private int waterTotal, oreTotal, foodTotal, fursTotal,
+	    gamesTotal, firearmsTotal, medicineTotal,
+	    machinesTotal, narcoticsTotal, robotsTotal,
+	    tempFunds; //automatically set to zero
     private Marketplace missingNo;
     @FXML
     private Label capacityLabel;

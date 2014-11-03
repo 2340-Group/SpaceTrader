@@ -94,29 +94,29 @@ public class ShipUpgradeController implements Initializable {
     @FXML
     private void handleBuy(ActionEvent event) throws Exception {
 	Button clicked = (Button) event.getSource();
-	Equipment e;
+	Equipment equi;
 	if (clicked.equals(weaponBasic) || clicked.equals(sheildBasic)) {
-	    e = Equipment.BASIC;
+	    equi = Equipment.BASIC;
 	} else if (clicked.equals(weaponNormal) || clicked.equals(sheildNormal)) {
-	    e = Equipment.NORMAL;
+	    equi = Equipment.NORMAL;
 	} else if (clicked.equals(weaponAdvanced)
 		|| clicked.equals(sheildAdvanced)) {
-	    e = Equipment.ADVANCED;
+	    equi = Equipment.ADVANCED;
 	} else if (clicked.equals(gadgetFuel)) {
-	    e = Equipment.BASIC;
+	    equi = Equipment.BASIC;
 	} else if (clicked.equals(gadgetCargo)) {
-	    e = Equipment.NORMAL;
+	    equi = Equipment.NORMAL;
 	} else if (clicked.equals(gadgetEscape)) {
-	    e = Equipment.ADVANCED;
+	    equi = Equipment.ADVANCED;
 	} else {
-	    e = Equipment.NOTHING;
+	    equi = Equipment.NOTHING;
 	}
 
-	if (e != Equipment.NOTHING) {
+	if (equi != Equipment.NOTHING) {
 	    int fund = MainController.getPlayer().getFunds();
-	    if (fund >= e.getPrice()) {
+	    if (fund >= equi.getPrice()) {
                 SoundController.click();
-		fund = fund - e.getPrice();
+		fund = fund - equi.getPrice();
 		MainController.getPlayer().setFunds(fund);
 		funds.setText("" + fund);
 
@@ -124,15 +124,15 @@ public class ShipUpgradeController implements Initializable {
 
 		if (clicked.equals(gadgetFuel) || clicked.equals(gadgetCargo)
 			|| clicked.equals(gadgetEscape)) {
-		    ship.addGadget(e);
+		    ship.addGadget(equi);
 		} else if (clicked.equals(weaponBasic)
 			|| clicked.equals(weaponNormal)
 			|| clicked.equals(weaponAdvanced)) {
-		    ship.addWeapon(e);
+		    ship.addWeapon(equi);
 		} else if (clicked.equals(sheildBasic)
 			|| clicked.equals(sheildNormal)
 			|| clicked.equals(sheildAdvanced)) {
-		    ship.addSheild(e);
+		    ship.addSheild(equi);
 		}
 
 		greyOut();

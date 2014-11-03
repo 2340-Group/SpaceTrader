@@ -18,17 +18,17 @@ public class SoundController implements Serializable {
     private static Media introSong;
     private static MediaPlayer mediaPlayer;
     private static MediaPlayer songPlayer;
-    private static Media click;
-    private static Media deny;
-    private static Media swoop;
+    private static Media clickSound;
+    private static Media denySound;
+    private static Media swoopSound;
 
     
     public static void init() {
-        click = new Media(new File("./src/spacetrader/Click Silencer 2.wav")
+        clickSound = new Media(new File("./src/spacetrader/Click Silencer 2.wav")
 		.toURI().toString());
-	deny = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
+	denySound = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
 		.toURI().toString());
-        swoop = new Media(new File("./src/spacetrader/Sweep Droga.wav")
+        swoopSound = new Media(new File("./src/spacetrader/Sweep Droga.wav")
 	.toURI().toString());
         introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
 	.toURI().toString());
@@ -36,17 +36,17 @@ public class SoundController implements Serializable {
     }
     
     public static void swoop() {
-        mediaPlayer = new MediaPlayer(swoop);
+        mediaPlayer = new MediaPlayer(swoopSound);
 	mediaPlayer.play();
     }
     
     public static void click() {
-        mediaPlayer = new MediaPlayer(click);
+        mediaPlayer = new MediaPlayer(clickSound);
 	mediaPlayer.play();
     }
     
     public static void deny() {
-        mediaPlayer = new MediaPlayer(deny);
+        mediaPlayer = new MediaPlayer(denySound);
 	mediaPlayer.play();
     }
     

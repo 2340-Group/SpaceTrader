@@ -14,7 +14,6 @@ package spacetrader;
 public class EventGeneratorSimple {
 
     private double baseProb = 0.7;
-    private Player player;
     private double policeProb;
     private double pirateProb;
     private double policeRNG;
@@ -31,7 +30,6 @@ public class EventGeneratorSimple {
         this.policeRNG = Math.random();
         this.pirateRNG = Math.random();
         this.eventChance = Math.random();
-	this.player = player;
     }
 
     /**
