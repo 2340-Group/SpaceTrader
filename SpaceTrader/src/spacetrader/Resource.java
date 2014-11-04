@@ -76,7 +76,7 @@ public class Resource implements Serializable {
      * @param quantity
      */
     public void setQuantity(int quantity) {
-	quantity = quantity;
+	this.quantity = quantity;
     }
 
     /**
