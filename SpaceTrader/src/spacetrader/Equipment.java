@@ -25,20 +25,29 @@ public enum Equipment {
      */
     private String gadgetName;
 
-    Equipment(int pow, String name) {
+    Equipment(final int pow, final String name) {
 	powerLeft = pow;
 	price = pow * 10;
 	gadgetName = name;
     }
 
+    /**
+     * @return the UI-friendly version of Gadget's name
+     */
     public String getGadgetName() {
 	return gadgetName;
     }
 
+    /**
+     * @return how much power the weapon or sheild has left
+     */
     public int getPower() {
 	return powerLeft;
     }
 
+    /**
+     * @return the price of Equipment
+     */
     public int getPrice() {
 	return price;
     }
@@ -49,15 +58,17 @@ public enum Equipment {
      * @return int the amount of used that was too much for the Equipment, -1 if
      *         still has power
      */
-    public int usePower(int used) {
+    public int usePower(final int used) {
 	int holding = powerLeft - used;
+	int retval;
 	if (holding <= 0) {
 	    holding = used - powerLeft;
 	    powerLeft = 0;
-	    return holding;
+	    retval = holding;
 	} else {
 	    powerLeft = holding;
-	    return -1;
+	    retval = -1;
 	}
+	return retval;
     }
 }

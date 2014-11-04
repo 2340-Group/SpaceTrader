@@ -51,7 +51,7 @@ public enum ShipType {
      */
     private final int PRICE;
 
-    ShipType(int par, int car, int wea, int gad, int she, int pri) {
+    ShipType(final int par, final int car, final int wea, final int gad, final int she, final int pri) {
 	PARSECS = par;
 	CARGO = car;
 	WEAPON = wea;
@@ -63,28 +63,43 @@ public enum ShipType {
     /**
      * DO NOT USE FOR FUEL Ship has method .getMaxFuel() use that instead
      *
-     * @return
+     * @return how far ship can go
      */
     public int getMaxDistance() {
 	return PARSECS;
     }
 
+    /**
+     * @return how much cargo the ship can hold
+     */
     public int getCargoSlots() {
 	return CARGO;
     }
 
+    /**
+     * @return how many weapons the ship can have
+     */
     public int getWeaponSlots() {
 	return WEAPON;
     }
 
+    /**
+     * @return how many gadgets the ship can have
+     */
     public int getGadgetSlots() {
 	return GADGET;
     }
 
+    /**
+     * @return how many sheilds the ship can have
+     */
     public int getSheildSlots() {
 	return SHEILD;
     }
 
+    /**
+     * @return the base price of this ShipType
+     */
     public int getPrice() {
 	return PRICE;
     }

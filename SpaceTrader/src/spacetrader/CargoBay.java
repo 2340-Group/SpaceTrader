@@ -11,8 +11,17 @@ import java.util.ArrayList;
 
 public class CargoBay implements Serializable {
 
+    /**
+     * how much CargoBay can hold
+     */
     private int capacity;
+    /**
+     * how much CargoBay has
+     */
     private int currentVolume;
+    /**
+     * what CargoBay has
+     */
     private ArrayList<Resource> stock;
 
     /**
@@ -71,7 +80,6 @@ public class CargoBay implements Serializable {
     public String printCargo() {
 	String s = "";
 	for (Resource r : stock) {
-//	    System.out.println("You have " + r.getQuantity() + " " + r.getName() + " in stock.");
 	    s = s + "You have " + r.getQuantity() + " " + r.getName()
 		    + " in stock.\n";
 	}

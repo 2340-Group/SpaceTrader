@@ -8,14 +8,41 @@ import java.util.ArrayList;
  * @author Jamie
  */
 public class Ship implements Serializable {
+    /**
+     * The type of ship this is
+     */
     private ShipType shipT;
+    /**
+     * If the police or pirates will leave you alone
+     */
     private int reputation;
+    /**
+     * Pilot's name
+     */
     private String name;
+    /**
+     * What weapons this Ship has
+     */
     private ArrayList<Equipment> weapons;
+    /**
+     * What sheilds this Ship has
+     */
     private ArrayList<Equipment> sheilds;
+    /**
+     * What gadgets this Ship has
+     */
     private ArrayList<Equipment> gadgets;
+    /**
+     * How much fuel the ship has left
+     */
     private int fuel;
+    /**
+     * How much more damage the ship can take
+     */
     private int health;
+    /**
+     * The Resources being carried
+     */
     private CargoBay cargo;
 
     /**
