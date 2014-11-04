@@ -15,6 +15,12 @@ import java.util.ArrayList;
  */
 public class MainController implements Serializable {
 
+    /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
     private static String currentPlanet;
     private static String currentSystem;
     private static Universe u;

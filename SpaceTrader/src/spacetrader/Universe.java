@@ -9,6 +9,13 @@ import java.util.Random;
  * @author
  */
 public class Universe implements Serializable {
+    /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
+
     private ArrayList<SolarSystem> universeList;
 
     private SolarSystem Space;

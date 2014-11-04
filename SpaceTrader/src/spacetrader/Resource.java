@@ -8,6 +8,12 @@ import java.io.Serializable;
  */
 public class Resource implements Serializable {
 
+    /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
     private String name;
     private int basePrice;
     private int quantity;
@@ -16,16 +22,16 @@ public class Resource implements Serializable {
     /**
      * Holds multiple of one type of resource
      *
-     * @param t
+     * @param rType
      *            - Type of resource
      * @param quantity
      *            - how much of resource t
      */
-    public Resource(ResourceType t, int quantity) {
-	this.name = t.getName();
-	this.basePrice = t.getBasePrice();
+    public Resource(ResourceType rType, int quantity) {
+	this.name = rType.getName();
+	this.basePrice = rType.getBasePrice();
 	this.quantity = quantity;
-	type = t;
+	type = rType;
     }
 
     /**
@@ -49,10 +55,10 @@ public class Resource implements Serializable {
     /**
      * sets bacePrice
      *
-     * @param p
+     * @param price
      */
-    public void setPrice(int p) {
-	basePrice = p;
+    public void setPrice(int price) {
+	basePrice = price;
     }
 
     /**
@@ -67,10 +73,10 @@ public class Resource implements Serializable {
     /**
      * sets quantity
      *
-     * @param q
+     * @param quantity
      */
-    public void setQuantity(int q) {
-	quantity = q;
+    public void setQuantity(int quantity) {
+	quantity = quantity;
     }
 
     /**
@@ -86,12 +92,12 @@ public class Resource implements Serializable {
      * Consolidates the quantities of two Resource objects of the same
      * ResourceType.
      *
-     * @param r
+     * @param resource
      *            - Resource to be added to this
      */
-    public void consolidate(Resource r) {
-	if (type.equals(r.getResourceType())) {
-	    setQuantity(quantity + r.getQuantity());
+    public void consolidate(Resource resource) {
+	if (type.equals(resource.getResourceType())) {
+	    setQuantity(quantity + resource.getQuantity());
 	    return;
 	} else {
 	    return;

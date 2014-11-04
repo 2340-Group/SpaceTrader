@@ -12,6 +12,12 @@ import java.util.ArrayList;
 public class CargoBay implements Serializable {
 
     /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
+    /**
      * how much CargoBay can hold
      */
     private int capacity;

@@ -16,6 +16,12 @@ import javafx.scene.media.MediaPlayer;
  */
 public class SoundController implements Serializable {
     /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
+    /**
      * to be used at start of game
      */
     private static Media introSong;

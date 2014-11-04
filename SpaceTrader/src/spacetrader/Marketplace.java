@@ -16,6 +16,12 @@ import java.util.ArrayList;
  */
 public class Marketplace implements Serializable {
 
+    /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
     private Double currentInflation;
     private final static int ECON_SCORE_MAX = 10;
     private final static int ECON_SCORE_MIN = 0;

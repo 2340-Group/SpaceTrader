@@ -15,6 +15,12 @@ import java.io.Serializable;
  */
 public class Player implements Serializable {
 
+    /**
+     * This helps with the serialization
+     * Without it, saved games might not be handled
+     * correctly by different compilers
+     */
+    private static final long serialVersionUID = 1L;
     private String name;
     private int piloting;
     private int fighting;
