@@ -21,6 +21,8 @@ AvoidPrintStackTrace - This is only used in exception handling when all else fai
 		The game, at this point, is going to crash anyway.
 CommentSize - the javaDocs are whatever length they need to be in order to get the
 		point across
+LocalArgumentCouldBeFinal & MethodArgumentCouldBeFinal - it is a controversial rule, 
+		and there is no particular reason for us to implement it here
 MethodArgumentCouldBeFinal & LocalArgumentCouldBeFinal - it is a controversial rule, 
 		and there is no particular reason for us to implement it here
 MissingBreakInSwitch - These fall through on purpose and it was more efficient
