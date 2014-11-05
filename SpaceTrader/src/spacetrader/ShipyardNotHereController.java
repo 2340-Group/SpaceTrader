@@ -31,13 +31,13 @@ public class ShipyardNotHereController implements Initializable {
     @FXML
     private void handleLeaveShipyard(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -45,7 +45,7 @@ public class ShipyardNotHereController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rbu) {
-	// entirely set up by .fxml
+    // entirely set up by .fxml
     }
 
 }

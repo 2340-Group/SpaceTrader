@@ -43,22 +43,22 @@ public class SolarSystem implements Serializable {
      *            - ArrayList<Planet> planets to be in system
      */
     public SolarSystem(String n, int x, int y, ArrayList<Planet> p) {
-//	System.out.println("Making Solar Sytems: " + n);
-	name = n;
-	locX = x;
-	locY = y;
-	// style = s;
-	planets = p;
+//  System.out.println("Making Solar Sytems: " + n);
+    name = n;
+    locX = x;
+    locY = y;
+    // style = s;
+    planets = p;
 
     }
 
     public void setLocation(int x, int y) {
-	locX = x;
-	locY = y;
+    locX = x;
+    locY = y;
     }
 
     public String getName() {
-	return name;
+    return name;
     }
 
     /*
@@ -66,7 +66,7 @@ public class SolarSystem implements Serializable {
      */
 
     public ArrayList<Planet> getPlanets() {
-	return planets;
+    return planets;
     }
 
 }

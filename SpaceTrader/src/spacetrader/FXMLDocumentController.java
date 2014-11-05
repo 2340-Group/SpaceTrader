@@ -33,13 +33,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		"ConfigurationScreen.fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        "ConfigurationScreen.fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -50,17 +50,17 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     private void handleLoadButtonAction(ActionEvent event) throws Exception {
-	MainController.loadGame();
+    MainController.loadGame();
         SoundController.stopSong();
-	SoundController.click();
-	String planetName = MainController.getCurrentPlanet();
-	Parent currentPlanet = FXMLLoader.load(getClass().getResource(
-		planetName + ".fxml"));
-	Scene scenePlanet = new Scene(currentPlanet);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(scenePlanet);
-	stageN.show();
+    SoundController.click();
+    String planetName = MainController.getCurrentPlanet();
+    Parent currentPlanet = FXMLLoader.load(getClass().getResource(
+        planetName + ".fxml"));
+    Scene scenePlanet = new Scene(currentPlanet);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(scenePlanet);
+    stageN.show();
     }
 
     /**
@@ -72,7 +72,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleQuitButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	System.exit(0);
+    System.exit(0);
     }
 
     /**
@@ -80,15 +80,15 @@ public class FXMLDocumentController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	/* try {
-	introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
-	.toURI().toString());
-	mediaPlayer = new MediaPlayer(introSong);
-	mediaPlayer.play();
-	mediaPlayer.setCycleCount(4);
-	// } catch (Exception e) {
-	// System.err.println(e.getMessage());
-	// }
+    /* try {
+    introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
+    .toURI().toString());
+    mediaPlayer = new MediaPlayer(introSong);
+    mediaPlayer.play();
+    mediaPlayer.setCycleCount(4);
+    // } catch (Exception e) {
+    // System.err.println(e.getMessage());
+    // }
         */
         SoundController.init();
         SoundController.intro();

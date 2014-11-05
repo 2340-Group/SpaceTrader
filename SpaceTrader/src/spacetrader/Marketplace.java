@@ -34,20 +34,20 @@ public class Marketplace implements Serializable {
      * economyScore as 5. initializes inflation as baseline.
      */
     public Marketplace(ArrayList<Resource> r, int planetTech) {
-	int i = 0;
-	resources = new ArrayList<Resource>();
-	for (Resource rs : r) {
-	    resources.add(rs);
-	    resources
-	    .get(i)
-	    .setPrice(
-		    (int) (resources.get(i).getPrice() * planetTech * ((100 - MainController
-			    .getPlayer().getTrading()) / 100.0)));
-	    i++;
-	}
-	// resources = r;
-	// economyScore = 5;
-	// currentInflation = (double) 1;
+    int i = 0;
+    resources = new ArrayList<Resource>();
+    for (Resource rs : r) {
+        resources.add(rs);
+        resources
+        .get(i)
+        .setPrice(
+            (int) (resources.get(i).getPrice() * planetTech * ((100 - MainController
+                .getPlayer().getTrading()) / 100.0)));
+        i++;
+    }
+    // resources = r;
+    // economyScore = 5;
+    // currentInflation = (double) 1;
     }
 
     /**
@@ -60,9 +60,9 @@ public class Marketplace implements Serializable {
      *         Economy.rasiePrice(metal, 10);
      */
     public void raisePrice(Resource r, Double percent) {
-	adjustInflation(economyScore);
-	int price = (int) ((r.getPrice() + r.getPrice() * (percent / 100)) * currentInflation);
-	r.setPrice(price);
+    adjustInflation(economyScore);
+    int price = (int) ((r.getPrice() + r.getPrice() * (percent / 100)) * currentInflation);
+    r.setPrice(price);
     }
 
     /**
@@ -75,9 +75,9 @@ public class Marketplace implements Serializable {
      *         Economy.lowerPrice(metal, 10);
      */
     public void lowerPrice(Resource r, Double percent) {
-	adjustInflation(economyScore);
-	int price = (int) ((r.getPrice() - r.getPrice() * (percent / 100)) * currentInflation);
-	r.setPrice(price);
+    adjustInflation(economyScore);
+    int price = (int) ((r.getPrice() - r.getPrice() * (percent / 100)) * currentInflation);
+    r.setPrice(price);
     }
 
     /**
@@ -87,8 +87,8 @@ public class Marketplace implements Serializable {
      * @return True if trading is possible, false if unable to trade.
      */
     public boolean checkEconomy() {
-	adjustInflation(economyScore);
-	return economyScore == ECON_SCORE_MIN || economyScore == ECON_SCORE_MAX;
+    adjustInflation(economyScore);
+    return economyScore == ECON_SCORE_MIN || economyScore == ECON_SCORE_MAX;
     }
 
     /**
@@ -99,41 +99,41 @@ public class Marketplace implements Serializable {
      *            current economyScore of this instance of Economy.
      */
     private void adjustInflation(int e) {
-	switch (e) {
-	case 0:
-	    currentInflation = (double) 0;
-	    break;
-	case 1:
-	    currentInflation = (double) 5;
-	    break;
-	case 2:
-	    currentInflation = (double) 4;
-	    break;
-	case 3:
-	    currentInflation = (double) 3;
-	    break;
-	case 4:
-	    currentInflation = (double) 2;
-	    break;
-	case 5:
-	    currentInflation = (double) 1;
-	    break;
-	case 6:
-	    currentInflation = (double) 2;
-	    break;
-	case 7:
-	    currentInflation = (double) 3;
-	    break;
-	case 8:
-	    currentInflation = (double) 4;
-	    break;
-	case 9:
-	    currentInflation = (double) 5;
-	    break;
-	default:	// for ten as well as randomnesses
-	    currentInflation = (double) 0;
-	    break;
-	}
+    switch (e) {
+    case 0:
+        currentInflation = (double) 0;
+        break;
+    case 1:
+        currentInflation = (double) 5;
+        break;
+    case 2:
+        currentInflation = (double) 4;
+        break;
+    case 3:
+        currentInflation = (double) 3;
+        break;
+    case 4:
+        currentInflation = (double) 2;
+        break;
+    case 5:
+        currentInflation = (double) 1;
+        break;
+    case 6:
+        currentInflation = (double) 2;
+        break;
+    case 7:
+        currentInflation = (double) 3;
+        break;
+    case 8:
+        currentInflation = (double) 4;
+        break;
+    case 9:
+        currentInflation = (double) 5;
+        break;
+    default:    // for ten as well as randomnesses
+        currentInflation = (double) 0;
+        break;
+    }
 
     }
 
@@ -146,16 +146,16 @@ public class Marketplace implements Serializable {
      *            player and his/her ship.
      */
     public void buy(Resource r, int quantity, Player p, Ship s) {
-	if (r.getPrice() * quantity > p.getFunds()) {
-	    return;
-	} else if (quantity > (s.getMaxCargo() - s.getCargo()
-		.getCurrentVolume())) {
-//	    System.out.println("Not enough Cargo Space.");
-	    return;
-	} else {
-	    s.getCargo().addStock(r, quantity);
-	    p.subtractFunds(r.getPrice() * quantity);
-	}
+    if (r.getPrice() * quantity > p.getFunds()) {
+        return;
+    } else if (quantity > (s.getMaxCargo() - s.getCargo()
+        .getCurrentVolume())) {
+//      System.out.println("Not enough Cargo Space.");
+        return;
+    } else {
+        s.getCargo().addStock(r, quantity);
+        p.subtractFunds(r.getPrice() * quantity);
+    }
 
     }
 
@@ -168,44 +168,44 @@ public class Marketplace implements Serializable {
      *            and his/her ship.
      */
     public void sell(Resource r, int quantity, Player p, Ship s) {
-	if (s.getCargo().getResourceStock(r) < quantity) {
-	    return;
-	} else {
-	    s.getCargo().addStock(r, -quantity);
-	    p.addFunds(r.getPrice() * quantity);
-	}
+    if (s.getCargo().getResourceStock(r) < quantity) {
+        return;
+    } else {
+        s.getCargo().addStock(r, -quantity);
+        p.addFunds(r.getPrice() * quantity);
+    }
     }
 
     /**
      * @return The Resource objects present in this planet's economy.
      */
     public ArrayList<Resource> getResources() {
-	return resources;
+    return resources;
     }
 
     /**
      * @return resource cost
      */
     public int getResourceCost(String s) {
-	int h = 0;
-	for (int i = 0; i < resources.size(); i++) {
-	    if (s.equals(resources.get(i).getName())) {
-		h = i;
-	    }
-	}
-	// int x = resources.get(i).getPrice();
-	return resources.get(h).getPrice();
+    int h = 0;
+    for (int i = 0; i < resources.size(); i++) {
+        if (s.equals(resources.get(i).getName())) {
+        h = i;
+        }
+    }
+    // int x = resources.get(i).getPrice();
+    return resources.get(h).getPrice();
     }
 
     /**
      * lists prices
      */
     public String listPrices() {
-	String s = "";
-	for (Resource r : resources) {
-	    s = s + r.getName() + " costs " + r.getPrice() + " credits.\n";
-	}
-	return s;
+    String s = "";
+    for (Resource r : resources) {
+        s = s + r.getName() + " costs " + r.getPrice() + " credits.\n";
+    }
+    return s;
 
     }
 

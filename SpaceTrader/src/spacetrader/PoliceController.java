@@ -32,13 +32,13 @@ public class PoliceController implements Initializable {
     @FXML
     private void handleContinueButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -46,8 +46,8 @@ public class PoliceController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	policeEvent.act(MainController.getPlayer());
-	funds.setText("" + (MainController.getPlayer().getFunds()));
+    policeEvent.act(MainController.getPlayer());
+    funds.setText("" + (MainController.getPlayer().getFunds()));
     }
 
 }

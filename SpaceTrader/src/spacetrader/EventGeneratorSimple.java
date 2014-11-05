@@ -38,10 +38,8 @@ public class EventGeneratorSimple {
      * If both are chosen and both random numbers are equal, one is chosen with
      * a new random number with a 50/50 chance. If no event is chosen, then
      * there is no event.
-
      * 
      * @param next next planet to go to
-
      * @return Event type that is randomly chosen based on the corresponding
      *         event probability.
      */

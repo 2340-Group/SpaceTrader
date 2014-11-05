@@ -51,14 +51,14 @@ public class SoundController implements Serializable {
      */
     public static void init() {
         clickSound = new Media(new File("./src/spacetrader/Click Silencer 2.wav")
-		.toURI().toString());
-	denySound = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
-		.toURI().toString());
+        .toURI().toString());
+    denySound = new Media(new File("./src/spacetrader/Glitch Smashvox 2.wav")
+        .toURI().toString());
         swoopSound = new Media(new File("./src/spacetrader/Sweep Droga.wav")
-	.toURI().toString());
+    .toURI().toString());
         introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
-	.toURI().toString());
-	//mediaPlayer = new MediaPlayer(click);
+    .toURI().toString());
+    //mediaPlayer = new MediaPlayer(click);
     }
 
     /**
@@ -66,7 +66,7 @@ public class SoundController implements Serializable {
      */
     public static void swoop() {
         mediaPlayer = new MediaPlayer(swoopSound);
-	mediaPlayer.play();
+    mediaPlayer.play();
     }
 
     /**
@@ -74,7 +74,7 @@ public class SoundController implements Serializable {
      */
     public static void click() {
         mediaPlayer = new MediaPlayer(clickSound);
-	mediaPlayer.play();
+    mediaPlayer.play();
     }
 
     /**
@@ -82,16 +82,16 @@ public class SoundController implements Serializable {
      */
     public static void deny() {
         mediaPlayer = new MediaPlayer(denySound);
-	mediaPlayer.play();
+    mediaPlayer.play();
     }
 
     /**
      * play intro music
      */
     public static void intro() {
-	songPlayer = new MediaPlayer(introSong);
-	songPlayer.play();
-	songPlayer.setCycleCount(4);
+    songPlayer = new MediaPlayer(introSong);
+    songPlayer.play();
+    songPlayer.setCycleCount(4);
     }
 
     /**

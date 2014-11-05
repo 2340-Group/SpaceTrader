@@ -6,9 +6,9 @@ package spacetrader;
 public enum ResourceType {
 
     WATER("Water", 30), ORE("Ore", 350), FOOD("Food", 100), FURS("Furs", 250), GAMES(
-	    "Games", 250), FIREARMS("Firearms", 1250), MEDICINE("Medicine", 650), MACHINES(
-		    "Machines", 900), NARCOTICS("Narcotics", 3500), ROBOTS("Robots",
-			    5000), MOON("Moon", 1000000000);
+        "Games", 250), FIREARMS("Firearms", 1250), MEDICINE("Medicine", 650), MACHINES(
+            "Machines", 900), NARCOTICS("Narcotics", 3500), ROBOTS("Robots",
+                5000), MOON("Moon", 1000000000);
 
     /**
      * This is the starting price without economy or Player points factored
@@ -23,8 +23,8 @@ public enum ResourceType {
      * Instantiates a ResourceType enumeration.
      */
     ResourceType(final String nam, final int base) {
-	NAME = nam;
-	BASEPRICE = base;
+    NAME = nam;
+    BASEPRICE = base;
     }
 
     /**
@@ -33,7 +33,7 @@ public enum ResourceType {
      * @return NAME
      */
     public String getName() {
-	return NAME;
+    return NAME;
     }
 
     /**
@@ -42,6 +42,6 @@ public enum ResourceType {
      * @return
      */
     public int getBasePrice() {
-	return BASEPRICE;
+    return BASEPRICE;
     }
 }

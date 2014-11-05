@@ -7,8 +7,8 @@ package spacetrader;
 public enum Equipment {
 
     BASIC(50, "MORE FUEL"), NORMAL(100, "LARGER CARGO"), ADVANCED(200,
-	    "ESCAPE POD"), CHEAPSHOT(Integer.MAX_VALUE, "CHEATER"), NOTHING(0,
-		    "NOTHING");
+        "ESCAPE POD"), CHEAPSHOT(Integer.MAX_VALUE, "CHEATER"), NOTHING(0,
+            "NOTHING");
 
     /**
      * The amount of sheilding or blasting power the sheild or weapon has left
@@ -26,30 +26,30 @@ public enum Equipment {
     private String gadgetName;
 
     Equipment(final int pow, final String name) {
-	powerLeft = pow;
-	price = pow * 10;
-	gadgetName = name;
+    powerLeft = pow;
+    price = pow * 10;
+    gadgetName = name;
     }
 
     /**
      * @return the UI-friendly version of Gadget's name
      */
     public String getGadgetName() {
-	return gadgetName;
+    return gadgetName;
     }
 
     /**
      * @return how much power the weapon or sheild has left
      */
     public int getPower() {
-	return powerLeft;
+    return powerLeft;
     }
 
     /**
      * @return the price of Equipment
      */
     public int getPrice() {
-	return price;
+    return price;
     }
 
     /**
@@ -59,16 +59,16 @@ public enum Equipment {
      *         still has power
      */
     public int usePower(final int used) {
-	int holding = powerLeft - used;
-	int retval;
-	if (holding <= 0) {
-	    holding = used - powerLeft;
-	    powerLeft = 0;
-	    retval = holding;
-	} else {
-	    powerLeft = holding;
-	    retval = -1;
-	}
-	return retval;
+    int holding = powerLeft - used;
+    int retval;
+    if (holding <= 0) {
+        holding = used - powerLeft;
+        powerLeft = 0;
+        retval = holding;
+    } else {
+        powerLeft = holding;
+        retval = -1;
+    }
+    return retval;
     }
 }

@@ -46,16 +46,16 @@ public class Planet implements Serializable {
      *            - int resource level
      */
     public Planet(String n, int x, int y, int tl, int rl) {
-//	System.out.println("Making planet: " + n + ", Tech Level: " + tl
-//		+ ", Resource Level: " + rl + " Location (x,y): " + x + ", "
-//		+ y);
-	name = n;
-	locX = x;
-	locY = y;
-	// solarSystem = ss;
-	techLevel = tl;
-	resourceLevel = rl;
-	// items = i;
+//  System.out.println("Making planet: " + n + ", Tech Level: " + tl
+//      + ", Resource Level: " + rl + " Location (x,y): " + x + ", "
+//      + y);
+    name = n;
+    locX = x;
+    locY = y;
+    // solarSystem = ss;
+    techLevel = tl;
+    resourceLevel = rl;
+    // items = i;
 
     }
 
@@ -64,15 +64,15 @@ public class Planet implements Serializable {
      */
     @Override
     public boolean equals(Object obj) {
-	if (obj instanceof Planet) {
-	    return ((Planet) obj).name.equals(this.name);
-	}
-	return false;
+    if (obj instanceof Planet) {
+        return ((Planet) obj).name.equals(this.name);
+    }
+    return false;
     }
 
     @Override
     public int hashCode() {
-	return name.hashCode();
+    return name.hashCode();
     }
 
     /**
@@ -82,8 +82,8 @@ public class Planet implements Serializable {
      * @param y
      */
     public void setLocation(int x, int y) {
-	locX = x;
-	locY = y;
+    locX = x;
+    locY = y;
     }
 
     /**
@@ -92,7 +92,7 @@ public class Planet implements Serializable {
      * @param e
      */
     public void setEcon(Marketplace e) {
-	econ = e;
+    econ = e;
     }
 
     /**
@@ -101,7 +101,7 @@ public class Planet implements Serializable {
      * @return econ
      */
     public Marketplace getEcon() {
-	return econ;
+    return econ;
     }
 
     /*
@@ -114,7 +114,7 @@ public class Planet implements Serializable {
      * @return name
      */
     public String getName() {
-	return name;
+    return name;
     }
 
     /*
@@ -127,7 +127,7 @@ public class Planet implements Serializable {
      * @return techLevel
      */
     public int getTechLevel() {
-	return techLevel;
+    return techLevel;
     }
 
     /**
@@ -136,7 +136,7 @@ public class Planet implements Serializable {
      * @return resourceLevel
      */
     public int getresourceLevel() {
-	return resourceLevel;
+    return resourceLevel;
     }
 
     /**
@@ -145,7 +145,7 @@ public class Planet implements Serializable {
      * @return locX
      */
     public int getX() {
-	return locX;
+    return locX;
     }
 
     /**
@@ -154,7 +154,7 @@ public class Planet implements Serializable {
      * @return locY
      */
     public int getY() {
-	return locY;
+    return locY;
     }
 
     /*

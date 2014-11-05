@@ -75,13 +75,13 @@ public class ShipUpgradeController implements Initializable {
     @FXML
     private void handleReturnAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -93,53 +93,53 @@ public class ShipUpgradeController implements Initializable {
      */
     @FXML
     private void handleBuy(ActionEvent event) throws Exception {
-	Button clicked = (Button) event.getSource();
-	Equipment equi;
-	if (clicked.equals(weaponBasic) || clicked.equals(sheildBasic)) {
-	    equi = Equipment.BASIC;
-	} else if (clicked.equals(weaponNormal) || clicked.equals(sheildNormal)) {
-	    equi = Equipment.NORMAL;
-	} else if (clicked.equals(weaponAdvanced)
-		|| clicked.equals(sheildAdvanced)) {
-	    equi = Equipment.ADVANCED;
-	} else if (clicked.equals(gadgetFuel)) {
-	    equi = Equipment.BASIC;
-	} else if (clicked.equals(gadgetCargo)) {
-	    equi = Equipment.NORMAL;
-	} else if (clicked.equals(gadgetEscape)) {
-	    equi = Equipment.ADVANCED;
-	} else {
-	    equi = Equipment.NOTHING;
-	}
+    Button clicked = (Button) event.getSource();
+    Equipment equi;
+    if (clicked.equals(weaponBasic) || clicked.equals(sheildBasic)) {
+        equi = Equipment.BASIC;
+    } else if (clicked.equals(weaponNormal) || clicked.equals(sheildNormal)) {
+        equi = Equipment.NORMAL;
+    } else if (clicked.equals(weaponAdvanced)
+        || clicked.equals(sheildAdvanced)) {
+        equi = Equipment.ADVANCED;
+    } else if (clicked.equals(gadgetFuel)) {
+        equi = Equipment.BASIC;
+    } else if (clicked.equals(gadgetCargo)) {
+        equi = Equipment.NORMAL;
+    } else if (clicked.equals(gadgetEscape)) {
+        equi = Equipment.ADVANCED;
+    } else {
+        equi = Equipment.NOTHING;
+    }
 
-	if (equi != Equipment.NOTHING) {
-	    int fund = MainController.getPlayer().getFunds();
-	    if (fund >= equi.getPrice()) {
+    if (equi != Equipment.NOTHING) {
+        int fund = MainController.getPlayer().getFunds();
+        if (fund >= equi.getPrice()) {
                 SoundController.click();
-		fund = fund - equi.getPrice();
-		MainController.getPlayer().setFunds(fund);
-		funds.setText("" + fund);
+        fund = fund - equi.getPrice();
+        MainController.getPlayer().setFunds(fund);
+        funds.setText("" + fund);
 
-		Ship ship = MainController.getPlayer().getShip();
+        Ship ship = MainController.getPlayer().getShip();
 
-		if (clicked.equals(gadgetFuel) || clicked.equals(gadgetCargo)
-			|| clicked.equals(gadgetEscape)) {
-		    ship.addGadget(equi);
-		} else if (clicked.equals(weaponBasic)
-			|| clicked.equals(weaponNormal)
-			|| clicked.equals(weaponAdvanced)) {
-		    ship.addWeapon(equi);
-		} else if (clicked.equals(sheildBasic)
-			|| clicked.equals(sheildNormal)
-			|| clicked.equals(sheildAdvanced)) {
-		    ship.addSheild(equi);
-		}
+        if (clicked.equals(gadgetFuel) || clicked.equals(gadgetCargo)
+            || clicked.equals(gadgetEscape)) {
+            ship.addGadget(equi);
+        } else if (clicked.equals(weaponBasic)
+            || clicked.equals(weaponNormal)
+            || clicked.equals(weaponAdvanced)) {
+            ship.addWeapon(equi);
+        } else if (clicked.equals(sheildBasic)
+            || clicked.equals(sheildNormal)
+            || clicked.equals(sheildAdvanced)) {
+            ship.addSheild(equi);
+        }
 
-		greyOut();
-	    } else {
-		SoundController.deny();
-	    }
-	}
+        greyOut();
+        } else {
+        SoundController.deny();
+        }
+    }
     }
 
     /**
@@ -148,44 +148,44 @@ public class ShipUpgradeController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	funds.setText("" + MainController.getPlayer().getFunds());
-	priceBasicW.setText("" + Equipment.BASIC.getPrice());
-	priceNormalW.setText("" + Equipment.NORMAL.getPrice());
-	priceAdvanceW.setText("" + Equipment.ADVANCED.getPrice());
-	priceBasicG.setText("" + Equipment.BASIC.getPrice());
-	priceNormalG.setText("" + Equipment.NORMAL.getPrice());
-	priceAdvanceG.setText("" + Equipment.ADVANCED.getPrice());
-	priceBasicS.setText("" + Equipment.BASIC.getPrice());
-	priceNormalS.setText("" + Equipment.NORMAL.getPrice());
-	priceAdvanceS.setText("" + Equipment.ADVANCED.getPrice());
-	
-	String out = "Out of Stock";
-	int tech = MainController.getPlanetNotString().getTechLevel();
-	switch (tech) // fall through on purpose
-	{
-	case 3:
-	    gadgetFuel.setDisable(true);
-	    gadgetFuel.setText(out);
-	case 4:
-	    sheildNormal.setDisable(true);
-	    sheildNormal.setText(out);
-	    weaponNormal.setDisable(true);
-	    weaponNormal.setText(out);
-	case 5:
-	    gadgetCargo.setDisable(true);
-	    gadgetCargo.setText(out);
-	    sheildAdvanced.setDisable(true);
-	    sheildAdvanced.setText(out);
-	    weaponAdvanced.setDisable(true);
-	    weaponAdvanced.setText(out);
-	case 6:
-	    gadgetEscape.setDisable(true);
-	    gadgetEscape.setText(out);
-	default:
-	    break; // tech level seven has all ships
-	}
+    funds.setText("" + MainController.getPlayer().getFunds());
+    priceBasicW.setText("" + Equipment.BASIC.getPrice());
+    priceNormalW.setText("" + Equipment.NORMAL.getPrice());
+    priceAdvanceW.setText("" + Equipment.ADVANCED.getPrice());
+    priceBasicG.setText("" + Equipment.BASIC.getPrice());
+    priceNormalG.setText("" + Equipment.NORMAL.getPrice());
+    priceAdvanceG.setText("" + Equipment.ADVANCED.getPrice());
+    priceBasicS.setText("" + Equipment.BASIC.getPrice());
+    priceNormalS.setText("" + Equipment.NORMAL.getPrice());
+    priceAdvanceS.setText("" + Equipment.ADVANCED.getPrice());
+    
+    String out = "Out of Stock";
+    int tech = MainController.getPlanetNotString().getTechLevel();
+    switch (tech) // fall through on purpose
+    {
+    case 3:
+        gadgetFuel.setDisable(true);
+        gadgetFuel.setText(out);
+    case 4:
+        sheildNormal.setDisable(true);
+        sheildNormal.setText(out);
+        weaponNormal.setDisable(true);
+        weaponNormal.setText(out);
+    case 5:
+        gadgetCargo.setDisable(true);
+        gadgetCargo.setText(out);
+        sheildAdvanced.setDisable(true);
+        sheildAdvanced.setText(out);
+        weaponAdvanced.setDisable(true);
+        weaponAdvanced.setText(out);
+    case 6:
+        gadgetEscape.setDisable(true);
+        gadgetEscape.setText(out);
+    default:
+        break; // tech level seven has all ships
+    }
 
-	greyOut();
+    greyOut();
     }
 
     /**
@@ -193,53 +193,53 @@ public class ShipUpgradeController implements Initializable {
      * player's ship can hold what the player already owns
      */
     private void greyOut() {
-	Ship ship = MainController.getPlayer().getShip();
-	ShipType st = ship.getType();
-	int have = ship.getWeapons().size();
-	int canHave = st.getWeaponSlots();
-	maxWeapon.setText("Own: " + have + "\nof possible " + canHave);
-	if (have == canHave) {
-	    weaponBasic.setDisable(true);
-	    weaponNormal.setDisable(true);
-	    weaponAdvanced.setDisable(true);
-	}
+    Ship ship = MainController.getPlayer().getShip();
+    ShipType st = ship.getType();
+    int have = ship.getWeapons().size();
+    int canHave = st.getWeaponSlots();
+    maxWeapon.setText("Own: " + have + "\nof possible " + canHave);
+    if (have == canHave) {
+        weaponBasic.setDisable(true);
+        weaponNormal.setDisable(true);
+        weaponAdvanced.setDisable(true);
+    }
 
-	have = ship.getSheilds().size();
-	canHave = st.getSheildSlots();
-	maxSheild.setText("Own: " + have + "\nof possible " + canHave);
-	if (have == canHave) {
-	    sheildBasic.setDisable(true);
-	    sheildNormal.setDisable(true);
-	    sheildAdvanced.setDisable(true);
-	}
+    have = ship.getSheilds().size();
+    canHave = st.getSheildSlots();
+    maxSheild.setText("Own: " + have + "\nof possible " + canHave);
+    if (have == canHave) {
+        sheildBasic.setDisable(true);
+        sheildNormal.setDisable(true);
+        sheildAdvanced.setDisable(true);
+    }
 
-	have = ship.getGadgets().size();
-	canHave = st.getGadgetSlots();
-	maxGadget.setText("Own: " + have + "\nof possible " + canHave);
-	if (have == canHave) {
-	    gadgetFuel.setDisable(true);
-	    gadgetCargo.setDisable(true);
-	    gadgetEscape.setDisable(true);
-	}
-	if (have > 0) {
-	    ArrayList<Equipment> gadgets = ship.getGadgets();
-	    for (Equipment e : gadgets) {
-		switch (e) { // fall through on purpose
-		case BASIC:
-		    gadgetFuel.setText("Own");
-		    gadgetFuel.setDisable(true);
-		    break;
-		case NORMAL:
-		    gadgetCargo.setText("Own");
-		    gadgetCargo.setDisable(true);
-		    break;
-		case ADVANCED:
-		    gadgetEscape.setText("Own");
-		    gadgetEscape.setDisable(true);
-		default:
-		    break; // probably cheating
-		}
-	    }
-	}
+    have = ship.getGadgets().size();
+    canHave = st.getGadgetSlots();
+    maxGadget.setText("Own: " + have + "\nof possible " + canHave);
+    if (have == canHave) {
+        gadgetFuel.setDisable(true);
+        gadgetCargo.setDisable(true);
+        gadgetEscape.setDisable(true);
+    }
+    if (have > 0) {
+        ArrayList<Equipment> gadgets = ship.getGadgets();
+        for (Equipment e : gadgets) {
+        switch (e) { // fall through on purpose
+        case BASIC:
+            gadgetFuel.setText("Own");
+            gadgetFuel.setDisable(true);
+            break;
+        case NORMAL:
+            gadgetCargo.setText("Own");
+            gadgetCargo.setDisable(true);
+            break;
+        case ADVANCED:
+            gadgetEscape.setText("Own");
+            gadgetEscape.setDisable(true);
+        default:
+            break; // probably cheating
+        }
+        }
+    }
     }
 }

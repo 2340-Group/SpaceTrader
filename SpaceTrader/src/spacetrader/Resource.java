@@ -28,10 +28,10 @@ public class Resource implements Serializable {
      *            - how much of resource t
      */
     public Resource(ResourceType rType, int quantity) {
-	this.name = rType.getName();
-	this.basePrice = rType.getBasePrice();
-	this.quantity = quantity;
-	type = rType;
+    this.name = rType.getName();
+    this.basePrice = rType.getBasePrice();
+    this.quantity = quantity;
+    type = rType;
     }
 
     /**
@@ -40,7 +40,7 @@ public class Resource implements Serializable {
      * @return name
      */
     public String getName() {
-	return name;
+    return name;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Resource implements Serializable {
      * @return basePrice
      */
     public int getPrice() {
-	return basePrice;
+    return basePrice;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Resource implements Serializable {
      * @param price
      */
     public void setPrice(int price) {
-	basePrice = price;
+    basePrice = price;
     }
 
     /**
@@ -67,7 +67,7 @@ public class Resource implements Serializable {
      * @return quantity
      */
     public int getQuantity() {
-	return quantity;
+    return quantity;
     }
 
     /**
@@ -76,7 +76,7 @@ public class Resource implements Serializable {
      * @param quantity
      */
     public void setQuantity(int quantity) {
-	this.quantity = quantity;
+    this.quantity = quantity;
     }
 
     /**
@@ -85,7 +85,7 @@ public class Resource implements Serializable {
      * @return type
      */
     public ResourceType getResourceType() {
-	return type;
+    return type;
     }
 
     /**
@@ -96,12 +96,12 @@ public class Resource implements Serializable {
      *            - Resource to be added to this
      */
     public void consolidate(Resource resource) {
-	if (type.equals(resource.getResourceType())) {
-	    setQuantity(quantity + resource.getQuantity());
-	    return;
-	} else {
-	    return;
-	}
+    if (type.equals(resource.getResourceType())) {
+        setQuantity(quantity + resource.getQuantity());
+        return;
+    } else {
+        return;
+    }
     }
 
 }

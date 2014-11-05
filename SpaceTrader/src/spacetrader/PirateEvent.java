@@ -14,10 +14,10 @@ public class PirateEvent implements Event {
 
     // Pirates steal all of your resources
     public Ship stealResources(Ship s) {
-	int cap = s.getMaxCargo();
-	s.setCargo(new CargoBay(cap));
+    int cap = s.getMaxCargo();
+    s.setCargo(new CargoBay(cap));
 
-	return s;
+    return s;
     }
     
     public String act(Player p) {
@@ -29,27 +29,27 @@ public class PirateEvent implements Event {
 
     // Fight the pirates
     public boolean fight(Ship s) {
-	int pirateFighting = (int) (Math.random() * 20);
+    int pirateFighting = (int) (Math.random() * 20);
 
-	if (MainController.getPlayer().getFighting() >= pirateFighting) {
-	    int damage = -25 + MainController.getPlayer().getFighting()
-		    + MainController.getPlayer().getPiloting();
-	    if (damage > 0) {
-		damage = 0;
-	    }
-	    s.takeDamageRepair(damage);
-	    return true;
-	} else {
-	    s.takeDamageRepair(-999);
-	    return false;
-	}
+    if (MainController.getPlayer().getFighting() >= pirateFighting) {
+        int damage = -25 + MainController.getPlayer().getFighting()
+            + MainController.getPlayer().getPiloting();
+        if (damage > 0) {
+        damage = 0;
+        }
+        s.takeDamageRepair(damage);
+        return true;
+    } else {
+        s.takeDamageRepair(-999);
+        return false;
+    }
     }
 
     // Flee the pirates
     public boolean flee(Ship s) {
-	int damage = -25 + MainController.getPlayer().getPiloting();
+    int damage = -25 + MainController.getPlayer().getPiloting();
 
-	return s.takeDamageRepair(damage);
+    return s.takeDamageRepair(damage);
     }
     
 }

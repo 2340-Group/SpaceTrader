@@ -46,15 +46,15 @@ public class PiratesController implements Initializable {
      */
     @FXML
     private void handleSurrenderButtonAction(ActionEvent event)
-	    throws Exception {
+        throws Exception {
         SoundController.click();
-	pirateEvent.stealResources(MainController.getShip());
+    pirateEvent.stealResources(MainController.getShip());
 
-	text.setText("You surrendered and\nlost all of your cargo.");
-	surrenderBtn.setVisible(false);
-	fightBtn.setVisible(false);
-	fleeBtn.setVisible(false);
-	continueBtn.setVisible(true);
+    text.setText("You surrendered and\nlost all of your cargo.");
+    surrenderBtn.setVisible(false);
+    fightBtn.setVisible(false);
+    fleeBtn.setVisible(false);
+    continueBtn.setVisible(true);
     }
 
     /**
@@ -66,16 +66,16 @@ public class PiratesController implements Initializable {
     @FXML
     private void handleFightButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	if (pirateEvent.fight(MainController.getShip())) {
-	    text.setText("You fought off the\npirates, but your ship\nhas taken damage.");
-	} else {
-	    text.setText("You tried to fight off the\npirates, but your fighting\nability was not high\nenough. Your ship has\nbeen destroyed.");
-	}
+    if (pirateEvent.fight(MainController.getShip())) {
+        text.setText("You fought off the\npirates, but your ship\nhas taken damage.");
+    } else {
+        text.setText("You tried to fight off the\npirates, but your fighting\nability was not high\nenough. Your ship has\nbeen destroyed.");
+    }
 
-	surrenderBtn.setVisible(false);
-	fightBtn.setVisible(false);
-	fleeBtn.setVisible(false);
-	continueBtn.setVisible(true);
+    surrenderBtn.setVisible(false);
+    fightBtn.setVisible(false);
+    fleeBtn.setVisible(false);
+    continueBtn.setVisible(true);
     }
 
     /**
@@ -87,25 +87,25 @@ public class PiratesController implements Initializable {
     @FXML
     private void handleFleeButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	pirateEvent.flee(MainController.getShip());
+    pirateEvent.flee(MainController.getShip());
 
-	text.setText("You fled the pirates,\nbut your ship has taken\ndamage.");
-	surrenderBtn.setVisible(false);
-	fightBtn.setVisible(false);
-	fleeBtn.setVisible(false);
-	continueBtn.setVisible(true);
+    text.setText("You fled the pirates,\nbut your ship has taken\ndamage.");
+    surrenderBtn.setVisible(false);
+    fightBtn.setVisible(false);
+    fleeBtn.setVisible(false);
+    continueBtn.setVisible(true);
     }
 
     @FXML
     private void handleContinueButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -113,7 +113,7 @@ public class PiratesController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	//taken care of by .fxml
+    //taken care of by .fxml
     }
 
 }

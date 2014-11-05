@@ -21,7 +21,7 @@ public class SpaceTrader extends Application {
     private static MainController mainC = new MainController();
 
     public static MainController getMainController() {
-	return mainC;
+    return mainC;
     }
 
     /**
@@ -29,10 +29,10 @@ public class SpaceTrader extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-	Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-	Scene scene = new Scene(root);
-	stage.setScene(scene);
-	stage.show();
+    Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+    Scene scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
     }
 
     /**
@@ -40,11 +40,11 @@ public class SpaceTrader extends Application {
      *            the command line arguments
      */
     public static void main(String[] args) {
-	MainController.makeUniverse();
+    MainController.makeUniverse();
 
-	launch(args);
+    launch(args);
 
-	System.exit(0);
+    System.exit(0);
     }
 
 }

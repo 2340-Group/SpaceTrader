@@ -27,7 +27,7 @@ public class NONAMEController implements Initializable {
 
     @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
-	System.exit(0);
+    System.exit(0);
     }
 
     /**
@@ -37,16 +37,16 @@ public class NONAMEController implements Initializable {
 
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-	if (MainController.getPlayer().getShip().getFuel() > 1) {
+    if (MainController.getPlayer().getShip().getFuel() > 1) {
             SoundController.click();
-	    Parent config = FXMLLoader.load(getClass().getResource(
-		    "Universe.fxml"));
-	    Scene sceneConfig = new Scene(config);
-	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		    .getWindow();
-	    stageN.setScene(sceneConfig);
-	    stageN.show();
-	} else {
+        Parent config = FXMLLoader.load(getClass().getResource(
+            "Universe.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+            .getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    } else {
             SoundController.deny();
         }
 
@@ -55,53 +55,53 @@ public class NONAMEController implements Initializable {
     @FXML
     private void handleERRORButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("ERROR", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("ERROR", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleBlankButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("Blank", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("Blank", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleInsertNameButtonAction(ActionEvent event)
-	    throws Exception {
+        throws Exception {
         SoundController.click();
-	nameHelper("InsertName", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("InsertName", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -109,12 +109,12 @@ public class NONAMEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	// taken care of by the .fxml
+    // taken care of by the .fxml
     } 
     
 
     private void nameHelper(String planet, ActionEvent event)throws Exception{
-	if (MainController.getCurrentPlanet().equals(planet)) {
+    if (MainController.getCurrentPlanet().equals(planet)) {
             this.eventType = planet + ".fxml";
         } else {
             MainController.getPlayer().getShip().useFuel(MainController.getFuelCost("NONAME"));

@@ -54,48 +54,48 @@ public class ShipScreenController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	Ship displayMe = MainController.getPlayer().getShip();
-	ShipType shipT = displayMe.getType();
-	shipType.setText("" + shipT);
-	health.setText("" + displayMe.getHealth());
-	currentFuel.setText("" + displayMe.getFuel());
-	currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
-	maxFuel.setText("" + displayMe.getMaxFuel());
-	maxCargo.setText("" + displayMe.getMaxCargo());
+    Ship displayMe = MainController.getPlayer().getShip();
+    ShipType shipT = displayMe.getType();
+    shipType.setText("" + shipT);
+    health.setText("" + displayMe.getHealth());
+    currentFuel.setText("" + displayMe.getFuel());
+    currentCargo.setText("" + displayMe.getCargo().getCurrentVolume());
+    maxFuel.setText("" + displayMe.getMaxFuel());
+    maxCargo.setText("" + displayMe.getMaxCargo());
 
-	int remain = shipT.getSheildSlots();
-	switch (remain) { // fall through on purpose
-	case 3:
-	    sheild3.setText(displayMe.getSheild(2));
-	case 2:
-	    sheild2.setText(displayMe.getSheild(1));
-	case 1:
-	    sheild1.setText(displayMe.getSheild(0));
-	default:
-	    break;
-	}
-	remain = shipT.getWeaponSlots();
-	switch (remain) { // fall through on purpose
-	case 3:
-	    weapon3.setText(displayMe.getWeapon(2));
-	case 2:
-	    weapon2.setText(displayMe.getWeapon(1));
-	case 1:
-	    weapon1.setText(displayMe.getWeapon(0));
-	default:
-	    break;
-	}
-	remain = shipT.getGadgetSlots();
-	switch (remain) { // fall through on purpose
-	case 3:
-	    gadget3.setText(displayMe.getGadget(2));
-	case 2:
-	    gadget2.setText(displayMe.getGadget(1));
-	case 1:
-	    gadget1.setText(displayMe.getGadget(0));
-	default:
-	    break;
-	}
+    int remain = shipT.getSheildSlots();
+    switch (remain) { // fall through on purpose
+    case 3:
+        sheild3.setText(displayMe.getSheild(2));
+    case 2:
+        sheild2.setText(displayMe.getSheild(1));
+    case 1:
+        sheild1.setText(displayMe.getSheild(0));
+    default:
+        break;
+    }
+    remain = shipT.getWeaponSlots();
+    switch (remain) { // fall through on purpose
+    case 3:
+        weapon3.setText(displayMe.getWeapon(2));
+    case 2:
+        weapon2.setText(displayMe.getWeapon(1));
+    case 1:
+        weapon1.setText(displayMe.getWeapon(0));
+    default:
+        break;
+    }
+    remain = shipT.getGadgetSlots();
+    switch (remain) { // fall through on purpose
+    case 3:
+        gadget3.setText(displayMe.getGadget(2));
+    case 2:
+        gadget2.setText(displayMe.getGadget(1));
+    case 1:
+        gadget1.setText(displayMe.getGadget(0));
+    default:
+        break;
+    }
     }
 
     /**
@@ -106,14 +106,14 @@ public class ShipScreenController implements Initializable {
      */
     @FXML
     private void handleBackToSpaceButtonAction(ActionEvent event)
-	    throws Exception {
+        throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 }

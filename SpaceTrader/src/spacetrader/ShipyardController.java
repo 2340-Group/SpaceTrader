@@ -79,17 +79,17 @@ public class ShipyardController implements Initializable {
      */
     @FXML
     private void handleBuyFuelAction(ActionEvent event) throws Exception {
-	if (MainController.getPlayer().getFunds() >= 10
-		&& MainController.getPlayer().getShip().getFuel() < MainController
-		.getPlayer().getShip().getMaxFuel()) {
+    if (MainController.getPlayer().getFunds() >= 10
+        && MainController.getPlayer().getShip().getFuel() < MainController
+        .getPlayer().getShip().getMaxFuel()) {
             SoundController.click();
-	    MainController.getPlayer().subtractFunds(10);
-	    MainController.getPlayer().getShip().addFuel(1);
-	    fundsLabel.setText("Funds\n"
-		    + MainController.getPlayer().getFunds());
-	    fuelLabel.setText("Fuel\n"
-		    + MainController.getPlayer().getShip().getFuel());
-	} else {
+        MainController.getPlayer().subtractFunds(10);
+        MainController.getPlayer().getShip().addFuel(1);
+        fundsLabel.setText("Funds\n"
+            + MainController.getPlayer().getFunds());
+        fuelLabel.setText("Fuel\n"
+            + MainController.getPlayer().getShip().getFuel());
+    } else {
             SoundController.deny();
         }
     }
@@ -104,47 +104,47 @@ public class ShipyardController implements Initializable {
      */
     @FXML
     private void handleBuyShip(ActionEvent event) throws Exception {
-	Button clicked = (Button) event.getSource();
-	ShipType st;
-	if (clicked.equals(buyFLEA)) {
-	    st = ShipType.FLEA;
-	} else if (clicked.equals(buyGNAT)) {
-	    st = ShipType.GNAT;
-	} else if (clicked.equals(buyBUMBLEBEE)) {
-	    st = ShipType.BUMBLEBEE;
-	} else if (clicked.equals(buyBEETLE)) {
-	    st = ShipType.BEETLE;
-	} else if (clicked.equals(buyHORNET)) {
-	    st = ShipType.HORNET;
-	} else if (clicked.equals(buyGRASSHOPPER)) {
-	    st = ShipType.GRASSHOPPER;
-	} else if (clicked.equals(buyTERMITE)) {
-	    st = ShipType.TERMITE;
-	} else if (clicked.equals(buyWASP)) {
-	    st = ShipType.WASP;
-	} else if (clicked.equals(buyMOSQUITO)) {
-	    st = ShipType.MOSQUITO;
-	} else if (clicked.equals(buyFIREFLY)) {
-	    st = ShipType.FIREFLY;
-	} else {
-	    st = ShipType.NOSHIP;
-	}
+    Button clicked = (Button) event.getSource();
+    ShipType st;
+    if (clicked.equals(buyFLEA)) {
+        st = ShipType.FLEA;
+    } else if (clicked.equals(buyGNAT)) {
+        st = ShipType.GNAT;
+    } else if (clicked.equals(buyBUMBLEBEE)) {
+        st = ShipType.BUMBLEBEE;
+    } else if (clicked.equals(buyBEETLE)) {
+        st = ShipType.BEETLE;
+    } else if (clicked.equals(buyHORNET)) {
+        st = ShipType.HORNET;
+    } else if (clicked.equals(buyGRASSHOPPER)) {
+        st = ShipType.GRASSHOPPER;
+    } else if (clicked.equals(buyTERMITE)) {
+        st = ShipType.TERMITE;
+    } else if (clicked.equals(buyWASP)) {
+        st = ShipType.WASP;
+    } else if (clicked.equals(buyMOSQUITO)) {
+        st = ShipType.MOSQUITO;
+    } else if (clicked.equals(buyFIREFLY)) {
+        st = ShipType.FIREFLY;
+    } else {
+        st = ShipType.NOSHIP;
+    }
 
-	int funds = MainController.getPlayer().getFunds();
-	if (funds >= st.getPrice()) {
+    int funds = MainController.getPlayer().getFunds();
+    if (funds >= st.getPrice()) {
             SoundController.click();
-	    funds = funds - st.getPrice();
-	    MainController.getPlayer().setFunds(funds);
-	    Ship newShip = new Ship(st, MainController.getPlayer().getShip()
-		    .getReputation(), MainController.getPlayer().getName(),
-		    null, null, null, st.getMaxDistance(), 100);
-	    MainController.getPlayer().setShip(newShip);
-	    fundsLabel.setText("Funds\n" + funds);
+        funds = funds - st.getPrice();
+        MainController.getPlayer().setFunds(funds);
+        Ship newShip = new Ship(st, MainController.getPlayer().getShip()
+            .getReputation(), MainController.getPlayer().getName(),
+            null, null, null, st.getMaxDistance(), 100);
+        MainController.getPlayer().setShip(newShip);
+        fundsLabel.setText("Funds\n" + funds);
 
-	    handleShipUpgrade(event);
-	} else {
-	    SoundController.deny();
-	}
+        handleShipUpgrade(event);
+    } else {
+        SoundController.deny();
+    }
     }
 
     /**
@@ -157,12 +157,12 @@ public class ShipyardController implements Initializable {
     @FXML
     private void handleShipUpgrade(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		"ShipUpgrade.fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) fuelLabel.getScene().getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        "ShipUpgrade.fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) fuelLabel.getScene().getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -174,13 +174,13 @@ public class ShipyardController implements Initializable {
     @FXML
     private void handleLeaveShipyardAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		MainController.getCurrentPlanet() + ".fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        MainController.getCurrentPlanet() + ".fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -190,97 +190,97 @@ public class ShipyardController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
-	fuelLabel.setText("Fuel\n"
-		+ MainController.getPlayer().getShip().getFuel());
-	maxFuelLabel.setText("Max Fuel\n"
-		+ MainController.getPlayer().getShip().getMaxFuel());
-	fleaPrice.setText(" " + ShipType.FLEA.getPrice());
-	gnatPrice.setText(" " + ShipType.GNAT.getPrice());
-	bumblebeePrice.setText(" " + ShipType.BUMBLEBEE.getPrice());
-	beetlePrice.setText(" " + ShipType.BEETLE.getPrice());
-	hornetPrice.setText(" " + ShipType.HORNET.getPrice());
-	grasshopperPrice.setText(" " + ShipType.GRASSHOPPER.getPrice());
-	termitePrice.setText(" " + ShipType.TERMITE.getPrice());
-	waspPrice.setText(" " + ShipType.WASP.getPrice());
-	mosquitoPrice.setText(" " + ShipType.MOSQUITO.getPrice());
-	fireflyPrice.setText(" " + ShipType.FIREFLY.getPrice());
-	int tech = MainController.getPlanetNotString().getTechLevel();
-	techLevelLabel.setText("TechLevel\n" + tech);
-	
-	String current = "Current Ship";
-	ShipType st = MainController.getPlayer().getShip().getType();
-	switch (st) {
-	case FLEA:
-	    buyFLEA.setDisable(true);
-	    buyFLEA.setText(current);
-	    break;
-	case GNAT:
-	    buyGNAT.setDisable(true);
-	    buyGNAT.setText(current);
-	    break;
-	case FIREFLY:
-	    buyFIREFLY.setDisable(true);
-	    buyFIREFLY.setText(current);
-	    break;
-	case MOSQUITO:
-	    buyMOSQUITO.setDisable(true);
-	    buyMOSQUITO.setText(current);
-	    break;
-	case BUMBLEBEE:
-	    buyBUMBLEBEE.setDisable(true);
-	    buyBUMBLEBEE.setText(current);
-	    break;
-	case BEETLE:
-	    buyBEETLE.setDisable(true);
-	    buyBEETLE.setText(current);
-	    break;
-	case HORNET:
-	    buyHORNET.setDisable(true);
-	    buyHORNET.setText(current);
-	    break;
-	case GRASSHOPPER:
-	    buyGRASSHOPPER.setDisable(true);
-	    buyGRASSHOPPER.setText(current);
-	    break;
-	case TERMITE:
-	    buyTERMITE.setDisable(true);
-	    buyTERMITE.setText(current);
-	    break;
-	case WASP:
-	    buyWASP.setDisable(true);
-	    buyWASP.setText(current);
-	    break;
-	default:
-	    // using ESCAPE
-	    break;
-	}
-	
-	String out = "Out of Stock";
-	switch (tech) // fall through on purpose
-	{
-	case 3:
-	    buyFIREFLY.setDisable(true);
-	    buyFIREFLY.setText(out);
-	    buyMOSQUITO.setDisable(true);
-	    buyMOSQUITO.setText(out);
-	case 4:
-	    buyBUMBLEBEE.setDisable(true);
-	    buyBUMBLEBEE.setText(out);
-	    buyBEETLE.setDisable(true);
-	    buyBEETLE.setText(out);
-	case 5:
-	    buyHORNET.setDisable(true);
-	    buyHORNET.setText(out);
-	    buyGRASSHOPPER.setDisable(true);
-	    buyGRASSHOPPER.setText(out);
-	case 6:
-	    buyWASP.setDisable(true);
-	    buyWASP.setText(out);
-	    buyTERMITE.setDisable(true);
-	    buyTERMITE.setText(out);
-	default:
-	    break; // tech level seven has all ships
-	}
+    fundsLabel.setText("Funds\n" + MainController.getPlayer().getFunds());
+    fuelLabel.setText("Fuel\n"
+        + MainController.getPlayer().getShip().getFuel());
+    maxFuelLabel.setText("Max Fuel\n"
+        + MainController.getPlayer().getShip().getMaxFuel());
+    fleaPrice.setText(" " + ShipType.FLEA.getPrice());
+    gnatPrice.setText(" " + ShipType.GNAT.getPrice());
+    bumblebeePrice.setText(" " + ShipType.BUMBLEBEE.getPrice());
+    beetlePrice.setText(" " + ShipType.BEETLE.getPrice());
+    hornetPrice.setText(" " + ShipType.HORNET.getPrice());
+    grasshopperPrice.setText(" " + ShipType.GRASSHOPPER.getPrice());
+    termitePrice.setText(" " + ShipType.TERMITE.getPrice());
+    waspPrice.setText(" " + ShipType.WASP.getPrice());
+    mosquitoPrice.setText(" " + ShipType.MOSQUITO.getPrice());
+    fireflyPrice.setText(" " + ShipType.FIREFLY.getPrice());
+    int tech = MainController.getPlanetNotString().getTechLevel();
+    techLevelLabel.setText("TechLevel\n" + tech);
+    
+    String current = "Current Ship";
+    ShipType st = MainController.getPlayer().getShip().getType();
+    switch (st) {
+    case FLEA:
+        buyFLEA.setDisable(true);
+        buyFLEA.setText(current);
+        break;
+    case GNAT:
+        buyGNAT.setDisable(true);
+        buyGNAT.setText(current);
+        break;
+    case FIREFLY:
+        buyFIREFLY.setDisable(true);
+        buyFIREFLY.setText(current);
+        break;
+    case MOSQUITO:
+        buyMOSQUITO.setDisable(true);
+        buyMOSQUITO.setText(current);
+        break;
+    case BUMBLEBEE:
+        buyBUMBLEBEE.setDisable(true);
+        buyBUMBLEBEE.setText(current);
+        break;
+    case BEETLE:
+        buyBEETLE.setDisable(true);
+        buyBEETLE.setText(current);
+        break;
+    case HORNET:
+        buyHORNET.setDisable(true);
+        buyHORNET.setText(current);
+        break;
+    case GRASSHOPPER:
+        buyGRASSHOPPER.setDisable(true);
+        buyGRASSHOPPER.setText(current);
+        break;
+    case TERMITE:
+        buyTERMITE.setDisable(true);
+        buyTERMITE.setText(current);
+        break;
+    case WASP:
+        buyWASP.setDisable(true);
+        buyWASP.setText(current);
+        break;
+    default:
+        // using ESCAPE
+        break;
+    }
+    
+    String out = "Out of Stock";
+    switch (tech) // fall through on purpose
+    {
+    case 3:
+        buyFIREFLY.setDisable(true);
+        buyFIREFLY.setText(out);
+        buyMOSQUITO.setDisable(true);
+        buyMOSQUITO.setText(out);
+    case 4:
+        buyBUMBLEBEE.setDisable(true);
+        buyBUMBLEBEE.setText(out);
+        buyBEETLE.setDisable(true);
+        buyBEETLE.setText(out);
+    case 5:
+        buyHORNET.setDisable(true);
+        buyHORNET.setText(out);
+        buyGRASSHOPPER.setDisable(true);
+        buyGRASSHOPPER.setText(out);
+    case 6:
+        buyWASP.setDisable(true);
+        buyWASP.setText(out);
+        buyTERMITE.setDisable(true);
+        buyTERMITE.setText(out);
+    default:
+        break; // tech level seven has all ships
+    }
     }
 }

@@ -32,21 +32,21 @@ public class SPAAACEController implements Initializable {
 
     @FXML
     private void handleQuitMenuItemAction(ActionEvent event) throws Exception {
-	System.exit(0);
+    System.exit(0);
     }
 
     @FXML
     private void handleExitMenuItemAction(ActionEvent event) throws Exception {
-	if (MainController.getPlayer().getShip().getFuel() > 1) {
+    if (MainController.getPlayer().getShip().getFuel() > 1) {
             SoundController.click();
-	    Parent config = FXMLLoader.load(getClass().getResource(
-		    "Universe.fxml"));
-	    Scene sceneConfig = new Scene(config);
-	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		    .getWindow();
-	    stageN.setScene(sceneConfig);
-	    stageN.show();
-	} else {
+        Parent config = FXMLLoader.load(getClass().getResource(
+            "Universe.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+            .getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    } else {
             SoundController.deny();
         }
 
@@ -55,86 +55,86 @@ public class SPAAACEController implements Initializable {
     @FXML
     private void handleS1ButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("S1", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("S1", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleS2ButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("S2", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("S2", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleS3ButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("S3", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("S3", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleS3PT2ButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("S3PT2", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("S3PT2", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void handleYNSButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
-	nameHelper("Your Naming Sucks", event);
-	MainController.getPlayer().setLocation(
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getX(),
-		MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getY());
-	Parent config = FXMLLoader.load(getClass().getResource(eventType));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    nameHelper("Your Naming Sucks", event);
+    MainController.getPlayer().setLocation(
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getX(),
+        MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getY());
+    Parent config = FXMLLoader.load(getClass().getResource(eventType));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     /**
@@ -142,7 +142,7 @@ public class SPAAACEController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	// taken care of by the .fxml
+    // taken care of by the .fxml
     }
     
     private void nameHelper(String planet, ActionEvent event)throws Exception{

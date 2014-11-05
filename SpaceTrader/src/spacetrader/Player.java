@@ -50,18 +50,18 @@ public class Player implements Serializable {
      *            - Ship
      */
     public Player(String newName, int pilot, int fight, int trade,
-	    int engineer, int xLoc, int yLoc, Ship newShip) {
-//	System.out.println("Making player: " + newName + " Location: " + xLoc
-//		+ ", " + yLoc);
-	name = newName;
-	piloting = pilot;
-	fighting = fight;
-	trading = trade;
-	engineering = engineer;
-	ship = newShip;
-	locX = xLoc;
-	locY = yLoc;
-	funds = 1000;
+        int engineer, int xLoc, int yLoc, Ship newShip) {
+//  System.out.println("Making player: " + newName + " Location: " + xLoc
+//      + ", " + yLoc);
+    name = newName;
+    piloting = pilot;
+    fighting = fight;
+    trading = trade;
+    engineering = engineer;
+    ship = newShip;
+    locX = xLoc;
+    locY = yLoc;
+    funds = 1000;
 
     }
 
@@ -72,8 +72,8 @@ public class Player implements Serializable {
      * @param y
      */
     public void setLocation(int x, int y) {
-	locX = x;
-	locY = y;
+    locX = x;
+    locY = y;
     }
 
     /**
@@ -82,10 +82,10 @@ public class Player implements Serializable {
      *            - int amount to be added to money (x should be +)
      */
     public void addFunds(int add) {
-	if (funds > 0 && (funds + add) < 0) {
-	    funds = Integer.MAX_VALUE;
-	}
-	funds = funds + add;
+    if (funds > 0 && (funds + add) < 0) {
+        funds = Integer.MAX_VALUE;
+    }
+    funds = funds + add;
     }
 
     /**
@@ -94,7 +94,7 @@ public class Player implements Serializable {
      *            - int amount to be subtracted from money (x should be +)
      */
     public void subtractFunds(int x) {
-	funds = funds - x;
+    funds = funds - x;
     }
 
     /**
@@ -103,7 +103,7 @@ public class Player implements Serializable {
      *            - int amount of money (x should be +)
      */
     public void setFunds(int x) {
-	funds = x;
+    funds = x;
     }
 
     /**
@@ -112,7 +112,7 @@ public class Player implements Serializable {
      * @param ss
      */
     public void setSolarSystem(SolarSystem ss) {
-	solarSystem = ss;
+    solarSystem = ss;
     }
 
     /**
@@ -121,7 +121,7 @@ public class Player implements Serializable {
      * @param p
      */
     public void setPlanet(Planet p) {
-	planet = p;
+    planet = p;
     }
 
     /**
@@ -130,7 +130,7 @@ public class Player implements Serializable {
      * @param e
      */
     public void setEngineering(int e) {
-	engineering = e;
+    engineering = e;
     }
 
     /**
@@ -139,7 +139,7 @@ public class Player implements Serializable {
      * @param p
      */
     public void setPiloting(int p) {
-	piloting = p;
+    piloting = p;
     }
 
     /**
@@ -148,7 +148,7 @@ public class Player implements Serializable {
      * @param f
      */
     public void setFighting(int f) {
-	fighting = f;
+    fighting = f;
     }
 
     /**
@@ -157,7 +157,7 @@ public class Player implements Serializable {
      * @param t
      */
     public void setTrading(int t) {
-	trading = t;
+    trading = t;
     }
 
     /**
@@ -166,7 +166,7 @@ public class Player implements Serializable {
      * @param s
      */
     public void setShip(Ship s) {
-	ship = s;
+    ship = s;
     }
 
     /**
@@ -175,7 +175,7 @@ public class Player implements Serializable {
      * @return name
      */
     public String getName() {
-	return name;
+    return name;
     }
 
     /**
@@ -184,7 +184,7 @@ public class Player implements Serializable {
      * @return solarSystem
      */
     public SolarSystem getSolarSystem() {
-	return solarSystem;
+    return solarSystem;
     }
 
     /**
@@ -193,7 +193,7 @@ public class Player implements Serializable {
      * @return planet
      */
     public Planet getPlanet() {
-	return planet;
+    return planet;
     }
 
     /**
@@ -202,7 +202,7 @@ public class Player implements Serializable {
      * @return engineering
      */
     public int getEngineering() {
-	return engineering;
+    return engineering;
     }
 
     /**
@@ -211,7 +211,7 @@ public class Player implements Serializable {
      * @return piloting
      */
     public int getPiloting() {
-	return piloting;
+    return piloting;
     }
 
     /**
@@ -220,7 +220,7 @@ public class Player implements Serializable {
      * @return fighting
      */
     public int getFighting() {
-	return fighting;
+    return fighting;
     }
 
     /**
@@ -229,7 +229,7 @@ public class Player implements Serializable {
      * @return trading
      */
     public int getTrading() {
-	return trading;
+    return trading;
     }
 
     /**
@@ -238,7 +238,7 @@ public class Player implements Serializable {
      * @return ship
      */
     public Ship getShip() {
-	return ship;
+    return ship;
     }
 
     /**
@@ -247,7 +247,7 @@ public class Player implements Serializable {
      * @return funds
      */
     public int getFunds() {
-	return funds;
+    return funds;
     }
 
     /**
@@ -256,7 +256,7 @@ public class Player implements Serializable {
      * @return locX
      */
     public int getlocX() {
-	return locX;
+    return locX;
     }
 
     /**
@@ -265,7 +265,7 @@ public class Player implements Serializable {
      * @return locY
      */
     public int getlocY() {
-	return locY;
+    return locY;
     }
 
 }

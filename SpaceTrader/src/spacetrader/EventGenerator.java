@@ -33,19 +33,19 @@ public class EventGenerator {
      *            The distance the ship is traveling
      */
     public EventGenerator(int policeActivity, int pirateActivity,
-	    int reputation, int cargo, int dist) {
-	this.policeActivity = policeActivity;
-	this.pirateActivity = pirateActivity;
+        int reputation, int cargo, int dist) {
+    this.policeActivity = policeActivity;
+    this.pirateActivity = pirateActivity;
 
-	baseProb += reputation * 0.01 + cargo * 0.005 + dist * 0.001;
+    baseProb += reputation * 0.01 + cargo * 0.005 + dist * 0.001;
     }
 
     public double calculatePolice() {
-	return baseProb + policeActivity;
+    return baseProb + policeActivity;
     }
 
     public double calculatePirate() {
-	return baseProb + pirateActivity;
+    return baseProb + pirateActivity;
     }
 
     /**
@@ -60,29 +60,29 @@ public class EventGenerator {
      */
 
     public Event generate() {
-	double policeProb = calculatePolice();
-	double pirateProb = calculatePirate();
-	double policeRNG = Math.random();
-	double pirateRNG = Math.random();
+    double policeProb = calculatePolice();
+    double pirateProb = calculatePirate();
+    double policeRNG = Math.random();
+    double pirateRNG = Math.random();
 
-	if (policeRNG <= policeProb && pirateRNG <= pirateProb) {
-	    if (policeRNG > pirateRNG) {
-		return new PoliceEvent();
-	    } else if (pirateRNG > policeRNG) {
-		return new PirateEvent();
-	    } else {
-		if (Math.random() < 0.5) {
-		    return new PoliceEvent();
-		} else {
-		    return new PirateEvent();
-		}
-	    }
-	} else if (policeRNG <= policeProb) {
-	    return new PoliceEvent();
-	} else if (pirateRNG <= pirateProb) {
-	    return new PirateEvent();
-	}
+    if (policeRNG <= policeProb && pirateRNG <= pirateProb) {
+        if (policeRNG > pirateRNG) {
+        return new PoliceEvent();
+        } else if (pirateRNG > policeRNG) {
+        return new PirateEvent();
+        } else {
+        if (Math.random() < 0.5) {
+            return new PoliceEvent();
+        } else {
+            return new PirateEvent();
+        }
+        }
+    } else if (policeRNG <= policeProb) {
+        return new PoliceEvent();
+    } else if (pirateRNG <= pirateProb) {
+        return new PirateEvent();
+    }
 
-	return null;
+    return null;
     }
 }

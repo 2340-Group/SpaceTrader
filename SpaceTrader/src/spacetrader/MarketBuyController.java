@@ -21,9 +21,9 @@ import javafx.stage.Stage;
 public class MarketBuyController implements Initializable {
 
     private int waterTotal, oreTotal, foodTotal, fursTotal,
-	    gamesTotal, firearmsTotal, medicineTotal,
-	    machinesTotal, narcoticsTotal, robotsTotal,
-	    tempFunds, cargoTotal; //automatically set to zero
+        gamesTotal, firearmsTotal, medicineTotal,
+        machinesTotal, narcoticsTotal, robotsTotal,
+        tempFunds, cargoTotal; //automatically set to zero
     private Marketplace missingNo;
     @FXML
     private Label fuelLabel;
@@ -106,16 +106,16 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractWater(ActionEvent event) {
-	if (waterTotal > 0) {
+    if (waterTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    waterTotal--;
-	    waterLabel.setText("WATER\n" + waterTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Water");
-	    fundsLabel.setText(pmd + tempFunds);
+        cargoTotal--;
+        waterTotal--;
+        waterLabel.setText("WATER\n" + waterTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Water");
+        fundsLabel.setText(pmd + tempFunds);
 
-	    //
-	} else {
+        //
+    } else {
             SoundController.deny();
         }
     }
@@ -127,15 +127,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addWater(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Water")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Water")) {
             SoundController.click();
-	    cargoTotal++;
-	    waterTotal++;
-	    waterLabel.setText("WATER\n" + waterTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Water");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        waterTotal++;
+        waterLabel.setText("WATER\n" + waterTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Water");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -148,14 +148,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractOre(ActionEvent event) {
-	if (oreTotal > 0) {
+    if (oreTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    oreTotal--;
-	    oreLabel.setText("ORE\n" + oreTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Ore");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        oreTotal--;
+        oreLabel.setText("ORE\n" + oreTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Ore");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -167,15 +167,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addOre(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Ore")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Ore")) {
             SoundController.click();
-	    cargoTotal++;
-	    oreTotal++;
-	    oreLabel.setText("ORE\n" + oreTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Ore");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        oreTotal++;
+        oreLabel.setText("ORE\n" + oreTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Ore");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -188,14 +188,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractFood(ActionEvent event) {
-	if (foodTotal > 0) {
+    if (foodTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    foodTotal--;
-	    foodLabel.setText("FOOD\n" + foodTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Food");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        foodTotal--;
+        foodLabel.setText("FOOD\n" + foodTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Food");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -207,15 +207,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFood(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Food")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Food")) {
             SoundController.click();
-	    cargoTotal++;
-	    foodTotal++;
-	    foodLabel.setText("FOOD\n" + foodTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Food");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        foodTotal++;
+        foodLabel.setText("FOOD\n" + foodTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Food");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -228,14 +228,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractFurs(ActionEvent event) {
-	if (fursTotal > 0) {
+    if (fursTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    fursTotal--;
-	    fursLabel.setText("FURS\n" + fursTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Furs");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        fursTotal--;
+        fursLabel.setText("FURS\n" + fursTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Furs");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -247,15 +247,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFurs(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Furs")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Furs")) {
             SoundController.click();
-	    cargoTotal++;
-	    fursTotal++;
-	    fursLabel.setText("FURS\n" + fursTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Furs");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        fursTotal++;
+        fursLabel.setText("FURS\n" + fursTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Furs");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -268,14 +268,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractGames(ActionEvent event) {
-	if (gamesTotal > 0) {
+    if (gamesTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    gamesTotal--;
-	    gamesLabel.setText("GAMES\n" + gamesTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Games");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        gamesTotal--;
+        gamesLabel.setText("GAMES\n" + gamesTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Games");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -287,15 +287,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addGames(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Games")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Games")) {
             SoundController.click();
-	    cargoTotal++;
-	    gamesTotal++;
-	    gamesLabel.setText("GAMES\n" + gamesTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Games");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        gamesTotal++;
+        gamesLabel.setText("GAMES\n" + gamesTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Games");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -308,14 +308,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractFirearms(ActionEvent event) {
-	if (firearmsTotal > 0) {
+    if (firearmsTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    firearmsTotal--;
-	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Firearms");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        firearmsTotal--;
+        firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Firearms");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -327,15 +327,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addFirearms(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Firearms")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Firearms")) {
             SoundController.click();
-	    cargoTotal++;
-	    firearmsTotal++;
-	    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Firearms");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        firearmsTotal++;
+        firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Firearms");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -348,14 +348,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractMedicine(ActionEvent event) {
-	if (medicineTotal > 0) {
+    if (medicineTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    medicineTotal--;
-	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Medicine");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        medicineTotal--;
+        medicineLabel.setText("MEDICINE\n" + medicineTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Medicine");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -367,15 +367,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addMedicine(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Medicine")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Medicine")) {
             SoundController.click();
-	    cargoTotal++;
-	    medicineTotal++;
-	    medicineLabel.setText("MEDICINE\n" + medicineTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Medicine");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        medicineTotal++;
+        medicineLabel.setText("MEDICINE\n" + medicineTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Medicine");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -388,14 +388,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractMachines(ActionEvent event) {
-	if (machinesTotal > 0) {
+    if (machinesTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    machinesTotal--;
-	    machinesLabel.setText("MACHINES/n" + machinesTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Machines");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        machinesTotal--;
+        machinesLabel.setText("MACHINES/n" + machinesTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Machines");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -407,15 +407,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addMachines(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Machines")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Machines")) {
             SoundController.click();
-	    cargoTotal++;
-	    machinesTotal++;
-	    machinesLabel.setText("MACHINES\n" + machinesTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Machines");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        machinesTotal++;
+        machinesLabel.setText("MACHINES\n" + machinesTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Machines");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -428,14 +428,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractNarcotics(ActionEvent event) {
-	if (narcoticsTotal > 0) {
+    if (narcoticsTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    narcoticsTotal--;
-	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Narcotics");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        narcoticsTotal--;
+        narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Narcotics");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -447,15 +447,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addNarcotics(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Narcotics")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Narcotics")) {
             SoundController.click();
-	    cargoTotal++;
-	    narcoticsTotal++;
-	    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Narcotics");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        narcoticsTotal++;
+        narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Narcotics");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -468,14 +468,14 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void subtractRobot(ActionEvent event) {
-	if (robotsTotal > 0) {
+    if (robotsTotal > 0) {
             SoundController.click();
-	    cargoTotal--;
-	    robotsTotal--;
-	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
-	    tempFunds = tempFunds + missingNo.getResourceCost("Robots");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal--;
+        robotsTotal--;
+        robotsLabel.setText("ROBOTS\n" + robotsTotal);
+        tempFunds = tempFunds + missingNo.getResourceCost("Robots");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -487,15 +487,15 @@ public class MarketBuyController implements Initializable {
      */
     @FXML
     private void addRobot(ActionEvent event) {
-	if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
-		&& tempFunds >= missingNo.getResourceCost("Robots")) {
+    if (cargoTotal < MainController.getPlayer().getShip().getMaxCargo()
+        && tempFunds >= missingNo.getResourceCost("Robots")) {
             SoundController.click();
-	    cargoTotal++;
-	    robotsTotal++;
-	    robotsLabel.setText("ROBOTS\n" + robotsTotal);
-	    tempFunds = tempFunds - missingNo.getResourceCost("Robots");
-	    fundsLabel.setText(pmd + tempFunds);
-	} else {
+        cargoTotal++;
+        robotsTotal++;
+        robotsLabel.setText("ROBOTS\n" + robotsTotal);
+        tempFunds = tempFunds - missingNo.getResourceCost("Robots");
+        fundsLabel.setText(pmd + tempFunds);
+    } else {
             SoundController.deny();
         }
     }
@@ -509,81 +509,81 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void handleBuyMarketAction(ActionEvent event) throws Exception {
         SoundController.click();
-	missingNo = MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getEcon();
-	if (waterTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(0), waterTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (oreTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(1), oreTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (foodTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(2), foodTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (fursTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(3), fursTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (gamesTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(4), gamesTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (firearmsTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(5), firearmsTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (medicineTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(6), medicineTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (machinesTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(7), machinesTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (narcoticsTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(8), narcoticsTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
-	if (robotsTotal > 0) {
-	    missingNo.buy(missingNo.getResources().get(9), robotsTotal,
-		    MainController.getPlayer(), MainController.getPlayer()
-		    .getShip());
-	}
+    missingNo = MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getEcon();
+    if (waterTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(0), waterTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (oreTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(1), oreTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (foodTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(2), foodTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (fursTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(3), fursTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (gamesTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(4), gamesTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (firearmsTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(5), firearmsTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (medicineTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(6), medicineTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (machinesTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(7), machinesTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (narcoticsTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(8), narcoticsTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
+    if (robotsTotal > 0) {
+        missingNo.buy(missingNo.getResources().get(9), robotsTotal,
+            MainController.getPlayer(), MainController.getPlayer()
+            .getShip());
+    }
 
-	resetMarket();
-	tempFunds = MainController.getPlayer().getFunds();
-	fundsLabel.setText(pmd + tempFunds);
-	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
-		.printCargo());
-	cargoTotal = MainController.getPlayer().getShip().getCargo()
-		.getCurrentVolume();
+    resetMarket();
+    tempFunds = MainController.getPlayer().getFunds();
+    fundsLabel.setText(pmd + tempFunds);
+    inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+        .printCargo());
+    cargoTotal = MainController.getPlayer().getShip().getCargo()
+        .getCurrentVolume();
     }
 
     @FXML
     private void handleBuyFuelAction(ActionEvent event) throws Exception {
-	if (MainController.getPlayer().getFunds() >= 100
-		&& MainController.getPlayer().getShip().getFuel() <= (MainController
-			.getPlayer().getShip().getMaxFuel() - 10)) {
+    if (MainController.getPlayer().getFunds() >= 100
+        && MainController.getPlayer().getShip().getFuel() <= (MainController
+            .getPlayer().getShip().getMaxFuel() - 10)) {
             SoundController.click();
-	    MainController.getPlayer().subtractFunds(100);
-	    MainController.getPlayer().getShip().addFuel(10);
-	    tempFunds = MainController.getPlayer().getFunds();
-	    fundsLabel.setText(pmd + tempFunds);
-	    fuelLabel.setText("FUEL\n"
-		    + MainController.getPlayer().getShip().getFuel());
-	} else {
+        MainController.getPlayer().subtractFunds(100);
+        MainController.getPlayer().getShip().addFuel(10);
+        tempFunds = MainController.getPlayer().getFunds();
+        fundsLabel.setText(pmd + tempFunds);
+        fuelLabel.setText("FUEL\n"
+            + MainController.getPlayer().getShip().getFuel());
+    } else {
             SoundController.deny();
         }
     }
@@ -592,27 +592,27 @@ public class MarketBuyController implements Initializable {
      * resets totals
      */
     private void resetMarket() {
-	waterTotal = 0;
-	oreTotal = 0;
-	foodTotal = 0;
-	fursTotal = 0;
-	gamesTotal = 0;
-	firearmsTotal = 0;
-	medicineTotal = 0;
-	machinesTotal = 0;
-	narcoticsTotal = 0;
-	robotsTotal = 0;
-	tempFunds = 0;
-	waterLabel.setText("WATER\n" + waterTotal);
-	oreLabel.setText("ORE\n" + oreTotal);
-	foodLabel.setText("FOOD\n" + foodTotal);
-	fursLabel.setText("FURS\n" + fursTotal);
-	gamesLabel.setText("GAMES\n" + gamesTotal);
-	firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
-	medicineLabel.setText("MEDICINE\n" + medicineTotal);
-	machinesLabel.setText("MACHINES\n" + machinesTotal);
-	narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
-	robotsLabel.setText("ROBOTS\n" + robotsTotal);
+    waterTotal = 0;
+    oreTotal = 0;
+    foodTotal = 0;
+    fursTotal = 0;
+    gamesTotal = 0;
+    firearmsTotal = 0;
+    medicineTotal = 0;
+    machinesTotal = 0;
+    narcoticsTotal = 0;
+    robotsTotal = 0;
+    tempFunds = 0;
+    waterLabel.setText("WATER\n" + waterTotal);
+    oreLabel.setText("ORE\n" + oreTotal);
+    foodLabel.setText("FOOD\n" + foodTotal);
+    fursLabel.setText("FURS\n" + fursTotal);
+    gamesLabel.setText("GAMES\n" + gamesTotal);
+    firearmsLabel.setText("FIREARMS\n" + firearmsTotal);
+    medicineLabel.setText("MEDICINE\n" + medicineTotal);
+    machinesLabel.setText("MACHINES\n" + machinesTotal);
+    narcoticsLabel.setText("NARCOTICS\n" + narcoticsTotal);
+    robotsLabel.setText("ROBOTS\n" + robotsTotal);
     }
 
     /**
@@ -624,33 +624,33 @@ public class MarketBuyController implements Initializable {
     @FXML
     private void handleLeaveMarketAction(ActionEvent event) throws Exception {
         SoundController.click();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		"Marketplace.fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        "Marketplace.fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-	fuelLabel.setText("FUEL\n"
-		+ MainController.getPlayer().getShip().getFuel());
-	missingNo = MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getEcon();
-	cargoTotal = MainController.getPlayer().getShip().getCargo()
-		.getCurrentVolume();
-	capacityLabel.setText("Your ship holds a maximum of "
-		+ MainController.getPlayer().getShip().getMaxCargo()
-		+ " resources.");
-	tempFunds = MainController.getPlayer().getFunds();
-	fundsLabel.setText(pmd + tempFunds);
-	costLabel.setText(MainController.getUniverse()
-		.getPlanet(MainController.getCurrentPlanet()).getEcon()
-		.listPrices());
-	inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
-		.printCargo());
+    fuelLabel.setText("FUEL\n"
+        + MainController.getPlayer().getShip().getFuel());
+    missingNo = MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getEcon();
+    cargoTotal = MainController.getPlayer().getShip().getCargo()
+        .getCurrentVolume();
+    capacityLabel.setText("Your ship holds a maximum of "
+        + MainController.getPlayer().getShip().getMaxCargo()
+        + " resources.");
+    tempFunds = MainController.getPlayer().getFunds();
+    fundsLabel.setText(pmd + tempFunds);
+    costLabel.setText(MainController.getUniverse()
+        .getPlanet(MainController.getCurrentPlanet()).getEcon()
+        .listPrices());
+    inventoryLabel.setText(MainController.getPlayer().getShip().getCargo()
+        .printCargo());
     }
 
 }

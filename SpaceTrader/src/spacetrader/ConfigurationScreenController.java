@@ -34,7 +34,7 @@ public class ConfigurationScreenController implements Initializable {
      */
     private String name = "Trader";
     private int remainingPoints = 15, pilotPoints, fighterPoints,
-	    traderPoints, engineerPoints; //automatically set to zero
+        traderPoints, engineerPoints; //automatically set to zero
 
     @FXML
     private TextField nameField;
@@ -68,126 +68,126 @@ public class ConfigurationScreenController implements Initializable {
 
     @FXML
     private void subtractPilot(ActionEvent event) {
-	if (pilotPoints > 0) {
+    if (pilotPoints > 0) {
             SoundController.click();
-	    remainingPoints++;
-	    remainingPointsL.setText(pmd + remainingPoints);
-	    pilotPoints--;
-	    pilotPointsL.setText("Pilot\n" + pilotPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Pilot Points: " + pilotPoints);
-	} else {
-	    SoundController.deny();
-	}
+        remainingPoints++;
+        remainingPointsL.setText(pmd + remainingPoints);
+        pilotPoints--;
+        pilotPointsL.setText("Pilot\n" + pilotPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Pilot Points: " + pilotPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void addPilot(ActionEvent event) {
-	if (remainingPoints > 0) {
-	    SoundController.click();
-	    remainingPoints--;
-	    remainingPointsL.setText(pmd + remainingPoints);
-	    pilotPoints++;
-	    pilotPointsL.setText("Pilot\n" + pilotPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Pilot Points: " + pilotPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (remainingPoints > 0) {
+        SoundController.click();
+        remainingPoints--;
+        remainingPointsL.setText(pmd + remainingPoints);
+        pilotPoints++;
+        pilotPointsL.setText("Pilot\n" + pilotPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Pilot Points: " + pilotPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void subtractFighter(ActionEvent event) {
-	if (fighterPoints > 0) {
-	    SoundController.click();
-	    remainingPoints++;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    fighterPoints--;
-	    fighterPointsL.setText("Fighter\n" + fighterPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Fighter Points: " + fighterPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (fighterPoints > 0) {
+        SoundController.click();
+        remainingPoints++;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        fighterPoints--;
+        fighterPointsL.setText("Fighter\n" + fighterPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Fighter Points: " + fighterPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void addFighter(ActionEvent event) {
-	if (remainingPoints > 0) {
-	    SoundController.click();
-	    remainingPoints--;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    fighterPoints++;
-	    fighterPointsL.setText("Fighter\n" + fighterPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Fighter Points: " + fighterPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (remainingPoints > 0) {
+        SoundController.click();
+        remainingPoints--;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        fighterPoints++;
+        fighterPointsL.setText("Fighter\n" + fighterPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Fighter Points: " + fighterPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void subtractTrader(ActionEvent event) {
-	if (traderPoints > 0) {
-	    SoundController.click();
-	    remainingPoints++;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    traderPoints--;
-	    traderPointsL.setText("Trader\n" + traderPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Trader Points: " + traderPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (traderPoints > 0) {
+        SoundController.click();
+        remainingPoints++;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        traderPoints--;
+        traderPointsL.setText("Trader\n" + traderPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Trader Points: " + traderPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void addTrader(ActionEvent event) {
-	if (remainingPoints > 0) {
-	    SoundController.click();
-	    remainingPoints--;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    traderPoints++;
-	    traderPointsL.setText("Trader\n" + traderPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Trader Points: " + traderPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (remainingPoints > 0) {
+        SoundController.click();
+        remainingPoints--;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        traderPoints++;
+        traderPointsL.setText("Trader\n" + traderPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Trader Points: " + traderPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void subtractEngineer(ActionEvent event) {
-	if (engineerPoints > 0) {
-	    SoundController.click();
-	    remainingPoints++;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    engineerPoints--;
-	    engineerPointsL.setText("Engineer\n" + engineerPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Engineer Points: " + engineerPoints);
-	} else {
-	    SoundController.deny();
-	}
+    if (engineerPoints > 0) {
+        SoundController.click();
+        remainingPoints++;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        engineerPoints--;
+        engineerPointsL.setText("Engineer\n" + engineerPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Engineer Points: " + engineerPoints);
+    } else {
+        SoundController.deny();
+    }
     }
 
     @FXML
     private void addEngineer(ActionEvent event) {
-	if (remainingPoints > 0) {
-	    SoundController.click();
-	    remainingPoints--;
-	    remainingPointsL
-		    .setText(pmd + remainingPoints);
-	    engineerPoints++;
-	    engineerPointsL.setText("Engineer\n" + engineerPoints);
-//	    System.out.println("Remaining Points: " + remainingPoints);
-//	    System.out.println("Engineer Points: " + engineerPoints);
-	} else {
+    if (remainingPoints > 0) {
+        SoundController.click();
+        remainingPoints--;
+        remainingPointsL
+            .setText(pmd + remainingPoints);
+        engineerPoints++;
+        engineerPointsL.setText("Engineer\n" + engineerPoints);
+//      System.out.println("Remaining Points: " + remainingPoints);
+//      System.out.println("Engineer Points: " + engineerPoints);
+    } else {
             SoundController.deny();
         }
     }
@@ -196,42 +196,42 @@ public class ConfigurationScreenController implements Initializable {
     private void cancel(ActionEvent event) throws Exception {
         SoundController.click();
         SoundController.stopSong();
-	Parent config = FXMLLoader.load(getClass().getResource(
-		"FXMLDocument.fxml"));
-	Scene sceneConfig = new Scene(config);
-	Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		.getWindow();
-	stageN.setScene(sceneConfig);
-	stageN.show();
+    Parent config = FXMLLoader.load(getClass().getResource(
+        "FXMLDocument.fxml"));
+    Scene sceneConfig = new Scene(config);
+    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+        .getWindow();
+    stageN.setScene(sceneConfig);
+    stageN.show();
     }
 
     @FXML
     private void done(ActionEvent event) throws Exception {
-	if (remainingPoints == 0) {
+    if (remainingPoints == 0) {
             SoundController.stopSong();
             SoundController.swoop();
-	    if (nameField.getText() != null
-		    && !nameField.getText().trim().isEmpty()) {
-		name = nameField.getText().trim();
-	    }
-//	    System.out.println(name);
+        if (nameField.getText() != null
+            && !nameField.getText().trim().isEmpty()) {
+        name = nameField.getText().trim();
+        }
+//      System.out.println(name);
 
-	    MainController.makePlayer(name, pilotPoints, fighterPoints,
-		    traderPoints, engineerPoints, MainController.getUniverse()
-			    .getPlanet("S1").getX(), MainController
-			    .getUniverse().getPlanet("S1").getY());
+        MainController.makePlayer(name, pilotPoints, fighterPoints,
+            traderPoints, engineerPoints, MainController.getUniverse()
+                .getPlanet("S1").getX(), MainController
+                .getUniverse().getPlanet("S1").getY());
 
-	    MainController.setCurrentPlanet("S1");
-	    MainController.setCurrentSolarSystem("SPAAACE");
-	    Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
-	    Scene sceneConfig = new Scene(config);
-	    Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-		    .getWindow();
-	    stageN.setScene(sceneConfig);
-	    stageN.show();
-	} else {
-	    SoundController.deny();
-	}
+        MainController.setCurrentPlanet("S1");
+        MainController.setCurrentSolarSystem("SPAAACE");
+        Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+            .getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    } else {
+        SoundController.deny();
+    }
     }
 
     /**
@@ -239,27 +239,27 @@ public class ConfigurationScreenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-	//taken care of by .fxml
+    //taken care of by .fxml
     }
 
     public String getName() {
-	return name;
+    return name;
     }
 
     public int getpilotPoints() {
-	return pilotPoints;
+    return pilotPoints;
     }
 
     public int getfighterPoints() {
-	return fighterPoints;
+    return fighterPoints;
     }
 
     public int getraderPoints() {
-	return traderPoints;
+    return traderPoints;
     }
 
     public int getengineerPoints() {
-	return engineerPoints;
+    return engineerPoints;
     }
 
 }
