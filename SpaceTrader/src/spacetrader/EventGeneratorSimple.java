@@ -23,6 +23,7 @@ public class EventGeneratorSimple {
     /**
      * Constructor
      *
+     * @param player
      * */
     public EventGeneratorSimple(Player player) {
         this.policeProb = Math.random();

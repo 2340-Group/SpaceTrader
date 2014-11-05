@@ -97,6 +97,30 @@ public class EventGeneratorSimpleTest {
         
     }
     
+    @Test
+    public void testAllFail() {
+        gen.setEventChance(1);
+        gen.setPoliceProb(0);
+        gen.setPoliceRNG(1);
+        gen.setPirateProb(0.9);
+        gen.setPirateRNG(1);
+        String ans = gen.generateEvent("Planet");
+        assertEquals(ans, "Planet");
+        
+    }
+    
+    @Test
+    public void testAllFail2() {
+        gen.setEventChance(1);
+        gen.setPoliceProb(0.9);
+        gen.setPoliceRNG(1);
+        gen.setPirateProb(0);
+        gen.setPirateRNG(1);
+        String ans = gen.generateEvent("Planet");
+        assertEquals(ans, "Planet");
+        
+    }
+    
     
     
 }
