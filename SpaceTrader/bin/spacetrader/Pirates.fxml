@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacetrader.PiratesController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="611.0" layoutX="-1.0">
+         <image>
+            <Image url="@PirateFlag.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="surrenderBtn" layoutX="177.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleSurrenderButtonAction" text="Surrender" />
+      <Text fill="RED" layoutX="220.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pirate Attack!">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Button fx:id="fightBtn" layoutX="283.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleFightButtonAction" text="Fight" />
+      <Button fx:id="fleeBtn" layoutX="362.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleFleeButtonAction" text="Flee" />
+      <Label fx:id="text" alignment="TOP_LEFT" layoutX="14.0" layoutY="56.0" prefHeight="148.0" prefWidth="223.0" text="You've been stopped&#10;by pirates! Choose to&#10;surrender, fight, or flee!" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="continueBtn" layoutX="271.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleContinueButtonAction" text="Continue" visible="false" />
+   </children>
+</AnchorPane>
