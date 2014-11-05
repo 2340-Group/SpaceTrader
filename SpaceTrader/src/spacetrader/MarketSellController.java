@@ -16,15 +16,17 @@ import javafx.stage.Stage;
 
 /**
  * Marketplace Sell
- * @author
+ * @author Ryan
  */
 public class MarketSellController implements Initializable {
 
-    private int waterTotal, oreTotal, foodTotal, fursTotal,
-	    gamesTotal, firearmsTotal, medicineTotal,
-	    machinesTotal, narcoticsTotal, robotsTotal,
-	    tempFunds; //automatically set to zero
-    private Marketplace missingNo;
+
+    private int waterTotal = 0, oreTotal = 0, foodTotal = 0, fursTotal = 0,
+	    gamesTotal = 0, firearmsTotal = 0, medicineTotal = 0,
+	    machinesTotal = 0, narcoticsTotal = 0, robotsTotal = 0,
+	    tempFunds = 0;
+    private Marketplace market;
+
     @FXML
     private Label capacityLabel;
     @FXML
@@ -94,7 +96,10 @@ public class MarketSellController implements Initializable {
     @FXML
     private Button plusRobots;
 
-    // Water
+    /**
+     * subtracts water from total
+     * @param event
+     */
     @FXML
     private void subtractWater(ActionEvent event) {
 	if (waterTotal > 0) {
@@ -106,6 +111,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds water to total
+     * @param event
+     */
     @FXML
     private void addWater(ActionEvent event) {
 	if (waterTotal < MainController.getPlayer().getShip().getCargo()
@@ -118,7 +127,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
-    // ORE
+    /**
+     * subtracts ore from total
+     * @param event
+     */
     @FXML
     private void subtractOre(ActionEvent event) {
 	if (oreTotal > 0) {
@@ -131,6 +143,10 @@ public class MarketSellController implements Initializable {
 	// add deny sound for else
     }
 
+    /**
+     * adds ore to total
+     * @param event
+     */
     @FXML
     private void addOre(ActionEvent event) {
 	if (oreTotal < MainController.getPlayer().getShip().getCargo()
@@ -144,7 +160,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Food
+    /**
+     * subtracts food from total
+     * @param event
+     */
     @FXML
     private void subtractFood(ActionEvent event) {
 	if (foodTotal > 0) {
@@ -157,6 +176,10 @@ public class MarketSellController implements Initializable {
 	// add deny sound for else
     }
 
+    /**
+     * adds food to total
+     * @param event
+     */
     @FXML
     private void addFood(ActionEvent event) {
 	if (foodTotal < MainController.getPlayer().getShip().getCargo()
@@ -170,7 +193,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Furs
+    /**
+     * subtracts furs from total
+     * @param event
+     */
     @FXML
     private void subtractFurs(ActionEvent event) {
 	if (fursTotal > 0) {
@@ -183,6 +209,10 @@ public class MarketSellController implements Initializable {
 	// add deny sound for else
     }
 
+    /**
+     * adds furs to total
+     * @param event
+     */
     @FXML
     private void addFurs(ActionEvent event) {
 	if (fursTotal < MainController.getPlayer().getShip().getCargo()
@@ -196,7 +226,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Games
+    /**
+     * subtracts games from total
+     * @param event
+     */
     @FXML
     private void subtractGames(ActionEvent event) {
 	if (gamesTotal > 0) {
@@ -208,6 +241,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds games to total
+     * @param event
+     */
     @FXML
     private void addGames(ActionEvent event) {
 	if (gamesTotal < MainController.getPlayer().getShip().getCargo()
@@ -221,7 +258,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Firearms
+    /**
+     * subtracts firearms from total
+     * @param event
+     */
     @FXML
     private void subtractFirearms(ActionEvent event) {
 	if (firearmsTotal > 0) {
@@ -233,6 +273,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds firearms to total
+     * @param event
+     */
     @FXML
     private void addFirearms(ActionEvent event) {
 	if (firearmsTotal < MainController.getPlayer().getShip().getCargo()
@@ -246,7 +290,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Medicine
+    /**
+     * subtracts medicine from total
+     * @param event
+     */
     @FXML
     private void subtractMedicine(ActionEvent event) {
 	if (medicineTotal > 0) {
@@ -258,6 +305,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds medicine to total
+     * @param event
+     */
     @FXML
     private void addMedicine(ActionEvent event) {
 	if (medicineTotal < MainController.getPlayer().getShip().getCargo()
@@ -271,7 +322,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Machines
+    /**
+     * subtracts machines from total
+     * @param event
+     */
     @FXML
     private void subtractMachines(ActionEvent event) {
 	if (machinesTotal > 0) {
@@ -283,6 +337,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds machines to total
+     * @param event
+     */
     @FXML
     private void addMachines(ActionEvent event) {
 	if (machinesTotal < MainController.getPlayer().getShip().getCargo()
@@ -296,7 +354,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Narcotics
+    /**
+     * subtracts narcotics from total
+     * @param event
+     */
     @FXML
     private void subtractNarcotics(ActionEvent event) {
 	if (narcoticsTotal > 0) {
@@ -308,6 +369,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds narcotics to total
+     * @param event
+     */
     @FXML
     private void addNarcotics(ActionEvent event) {
 	if (narcoticsTotal < MainController.getPlayer().getShip().getCargo()
@@ -321,7 +386,10 @@ public class MarketSellController implements Initializable {
 
     }
 
-    // Robots
+    /**
+     * subtracts robots from total
+     * @param event
+     */
     @FXML
     private void subtractRobot(ActionEvent event) {
 	if (robotsTotal > 0) {
@@ -333,6 +401,10 @@ public class MarketSellController implements Initializable {
         }
     }
 
+    /**
+     * adds robots to total
+     * @param event
+     */
     @FXML
     private void addRobot(ActionEvent event) {
 	if (robotsTotal < MainController.getPlayer().getShip().getCargo()
@@ -356,55 +428,55 @@ public class MarketSellController implements Initializable {
     private void handleSellMarketAction(ActionEvent event) throws Exception {
 	// subtract inventory & add funds
         SoundController.click();
-	missingNo = MainController.getUniverse()
+	market = MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon();
 	if (waterTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(0), waterTotal,
+	    market.sell(market.getResources().get(0), waterTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (oreTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(1), oreTotal,
+	    market.sell(market.getResources().get(1), oreTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (foodTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(2), foodTotal,
+	    market.sell(market.getResources().get(2), foodTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (fursTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(3), fursTotal,
+	    market.sell(market.getResources().get(3), fursTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (gamesTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(4), gamesTotal,
+	    market.sell(market.getResources().get(4), gamesTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (firearmsTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(5), firearmsTotal,
+	    market.sell(market.getResources().get(5), firearmsTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (medicineTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(6), medicineTotal,
+	    market.sell(market.getResources().get(6), medicineTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (machinesTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(7), machinesTotal,
+	    market.sell(market.getResources().get(7), machinesTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (narcoticsTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(8), narcoticsTotal,
+	    market.sell(market.getResources().get(8), narcoticsTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
 	if (robotsTotal > 0) {
-	    missingNo.sell(missingNo.getResources().get(9), robotsTotal,
+	    market.sell(market.getResources().get(9), robotsTotal,
 		    MainController.getPlayer(), MainController.getPlayer()
 		    .getShip());
 	}
@@ -428,10 +500,10 @@ public class MarketSellController implements Initializable {
     private void handleSellAllMarketAction(ActionEvent event) throws Exception {
 	// subtract all inventory and add funds
         SoundController.click();
-	missingNo = MainController.getUniverse()
+        market = MainController.getUniverse()
 		.getPlanet(MainController.getCurrentPlanet()).getEcon();
-	for (int i = 0; i < missingNo.getResources().size(); i++) {
-	    missingNo.sell(missingNo.getResources().get(i), missingNo
+	for (int i = 0; i < market.getResources().size(); i++) {
+	    market.sell(market.getResources().get(i), market
 		    .getResources().get(i).getQuantity(), MainController
 		    .getPlayer(), MainController.getPlayer().getShip());
 	}
@@ -442,6 +514,9 @@ public class MarketSellController implements Initializable {
 		.printCargo());
     }
 
+    /**
+     * resets market page
+     */
     private void resetMarket() {
 	waterTotal = 0;
 	oreTotal = 0;
@@ -484,6 +559,9 @@ public class MarketSellController implements Initializable {
 	stageN.show();
     }
 
+    /**
+     * initializes controller
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 	// cargoTotal =
