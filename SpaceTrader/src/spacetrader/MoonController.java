@@ -32,17 +32,18 @@ public class MoonController implements Initializable {
      */
     @FXML
     private void handleStupidity(ActionEvent event) throws Exception {
-    if (MainController.getPlayer().getShip().getFuel() > 0) {
+        if (MainController.getPlayer().getShip().getFuel() > 0) {
+            SoundController.stopSong();
             SoundController.click();
-        Parent config = FXMLLoader.load(getClass().getResource("S1.fxml"));
-        Scene sceneConfig = new Scene(config);
-        Stage stageN = (Stage) ((Node) event.getSource()).getScene()
-            .getWindow();
-        stageN.setScene(sceneConfig);
-        stageN.show();
-    } else {
-            SoundController.deny();
-        }
+            Parent config = FXMLLoader.load(getClass().getResource("ERROR.fxml"));
+            Scene sceneConfig = new Scene(config);
+            Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+                .getWindow();
+            stageN.setScene(sceneConfig);
+            stageN.show();
+        } else {
+                SoundController.deny();
+            }
     }
 
     /**
@@ -50,7 +51,7 @@ public class MoonController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rbu) {
-    // entriely delt with by the .fxml
+        SoundController.intro();
     }
 
 }

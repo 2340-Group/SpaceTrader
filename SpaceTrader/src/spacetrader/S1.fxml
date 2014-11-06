@@ -31,12 +31,6 @@
       </MenuBar>
       <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
       <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
-      <Button layoutX="399.0" layoutY="85.0" mnemonicParsing="false" onAction="#handleBuyMoon" text="Buy Moon" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="323.0" layoutY="48.0" text="Moon Costs 2147483647" textAlignment="CENTER">
-               <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
       <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="188.0" text="FUEL&#10;0" textAlignment="CENTER">
          <font>
             <Font size="20.0" />

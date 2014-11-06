@@ -32,12 +32,18 @@
       </MenuBar>
       <Button layoutX="25.0" layoutY="273.0" mnemonicParsing="false" onAction="#handleExitMenuItemAction" text="Leave Planet" />
       <Button layoutX="496.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleMarket" text="Marketplace" />
-      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="312.0" text="FUNDS&#10;0" textAlignment="CENTER">
+      <Button layoutX="504.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleBuyMoon" text="Buy Moon" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="160.0" layoutY="365.0" text="Moon Costs 200000000" textAlignment="CENTER">
+               <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="fundsLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="295.0" text="FUNDS&#10;0" textAlignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="322.0" layoutY="312.0" text="FUEL&#10;0" textAlignment="CENTER">
+      <Label fx:id="fuelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="322.0" layoutY="295.0" text="FUEL&#10;0" textAlignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>
@@ -47,6 +53,6 @@
             <Font name="System Bold" size="83.0" />
          </font>
       </Label>
-      <Button layoutX="515.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
+      <Button layoutX="515.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleShipyard" text="Shipyard" />
    </children>
 </AnchorPane>

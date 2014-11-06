@@ -46,8 +46,9 @@ public class PlanetController implements Initializable {
 
     @FXML
     private void handleBuyMoon(ActionEvent event) throws Exception {
-    if (MainController.getPlayer().getFunds() >= Integer.MAX_VALUE) {
+    if (MainController.getPlayer().getFunds() >= 200000000) {
             SoundController.click();
+            MainController.getPlayer().subtractFunds(200000000);
         Parent config = FXMLLoader
             .load(getClass().getResource("Moon.fxml"));
         Scene sceneConfig = new Scene(config);
@@ -56,7 +57,7 @@ public class PlanetController implements Initializable {
         stageN.setScene(sceneConfig);
         stageN.show();
     } else {
-            SoundController.click();
+            SoundController.deny();
         }
     }
 
