@@ -1,0 +1,28 @@
+//Set a default task, so if I don't give a task, this (these) will be executed
+defaultTasks  'jar'
+
+//Import a bunch of java related tasks like compileJava, compileJavaTest, clean, javadoc, jar
+apply plugin: 'java'
+apply from: 'javafx.plugin'
+//apply from: 'http://dl.bintray.com/content/shemnon/javafx-gradle/0.4.0/javafx.plugin'
+
+//declare dependencies
+dependencies {
+    compile files('lib/resources.jar')
+}
+
+//Set up some variables (properties)
+sourceCompatibility = 1.8
+version = '1.0'
+
+//Define the contents of the jar file
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Testing', 'Implementation-Version': version ,'Main-Class' : 'GradleMain', 'Class-Path' : '../../lib/resources.jar'
+    }
+}
+
+//Set up a location of repositories so that any needed library dependencies can be downloaded
+repositories {
+    mavenCentral()
+}
