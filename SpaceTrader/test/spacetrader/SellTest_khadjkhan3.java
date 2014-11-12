@@ -54,23 +54,6 @@ public class SellTest_khadjkhan3 {
 		assertEquals(testShip.getCargo().getResourceStock(market.getResources().get(0)), 0);
 	}
 
-	/*// test higher tech level planet pay more.
-	@Test
-	public void testDiffTechLevel() {
-		MainController.makePlayer("tech",0,0,0,0,0,0);
-		Player techLevel = MainController.getPlayer();
-		Ship testShip = techLevel.getShip();
-		testShip.getCargo().addStock(market.getResources().get(0), 5);
-		techLevel.setFunds(0);
-		market.sell(market.getResources().get(0), 2, techLevel, testShip);
-		int lowerTech = techLevel.getFunds();
-		techLevel.setFunds(0);
-		market.sell(market.getResources().get(0), 2, techLevel, testShip);
-		int higherTech = techLevel.getFunds();
-		assertTrue(higherTech > lowerTech);
-
-
-	}*/
 
 	// test player funds updated after selling
 	@Test
