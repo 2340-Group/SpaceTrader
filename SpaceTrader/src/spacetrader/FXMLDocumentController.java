@@ -8,10 +8,12 @@ package spacetrader;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.media.*;
+
 import java.io.*;
 
 import javafx.fxml.FXMLLoader;
@@ -33,6 +35,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleStartButtonAction(ActionEvent event) throws Exception {
         SoundController.click();
+        MainController.makeUniverse();
     Parent config = FXMLLoader.load(getClass().getResource(
         "ConfigurationScreen.fxml"));
     Scene sceneConfig = new Scene(config);

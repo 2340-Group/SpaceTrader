@@ -45,7 +45,7 @@ public class MainController implements Serializable {
     p = new Player(n, pilot, fight, trade, engineering, x, y, s);
     currentPlanet = "S1";
     currentSystem = "SPAAACE";
-    p.setFunds(200000002);
+    //p.setFunds(200000002);
     }
 
     /**
