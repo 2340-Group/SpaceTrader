@@ -10,6 +10,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import spacetrader.EventGeneratorSimple;
+import spacetrader.Player;
+import spacetrader.Ship;
 import static org.junit.Assert.*;
 
 /**

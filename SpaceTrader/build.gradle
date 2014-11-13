@@ -15,10 +15,18 @@ dependencies {
 sourceCompatibility = 1.8
 version = '1.0'
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src/spacetrader'
+        }
+    }
+}
+
 //Define the contents of the jar file
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Testing', 'Implementation-Version': version ,'Main-Class' : 'GradleMain', 'Class-Path' : '../../lib/resources.jar'
+        attributes 'Implementation-Title': 'Testing', 'Implementation-Version': version ,'Main-Class' : 'SpaceTrader', 'Class-Path' : '../../lib/resources.jar'
     }
 }
 
