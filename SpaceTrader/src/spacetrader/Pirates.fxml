@@ -29,5 +29,11 @@
          </font>
       </Label>
       <Button fx:id="continueBtn" layoutX="271.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleContinueButtonAction" text="Continue" visible="false" />
+      <Button fx:id="okayBtn" layoutX="283.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleOkayButtonAction" text="Okay" visible="false" />
+      <Label fx:id="text1" alignment="TOP_LEFT" layoutX="390.0" layoutY="56.0" prefHeight="148.0" prefWidth="209.0" text="You will be returned to&#10;the main menu where&#10;you can start a new&#10;game or continue from&#10;your last saved state." textFill="RED" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
