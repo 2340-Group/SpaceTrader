@@ -39,6 +39,7 @@ public class UniverseController implements Initializable {
         .getWindow();
     stageN.setScene(sceneConfig);
     stageN.show();
+    SoundController.spaceMusic();
     }
 
     @FXML
@@ -50,6 +51,7 @@ public class UniverseController implements Initializable {
         .getWindow();
     stageN.setScene(sceneConfig);
     stageN.show();
+    SoundController.nameMusic();
     }
 
     @FXML
@@ -61,6 +63,7 @@ public class UniverseController implements Initializable {
         .getWindow();
     stageN.setScene(sceneConfig);
     stageN.show();
+    SoundController.nonameMusic();
     }
 
     /**
@@ -68,7 +71,7 @@ public class UniverseController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    // TODO
+        SoundController.universeMusic();
     }
 
 }

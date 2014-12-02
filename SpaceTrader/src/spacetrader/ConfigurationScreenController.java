@@ -229,6 +229,7 @@ public class ConfigurationScreenController implements Initializable {
             .getWindow();
         stageN.setScene(sceneConfig);
         stageN.show();
+        SoundController.spaceMusic();
     } else {
         SoundController.deny();
     }

@@ -45,6 +45,22 @@ public class SoundController implements Serializable {
      * third sound effect
      */
     private static Media swoopSound;
+    /**
+     * song 1
+     */
+    private static Media one44;
+    /**
+     * song 2
+     */
+    private static Media one40;
+    /**
+     * song 3
+     */
+    private static Media one26;
+    /**
+     * song 5
+     */
+    private static Media universe;
 
     /**
      * initializes the sounds, pointing to proper files
@@ -58,6 +74,14 @@ public class SoundController implements Serializable {
     .toURI().toString());
         introSong = new Media(new File("./src/spacetrader/OpenTrack.mp3")
     .toURI().toString());
+       one44 = new Media(new File("./src/spacetrader/144.mp3")
+    .toURI().toString()); 
+       one26 = new Media(new File("./src/spacetrader/126.mp3")
+    .toURI().toString()); 
+       one40 = new Media(new File("./src/spacetrader/wobbler.mp3")
+    .toURI().toString()); 
+       universe = new Media(new File("./src/spacetrader/universe.mp3")
+    .toURI().toString()); 
     //mediaPlayer = new MediaPlayer(click);
     }
 
@@ -106,5 +130,43 @@ public class SoundController implements Serializable {
      */
     public static void stopSong() {
         songPlayer.stop();
+    }
+    
+    /**
+     * play solar system 1
+     */
+    public static void spaceMusic() {
+        songPlayer.stop();
+        songPlayer = new MediaPlayer(one44);
+        songPlayer.play();
+        songPlayer.setCycleCount(100);
+    }
+    /**
+     * play solar system 2
+     */
+    public static void nameMusic() {
+        songPlayer.stop();
+        songPlayer = new MediaPlayer(one26);
+        songPlayer.play();
+        songPlayer.setCycleCount(100);
+    }
+    /**
+     * play solar system 3
+     */
+    public static void nonameMusic() {
+        songPlayer.stop();
+        songPlayer = new MediaPlayer(one40);
+        songPlayer.play();
+        songPlayer.setCycleCount(100);
+    }
+    
+    /**
+     * play universe
+     */
+    public static void universeMusic() {
+        songPlayer.stop();
+        songPlayer = new MediaPlayer(universe);
+        songPlayer.play();
+        songPlayer.setCycleCount(100);
     }
 }
