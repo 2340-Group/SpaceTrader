@@ -21,8 +21,8 @@ public class PirateEvent implements Event {
     }
     
     public String act(Player p) {
-        int cap = p.getShip().getMaxCargo();
-        p.getShip().setCargo(new CargoBay(cap));
+        //int cap = p.getShip().getMaxCargo();
+        //p.getShip().setCargo(new CargoBay(cap));
         
         return "Pirates";
     }

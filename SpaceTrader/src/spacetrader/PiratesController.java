@@ -79,7 +79,7 @@ public class PiratesController implements Initializable {
                     + "damage.");
             continueBtn.setVisible(true);
         } else {
-            text.setText("You tried to fight off the\npirates, but your"
+            text.setText("You tried to fight off the\npirates, but your "
                     + "fighting\nability was not high\nenough. Your ship has"
                     + "\nbeen destroyed.");
             okayBtn.setVisible(true);
@@ -116,13 +116,26 @@ public class PiratesController implements Initializable {
         stageN.setScene(sceneConfig);
         stageN.show();
     }
+    
+    @FXML
+    private void handleOkayButtonAction(ActionEvent event) throws Exception {
+        SoundController.click();
+        Parent config = FXMLLoader.load(getClass().getResource(
+            "FXMLDocument.fxml"));
+        Scene sceneConfig = new Scene(config);
+        Stage stageN = (Stage) ((Node) event.getSource()).getScene()
+            .getWindow();
+        stageN.setScene(sceneConfig);
+        stageN.show();
+    }
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //taken care of by .fxml
+    pirateEvent.act(MainController.getPlayer());
+    //funds.setText("" + (MainController.getPlayer().getFunds()));
     }
 
 }

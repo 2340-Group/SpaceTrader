@@ -45,7 +45,7 @@ public class EventGeneratorSimple {
      *         event probability.
      */
     public String generateEvent(String next) {
-        if(eventChance >= baseProb) {
+        /*if(eventChance >= baseProb) {
         if (policeRNG <= policeProb && pirateRNG <= pirateProb) {
             if (policeRNG > pirateRNG) {
                 return "Police";
@@ -66,8 +66,8 @@ public class EventGeneratorSimple {
             return next;
         }
         }
-        return next;
-
+        return next;*/
+        return "Pirates";
     }
     
     public double getPoliceProb() {
